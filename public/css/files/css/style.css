@@ -1,0 +1,588 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #2f3542;
+}
+i{
+  font-family: 'Font Awesome 5 Free';
+  font-family: 'Font Awesome 5 Regular';
+  font-family: 'Font Awesome 5 Brands';
+}
+label{
+  font-weight: bold !important;
+}
+.datepickers-container{
+  z-index: 9999999;
+}
+.modal-title{
+  color: #009688;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.modal-content, .modal-header, .modal-footer{
+  background-color: #1f2532;
+  border-color: transparent;
+}
+.modal-body{
+  background-color: #2f3542;;
+}
+.breadcrumb{
+  background-color: #ffffff !important;
+  box-shadow: 0px 0px 16px 0px rgba(208, 208, 208, 0.85);
+  margin-bottom: 35px !important;
+}
+.breadcrumb-item{
+  color: #009688c4;
+}
+.breadcrumb-item a{
+  font-weight: bold;
+  text-decoration: none;
+}
+.breadcrumb-item a:hover{
+  color: ##006d63;
+  font-weight: bold;
+  text-decoration: none;
+}
+.breadcrumb-item + .breadcrumb-item::before {
+  /* content: "/f35a" !important; */
+  font-family: "Font Awesome 5 Brands"; 
+  /* font-weight: 900;  */
+  content: "\f260" !important;
+}
+/* ============< Navbar Part Starts >=========== */
+.navbar-part {
+  background-color: #1f2532;
+  border-bottom-color: #1f2532;
+  box-shadow: 0 0 10px #000;
+}
+.navbar-part.fire_header2 .navbar-nav>li:last-child>a {
+  border-right: 1px solid #191d25;
+}
+.navbar-part .navbar .navbar-brand img{
+  max-width: 240px;
+}
+.navbar-part.header_common .navbar-nav li a{
+  color: #c3c5c5;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.navbar-part.header_common .navbar-nav li a:hover{
+  color: #009688;
+  border-bottom: 5px solid #009688;
+  padding-bottom: 27px;
+}
+.navbar-part.header_common .navbar-nav li.active a{
+  color: #009688;
+  border-bottom: 5px solid #009688;
+  padding-bottom: 27px;
+}
+.navbar-part.header_common .dropdown>ul {
+  background: #1f2532;
+  border: 1px solid #2f3542;
+  box-shadow: 3px 4px 11px 0px rgba(0, 0, 0, 0.6);
+}
+.navbar-part.header_common .dropdown>ul a:hover,
+.navbar-part.header_common .dropdown>ul a:focus,
+.navbar-part.header_common .dropdown>ul a:active{
+  background: #2f3542;
+}
+.navbar-part.header_common .dropdown>ul::before {
+  background: #1f2532;
+  border-left: 1px solid #2f3542;
+  border-top: 1px solid #2f3542;
+}
+.navbar-part.fire_header2 nav .social_contact li a{
+  color: #c3c5c5;
+  font-size: 18px;
+  padding: 0 10px;
+}
+.navbar-part.fire_header2 nav .social_contact li a:hover{
+  color: #009688;
+}
+/* =============< Navbar Part Ends >============ */
+
+
+/*=====================================================
+=======================< Home Page >===================
+=======================================================*/
+
+/* ============< Carousel Part Starts >=========== */
+.carousel-part{
+  background-image: url("../images/carousel_background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 650px;
+}
+.carousel-part .cp-left.welcome-msg{
+  background: rgba(47, 53, 66, 0.76);
+  padding: 30px 30px;
+  border-radius: 10px;
+  margin-top: 50%;
+}
+.carousel-part .cp-left.welcome-msg h1{
+  font-weight: bold;
+}
+.carousel-part .cp-right.search-form{
+  background: #2f3542;
+  padding: 30px 30px;
+  border-radius: 10px;
+  margin-top: 25%;
+}
+.fire_input2 textarea, .fire_input2 input, .fire_input1 input{
+  width: 100%;
+  margin-bottom: 24px;
+}
+.fire_input2 .input1, .fire_input1 .input1 {
+  border-color: #1f2532;
+  /* background: #1f2532; */
+  color: #fff;
+  border-radius: 2px;
+}
+.fire_input1 .input1:hover,
+.fire_input1 .input1:focus,
+.fire_input1 .input1:active{
+  border-color: #009688;
+  color: #fff;
+  border: 1px solid #009688;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px #1f2532 inset;
+  -webkit-text-fill-color: #fff;
+}
+
+.fire_select .nice-select .list{
+  min-width: 100%;
+  max-width: 100%;
+}
+.fire_select{
+  min-width: 100%;
+}
+.fire_select .nice-select{
+  width: 100%;
+}
+.fire_select2 .nice-select .list, .fire_select2 .nice-select{
+    border: 1px solid #009688c9;
+    background: #ffffff;
+    color: #090909;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 3px 3px 10px 0px rgba(218, 218, 218, 0.41);
+}
+.fire_select2 .nice-select .list li:hover, .fire_select2 .nice-select:hover{
+    background: #009688;
+    color: #090909;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.nice-select:after {
+  border-bottom: 2px solid #090909;
+  border-right: 2px solid #090909;
+}
+.custom-btn.btn-info{
+  color: #2f3542;
+  background-color: transparent;
+  border: 1px solid #2f3542;
+  border-color: #2f3542;
+  outline: none;
+  box-shadow: none;
+  transition: all 0.3s ease-in-out;
+}
+ 
+.custom-btn.btn-info:hover,
+.custom-btn.btn-info:active, 
+.custom-btn.btn-info:focus{
+  color: #ffffff;
+  background-color: #0d6d75;
+  border-color: #0d6d75;
+  outline: none;
+  box-shadow: none;
+  transition: all 0.3s ease-in-out;
+}
+.custom-btn.btn-info:not([disabled]):not(.disabled).active,
+.custom-btn.btn-info:not([disabled]):not(.disabled):active,
+.show>.custom-btn.btn-info.dropdown-toggle{
+  color: #050506;
+  background-color: #009688;
+  border-color: #009688;
+  border: 1px solid #009688;
+  box-shadow: none;
+}
+/* =============< Carousel Part Ends >============ */
+
+
+/* ============< About Part Starts >=========== */
+.about-part .heading h1 {
+  font-size: 40px;
+}
+.about-part{
+  background: #1f2532;
+}
+.about-part .heading p {
+  font-size: 18px;
+  text-align: left;
+  color: #efefef;
+}
+
+.about-part .about p, .about-part .our-vision p{
+  text-align: justify;
+}
+
+.about-part .about-us .our-vision p {
+  font-size: 16px;
+  color: #efefef;
+}
+
+.about-part .about-us .our-goal ul {
+  padding-left: 0px;
+  margin-top: -4px;
+  color: #efefef;
+}
+
+.about-part .about-us .our-goal ul>li {
+  list-style: none;
+  padding: 0 0 0 15px;
+  line-height: 30px;
+  position: relative;
+  font-size: 16px;
+}
+
+.about-part .about-us .our-goal li::before {
+  content: '\f24d';
+font-family: 'Font Awesome 5 Free';
+  margin: 0 10px 0 -15px;
+  color: #fecc00;
+}
+hr{
+  border-top: 1px solid rgb(69, 78, 97);
+}
+/* =============< About Part Ends >============ */
+
+
+/* ============< Car Service Part Starts >=========== */
+.car-service-part{
+  background-image: url("../images/car_background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+/* .car-service-part .car-service{
+  background-color: #1f2532;
+  padding: 20px;
+} */
+.pricing_wrapper .single_table{
+	background-color: #2f3542;
+}
+.car-service-part.pricing_section .single_table .tbl_header .img-thumbnail{
+    min-height: 139px;
+    max-height: 139px;
+    padding: 0;
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+.car-service-part.pricing_section .single_table .tbl_header {
+    padding: 5px 5px;
+    border-color: #1f2532;
+}
+.car-service-part.pricing_section .single_table .tbl_header>p{
+	margin-top: 5px;
+	font-size: 14px;
+}
+.car-service-part.pricing_section .single_table .tbl_header>p>a{
+	font-weight: bold;
+  color: #009688;
+  font-size: 18px;
+}
+.car-service-part.pricing_section .single_table:hover{
+	box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.30);
+}
+.car-service-part.pricing_section .single_table:hover .tbl_header a{
+  color: #fff;
+  font-size: 18px;
+}
+.car-service-part.tbl_body .list{
+  opacity: 0.9;
+}
+.pricing_section .single_table .tbl_body .list>li{
+  color: #009688;
+  text-align: left;
+}
+.car-service-part.pricing_section .single_table .tbl_body {
+    padding: 20px 30px;
+}
+.car-service-part.pricing_section .single_table .tbl_body .purchase{
+  margin-top: 16px;
+  color: #009688;
+  border-color: #009688;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.pricing_section{
+	border-bottom: 0px solid;
+}
+.pricing_section .single_table{
+  width: inherit;
+  border-color: #191d25;
+}
+.pricing_section .single_table:hover{
+  border-color: #009688;
+}
+.pricing_section .single_table:hover .tbl_body .purchase{
+  background: #009688;
+  border-color: #009688;
+  color: #2f3542;
+}
+.pricing_section.style2 .single_table:hover .tbl_header{
+  background-color: #009688;
+}
+.car-service-part.pricing_section .single_table:hover .tbl_header a{
+  color: #2f3542;
+}
+/* =============< Car Service Part Ends >============ */
+
+
+/* ============< hiace Service Part Starts >=========== */
+.hiace-service-part{
+  background-image: url("../images/hiace_background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+/* .hiace-service-part .hiace-service{
+  background-color: #1f2532;
+  padding: 20px;
+} */
+.pricing_wrapper .single_table{
+	background-color: #2f3542;
+}
+.hiace-service-part.pricing_section .single_table .tbl_header .img-thumbnail{
+    max-height: 242px;
+    padding: 0;
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+.hiace-service-part.pricing_section .single_table .tbl_header {
+    padding: 5px 5px;
+    border-color: #1f2532;
+}
+.hiace-service-part.pricing_section .single_table .tbl_header>p{
+	margin-top: 5px;
+	font-size: 14px;
+}
+.hiace-service-part.pricing_section .single_table .tbl_header>p>a{
+	font-weight: bold;
+  color: #009688;
+  font-size: 18px;
+}
+.hiace-service-part.pricing_section .single_table:hover{
+	box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.30);
+}
+.hiace-service-part.pricing_section .single_table:hover .tbl_header a{
+  color: #fff;
+  font-size: 18px;
+}
+.hiace-service-part.tbl_body .list{
+  opacity: 0.9;
+}
+.pricing_section .single_table .tbl_body .list>li{
+  color: #009688;
+  text-align: left;
+}
+.hiace-service-part.pricing_section .single_table .tbl_body {
+    padding: 20px 30px;
+}
+.hiace-service-part.pricing_section .single_table .tbl_body .purchase{
+  margin-top: 16px;
+  color: #009688;
+  border-color: #009688;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.pricing_section{
+	border-bottom: 0px solid;
+}
+.pricing_section .single_table{
+  width: inherit;
+  border-color: #191d25;
+}
+.pricing_section .single_table:hover{
+  border-color: #009688;
+}
+.pricing_section .single_table:hover .tbl_body .purchase{
+  background: #009688;
+  border-color: #009688;
+  color: #2f3542;
+}
+.pricing_section.style2 .single_table:hover .tbl_header{
+  background-color: #009688;
+}
+.hiace-service-part.pricing_section .single_table:hover .tbl_header a{
+  color: #2f3542;
+}
+/* =============< hiace Service Part Ends >============ */
+
+
+/* ============< Contact Part Starts >=========== */
+/* .contact-part{
+  background: #1f2532;
+} */
+.contact-part .contact-us .fas{
+	color:#009688;
+  border:1px solid #009688;
+  border-radius: 5px;
+	padding:18px;
+}
+.contact-part .contact-us h5{
+	color:#009688;
+	margin-top:0px;
+  margin-bottom:10px;
+  font-size: 18px;
+}
+.contact-part .contact-us .contact-header{
+  text-transform: uppercase;
+}
+.contact-part .contact-us p{
+	color:#efefef;
+  margin-top:0px;
+  margin-bottom: 0px;
+  font-size: 15px;
+  line-height: 17px;
+}
+/* =============< Contact Part Ends >============ */
+
+
+/* ============< Footer Part Starts >=========== */
+
+.footer{
+	background-color:#1f2532;
+	color:#009688;
+}
+.footer .social-media ul {
+	padding-top:10px;
+}
+.footer .social-media ul li{
+	display:inline;
+	list-style:none;
+	margin-right:5px;
+}
+.footer .social-media ul li:nth-child(1) i{
+	padding:10px 16px;
+  border:1px solid #009688;
+  font-size: 24px;
+  border-radius: 5px;
+}
+.footer .social-media ul li:nth-child(2) i{
+	padding:10px 11px;
+  border:1px solid #009688;
+  font-size: 24px;
+  border-radius: 5px;
+}
+.footer .social-media ul li:nth-child(3) i{
+	padding:10px 13px;
+  border:1px solid #009688;
+  font-size: 24px;
+  border-radius: 5px;
+}
+.footer .social-media ul li:nth-child(4) i{
+	padding:10px 10px;
+  border:1px solid #009688;
+  font-size: 24px;
+  border-radius: 5px;
+}
+.footer .social-media ul li a{
+	color:#009688;
+}
+.footer .social-media ul li i{
+  transition: 0.5s all ease-in-out;
+}
+.footer .social-media ul li i:hover{
+  background-color: #009688;
+  color: #1f2532;
+  transition: 0.5s all ease-in-out;
+}
+.footer .copyright{
+	color:#efefef;
+}
+.footer .copyright span, .footer .copyright a{
+	color:#009688;
+	font-size:16px;
+	font-weight:700;
+}
+
+/* =============< Footer Part Ends >============ */
+
+
+/* ============< Part Starts >=========== */
+
+/* =============< Part Ends >============ */
+
+
+/* ============< Part Starts >=========== */
+
+/* =============< Part Ends >============ */
+
+
+/* ============< Part Starts >=========== */
+
+/* =============< Part Ends >============ */
+
+
+/* ============< Part Starts >=========== */
+
+/* =============< Part Ends >============ */
+
+
+/* ============< Part Starts >=========== */
+
+/* =============< Part Ends >============ */
+
+
+/* ============< Part Starts >=========== */
+
+/* =============< Part Ends >============ */
+
+
+/* ============< Part Starts >=========== */
+
+/* =============< Part Ends >============ */
+
+
+/* ============< Part Starts >=========== */
+
+/* =============< Part Ends >============ */
+
+
+/* ============< Part Starts >=========== */
+
+/* =============< Part Ends >============ */
+
+
+/* ============< Part Starts >=========== */
+
+/* =============< Part Ends >============ */
+
+
+/* ============< Scroll-Top Part Starts >=========== */
+.scrollTop {
+  position: fixed;
+  right: 3%;
+  bottom: 20px;
+  background-color: #2f3542;
+  padding: 5px 14px;
+  border-radius: 5px;
+  opacity: 0;
+  transition: all 0.4s ease-in-out 0s;
+  box-shadow: 3px 4px 15px 0px rgba(0, 0, 0, 0.3);
+}
+.scrollTop i{
+  font-size: 24px;
+  padding-top: 4px;
+  color: #fff;
+}
+.scrollTop i:hover{
+  color: #009688;
+}
+/* =============< Scroll-Top Part Ends >============ */
