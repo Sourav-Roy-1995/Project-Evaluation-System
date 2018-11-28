@@ -79,6 +79,7 @@ class SupervisorController extends Controller
     public function store(Request $request)
     {
         //
+
             $validatedData = $request->validate([
 
                 'project_id'        => 'required|max:10',
@@ -94,22 +95,30 @@ class SupervisorController extends Controller
                 
             ]);
 
+         
+            // create new task
+    $rows = $request->input('rows');
+    foreach ($rows as $row)
+    {
+        $marking[] = new MarkingSystem(array(
+            'project_id'=>$request->input('project_id'),
+            'student_id'=>$row['student_id'],
+            'personal_id'=>$request->input('personal_id'),
+            'course_code'=>$request->input('course_code'),
+            'semester'=>$request->input('semester'),
+            'category_one'=>$row['category_one'],
+            'category_two'=>$row['category_two'],
+            'supervisor_marks'=>$row['supervisor_marks'],
+            'total'=>$row['total'],
 
-
-          $marking = new MarkingSystem;
-          $marking->project_id = $request->input("project_id");
-          $marking->student_id = $request->input("student_id");
-          $marking->personal_id = $request->input("personal_id");
-          $marking->course_code = $request->input("course_code");
-          $marking->semester = $request->input("semester");
-          $marking->category_one = $request->input("category_one");
-          $marking->category_two = $request->input("category_two");
-          $marking->supervisor_marks = $request->input("supervisor_marks");
-          $marking->total = $request->input("total");
-          $marking->save();
-
-          $request->session()->flash('flash_message', 'Submitted successfully!');
-          return redirect()->back();
+        ));
+    }
+    MarkingSystem::insert($marking);
+    $request->session()->flash('flash_message', 'Submitted successfully!');
+    return redirect()->back();
+            
+            
+    
     }
 
     /**

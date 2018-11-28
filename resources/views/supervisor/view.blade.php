@@ -50,7 +50,9 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light" id="custom-nav">
 
           <a class="navbar-brand" href="http://localhost/final_year_project/public">Dept. Of CSE</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+          <button class="navbar-toggler" type="button" data-toggle="collapse" 
+          data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+          aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
 
@@ -98,10 +100,15 @@
 <div class="row" style="margin-top: 50px;">
 <div class="container">
    <div id="con" class="card">
-      <div class="card-header col-md-12">
-         Result Sheet
-          <a href="javascript:history.back()" class="btn btn-info btn-sm float-right">Back</a>
-      </div>
+    <div class="card-header text-right">
+        <div class="btn-group"  role="group" aria-label="Basic example">
+            
+             <a href="javascript:history.back()" class="btn btn-info btn-sm float-right">Back</a>
+             <button  class="btn btn-info btn-sm float-right" id="btn2">Append form</button>
+         </div>
+   
+    </div>
+   
 
   
 @if(Session::has('flash_message'))
@@ -119,7 +126,7 @@
 
    <div class="row">
       <div class="col-md-6">
-        <div class="form-label-group">        
+        <div class="form-label-group ">        
 
           {!! Form::text('project_id',null,['class'=>'form-control']) !!}
 
@@ -131,11 +138,9 @@
       <div class="col-md-6">
           <div class="form-label-group">          
 
-            <select name="student_id" class="form-control" id="exampleFormControlSelect1">
-              <option>{{$supervisorstudents->studentid_one}}</option>
-              <option>{{$supervisorstudents->studentid_two}}</option>
-              <option>{{$supervisorstudents->studentid_three}}</option>
-            </select>
+              <input class="form-control" type="text" name="rows[0][student_id]" value="{{$supervisorstudents->studentid_one}}">
+
+              {!! Form::label('student_id','First Student Id: ') !!}
 
           </div>
       </div>
@@ -179,7 +184,7 @@
       <div class="col-md-6">
           <div class="form-label-group">          
 
-            {!! Form::text('category_one',null,['class'=>'form-control']) !!}
+            {!! Form::text('rows[0][category_one]',null,['class'=>'form-control']) !!}
 
             {!! Form::label('category_one','Category One') !!}
 
@@ -194,7 +199,7 @@
 
         <div class="form-label-group">
 
-          {!! Form::text('category_two',null,['class'=>'form-control']) !!}
+          {!! Form::text('rows[0][category_two]',null,['class'=>'form-control']) !!}
 
           {!! Form::label('category_two','Category Two: ') !!}
 
@@ -206,7 +211,7 @@
         
         <div class="form-label-group">          
 
-          {!! Form::text('supervisor_marks',null,['class'=>'form-control']) !!}
+          {!! Form::text('rows[0][supervisor_marks]',null,['class'=>'form-control']) !!}
 
           {!! Form::label('supervisor_marks','Supervisor Marks: ') !!}
 
@@ -224,7 +229,7 @@
         
         <div class="form-label-group">          
 
-          {!! Form::text('total',null,['class'=>'form-control']) !!}
+          {!! Form::text('rows[0][total]',null,['class'=>'form-control']) !!}
           {!! Form::label('total','Total: ') !!}
 
         </div>
@@ -286,6 +291,97 @@
 
     <!-- Demo scripts for this page-->
     <script src="{{URL::asset('js/demo/datatables-demo.js')}}"></script>
+
+
+
+    <script>
+      $(document).ready(function(){
+
+          $("#btn2").click(function(e){
+            var i = 2;
+            $(".card-body")
+           .append(
+             
+            '<div class="row" style="margin-top:10px;">'+
+                '<div class="col-md-6">'+
+                      '<div class="form-label-group ">'+
+                          '<input value="{{$supervisorstudents->studentid_two}}" name="rows[' + i +'][student_id]" name="student_id" class="form-control"  type="text" >'+
+                          '{!! Form::label('student_id','Second Students Id: ') !!}'+
+                      '</div>'+
+                '</div>'+
+                '<div class="col-md-6">'+
+                    '<div class="form-label-group ">'+
+                        '<input name="rows[' + i +'][category_one]" class="form-control" type="text" >'+
+                        '{!! Form::label('category_one','Category One: ') !!}'+
+                    '</div>'+
+                  '</div>'+
+            '</div>'+
+
+           '<div class="row" style="margin-top:10px;">'+
+                '<div class="col-md-6">'+
+                    '<div class="form-label-group ">'+
+                        '<input name="rows[' + i +'][category_two]" class="form-control"  type="text" >'+
+                        '{!! Form::label('category_two','Category Two: ') !!}'+
+                    '</div>'+
+                '</div>'+
+                '<div class="col-md-6">'+
+                    '<div class="form-label-group ">'+
+                        '<input name="rows[' + i +'][supervisor_marks]" class="form-control" type="text" >'+
+                        '{!! Form::label('supervisor_marks','Supervisr Marks: ') !!}'+
+                    '</div>'+
+                '</div>'+
+          '</div>'+
+
+           '<div class="row" style="margin-top:10px;">'+
+                '<div class="col-md-12">'+
+                    '<div class="form-label-group ">'+
+                        '<input name="rows[' + i +'][total]"  class="form-control"  type="text" >'+
+                        '{!! Form::label('total','Total: ') !!}'+
+                    '</div>'+
+                 '</div>'+
+            '</div>'+
+
+          '<div class="row" style="margin-top:10px;">'+
+                '<div class="col-md-6">'+
+                      '<div class="form-label-group ">'+
+                          '<input value="{{$supervisorstudents->studentid_three}}" name="rows[' + i +'][student_id]" class="form-control"  type="text" >'+
+                          '{!! Form::label('student_id','Third Students Id: ') !!}'+
+                      '</div>'+
+                '</div>'+
+                '<div class="col-md-6">'+
+                    '<div class="form-label-group ">'+
+                        '<input name="rows[' + i +'][category_one]" class="form-control" type="text" >'+
+                        '{!! Form::label('category_one','Category One: ') !!}'+
+                    '</div>'+
+                  '</div>'+
+            '</div>'+
+
+           '<div class="row" style="margin-top:10px;">'+
+                '<div class="col-md-6">'+
+                    '<div class="form-label-group ">'+
+                        '<input name="rows[' + i +'][category_two]" class="form-control"  type="text" >'+
+                        '{!! Form::label('category_two','Category Two: ') !!}'+
+                    '</div>'+
+                '</div>'+
+                '<div class="col-md-6">'+
+                    '<div class="form-label-group ">'+
+                        '<input name="rows[' + i +'][supervisor_marks]" class="form-control" type="text" >'+
+                        '{!! Form::label('supervisor_marks','Supervisr Marks: ') !!}'+
+                    '</div>'+
+                '</div>'+
+          '</div>'+
+
+           '<div class="row" style="margin-top:10px;">'+
+                '<div class="col-md-12">'+
+                    '<div class="form-label-group ">'+
+                        '<input name="rows[' + i +'][total]" class="form-control"  type="text" >'+
+                        '{!! Form::label('total','Total: ') !!}'+
+                    '</div>'+
+                 '</div>'+
+            '</div>');
+          });
+      });
+      </script>
 
 
 
