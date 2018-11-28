@@ -166,16 +166,39 @@ class AdminController extends Controller
     }
 
 
-    public function view_supervisor($project_id)
+    public function view_supervisor($id)
 
     {
 
-        $post = SupervisorStudent::findOrFail($project_id);
+        $supervisorstudent = SupervisorStudent::findOrFail($id);
 
-        return view('admin.view_supervisor',compact('post')); 
+        $supervisors = User::all()->where('supervisor',1);
+
+        return view('admin.view_supervisor',compact('supervisorstudent','supervisors')); 
 
     }
 
+    public function update_supervisor(Request $request, $id)
+    {
+        //
+
+        $supervisorstudent = SupervisorStudent::findOrFail($id);
+
+        $supervisorstudent->update($request->all());
+
+        return redirect('/admin');
+
+
+    }
+
+    public function destroy_supervisor($id)
+    {
+        //
+        $supervisorstudent = SupervisorStudent::findOrFail($id);
+        $supervisorstudent->delete();
+
+        return redirect('admin');
+    }
 
     /**
      * Display the specified resource.
@@ -234,6 +257,7 @@ class AdminController extends Controller
     }
 
 
+
 /*    public function update_two(Request $request, $id)
     {
         //
@@ -258,7 +282,6 @@ class AdminController extends Controller
     public function destroy($id)
     {
         //
-
         $userlist = User::findOrFail($id);
 
         $userlist->delete();

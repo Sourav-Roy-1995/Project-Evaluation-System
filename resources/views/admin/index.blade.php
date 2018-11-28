@@ -52,7 +52,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light" id="custom-nav">
 
           <a class="navbar-brand" href="http://localhost/final_year_project/public">Dept. Of CSE</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
 
@@ -65,7 +65,7 @@
                 </li>
 
                 <li class="nav-item">
-                  <a class="nav-link" href="#con">Add Supervisor</a>
+                  <a class="nav-link" href="#add_supervisor">Add Supervisor</a>
                 </li>
 
                 <li class="nav-item">
@@ -119,7 +119,7 @@
  
       </ul>
 
-      <div id="content-wrapper">
+<div id="content-wrapper">
 
         <div class="container-fluid">
 
@@ -131,130 +131,8 @@
             <li class="breadcrumb-item active">Overview</li>
           </ol>
 
-          <!-- Icon Cards-->
-          <div class="row">
 
-            <div class="col-lg-12 col-md-12">
-
-
-
-            </div>
-
-          </div>
-
-
-<!-- Supervisor data form -->
-
-<div class="row">
-<div class="container">
-   <div id="con" class="card">
-      <div class="card-header col-md-12">
-          Supervisor Distribution
-          <a href="#supervisorlist" class="btn btn-info btn-sm float-right">View</a>
-      </div>
-
-
-@if(Session::has('flash_message'))
-        <div class="alert alert-success">
-            {{ Session::get('flash_message') }}
-        </div>
-@endif
-
-
-{!! Form::open(['id'=>'search_form','class'=>'search_form',     
-    'method'=>'POST','action'=>'AdminController@store','files'=>true]) !!}
-
-  
-  <div class="card-body">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-label-group">        
-
-          {!! Form::text('start_input',null,['class'=>'form-control','required'=>'required','data-error'=>'Input is required.']) !!}
-
-          {!! Form::label('start_id','Start ID: ') !!}
-
-        </div>
-      </div>
-
-      <div class="col-md-6">
-          <div class="form-label-group">          
-
-            {!! Form::text('end_input',null,['class'=>'form-control','required'=>'required','data-error'=>'Input is required.']) !!}
-
-            {!! Form::label('end_id','End Id: ') !!}
-
-          </div>
-      </div>
-    </div>
-
-      
-
-  <div class="row" style="margin-top: 12px;">
-      
-    <div class="col-md-6">
-
-        <div class="form-label-group">
-
-          {!! Form::text('personal_id',null,['class'=>'form-control','required'=>'required','data-error'=>'Input is required.']) !!}
-
-          {!! Form::label('personal_id','Supervisor ID: ') !!}
-
-        </div>
-
-    </div>
-
-
-   <div class="col-md-6">
-
-        <div class="form-label-group">
-
-          {!! Form::text('supervisor_name',null,['class'=>'form-control','required'=>'required','data-error'=>'Input is required.']) !!}
-
-          {!! Form::label('supervisor_name','Name: ') !!}
-
-        </div>
-
-    </div>
-
-  </div>
-  </div>
-
-
-<div class="card-footer text-right">
-    <div class="btn-group" role="group" aria-label="Basic example">
-       <a href="javascript:history.back()" class="btn btn-info custom-btn btn-sm">Cancle</a>
-         {!! Form::submit('Update',['class'=>'btn btn-info btn-sm']) !!}
-    </div>
-</div>      
-
-
-{!! Form::close() !!} 
-
-
-@if(count($errors) > 0)
-
-      <div class="alert alert-danger">
-        
-        <ul>
-          @foreach($errors->all() as $error)
-
-            <li>{{$error}}</li>
-
-          @endforeach
-
-        </ul>
-
-      </div>
-
-@endif
-
-     </div>
-</div>
-</div>
-
-
-   <div class="card mb-3" style="margin-top: 30px">
+  <div class="card mb-3" style="margin-top: 30px">
             <div class="card-header" id="supervisorlist">
               <i class="fas fa-table"></i>
               Supervisor Information</div>
@@ -266,23 +144,20 @@
                 <table class="table table-bordered" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Project ID</th>
-                      <th>Supervisor Id:</th>
+
                       <th>Supervisor Name:</th>
                       <th>Course Code:</th>                      
                       <th>semester</th>
-                      <!-- <th>studentid one</th>
+                      <th>studentid one</th>
                       <th>studentid two</th>
-                      <th>studentid three</th> -->
+                      <th>studentid three</th>
+                      <th>View</th>
                     </tr>
                   </thead>
 
                 @foreach($supervisorstudents as $supervisorstudent)
                   <tbody id="myTable2">
                     <tr>
-                      <td>{{$supervisorstudent->project_id}}</td>
-              
-                      <td>{{$supervisorstudent->personal_id}}</td>
 
                       <td>{{$supervisorstudent->supervisor_name}}</td>
 
@@ -290,12 +165,13 @@
 
                       <td>{{$supervisorstudent->semester}}</td>
 
-                     <!--  <td>{{$supervisorstudent->studentid_one}}</td>
+                      <td>{{$supervisorstudent->studentid_one}}</td>
 
                       <td>{{$supervisorstudent->studentid_two}}</td>
 
-                      <td>{{$supervisorstudent->studentid_three}}</td> -->
+                      <td>{{$supervisorstudent->studentid_three}}</td> 
                       
+                      <td><a href="{{route('admin.view_supervisor',$supervisorstudent->id)}}" class='btn btn-info btn-sm' name="name" >View</a></td>
                     </tr>
                   </tbody>
                   @endforeach
@@ -321,8 +197,7 @@
                   <thead>
                     <tr>
                       
-                      <th>Project Name:</th>
-                      
+                      <th>Project Name:</th>                  
                       <th>Course Code:</th>                      
                       <th>semester</th>
                       <th>studentid one</th>
@@ -363,7 +238,7 @@
 <div id="con" class="card">
       <div class="card-header col-md-12">
           Registrattion Information
-          <a href="#supervisorlist" class="btn btn-info btn-sm float-right">View</a>
+          
       </div>
 
 
@@ -445,8 +320,9 @@
 
 </div>
 
-          <!-- DataTables -->
-          
+
+
+      <!-- All Uder Data -->      
       <div class="card mb-3" style="margin-top: 15px;" id="all_user">
             <div class="card-header" id="all_user">
               <i class="fas fa-table"></i>
@@ -458,7 +334,8 @@
                     <tr>
                       <th>Personal ID</th>
                       <th>Name</th>
-                      <th>Update</th>
+                      <th>View</th>
+                     
                     </tr>
                   </thead>
 
@@ -468,7 +345,7 @@
                     <tr>
                       <td>{{$userlist->personal_id}}</td>
                       <td>{{$userlist->name}}</td>
-                      <td><a href="{{route('admin.edit',$userlist->id)}}" class='btn btn-info btn-sm' name="name" >Update</a></td>
+                      <td><a href="{{route('admin.edit',$userlist->id)}}" class='btn btn-info btn-sm' name="name" >View</a></td>
                     </tr>
                   </tbody>
                   @endforeach
@@ -478,8 +355,115 @@
               </div>
             </div>
             <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+      </div> <!-- All Uder Data -->
+
+
+<!-- Supervisor data form -->
+     <div id="con" class="card">
+        <div class="card-header col-md-12" id="add_supervisor">
+            Supervisor Distribution
+            <a href="#supervisorlist" class="btn btn-info btn-sm float-right">View</a>
+        </div>
+  
+  
+  @if(Session::has('flash_message'))
+          <div class="alert alert-success">
+              {{ Session::get('flash_message') }}
+          </div>
+  @endif
+  
+  
+  {!! Form::open(['id'=>'search_form','class'=>'search_form',     
+      'method'=>'POST','action'=>'AdminController@store','files'=>true]) !!}
+  
+    
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-label-group">        
+  
+            {!! Form::text('start_input',null,['class'=>'form-control','required'=>'required','data-error'=>'Input is required.']) !!}
+  
+            {!! Form::label('start_id','Start ID: ') !!}
+  
+          </div>
+        </div>
+  
+        <div class="col-md-6">
+            <div class="form-label-group">          
+  
+              {!! Form::text('end_input',null,['class'=>'form-control','required'=>'required','data-error'=>'Input is required.']) !!}
+  
+              {!! Form::label('end_id','End Id: ') !!}
+  
+            </div>
+        </div>
       </div>
+  
+        
+  
+    <div class="row" style="margin-top: 12px;">
+        
+      <div class="col-md-6">
+  
+          <div class="form-label-group">
+  
+            {!! Form::text('personal_id',null,['class'=>'form-control','required'=>'required','data-error'=>'Input is required.']) !!}
+  
+            {!! Form::label('personal_id','Supervisor ID: ') !!}
+  
+          </div>
+  
       </div>
+  
+  
+     <div class="col-md-6">
+  
+          <div class="form-label-group">
+  
+            {!! Form::text('supervisor_name',null,['class'=>'form-control','required'=>'required','data-error'=>'Input is required.']) !!}
+  
+            {!! Form::label('supervisor_name','Name: ') !!}
+  
+          </div>
+  
+      </div>
+  
+    </div>
+    </div>
+  
+  
+  <div class="card-footer text-right">
+      <div class="btn-group" role="group" aria-label="Basic example">
+         <a href="javascript:history.back()" class="btn btn-info custom-btn btn-sm">Cancle</a>
+           {!! Form::submit('Update',['class'=>'btn btn-info btn-sm']) !!}
+      </div>
+  </div>      
+  
+  
+  {!! Form::close() !!} 
+  
+  
+  @if(count($errors) > 0)
+  
+        <div class="alert alert-danger">
+          
+          <ul>
+            @foreach($errors->all() as $error)
+  
+              <li>{{$error}}</li>
+  
+            @endforeach
+  
+          </ul>
+  
+        </div>
+  
+  @endif
+  
+</div><!-- Supervisor data form -->
+  
+</div>
         <!-- /.container-fluid -->
 
         <!-- Sticky Footer -->

@@ -50,8 +50,8 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light" id="custom-nav">
 
           <a class="navbar-brand" href="http://localhost/final_year_project/public">Dept. Of CSE</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-            <span class="navbar-toggler-icon"></span>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
           </button>
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -103,171 +103,61 @@
           <a href="javascript:history.back()" class="btn btn-info btn-sm float-right">Back</a>
       </div>
 
-  
 
-{!! Form::model($post,['method'=>'PATCH','action'=>['AdminController@update', $post->id],'files'=>true]) !!}
+@if(Session::has('flash_message'))
+        <div class="alert alert-success">
+            {{ Session::get('flash_message') }}
+        </div>
+@endif 
+
+{!! Form::model($supervisorstudent,['method'=>'PATCH','action'=>['AdminController@update_supervisor', $supervisorstudent->id],'files'=>true]) !!}
   
   <div class="card-body">
     <div class="row">
       <div class="col-md-6">
         <div class="form-label-group">        
 
-          {!! Form::text('personal_id',null,['class'=>'form-control']) !!}
+          {!! Form::text('project_id',null,['class'=>'form-control']) !!}
 
-          {!! Form::label('personal_id','ID: ') !!}
+          {!! Form::label('project_id','Project ID: ') !!}
 
         </div>
       </div>
 
       <div class="col-md-6">
-          <div class="form-label-group">          
 
-            {!! Form::text('name',null,['class'=>'form-control']) !!}
+        <div class="form-label-group">          
+ 
+             <select name="personal_id" class="form-control" id="exampleFormControlSelect1">
+              @foreach($supervisors as $supervisor)
+ 
+               <option>{{$supervisor->personal_id}}</option>
+ 
+              @endforeach 
+             </select>
+          
+         </div>
+ 
+       </div>
+    </div>
 
-            {!! Form::label('name','name: ') !!}
 
-          </div>
+    <div class="row" style="margin-top:10px">
+      <div class="col-md-12">
+        <div class="form-label-group">
+
+            <select name="supervisor_name" class="form-control" id="exampleFormControlSelect1">
+               @foreach($supervisors as $supervisor)
+
+                <option>{{$supervisor->name}}</option>
+
+               @endforeach 
+            </select>
+
+        </div>
       </div>
     </div>
 
-      
-
-    <div class="row" style="margin-top: 12px;">
-
-
-    <div class="col-md-2 col-sm-6 col-xs-6">
-
-      {!! Form::label('checkall','Check/Uncheck All: ') !!}
-
-          <div class="form-check">
-
-              <input class="form-check-input" type="checkbox" name="checkall" id="checkall">
-              <label class="form-check-label" for="admin">
-                Yes
-              </label>
-          </div>
-
-
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="uncheckall" id="uncheckall">
-            <label class="form-check-label" for="admin">
-              No
-            </label>
-          </div>
-
-
-      </div>
-      
-      <div class="col-md-2 col-sm-6 col-xs-6">
-
-      {!! Form::label('admin','Administrator: ') !!}
-
-          <div class="form-check">
-
-              <input class="form-check-input checkitem" type="checkbox" name="admin" id="admin" value="1">
-              <label class="form-check-label" for="admin">
-                Yes
-              </label>
-          </div>
-
-
-          <div class="form-check">
-            <input class="form-check-input uncheckitem" type="checkbox" name="admin" id="admin" value="0">
-            <label class="form-check-label" for="admin">
-              No
-            </label>
-          </div>
-
-      </div>
-
-      <div class="col-md-2 col-sm-6 col-xs-6">
-        
-      {!! Form::label('faculty','Faculty: ') !!}
-
-          <div class="form-check">
-              <input class="form-check-input checkitem" type="checkbox" name="faculty" id="faculty" value="1">
-              <label class="form-check-label" for="faculty">
-                Yes
-              </label>
-          </div>
-
-
-          <div class="form-check">
-            <input class="form-check-input uncheckitem" type="checkbox" name="faculty" id="faculty" value="0">
-            <label class="form-check-label" for="faculty">
-               No
-            </label>
-          </div>
-
-      </div>  
-
-      
-      <div class="col-md-2 col-sm-6 col-xs-6">
-        
-      {!! Form::label('student','Student: ') !!}
-      
-          <div class="form-check">
-              <input class="form-check-input checkitem" type="checkbox" name="student" id="student" value="1">
-              <label class="form-check-label" for="student">
-                Yes
-              </label>
-          </div>
-
-
-          <div class="form-check">
-            <input class="form-check-input uncheckitem" type="checkbox" name="student" id="student" value="0">
-            <label class="form-check-label" for="student">
-              No
-            </label>
-          </div>
-
-      </div> 
-
-
-
-      <div class="col-md-2 col-sm-6 col-xs-6">
-        
-      {!! Form::label('normal_user','Normal User: ') !!}
-      
-          <div class="form-check">
-              <input class="form-check-input checkitem" type="checkbox" name="normal_user" id="normal_user" value="1">
-              <label class="form-check-label" for="normal_user">
-                Yes
-              </label>
-          </div>
-
-
-          <div class="form-check">
-            <input class="form-check-input uncheckitem" type="checkbox" name="normal_user" id="normal_user" value="0">
-            <label class="form-check-label" for="normal_user">
-              No
-            </label>
-          </div>
-
-      </div>  
-
-      <div class="col-md-2 col-sm-6 col-xs-6">
-        
-      {!! Form::label('supervisor','Supervisor: ') !!}
-      
-          <div class="form-check">
-              <input class="form-check-input checkitem" type="checkbox" name="supervisor" id="supervisor" value="1">
-              <label class="form-check-label" for="supervisor">
-                Yes
-              </label>
-          </div>
-
-
-          <div class="form-check">
-            <input class="form-check-input uncheckitem" type="checkbox" name="supervisor" id="supervisor" value="0">
-            <label class="form-check-label" for="supervisor">
-              No
-            </label>
-          </div>
-
-      </div>  
-
-    </div>
 
   </div>
 
@@ -276,11 +166,40 @@
                <div class="btn-group" role="group" aria-label="Basic example">
                     <a href="javascript:history.back()" class="btn btn-info custom-btn btn-sm">Cancle</a>
                          {!! Form::submit('Update',['class'=>'btn btn-info btn-sm']) !!}
-                </div>
-          </div>      
+                
+      
 
 
+{!! Form::close() !!}
+
+{!! Form::open(['method'=>'DELETE','action'=>['AdminController@destroy_supervisor',$supervisorstudent->id]]) !!}
+
+          {{csrf_field()}}
+
+   
+            {!! Form::submit('Delete',['class'=>'btn btn-danger btn-sm']) !!}
+
+          </div>	
 {!! Form::close() !!} 
+
+</div> 
+
+@if(count($errors) > 0)
+
+      <div class="alert alert-danger">
+        
+        <ul>
+          @foreach($errors->all() as $error)
+
+            <li>{{$error}}</li>
+
+          @endforeach
+
+        </ul>
+
+      </div>
+
+@endif 
 
      </div>
 </div>

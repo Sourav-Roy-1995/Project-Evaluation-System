@@ -54,12 +54,12 @@ Route::group(['middleware'=>'auth'],function(){
 		Route::get('/index4','AdminController@index_four');
 
 		Route::get('insertsupervisor/{project_id}/view','AdminController@view')->name('admin.view');
-		Route::get('editsupervisor/{project_id}/view_supervisor','AdminController@view_supervisor')->name('admin.view_supervisor');
+		Route::get('editsupervisor/{id}/view_supervisor','AdminController@view_supervisor')->name('admin.view_supervisor');
+		Route::patch('editsupervisor/{id}','AdminController@update_supervisor')->name('admin.update_supervisor');
+		Route::DELETE('deletesupervisor/{id}','AdminController@destroy_supervisor')->name('admin.delete_supervisor');
 
 		Route::post('store_two','AdminController@store_two')->name('admin.store');
-		Route::post('store_three','AdminController@store_three')->name('admin.store');
-
-		
+		Route::post('store_three','AdminController@store_three')->name('admin.store');		
 
 	    //Main Admin Route List:
 		

@@ -276,13 +276,20 @@
                <div class="btn-group" role="group" aria-label="Basic example">
                     <a href="javascript:history.back()" class="btn btn-info custom-btn btn-sm">Cancle</a>
                          {!! Form::submit('Update',['class'=>'btn btn-info btn-sm']) !!}
-                </div>
-          </div>			
+                	
+    {!! Form::close() !!} 
 
+{!! Form::open(['method'=>'DELETE','action'=>['AdminController@destroy',$userlist->id]]) !!}
 
+          {{csrf_field()}}
+
+   
+            {!! Form::submit('Delete',['class'=>'btn btn-danger btn-sm']) !!}
+
+          </div>	
 {!! Form::close() !!} 
-
-     </div>
+  </div>	
+  </div>
 </div>
 </div>
 

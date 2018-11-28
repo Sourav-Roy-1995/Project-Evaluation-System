@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2018 at 09:09 PM
+-- Generation Time: Nov 28, 2018 at 02:28 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -59,12 +59,13 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(213, '2014_10_12_000000_create_users_table', 1),
-(214, '2014_10_12_100000_create_password_resets_table', 1),
-(215, '2018_11_09_183850_create_student_lists_table', 1),
-(216, '2018_11_13_191303_create_project_lists_table', 1),
-(217, '2018_11_17_061207_create_marking_systems_table', 1),
-(218, '2018_11_17_123019_create_supervisor_students_table', 1);
+(186, '2014_10_12_000000_create_users_table', 1),
+(187, '2014_10_12_100000_create_password_resets_table', 1),
+(188, '2018_11_09_183850_create_student_lists_table', 1),
+(189, '2018_11_13_191303_create_project_lists_table', 1),
+(190, '2018_11_17_061207_create_marking_systems_table', 1),
+(191, '2018_11_17_123019_create_supervisor_students_table', 1),
+(192, '2018_11_26_220525_create_reg_infos_table', 1);
 
 -- --------------------------------------------------------
 
@@ -103,8 +104,35 @@ CREATE TABLE `project_lists` (
 --
 
 INSERT INTO `project_lists` (`project_id`, `project_name`, `description`, `course_code`, `personal_id`, `semester`, `studentid_one`, `studentid_two`, `studentid_three`, `created_at`, `updated_at`) VALUES
-(14000, 'Project Evaluation', 'xyz', 'cse-3031', 0, 'SUMMER-2018', 1512020246, NULL, NULL, '2018-11-26 13:50:22', '2018-11-26 13:50:22'),
-(14001, 'Project Evaluation2', 'xyz', 'cse-3031', 0, 'SUMMER-2018', 1512020201, NULL, NULL, '2018-11-26 13:54:25', '2018-11-26 13:54:25');
+(14000, 'Project Evaluation', 'xyz', 'cse-3031', 0, 'SUMMER-2018', 1512020246, NULL, NULL, '2018-11-26 16:19:53', '2018-11-26 16:19:53'),
+(14001, 'Project Evaluation4', 'xyz', 'CSE-4041', 0, 'SUMMER-2018', 1512020204, 1512020247, NULL, '2018-11-27 01:46:26', '2018-11-27 01:46:26');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reg_infos`
+--
+
+CREATE TABLE `reg_infos` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `course_code` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `semester` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `reg_infos`
+--
+
+INSERT INTO `reg_infos` (`id`, `course_code`, `semester`, `created_at`, `updated_at`) VALUES
+(1, 'CSE-4041', 'SUMMER-2018', '2018-11-26 16:23:06', '2018-11-26 16:23:06'),
+(2, 'CSE-4042', 'FALL-2018', '2018-11-26 16:23:57', '2018-11-26 16:23:57'),
+(3, 'CSE-4043', 'SUMMER-2018', '2018-11-26 16:24:10', '2018-11-26 16:24:10'),
+(4, 'CSE-4044', 'SPRING-2018', '2018-11-26 16:26:37', '2018-11-26 16:26:37'),
+(5, 'CSE-4043', 'FALL-2018', '2018-11-26 16:27:43', '2018-11-26 16:27:43'),
+(6, 'CSE-4041', 'SUMMER-2018', '2018-11-27 06:05:32', '2018-11-27 06:05:32'),
+(7, 'CSE-4041', 'SUMMER-2018', '2018-11-27 06:05:41', '2018-11-27 06:05:41');
 
 -- --------------------------------------------------------
 
@@ -149,7 +177,29 @@ INSERT INTO `student_lists` (`id`, `studentid`, `studentname`, `semester`, `proj
 (19, 1512020221, 'Maha', 'SUMMER-2018', NULL, NULL, NULL, NULL),
 (20, 1512020222, 'Maya', 'SUMMER-2018', NULL, NULL, NULL, NULL),
 (21, 1512020223, 'Azhar', 'SUMMER-2018', NULL, NULL, NULL, NULL),
-(22, 1512020224, 'XYZ', 'SUMMER-2018', NULL, NULL, NULL, NULL);
+(22, 1512020224, 'XYZ', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(23, 1512020246, 'Sourav Roy', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(24, 1512020201, 'Debasish', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(25, 1512020202, 'Akash', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(26, 1512020203, 'Proma', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(27, 1512020204, 'Sourav Roy', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(28, 1512020205, 'Debasish', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(29, 1512020206, 'Akash', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(30, 1512020210, 'Proma', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(31, 1512020211, 'Raju', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(32, 1512020212, 'Nikhil', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(33, 1512020213, 'Deba', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(34, 1512020214, 'Dulon', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(35, 1512020215, 'Sagar', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(36, 1512020216, 'Shuvo', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(37, 1512020217, 'Niaz', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(38, 1512020218, 'Riya', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(39, 1512020219, 'Rekha', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(40, 1512020220, 'Shanta', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(41, 1512020221, 'Maha', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(42, 1512020222, 'Maya', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(43, 1512020223, 'Azhar', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(44, 1512020224, 'XYZ', 'SUMMER-2018', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -158,7 +208,8 @@ INSERT INTO `student_lists` (`id`, `studentid`, `studentname`, `semester`, `proj
 --
 
 CREATE TABLE `supervisor_students` (
-  `project_id` int(10) UNSIGNED NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL,
+  `project_id` int(11) NOT NULL,
   `personal_id` int(11) NOT NULL,
   `supervisor_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -169,11 +220,8 @@ CREATE TABLE `supervisor_students` (
 -- Dumping data for table `supervisor_students`
 --
 
-INSERT INTO `supervisor_students` (`project_id`, `personal_id`, `supervisor_name`, `created_at`, `updated_at`) VALUES
-(14000, 90901, 'Sourav', '2018-11-26 13:54:02', '2018-11-26 13:54:02'),
-(14001, 90901, 'Sourav', '2018-11-26 13:54:56', '2018-11-26 13:54:56'),
-(14002, 90901, 'Sourav', '2018-11-26 13:54:02', '2018-11-26 13:54:02'),
-(14003, 90901, 'Sourav', '2018-11-26 13:54:56', '2018-11-26 13:54:56');
+INSERT INTO `supervisor_students` (`id`, `project_id`, `personal_id`, `supervisor_name`, `created_at`, `updated_at`) VALUES
+(2, 14001, 909010, 'Sourav', '2018-11-27 01:47:06', '2018-11-28 06:36:01');
 
 -- --------------------------------------------------------
 
@@ -203,7 +251,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `personal_id`, `name`, `admin`, `faculty`, `student`, `normal_user`, `supervisor`, `email`, `phone`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 90901, 'Sourav', 1, 1, 1, 0, 1, 'sourav@gmail.com', 65698956, '$2y$10$OoZgc3M0aubW9pbAmSEosertCAJT46CwRJEj2.kEsjmNgtmZWucma', NULL, '2018-11-26 13:49:37', '2018-11-26 13:49:37');
+(1, 90901, 'Sourav', 1, 1, 1, 1, 1, 'sourav@gmail.com', 65698956, '$2y$10$N1SiwXSoj6R2YH2gveTglO.8N0qOwgoktuJ0p.fKRq2wTxHs/IfKe', 'FO3cXhKvGgHr1x7HcPzmoBIFac1jUyVpbXboPKP1ZLj4XqfS5sZiDOtzEIP9', '2018-11-26 16:17:55', '2018-11-27 05:40:27');
 
 --
 -- Indexes for dumped tables
@@ -228,6 +276,12 @@ ALTER TABLE `project_lists`
   ADD PRIMARY KEY (`project_id`);
 
 --
+-- Indexes for table `reg_infos`
+--
+ALTER TABLE `reg_infos`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `student_lists`
 --
 ALTER TABLE `student_lists`
@@ -237,7 +291,7 @@ ALTER TABLE `student_lists`
 -- Indexes for table `supervisor_students`
 --
 ALTER TABLE `supervisor_students`
-  ADD PRIMARY KEY (`project_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users`
@@ -256,7 +310,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=219;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=193;
 
 --
 -- AUTO_INCREMENT for table `project_lists`
@@ -265,22 +319,28 @@ ALTER TABLE `project_lists`
   MODIFY `project_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14002;
 
 --
+-- AUTO_INCREMENT for table `reg_infos`
+--
+ALTER TABLE `reg_infos`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT for table `student_lists`
 --
 ALTER TABLE `student_lists`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `supervisor_students`
 --
 ALTER TABLE `supervisor_students`
-  MODIFY `project_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14004;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
