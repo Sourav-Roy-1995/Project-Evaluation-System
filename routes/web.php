@@ -26,7 +26,6 @@ Route::get('/contact',function(){
 });
 
 
-
 //Custom Login Page
 Route::post('/login/custom',[
 

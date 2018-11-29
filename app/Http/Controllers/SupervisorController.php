@@ -80,43 +80,6 @@ class SupervisorController extends Controller
     {
         //
 
-            $validatedData = $request->validate([
-
-                'project_id'        => 'required|max:10',
-                'student_id'        => 'required|max:10',
-                'personal_id'       => 'required|max:10',
-                'course_code'       => 'required|max:10',
-                'semester'          => 'required',
-                'category_one'      => 'required',
-                'category_two'      => 'required',
-                'supervisor_marks'  => 'required',
-                'total'             => 'required',
-
-                
-            ]);
-
-         
-            // create new task
-    $rows = $request->input('rows');
-    foreach ($rows as $row)
-    {
-        $marking[] = new MarkingSystem(array(
-            'project_id'=>$request->input('project_id'),
-            'student_id'=>$row['student_id'],
-            'personal_id'=>$request->input('personal_id'),
-            'course_code'=>$request->input('course_code'),
-            'semester'=>$request->input('semester'),
-            'category_one'=>$row['category_one'],
-            'category_two'=>$row['category_two'],
-            'supervisor_marks'=>$row['supervisor_marks'],
-            'total'=>$row['total'],
-
-        ));
-    }
-    MarkingSystem::insert($marking);
-    $request->session()->flash('flash_message', 'Submitted successfully!');
-    return redirect()->back();
-            
             
     
     }
