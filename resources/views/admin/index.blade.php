@@ -440,7 +440,6 @@
       </div>
   </div>      
   
-  
   {!! Form::close() !!} 
   
   

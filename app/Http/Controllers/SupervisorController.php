@@ -59,7 +59,13 @@ class SupervisorController extends Controller
 
     }
 
-
+    public function marks_store(Request $request)
+    {
+        //
+        $data = MarkingSystem::select('total')->where('project_id',$request->project_id)->first();
+        return response()->json($data);
+        
+    }
     /**
      * Show the form for creating a new resource.
      *

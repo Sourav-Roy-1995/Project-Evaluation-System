@@ -79,6 +79,7 @@ Route::group(['middleware'=>'auth'],function(){
 		//Supervisor LoginPage
 		Route::resource('/supervisor','SupervisorController');
 		Route::get('/marking/{project_id}/view','SupervisorController@view')->name('supervisor.view');
+		Route::get('/marks_store',array('as'=>'marks_store','uses'=>'SupervisorController@marks_store'));
 		//Supervisor LoginPage
 
 

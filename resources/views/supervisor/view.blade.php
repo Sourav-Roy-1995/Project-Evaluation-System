@@ -162,7 +162,7 @@
                                    <tr>
                                       <td>
 
-                                           <select name="student_id[]" class="form-control">
+                                           <select name="student_id[]" class="form-control student_id">
                                               <option value="0" selected="true" disabled="true">Student ID:</option>
                                               <option>{{$supervisorstudents->studentid_one}}</option>
                                               <option>{{$supervisorstudents->studentid_two}}</option>
@@ -171,17 +171,17 @@
                                            
                                       </td>
                                       <td>
-                                          <input class="form-control" type="text" name="category_one[]" placeholder="Category One">
+                                          <input class="form-control category_one" type="text" name="category_one[]" placeholder="Category One">
                                       </td>
 
                                       <td>
-                                          <input class="form-control" type="text" name="category_two[]" placeholder="Category Two">
+                                          <input class="form-control category_two" type="text" name="category_two[]" placeholder="Category Two">
                                       </td>
                                       <td>
-                                          <input class="form-control" type="text" name="supervisor_marks[]" placeholder="Supervisor Marks">
+                                          <input class="form-control supervisor_marks" type="text" name="supervisor_marks[]" placeholder="Supervisor Marks">
                                       </td>
                                       <td>
-                                          <input class="form-control" type="text" name="total[]" disabled="true" 
+                                          <input class="form-control total" type="text" name="total[]" disabled="true" 
                                           placeholder="Total Marks" style="background:white;cursor:default">
                                       </td>
 
@@ -234,24 +234,48 @@
 
 
 <script type="text/javascript">
+
+    $('tbody').delegate('.student_id','change',function(){
+        var tr = $(this).parent().parent();
+        var id = tr.find('.student_id').val();
+        var dataId={'id':id};
+        $.ajax({
+            type     : 'GET',
+            url      : '{!!URL::route('marks_store')!!}',
+            dataType : 'json',
+            data     :  dataId,
+            success:function(data){
+                tr.find('.total').val(data.total);
+            }
+        });
+
+    });
+    $('tbody').delegate('.category_one,.category_two','keyup',function(){
+            var tr = $(this).parent().parent();
+            var category_one = parseFloat(tr.find('.category_one').val());
+            var category_two = parseFloat(tr.find('.category_two').val());
+            var total = (category_one + category_two);
+            tr.find('.total').val(total);
+    });
+
     $('.addRow').on('click',function(){
         addRow();
     });
     function addRow(){
       var tr='<tr>'+
                   '<td>'+
-                  '<select name="student_id[]" class="form-control">'+
+                  '<select name="student_id[]" class="form-control student_id">'+
                   '<option value="0" selected="true" disabled="true">Student ID:</option>'+
                   '<option>{{$supervisorstudents->studentid_one}}</option>'+
                   '<option>{{$supervisorstudents->studentid_two}}</option>'+
                   '<option>{{$supervisorstudents->studentid_three}}</option>'+
                   '</select>'+
                   '</td>'+
-                  '<td><input class="form-control" type="text" name="category_one[]" placeholder="Category One"></td>'+
+                  '<td><input class="form-control category_one" type="text" name="category_one[]" placeholder="Category One"></td>'+
 
-                  '<td><input class="form-control" type="text" name="category_two[]" placeholder="Category Two"></td>'+
-                  '<td><input class="form-control" type="text" name="supervisor_marks[]" placeholder="Supervisor Marks"></td>'+
-                  '<td><input class="form-control" type="text" name="total[]" disabled="true" placeholder="Total Marks" style="background:white;cursor:default"></td>'+
+                  '<td><input class="form-control category_two" type="text" name="category_two[]" placeholder="Category Two"></td>'+
+                  '<td><input class="form-control supervisor_marks" type="text" name="supervisor_marks[]" placeholder="Supervisor Marks"></td>'+
+                  '<td><input class="form-control total" type="text" name="total[]" disabled="true" placeholder="Total Marks" style="background:white;cursor:default"></td>'+
                   '<td><a href="#" class="btn btn-danger btn-sm remove">Remove</a></td>'+      
                   '</tr>';
 
