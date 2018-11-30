@@ -106,48 +106,20 @@
           </header>
        </div>
        <div class="panel panel-footer">
-          {!! Form::model($supervisorstudents,['method'=>'POST','action'=>['SupervisorController@store', $supervisorstudents->project_id],'files'=>true]) !!}
 
+            {!! Form::model($supervisorstudents,['method'=>'POST',
+            'action'=>['SupervisorController@insert',$supervisorstudents->project_id],'files'=>true]) !!}
+            {{csrf_field()}}
               <div class="row">
-                  <div class="col-lg-3">
-                      <div class="form-group">
-                          
-                          {!! Form::label('project_id','Project Id: ') !!}
-                          {!! Form::text('project_id',null,['class'=>'form-control','disabled'=>'true','cursor'=>'default','style'=>'background:white;']) !!}
-                        
-                          
-                      </div>
-                  </div>
-
-                  <div class="col-lg-3">
-                      <div class="form-group">
-
-                          {!! Form::label('personal_id','Teacher ID: ') !!}
-                          <input type="text" name="personal_id" class="form-control" disabled="true" cursor="default" style="background:white;" value="{{ Auth::User()->personal_id }}">
-                        
-                      </div>
-                  </div>
-
-                  <div class="col-lg-3">
-                      <div class="form-group">
-                          {!! Form::label('course_code','Course Code: ') !!}
-                          {!! Form::text('course_code',null,['class'=>'form-control','disabled'=>'true','cursor'=>'default','style'=>'background:white;']) !!}
-                      </div>
-                  </div>
-
-                  <div class="col-lg-3">
-                      <div class="form-group">
-                           {!! Form::label('semester','Semester: ') !!}
-                           {!! Form::text('semester',null,['class'=>'form-control','disabled'=>'true','cursor'=>'default','style'=>'background:white;']) !!}
-                      </div>
-                  </div>
-
-              </div>
 
                 <div class="col-lg-12 col-sm-12">
                       <div class="form-group">
                           <table class="table table-bordered">
                                 <thead>
+                                    <th>Project ID</th>
+                                    <th>Teacher ID</th>
+                                    <th>Course Code</th>
+                                    <th>Semester</th>
                                     <th>Student ID</th>
                                     <th>Category One</th>
                                     <th>Category Two</th>
@@ -160,8 +132,26 @@
 
                                 <tbody>
                                    <tr>
-                                      <td>
+                                       <td>                                           
+                                            <input type="text" name="project_id[]" class="form-control" cursor="default" 
+                                            style="background:white;" value="{{$supervisorstudents->project_id}}">
+                                       </td>
+                                       <td>
+                                            <input type="text" name="personal_id[]" class="form-control" cursor="default" 
+                                            style="background:white;">
+                                       </td>
 
+                                       <td>
+                                            <input type="text" name="course_code[]" class="form-control" cursor="default" 
+                                            style="background:white;" value="{{$supervisorstudents->course_code}}">
+                                       </td>
+
+                                       <td>
+                                            <input type="text" name="semester[]" class="form-control" cursor="default" 
+                                            style="background:white;" value="{{$supervisorstudents->semester}}">
+                                       </td>
+                                       
+                                      <td>
                                            <select name="student_id[]" class="form-control student_id">
                                               <option value="0" selected="true" disabled="true">Student ID:</option>
                                               <option>{{$supervisorstudents->studentid_one}}</option>
@@ -181,7 +171,7 @@
                                           <input class="form-control supervisor_marks" type="text" name="supervisor_marks[]" placeholder="Supervisor Marks">
                                       </td>
                                       <td>
-                                          <input class="form-control total" type="text" name="total[]" disabled="true" 
+                                          <input class="form-control total" type="text" name="total[]"
                                           placeholder="Total Marks" style="background:white;cursor:default">
                                       </td>
 
@@ -190,13 +180,21 @@
                                       </td>
                   
                                    </tr>
+                                   
                                 </tbody>
 
                           </table>
-                      </div>
-                </div>
 
-          {!! Form::close() !!}
+                          <div class="card-footer text-right">
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <a href="javascript:history.back()" class="btn btn-info custom-btn btn-sm">Cancle</a>
+                                <input type="submit" class="btn btn-info custom-btn btn-sm" name="submit" value="Submit">
+                            </div>
+                          </div> 
+                      </div>
+                </div>            
+
+                {!! Form::close() !!}
 
           @if(Session::has('flash_message'))
             <div class="alert alert-success">
@@ -263,6 +261,10 @@
     });
     function addRow(){
       var tr='<tr>'+
+                  '<td><input type="text" name="project_id[]" class="form-control" cursor="default" style="background:white;" value="{{$supervisorstudents->project_id}}"></td>'+
+                  '<td><input type="text" name="personal_id[]" class="form-control" cursor="default" style="background:white;"></td>'+
+                  '<td><input type="text" name="course_code[]" class="form-control" cursor="default" style="background:white;" value="{{$supervisorstudents->course_code}}"></td>'+
+                  '<td><input type="text" name="semester[]" class="form-control" cursor="default" style="background:white;" value="{{$supervisorstudents->semester}}"></td>'+
                   '<td>'+
                   '<select name="student_id[]" class="form-control student_id">'+
                   '<option value="0" selected="true" disabled="true">Student ID:</option>'+
@@ -275,7 +277,7 @@
 
                   '<td><input class="form-control category_two" type="text" name="category_two[]" placeholder="Category Two"></td>'+
                   '<td><input class="form-control supervisor_marks" type="text" name="supervisor_marks[]" placeholder="Supervisor Marks"></td>'+
-                  '<td><input class="form-control total" type="text" name="total[]" disabled="true" placeholder="Total Marks" style="background:white;cursor:default"></td>'+
+                  '<td><input class="form-control total" type="text" name="total[]"  placeholder="Total Marks" style="background:white;cursor:default"></td>'+
                   '<td><a href="#" class="btn btn-danger btn-sm remove">Remove</a></td>'+      
                   '</tr>';
 

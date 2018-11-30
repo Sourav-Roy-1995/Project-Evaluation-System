@@ -14,11 +14,12 @@ class CreateMarkingSystemsTable extends Migration
     public function up()
     {
         Schema::create('marking_systems', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('project_id');
-            $table->integer('student_id'); 
             $table->integer('personal_id');
             $table->string('course_code');
-            $table->text('semester');                                       
+            $table->text('semester');
+            $table->integer('student_id');                                       
             $table->integer('category_one');
             $table->integer('category_two');
             $table->integer('supervisor_marks')->unsigned()->nullable();

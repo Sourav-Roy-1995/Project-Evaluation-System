@@ -64,7 +64,47 @@ class SupervisorController extends Controller
         //
         $data = MarkingSystem::select('total')->where('project_id',$request->project_id)->first();
         return response()->json($data);
+
         
+    }
+
+    public function insert(Request $request){
+
+        $validatedData = $request->validate([
+
+            'project_id'        => 'required',
+            'personal_id'       => 'required',
+            'course_code'       => 'required',
+            'semester'          => 'required',
+            'student_id'        => 'required',
+            'category_one'      => 'required',
+            'category_two'      => 'required',
+            'supervisor_marks'  => 'required',
+            'total'             => 'required',
+           
+        ]);
+
+
+        foreach($request->project_id as $key => $v){
+
+            $data = array(
+            'project_id'=>$request->project_id [$key],
+            'personal_id'=>$request->personal_id [$key],
+            'course_code'=>$request->course_code [$key],
+            'semester'=>$request->semester [$key],
+            'student_id'=>$request->student_id [$key],
+            'category_one'=>$request->category_one [$key],
+            'category_two'=>$request->category_two [$key],
+            'supervisor_marks'=>$request->supervisor_marks [$key],
+            'total'=>$request->total [$key],
+           );
+            MarkingSystem::insert($data);
+
+        }
+
+          $request->session()->flash('flash_message', 'Submitted successfully!');
+          return redirect()->back();
+
     }
     /**
      * Show the form for creating a new resource.
