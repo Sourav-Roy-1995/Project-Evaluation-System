@@ -99,12 +99,12 @@
     <!--Content Form -->
 
 <div class="container">
-    <section class="card">
+    <section class="card" style="margin-top:100px">
         <div class="card-header col-md-12 ">
             Marking System
             <div class="text-right">
                 <div class="btn-group " role="group" aria-label="Basic example">
-                    <a href="javascript:history.back()" class="btn btn-info btn-sm float-right">Back</a>
+                    <a href="{{ asset('supervisor') }}" class="btn btn-info btn-sm float-right">Back</a>
                     <a href="#" class="btn btn-info btn-sm float-right supervisor">Supervisor?</a>
                 </div>
             </div>
@@ -203,7 +203,7 @@
 
     <div class="card-footer text-right">
         <div class="btn-group" role="group" aria-label="Basic example">
-            <a href="javascript:history.back()" class="btn btn-info custom-btn btn-sm">Cancle</a>
+            <a href="{{ asset('supervisor') }}" class="btn btn-info custom-btn btn-sm">Cancle</a>
             <input type="submit" class="btn btn-info custom-btn btn-sm" name="submit" value="Submit">
         </div>
     </div>
@@ -276,7 +276,7 @@
     function addRow(){
       var tr='<tr>'+
                   '<input type="hidden" name="project_id[]" class="form-control" cursor="default" style="background:white;" value="{{$supervisorstudents->project_id}}">'+
-                  '<td><input type="text" name="personal_id[]" class="form-control" cursor="default" style="background:white;"></td>'+
+                  '<td><select name="personal_id[]"  class="form-control personal_id" style="width:129px"><option value="0" selected="true" disabled="true">Teacher Id:</option>@foreach($supervisors as $supervisor)<option>{{$supervisor->personal_id}}</option>@endforeach</select></td>'+
                   '<input type="hidden" name="course_code[]" class="form-control" cursor="default" style="background:white;" value="{{$supervisorstudents->course_code}}">'+
                   '<input type="hidden" name="semester[]" class="form-control" cursor="default" style="background:white;" value="{{$supervisorstudents->semester}}" >'+
                   '<td>'+

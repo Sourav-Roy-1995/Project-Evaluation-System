@@ -77,6 +77,10 @@
                 </li>
 
                 <li class="nav-item">
+                    <a class="nav-link" href="#result">Result</a>
+                </li>
+
+                <li class="nav-item">
                   <a class="nav-link" href="#reg">Project Registration</a>
                 </li>
 
@@ -198,7 +202,7 @@
                     <tr>
                       
                       <th>Project Name:</th>                  
-                      <th>Course Code:</th>                      
+                      <th>Course Code:</th>                    
                       <th>semester</th>
                       <th>studentid one</th>
                       <th>studentid two</th>
@@ -235,7 +239,8 @@
 
 
 
-<div id="con" class="card">
+<div id="reg" class="card">
+
       <div class="card-header col-md-12">
           Registrattion Information
           
@@ -462,6 +467,65 @@
   
 </div><!-- Supervisor data form -->
   
+<div class="card mb-3" style="margin-top: 30px">
+    <div class="card-header" id="supervisorlist">
+      <i class="fas fa-table"></i>
+      Project Marking </div>
+    <div class="card-body">
+
+   <!--  <input float="left" class="form-control" id="myInput2" type="text" placeholder="Search.."> -->
+
+      <div class="table-responsive">
+        <table class="table table-bordered" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th>Project Id:</th>
+              <th>Teacher ID:</th>                      
+              <th>Course Code</th>
+              <th>Semester</th>
+              <th>Student ID</th>
+              <th>Category One</th>
+              <th>Category Two</th>
+              <th>Supervisor Marks</th>
+              <th>Total</th>
+              <th>View</th>
+            </tr>
+          </thead>
+
+        @foreach($marks as $mark)
+          <tbody id="myTable2">
+            <tr>
+
+              <td>{{$mark->project_id}}</td>
+
+              <td>{{$mark->personal_id}}</td>
+
+              <td>{{$mark->course_code}}</td>
+
+              <td>{{$mark->semester}}</td>
+
+              <td>{{$mark->student_id}}</td>
+
+              <td>{{$mark->category_one}}</td> 
+
+              <td>{{$mark->category_two}}</td> 
+
+              <td>{{$mark->supervisor_marks}}</td> 
+
+              <td>{{$mark->total}}</td> 
+              
+              <td><a href="#" class='btn btn-info btn-sm' name="name" >View</a></td>
+            </tr>
+          </tbody>
+          @endforeach
+
+        </table>
+      </div>
+    </div>
+    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+</div>
+
+
 </div>
         <!-- /.container-fluid -->
 

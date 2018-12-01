@@ -11,6 +11,7 @@ use App\User;
 use App\ProjectList;
 use App\SupervisorStudent;
 use App\RegInfo;
+use App\MarkingSystem;
 use Illuminate\Support\Facades\Validator;
 use Session;
 
@@ -34,7 +35,8 @@ class AdminController extends Controller
     	$posts=ProjectList::all();
         $userlists = User::all();
         $students=StudentList::all();
-      //  $supervisorstudents=SupervisorStudent::all();
+        $marks = MarkingSystem::all();
+
 
         $supervisorstudents = DB::table('supervisor_students')
         ->join('project_lists', function ($join) {
@@ -47,7 +49,7 @@ class AdminController extends Controller
         ->get();
 
 
-		return view('admin.index',compact('posts','userlists','students','supervisorstudents'));
+		return view('admin.index',compact('posts','userlists','students','supervisorstudents','marks'));
 
 	}
 
