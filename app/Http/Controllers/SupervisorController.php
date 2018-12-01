@@ -55,7 +55,8 @@ class SupervisorController extends Controller
     {
         //
         $supervisorstudents = ProjectList::findOrFail($project_id);
-        return view('supervisor.view',compact('supervisorstudents')); 
+        $supervisors = User::all()->where('supervisor',1);
+        return view('supervisor.view',compact('supervisorstudents','supervisors')); 
 
     }
 
@@ -79,7 +80,6 @@ class SupervisorController extends Controller
             'student_id'        => 'required',
             'category_one'      => 'required',
             'category_two'      => 'required',
-            'supervisor_marks'  => 'required',
             'total'             => 'required',
            
         ]);

@@ -99,13 +99,18 @@
     <!--Content Form -->
 
 <div class="container">
-    <section class="panel">
-       <div class="panel panel-footer">
-          <header class="panel panel-default">
-              <h1>Mark Sheet</h1>
-          </header>
-       </div>
-       <div class="panel panel-footer">
+    <section class="card">
+        <div class="card-header col-md-12 ">
+            Marking System
+            <div class="text-right">
+                <div class="btn-group " role="group" aria-label="Basic example">
+                    <a href="javascript:history.back()" class="btn btn-info btn-sm float-right">Back</a>
+                    <a href="#" class="btn btn-info btn-sm float-right supervisor">Supervisor?</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-body">
 
             {!! Form::model($supervisorstudents,['method'=>'POST',
             'action'=>['SupervisorController@insert',$supervisorstudents->project_id],'files'=>true]) !!}
@@ -114,12 +119,9 @@
 
                 <div class="col-lg-12 col-sm-12">
                       <div class="form-group">
-                          <table class="table table-bordered">
-                                <thead>
-                                    <th>Project ID</th>
-                                    <th>Teacher ID</th>
-                                    <th>Course Code</th>
-                                    <th>Semester</th>
+                          <table class="table table-bordered table-responsive">
+                                <thead>   
+                                    <th>Teacher ID</th>                       
                                     <th>Student ID</th>
                                     <th>Category One</th>
                                     <th>Category Two</th>
@@ -132,27 +134,35 @@
 
                                 <tbody>
                                    <tr>
-                                       <td>                                           
-                                            <input type="text" name="project_id[]" class="form-control" cursor="default" 
+                                                                                  
+                                            <input type="hidden" name="project_id[]" class="form-control" cursor="default" 
                                             style="background:white;" value="{{$supervisorstudents->project_id}}">
-                                       </td>
+                                      
                                        <td>
-                                            <input type="text" name="personal_id[]" class="form-control" cursor="default" 
-                                            style="background:white;">
+                                            
+
+                                            <select name="personal_id[]"  class="form-control personal_id" style="width:129px">
+                                                <option value="0" selected="true" disabled="true">Teacher Id:</option>
+                                                @foreach($supervisors as $supervisor)
+
+                                                <option>{{$supervisor->personal_id}}</option>
+                                
+                                                @endforeach 
+                                             </select>
                                        </td>
 
-                                       <td>
-                                            <input type="text" name="course_code[]" class="form-control" cursor="default" 
+                                       
+                                            <input type="hidden" name="course_code[]" class="form-control" cursor="default" 
                                             style="background:white;" value="{{$supervisorstudents->course_code}}">
-                                       </td>
+                                       
 
-                                       <td>
-                                            <input type="text" name="semester[]" class="form-control" cursor="default" 
+                                      
+                                            <input type="hidden" name="semester[]" class="form-control" cursor="default" 
                                             style="background:white;" value="{{$supervisorstudents->semester}}">
-                                       </td>
+                                       
                                        
                                       <td>
-                                           <select name="student_id[]" class="form-control student_id">
+                                           <select name="student_id[]" class="form-control student_id" style="width:130px">
                                               <option value="0" selected="true" disabled="true">Student ID:</option>
                                               <option>{{$supervisorstudents->studentid_one}}</option>
                                               <option>{{$supervisorstudents->studentid_two}}</option>
@@ -161,18 +171,18 @@
                                            
                                       </td>
                                       <td>
-                                          <input class="form-control category_one" type="text" name="category_one[]" placeholder="Category One">
+                                          <input class="form-control category_one" type="text" name="category_one[]" placeholder="Category One" style="width:141px">
                                       </td>
 
                                       <td>
-                                          <input class="form-control category_two" type="text" name="category_two[]" placeholder="Category Two">
+                                          <input class="form-control category_two" type="text" name="category_two[]" placeholder="Category Two" style="width:141px">
                                       </td>
                                       <td>
-                                          <input class="form-control supervisor_marks" type="text" name="supervisor_marks[]" placeholder="Supervisor Marks">
+                                          <input class="form-control supervisor_marks" type="text" name="supervisor_marks[]" placeholder="Disabled" disabled="true" cursor="default" style="background:white;width:141px">
                                       </td>
                                       <td>
                                           <input class="form-control total" type="text" name="total[]"
-                                          placeholder="Total Marks" style="background:white;cursor:default">
+                                          placeholder="Total Marks" style="background:white;cursor:default;width:141px">
                                       </td>
 
                                       <td>
@@ -185,23 +195,27 @@
 
                           </table>
 
-                          <div class="card-footer text-right">
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                                <a href="javascript:history.back()" class="btn btn-info custom-btn btn-sm">Cancle</a>
-                                <input type="submit" class="btn btn-info custom-btn btn-sm" name="submit" value="Submit">
-                            </div>
-                          </div> 
                       </div>
                 </div>            
 
-                {!! Form::close() !!}
-
-          @if(Session::has('flash_message'))
-            <div class="alert alert-success">
-                {{ Session::get('flash_message') }}
-            </div>
-          @endif
        </div>
+    </div>
+
+    <div class="card-footer text-right">
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <a href="javascript:history.back()" class="btn btn-info custom-btn btn-sm">Cancle</a>
+            <input type="submit" class="btn btn-info custom-btn btn-sm" name="submit" value="Submit">
+        </div>
+    </div>
+
+    {!! Form::close() !!}
+
+    @if(Session::has('flash_message'))
+      <div class="alert alert-success">
+          {{ Session::get('flash_message') }}
+      </div>
+    @endif
+
     </section>
 </div> 
    
@@ -261,10 +275,10 @@
     });
     function addRow(){
       var tr='<tr>'+
-                  '<td><input type="text" name="project_id[]" class="form-control" cursor="default" style="background:white;" value="{{$supervisorstudents->project_id}}"></td>'+
+                  '<input type="hidden" name="project_id[]" class="form-control" cursor="default" style="background:white;" value="{{$supervisorstudents->project_id}}">'+
                   '<td><input type="text" name="personal_id[]" class="form-control" cursor="default" style="background:white;"></td>'+
-                  '<td><input type="text" name="course_code[]" class="form-control" cursor="default" style="background:white;" value="{{$supervisorstudents->course_code}}"></td>'+
-                  '<td><input type="text" name="semester[]" class="form-control" cursor="default" style="background:white;" value="{{$supervisorstudents->semester}}"></td>'+
+                  '<input type="hidden" name="course_code[]" class="form-control" cursor="default" style="background:white;" value="{{$supervisorstudents->course_code}}">'+
+                  '<input type="hidden" name="semester[]" class="form-control" cursor="default" style="background:white;" value="{{$supervisorstudents->semester}}" >'+
                   '<td>'+
                   '<select name="student_id[]" class="form-control student_id">'+
                   '<option value="0" selected="true" disabled="true">Student ID:</option>'+
@@ -276,7 +290,7 @@
                   '<td><input class="form-control category_one" type="text" name="category_one[]" placeholder="Category One"></td>'+
 
                   '<td><input class="form-control category_two" type="text" name="category_two[]" placeholder="Category Two"></td>'+
-                  '<td><input class="form-control supervisor_marks" type="text" name="supervisor_marks[]" placeholder="Supervisor Marks"></td>'+
+                  '<td><input class="form-control supervisor_marks" type="text" name="supervisor_marks[]" disabled="true" cursor="default" style="background:white" placeholder="Disabled"></td>'+
                   '<td><input class="form-control total" type="text" name="total[]"  placeholder="Total Marks" style="background:white;cursor:default"></td>'+
                   '<td><a href="#" class="btn btn-danger btn-sm remove">Remove</a></td>'+      
                   '</tr>';
@@ -291,6 +305,16 @@
           $(this).parent().parent().remove();
         }
     });
+
+    $('.supervisor').on('click',function(){
+        supervisor();
+    });
+
+    function supervisor(){
+        $(".supervisor_marks").prop('disabled', false).attr("placeholder", "Enabled");
+       
+    }
+   
 </script>
 
 
