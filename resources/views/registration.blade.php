@@ -3,18 +3,7 @@
 
 
 	
-	<!-- Home -->
 
-	<div class="home" style="height:447px;">
-		<div class="home_background_container prlx_parent">
-			<div class="home_background prlx" style="background-image:url(images/contact_background.jpg)"></div>
-		</div>
-		<div class="home_content">
-			<h1>Make Registraion Here</h1>
-		</div>
-	</div>
-
-	<!-- Elements -->
 
 
 	<div class="register" style="margin-top: -39px">
@@ -27,7 +16,7 @@
 
 					<div class="search_section d-flex flex-column align-items-center justify-content-center">
 						<div class="search_background" style="background-image:url(images/search_background.jpg);"></div>
-						<div class="search_content text-center">
+						<div class="search_content text-center" style="margin-top: 15%;">
 							<h1 class="search_title">Register Here</h1>
 
 
@@ -60,7 +49,7 @@
 
 				<div class="form-group">
 					
-					{!! Form::text('description',null,['class'=>'input_field search_form_name','required'=>'required', 'data-error'=>'description is required.','placeholder'=>'Description']) !!}
+					{!! Form::textarea('description',null,['class'=>'input_field search_form_name','required'=>'required', 'data-error'=>'description is required.','placeholder'=>'Description','style'=>'height:250px;margin-bottom:3px']) !!}
 
 				</div>
 
@@ -108,6 +97,7 @@
 				<div class="form-group">				
 
 					{!! Form::text('studentid_three',null,['class'=>'input_field search_form_name','placeholder'=>'Students Id:']) !!}
+
 
 				</div>
 

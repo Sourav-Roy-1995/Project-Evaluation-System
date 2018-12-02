@@ -55,8 +55,7 @@ class SupervisorController extends Controller
     {
         //
         $supervisorstudents = ProjectList::findOrFail($project_id);
-        $supervisors = User::all()->where('supervisor',1);
-        return view('supervisor.view',compact('supervisorstudents','supervisors')); 
+        return view('supervisor.view',compact('supervisorstudents')); 
 
     }
 

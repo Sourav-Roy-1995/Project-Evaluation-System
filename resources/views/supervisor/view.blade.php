@@ -140,15 +140,8 @@
                                       
                                        <td>
                                             
+                                        <input type="text" name="personal_id[]" class="form-control" style="width:130px" value="{{ Auth::User()->personal_id }}">
 
-                                            <select name="personal_id[]"  class="form-control personal_id" style="width:129px">
-                                                <option value="0" selected="true" disabled="true">Teacher Id:</option>
-                                                @foreach($supervisors as $supervisor)
-
-                                                <option>{{$supervisor->personal_id}}</option>
-                                
-                                                @endforeach 
-                                             </select>
                                        </td>
 
                                        
@@ -162,12 +155,9 @@
                                        
                                        
                                       <td>
-                                           <select name="student_id[]" class="form-control student_id" style="width:130px">
-                                              <option value="0" selected="true" disabled="true">Student ID:</option>
-                                              <option>{{$supervisorstudents->studentid_one}}</option>
-                                              <option>{{$supervisorstudents->studentid_two}}</option>
-                                              <option>{{$supervisorstudents->studentid_three}}</option>
-                                           </select>
+
+                                            <input class="form-control student_id" type="text" name="student_id[]" placeholder="Student ID" style="width:141px" value="{{$supervisorstudents->studentid_one}}">
+
                                            
                                       </td>
                                       <td>
@@ -269,23 +259,18 @@
             var total = (category_one + category_two);
             tr.find('.total').val(total);
     });
-
-    $('.addRow').on('click',function(){
-        addRow();
-    });
-    function addRow(){
+    window.onload = function addRow(){
+         std_two = {{$supervisorstudents->studentid_two}}
+         std_three = {{$supervisorstudents->studentid_three}}
+        
+        if(std_two>1 && std_three<1){
       var tr='<tr>'+
                   '<input type="hidden" name="project_id[]" class="form-control" cursor="default" style="background:white;" value="{{$supervisorstudents->project_id}}">'+
-                  '<td><select name="personal_id[]"  class="form-control personal_id" style="width:129px"><option value="0" selected="true" disabled="true">Teacher Id:</option>@foreach($supervisors as $supervisor)<option>{{$supervisor->personal_id}}</option>@endforeach</select></td>'+
+                  '<td><input type="text" name="personal_id[]" class="form-control" style="width:130px" value="{{ Auth::User()->personal_id }}"></td>'+
                   '<input type="hidden" name="course_code[]" class="form-control" cursor="default" style="background:white;" value="{{$supervisorstudents->course_code}}">'+
                   '<input type="hidden" name="semester[]" class="form-control" cursor="default" style="background:white;" value="{{$supervisorstudents->semester}}" >'+
                   '<td>'+
-                  '<select name="student_id[]" class="form-control student_id">'+
-                  '<option value="0" selected="true" disabled="true">Student ID:</option>'+
-                  '<option>{{$supervisorstudents->studentid_one}}</option>'+
-                  '<option>{{$supervisorstudents->studentid_two}}</option>'+
-                  '<option>{{$supervisorstudents->studentid_three}}</option>'+
-                  '</select>'+
+                  '<input class="form-control student_id" type="text" name="student_id[]" placeholder="Category Two" style="width:141px" value="{{$supervisorstudents->studentid_two}}">'+
                   '</td>'+
                   '<td><input class="form-control category_one" type="text" name="category_one[]" placeholder="Category One"></td>'+
 
@@ -296,7 +281,45 @@
                   '</tr>';
 
         $('tbody').append(tr);
+        }
+
+     else if(std_two>1 && std_three>1){
+      var tr='<tr>'+
+                  '<input type="hidden" name="project_id[]" class="form-control" cursor="default" style="background:white;" value="{{$supervisorstudents->project_id}}">'+
+                  '<td><input type="text" name="personal_id[]" class="form-control" style="width:130px" value="{{ Auth::User()->personal_id }}"></td>'+
+                  '<input type="hidden" name="course_code[]" class="form-control" cursor="default" style="background:white;" value="{{$supervisorstudents->course_code}}">'+
+                  '<input type="hidden" name="semester[]" class="form-control" cursor="default" style="background:white;" value="{{$supervisorstudents->semester}}" >'+
+                  '<td>'+
+                  '<input class="form-control student_id" type="text" name="student_id[]" placeholder="Category Two" style="width:141px" value="{{$supervisorstudents->studentid_two}}">'+
+                  '</td>'+
+                  '<td><input class="form-control category_one" type="text" name="category_one[]" placeholder="Category One"></td>'+
+
+                  '<td><input class="form-control category_two" type="text" name="category_two[]" placeholder="Category Two"></td>'+
+                  '<td><input class="form-control supervisor_marks" type="text" name="supervisor_marks[]" disabled="true" cursor="default" style="background:white" placeholder="Disabled"></td>'+
+                  '<td><input class="form-control total" type="text" name="total[]"  placeholder="Total Marks" style="background:white;cursor:default"></td>'+
+                  '<td><a href="#" class="btn btn-danger btn-sm remove">Remove</a></td>'+      
+                  '</tr>'+
+                  
+                  '<tr>'+
+                  '<input type="hidden" name="project_id[]" class="form-control" cursor="default" style="background:white;" value="{{$supervisorstudents->project_id}}">'+
+                  '<td><input type="text" name="personal_id[]" class="form-control" style="width:130px" value="{{ Auth::User()->personal_id }}"></td>'+
+                  '<input type="hidden" name="course_code[]" class="form-control" cursor="default" style="background:white;" value="{{$supervisorstudents->course_code}}">'+
+                  '<input type="hidden" name="semester[]" class="form-control" cursor="default" style="background:white;" value="{{$supervisorstudents->semester}}" >'+
+                  '<td>'+
+                  '<input class="form-control student_id" type="text" name="student_id[]" placeholder="Category Two" style="width:141px" value="{{$supervisorstudents->studentid_three}}">'+
+                  '</td>'+
+                  '<td><input class="form-control category_one" type="text" name="category_one[]" placeholder="Category One"></td>'+
+
+                  '<td><input class="form-control category_two" type="text" name="category_two[]" placeholder="Category Two"></td>'+
+                  '<td><input class="form-control supervisor_marks" type="text" name="supervisor_marks[]" disabled="true" cursor="default" style="background:white" placeholder="Disabled"></td>'+
+                  '<td><input class="form-control total" type="text" name="total[]"  placeholder="Total Marks" style="background:white;cursor:default"></td>'+
+                  '<td><a href="#" class="btn btn-danger btn-sm remove">Remove</a></td>'+      
+                  '</tr>';
+
+        $('tbody').append(tr);
+        }
     };
+
     $('body').delegate('.remove','click',function(){
         var l = $('tbody tr').length;
         if(l==1){
