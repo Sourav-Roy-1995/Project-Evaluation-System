@@ -57,6 +57,9 @@ Route::group(['middleware'=>'auth'],function(){
 		Route::patch('editsupervisor/{id}','AdminController@update_supervisor')->name('admin.update_supervisor');
 		Route::DELETE('deletesupervisor/{id}','AdminController@destroy_supervisor')->name('admin.delete_supervisor');
 
+		Route::get('viewmark/{id}/view_mark','AdminController@view_marks')->name('admin.view_mark');
+		Route::patch('editmark/{id}','AdminController@update_marks')->name('admin.updat');
+
 		Route::post('store_two','AdminController@store_two')->name('admin.store');
 		Route::post('store_three','AdminController@store_three')->name('admin.store');		
 

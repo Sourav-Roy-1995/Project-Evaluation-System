@@ -329,12 +329,15 @@
         }
     });
 
-    $('.supervisor').on('click',function(){
-        supervisor();
-    });
 
-    function supervisor(){
-        $(".supervisor_marks").prop('disabled', false).attr("placeholder", "Enabled");
+    window.onload = function supervisor(){
+
+        sp_id   = "{{$supervisorstudents->personal_id}}"
+        user_id = "{{ Auth::User()->personal_id }}"
+        
+        if(sp_id == user_id ){
+            $(".supervisor_marks").prop('disabled', false).attr("placeholder", "Enabled");
+        }
        
     }
    

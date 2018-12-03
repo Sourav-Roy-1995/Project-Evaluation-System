@@ -132,6 +132,10 @@ class AdminController extends Controller
           $post->personal_id = $request->input("personal_id");
           $post->supervisor_name = $request->input("supervisor_name");
           $post->save();
+
+           DB::table('project_lists')
+            ->where('project_id',$post->project_id)
+            ->update(['personal_id' => $post->personal_id]);
          
          $request->session()->flash('flash_message', 'Submitted successfully!');
 
@@ -208,6 +212,29 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function view_marks($id)
+
+    {
+
+        $mark = MarkingSystem::findOrFail($id);
+
+        return view('admin.view_marks',compact('mark')); 
+
+    }
+
+    public function update_marks(Request $request, $id)
+    {
+        //
+
+        $mark = MarkingSystem::findOrFail($id);
+
+        $mark->update($request->all());
+
+        return redirect('/admin');
+
+
+    }
+
     public function show($id)
     {
         //

@@ -479,42 +479,51 @@
         <table class="table table-bordered" width="100%" cellspacing="0">
           <thead>
             <tr>
-              <th>Project Id:</th>
-              <th>Teacher ID:</th>                      
-              <th>Course Code</th>
-              <th>Semester</th>
               <th>Student ID</th>
               <th>Category One</th>
               <th>Category Two</th>
               <th>Supervisor Marks</th>
               <th>Total</th>
-              <th>View</th>
+             
+              <th>Final</th>
+              <th>Update</th>
             </tr>
           </thead>
 
         @foreach($marks as $mark)
-          <tbody id="myTable2">
+          <tbody class="tbody">
             <tr>
 
-              <td>{{$mark->project_id}}</td>
+              <td>
+                  <input class="form-control student_id" type="text" name="student_id[]" placeholder="Student ID" style="width:123px" value="{{$mark->student_id}}">
+              </td>
 
-              <td>{{$mark->personal_id}}</td>
+              <td>
+                  <input class="form-control category_one" type="text" name="category_one[]" placeholder="Category One" style="width:123px" value="{{$mark->category_one}}">
+              </td> 
 
-              <td>{{$mark->course_code}}</td>
+              <td>
+                  <input class="form-control category_two" type="text" name="category_two[]" placeholder="Category Two" style="width:123px" value="{{$mark->category_two}}">
+              </td> 
 
-              <td>{{$mark->semester}}</td>
+              <td>
+                  <input class="form-control supervisor_marks" type="text" name="supervisor_marks[]" style="background:white;width:123px";
+                  value="{{$mark->supervisor_marks}}" autofocus>
+              </td> 
 
-              <td>{{$mark->student_id}}</td>
+              <td>
+                  <input class="form-control total" type="text" name="total[]"
+                  placeholder="Total Marks" style="background:white;cursor:default;width:123px" value="{{$mark->total}}" autofocus> 
 
-              <td>{{$mark->category_one}}</td> 
+              </td> 
 
-              <td>{{$mark->category_two}}</td> 
+              <td>
+                  <input class="form-control final" type="text" name="final[]"
+                  placeholder="Final Marks" style="background:white;cursor:default;width:123px" autofocus> 
 
-              <td>{{$mark->supervisor_marks}}</td> 
-
-              <td>{{$mark->total}}</td> 
+              </td> 
               
-              <td><a href="#" class='btn btn-info btn-sm' name="name" >View</a></td>
+              <td><a href="{{route('admin.view_mark',$mark->id)}}" class='btn btn-info btn-sm' name="update" >Update</a></td>
             </tr>
           </tbody>
           @endforeach
@@ -572,40 +581,9 @@
 
 
 
-
-     <!-- Search -->
-
-       <script>
-                $(document).ready(function(){
-                  $("#myInput").on("keyup", function() {
-                    var value = $(this).val().toLowerCase();
-                    $("#myTable a").filter(function() {
-                      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                    });
-                  });
-                });
-
-      </script> 
-
-
-
-     <script>
-                $(document).ready(function(){
-                  $("#myInput2").on("keyup", function() {
-                    var value = $(this).val().toLowerCase();
-                    $("#myTable2 td").filter(function() {
-                      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                    });
-                  });
-                });
-
-      </script> 
-
-    <!-- Search -->
-
-
-
     <!-- Bootstrap core JavaScript-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -621,6 +599,60 @@
 
     <!-- Demo scripts for this page-->
     <script src="js/demo/datatables-demo.js"></script>
+
+
+    
+
+
+
+        <!-- Search -->
+
+        <script>
+            $(document).ready(function(){
+              $("#myInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#myTable a").filter(function() {
+                  $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+              });
+            });
+
+        </script> 
+
+
+
+    <script>
+            $(document).ready(function(){
+              $("#myInput2").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#myTable2 td").filter(function() {
+                  $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+              });
+            });
+
+    </script> 
+
+    <!-- Search -->
+
+
+    <script type="text/javascript">
+      
+      $('.tbody').delegate('.total,.supervisor_marks','keyup',function(){
+
+        var tr = $(this).parent().parent();
+        var total = parseFloat(tr.find('.total').val());
+        var supervisor_marks = parseFloat(tr.find('.supervisor_marks').val());
+        var final = (total + supervisor_marks);
+        tr.find('.final').val(final);
+    });
+
+    var count = $('.student_id').length;
+    alert('Your have ' + count + ' student id in marking table.');
+
+    </script>
+
+
 
   </body>
 
