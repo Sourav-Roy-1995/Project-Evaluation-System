@@ -260,10 +260,10 @@
             tr.find('.total').val(total);
     });
     window.onload = function addRow(){
-         std_two = {{$supervisorstudents->studentid_two}}
-         std_three = {{$supervisorstudents->studentid_three}}
-        
-        if(std_two>1 && std_three<1){
+         std_three = "{{$supervisorstudents->studentid_three}}"
+         std_two = "{{$supervisorstudents->studentid_two}}"
+            
+        if(std_two > 1 && std_three==""){
       var tr='<tr>'+
                   '<input type="hidden" name="project_id[]" class="form-control" cursor="default" style="background:white;" value="{{$supervisorstudents->project_id}}">'+
                   '<td><input type="text" name="personal_id[]" class="form-control" style="width:130px" value="{{ Auth::User()->personal_id }}"></td>'+
@@ -283,7 +283,7 @@
         $('tbody').append(tr);
         }
 
-     else if(std_two>1 && std_three>1){
+     else if(std_two > 1 && std_three!=""){
       var tr='<tr>'+
                   '<input type="hidden" name="project_id[]" class="form-control" cursor="default" style="background:white;" value="{{$supervisorstudents->project_id}}">'+
                   '<td><input type="text" name="personal_id[]" class="form-control" style="width:130px" value="{{ Auth::User()->personal_id }}"></td>'+
@@ -306,7 +306,7 @@
                   '<input type="hidden" name="course_code[]" class="form-control" cursor="default" style="background:white;" value="{{$supervisorstudents->course_code}}">'+
                   '<input type="hidden" name="semester[]" class="form-control" cursor="default" style="background:white;" value="{{$supervisorstudents->semester}}" >'+
                   '<td>'+
-                  '<input class="form-control student_id" type="text" name="student_id[]" placeholder="Category Two" style="width:141px" value="{{$supervisorstudents->studentid_three}}">'+
+                  '<input class="form-control student_id" type="text" name="student_id[]" placeholder="Student ID" style="width:141px" value="{{$supervisorstudents->studentid_three}}">'+
                   '</td>'+
                   '<td><input class="form-control category_one" type="text" name="category_one[]" placeholder="Category One"></td>'+
 

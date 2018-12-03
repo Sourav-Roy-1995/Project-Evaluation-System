@@ -22,8 +22,8 @@ class CreateProjectListsTable extends Migration
             $table->integer('personal_id')->default(0);
             $table->text('semester');
             $table->integer('studentid_one');
-            $table->integer('studentid_two')->default(0);
-            $table->integer('studentid_three')->default(0);
+            $table->integer('studentid_two')->unsigned()->nullable();
+            $table->integer('studentid_three')->unsigned()->nullable();
             $table->timestamps();   
         });
 
