@@ -41,6 +41,7 @@ class AdminController extends Controller
                  ->select('id','student_id','category_one','category_two','supervisor_marks','total')              
                  ->get();
 
+                
         /*$marks = DB::table('marking_systems')
         ->select('id','student_id','category_one','category_two','supervisor_marks')   
         ->select('SUM(`total`) `total`') 

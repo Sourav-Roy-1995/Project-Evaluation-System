@@ -485,10 +485,19 @@
               <th>Supervisor Marks</th>
               <th>Total</th>
              
+              <th>Counter</th>
               <th>Final</th>
               <th>Update</th>
             </tr>
+
+            <?php
+              $a = array();
+              $b = array();
+              $sup = array();
+            ?>
           </thead>
+
+
 
         @foreach($marks as $mark)
           <tbody class="tbody">
@@ -508,25 +517,52 @@
 
               <td>
                   <input class="form-control supervisor_marks" type="text" name="supervisor_marks[]" style="background:white;width:123px";
-                  value="{{$mark->supervisor_marks}}" autofocus>
+                  value="{{$mark->supervisor_marks}}">
               </td> 
 
               <td>
                   <input class="form-control total" type="text" name="total[]"
-                  placeholder="Total Marks" style="background:white;cursor:default;width:123px" value="{{$mark->total}}" autofocus> 
+                  placeholder="Total Marks" style="background:white;cursor:default;width:123px" value="{{$mark->total}}" > 
 
               </td> 
 
-              <td>
-                  <input class="form-control final" type="text" name="final[]"
-                  placeholder="Final Marks" style="background:white;cursor:default;width:123px" autofocus> 
+              <td>                   
+                  <?php 
+                  if(!isset($a[$mark->student_id])) {
+                        $a[$mark->student_id] = 0;
+                  }
+                  
+                  if(!isset($b[$mark->student_id])) {
+                        $b[$mark->student_id] = 0;
+                   }
+                          
+                  if(!isset($sup[$mark->supervisor_marks])) {
+                        $sup[$mark->supervisor_marks] = 0;
+                   }
+                  
+                  $a[$mark->student_id]++;
+                  $b[$mark->student_id] += $mark->total;
+                  $sup[$mark->supervisor_marks] = $mark->supervisor_marks;
+                  $count = $a[$mark->student_id];
+                  $final = ($b[$mark->student_id] /$a[$mark->student_id]) + 
+                  $sup[$mark->supervisor_marks];   
+                  ?>
+                <input class="form-control final" type="text" name="counter[]"
+                placeholder="Counter" style="background:white;cursor:default;width:123px" value=<?php echo $count ?>>
 
+              </td>
+
+              <td>
+                <input class="form-control final" type="text" name="final[]"
+                placeholder="Final Marks" style="background:white;cursor:default;width:123px" value=<?php echo $final ?> >
               </td> 
               
               <td><a href="{{route('admin.view_mark',$mark->id)}}" class='btn btn-info btn-sm' name="update" >Update</a></td>
             </tr>
           </tbody>
           @endforeach
+
+
 
         </table>
       </div>
@@ -636,7 +672,7 @@
     <!-- Search -->
 
 
-    <script type="text/javascript">
+   <!-- <script type="text/javascript">
       
       $('.tbody').delegate('.total,.supervisor_marks','keyup',function(){
 
@@ -647,12 +683,11 @@
         tr.find('.final').val(final);
     });
 
-    var count = $('.student_id').length;
+
+    //var count = $('.student_id').length;
     //alert('Your have ' + count + ' student id in marking table.');
 
-    </script>
-
-
+    </script>-->
 
   </body>
 

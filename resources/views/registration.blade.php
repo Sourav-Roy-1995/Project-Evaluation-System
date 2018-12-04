@@ -1,10 +1,4 @@
 @extends('includes.header')
-@extends('includes.menu')
-
-
-	
-
-
 
 	<div class="register" style="margin-top: -39px">
 
@@ -12,11 +6,11 @@
 			
 			<div class="row row-eq-height">
 
-				<div class="col-lg-12 nopadding">			
+				<div class="col-lg-12 nopadding" style="height:64pc;">			
 
-					<div class="search_section d-flex flex-column align-items-center justify-content-center">
+					<div class="search_section d-flex flex-column align-items-center justify-content-center" style="margin-top:5pc">
 						<div class="search_background" style="background-image:url(images/search_background.jpg);"></div>
-						<div class="search_content text-center" style="margin-top: 15%;">
+						<div class="search_content text-center" >
 							<h1 class="search_title">Register Here</h1>
 
 
