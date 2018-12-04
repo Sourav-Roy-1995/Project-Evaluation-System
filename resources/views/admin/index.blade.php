@@ -648,7 +648,7 @@
     });
 
     var count = $('.student_id').length;
-    alert('Your have ' + count + ' student id in marking table.');
+    //alert('Your have ' + count + ' student id in marking table.');
 
     </script>
 

@@ -19,7 +19,16 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('test',function(){
 
+		$marks = DB::table('marking_systems')
+        ->select('student_id','category_one','category_two','supervisor_marks','total',DB::raw('count(*) as total'))   
+		->groupBy('student_id','category_one','category_two','supervisor_marks','total') 
+		->orderBy('total','DESC')        
+		->get();
+		dd($marks);
+		
+});
 
 Route::get('/contact',function(){
 	return view('contact');
@@ -57,8 +66,8 @@ Route::group(['middleware'=>'auth'],function(){
 		Route::patch('editsupervisor/{id}','AdminController@update_supervisor')->name('admin.update_supervisor');
 		Route::DELETE('deletesupervisor/{id}','AdminController@destroy_supervisor')->name('admin.delete_supervisor');
 
-		Route::get('viewmark/{id}/view_mark','AdminController@view_marks')->name('admin.view_mark');
-		Route::patch('editmark/{id}','AdminController@update_marks')->name('admin.updat');
+		Route::get('viewmark/{id}/view','AdminController@view_marks')->name('admin.view_mark');
+		Route::patch('editmark/{id}','AdminController@update_marks')->name('admin.update');
 
 		Route::post('store_two','AdminController@store_two')->name('admin.store');
 		Route::post('store_three','AdminController@store_three')->name('admin.store');		

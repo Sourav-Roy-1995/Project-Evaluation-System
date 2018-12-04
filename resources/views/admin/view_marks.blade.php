@@ -112,6 +112,8 @@
 @endif 
 
 {!! Form::model($mark,['method'=>'PATCH','action'=>['AdminController@update_marks', $mark->id],'files'=>true]) !!}
+
+
   
   <div class="card-body">
     <div class="row">

@@ -318,6 +318,13 @@
 
         $('tbody').append(tr);
         }
+
+        sp_id   = "{{$supervisorstudents->personal_id}}"
+        user_id = "{{ Auth::User()->personal_id }}"
+        
+        if(sp_id == user_id ){
+            $(".supervisor_marks").prop('disabled', false).attr("placeholder", "Enabled");
+        }
     };
 
     $('body').delegate('.remove','click',function(){
@@ -328,18 +335,6 @@
           $(this).parent().parent().remove();
         }
     });
-
-
-    window.onload = function supervisor(){
-
-        sp_id   = "{{$supervisorstudents->personal_id}}"
-        user_id = "{{ Auth::User()->personal_id }}"
-        
-        if(sp_id == user_id ){
-            $(".supervisor_marks").prop('disabled', false).attr("placeholder", "Enabled");
-        }
-       
-    }
    
 </script>
 

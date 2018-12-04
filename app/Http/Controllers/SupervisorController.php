@@ -34,8 +34,6 @@ class SupervisorController extends Controller
 
         $user = Auth::user();
 
-
-
 		 $supervisorstudents = DB::table('supervisor_students')
         ->join('project_lists', function ($join) {
             $join->on('supervisor_students.project_id', '=', 'project_lists.project_id');
