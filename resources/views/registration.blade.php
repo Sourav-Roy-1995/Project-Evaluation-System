@@ -81,17 +81,25 @@
 					{!! Form::text('studentid_one',null,['class'=>'input_field search_form_name', 'required'=>'required','data-error'=>'studentid is required.','placeholder'=>'Students Id:']) !!}
 
 				</div>
+				
 
-				<div class="form-group">				
+				<div class="input-group mb-3">
 
-					{!! Form::text('studentid_two',null,['class'=>'input_field search_form_name','placeholder'=>'Students Id:']) !!}
+						{!! Form::text('studentid_two',null,['class'=>'form-control studentid_two','placeholder'=>'Students Id:','disabled'=>'true','cursor'=>'default' ]) !!}
 
+						<div class="input-group-append">
+							<a href="#studentid_two" class="btn btn-info btn-sm input-group-text add_std_one">Add</a>
+						</div>
 				</div>
 
-				<div class="form-group">				
 
-					{!! Form::text('studentid_three',null,['class'=>'input_field search_form_name','placeholder'=>'Students Id:']) !!}
+				<div class="input-group mb-3">				
 
+					{!! Form::text('studentid_three',null,['class'=>'form-control studentid_three','placeholder'=>'Students Id:','disabled'=>'true','cursor'=>'default' ]) !!}
+
+					<div class="input-group-append">
+							<a href="#studentid_three" class="btn btn-info btn-sm input-group-text add_std_two">Add</a>
+					</div>
 
 				</div>
 
@@ -137,5 +145,27 @@
 	</div>
 
 
-
 @extends('includes.footer')
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script>
+
+	$('.add_std_one').on('click',function(){
+        student_two();
+    });
+
+	$('.add_std_two').on('click',function(){
+        student_three();
+    });
+
+    function student_two(){
+        $(".studentid_two").prop('disabled', false).attr("placeholder", "Student Id");
+    }
+
+	
+    function student_three(){
+		$(".studentid_three").prop('disabled', false).attr("placeholder", "Student Id");
+    }
+   
+
+</script>

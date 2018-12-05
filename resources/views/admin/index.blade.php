@@ -482,7 +482,7 @@
               <th>Student ID</th>
               <th>Category One</th>
               <th>Category Two</th>
-              <th>Supervisor Marks</th>
+              <th>Supervisor</th>
               <th>Total</th>
              
               <th>Counter</th>
@@ -500,67 +500,93 @@
 
 
         @foreach($marks as $mark)
+
+        <?php 
+            if(!isset($a[$mark->student_id])) {
+                  $a[$mark->student_id] = 0;
+            }
+            
+            if(!isset($b[$mark->student_id])) {
+                  $b[$mark->student_id] = 0;
+            }
+                    
+            if(!isset($sup[$mark->supervisor_marks])) {
+                  $sup[$mark->supervisor_marks] = 0;
+            }
+            
+            $a[$mark->student_id]++;
+            $b[$mark->student_id] += $mark->total;
+            $sup[$mark->supervisor_marks] = $mark->supervisor_marks;
+            $count = $a[$mark->student_id];
+            $final = ($b[$mark->student_id] / $a[$mark->student_id]) + 
+            $sup[$mark->supervisor_marks];   
+        ?>
+        
           <tbody class="tbody">
             <tr>
 
               <td>
-                  <input class="form-control student_id" type="text" name="student_id[]" placeholder="Student ID" style="width:123px" value="{{$mark->student_id}}">
+                  <input class="form-control student_id" type="text" name="student_id[]" placeholder="Student ID" style="width:100px" value="{{$mark->student_id}}">
               </td>
 
               <td>
-                  <input class="form-control category_one" type="text" name="category_one[]" placeholder="Category One" style="width:123px" value="{{$mark->category_one}}">
+                  <input class="form-control category_one" type="text" name="category_one[]" placeholder="Category One" style="width:100px" value="{{$mark->category_one}}">
               </td> 
 
               <td>
-                  <input class="form-control category_two" type="text" name="category_two[]" placeholder="Category Two" style="width:123px" value="{{$mark->category_two}}">
+                  <input class="form-control category_two" type="text" name="category_two[]" placeholder="Category Two" style="width:100px" value="{{$mark->category_two}}">
               </td> 
 
               <td>
-                  <input class="form-control supervisor_marks" type="text" name="supervisor_marks[]" style="background:white;width:123px";
+                  <input class="form-control supervisor_marks" type="text" name="supervisor_marks[]" style="background:white;width:110px";
                   value="{{$mark->supervisor_marks}}">
               </td> 
 
               <td>
                   <input class="form-control total" type="text" name="total[]"
-                  placeholder="Total Marks" style="background:white;cursor:default;width:123px" value="{{$mark->total}}" > 
+                  placeholder="Total Marks" style="background:white;cursor:default;width:100px" value="{{$mark->total}}" > 
 
               </td> 
 
               <td>                   
-                  <?php 
-                  if(!isset($a[$mark->student_id])) {
-                        $a[$mark->student_id] = 0;
-                  }
-                  
-                  if(!isset($b[$mark->student_id])) {
-                        $b[$mark->student_id] = 0;
-                   }
-                          
-                  if(!isset($sup[$mark->supervisor_marks])) {
-                        $sup[$mark->supervisor_marks] = 0;
-                   }
-                  
-                  $a[$mark->student_id]++;
-                  $b[$mark->student_id] += $mark->total;
-                  $sup[$mark->supervisor_marks] = $mark->supervisor_marks;
-                  $count = $a[$mark->student_id];
-                  $final = ($b[$mark->student_id] /$a[$mark->student_id]) + 
-                  $sup[$mark->supervisor_marks];   
-                  ?>
                 <input class="form-control final" type="text" name="counter[]"
-                placeholder="Counter" style="background:white;cursor:default;width:123px" value=<?php echo $count ?>>
-
+                placeholder="Counter" style="background:white;cursor:default;width:100px" value=<?php echo $count ?>>
               </td>
 
               <td>
                 <input class="form-control final" type="text" name="final[]"
-                placeholder="Final Marks" style="background:white;cursor:default;width:123px" value=<?php echo $final ?> >
+                placeholder="Final Marks" style="background:white;cursor:default;width:100px" value=<?php echo $final ?> >
               </td> 
               
               <td><a href="{{route('admin.view_mark',$mark->id)}}" class='btn btn-info btn-sm' name="update" >Update</a></td>
             </tr>
           </tbody>
+
           @endforeach
+
+          <?php 
+
+          $keys = array_keys($a);
+
+              for($i=0; $i < count($keys); ++$i) {
+
+                  if(!isset($b[$keys[$i]] )) {
+                      $b[$keys[$i]]  = 0;
+                  }
+                 else  if(!isset($a[$keys[$i]])) {
+                      $a[$keys[$i]] = 0;
+                   }
+                          
+                 else  if(!isset($sup[$keys[$i]])) {
+                       $sup[$keys[$i]] = 0;
+                   }
+                  echo $keys[$i] . '    ' . $a[$keys[$i]] . "<br/>";
+                  
+                  $avg = ($b[$keys[$i]] / $a[$keys[$i]]) + $sup[$keys[$i]];
+                  echo $keys[$i]." got total average marks: ".$avg."<br/>";
+              }
+            
+          ?>
 
 
 
