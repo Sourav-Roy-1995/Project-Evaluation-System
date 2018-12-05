@@ -82,6 +82,8 @@ Route::group(['middleware'=>'auth'],function(){
 
 		//Students Route List:
 		Route::get('/elligible_student','StudentController@index');
+		Route::get('/supervisorlist','StudentController@index2');
+		Route::post('/getans','StudentController@getAns')->name('student.getans');
 		//Students Route List:
 
 		//Normal User loginPage
@@ -94,17 +96,13 @@ Route::group(['middleware'=>'auth'],function(){
 		Route::get('/marks_store',array('as'=>'marks_store','uses'=>'SupervisorController@marks_store'));
 		Route::post('/insert',array('as'=>'supervisor.insert',
 		'uses'=>'SupervisorController@insert'));
-
-			
 		//Supervisor LoginPage
 
 
-		//Supervisor list
-		Route::get('/supervisorlist','StudentController@index2');
-		//Supervisor list
 
-
+		//Reg 
 		Route::resource('/registration','ProjectListController');
+		//Reg 
 
 		  
 

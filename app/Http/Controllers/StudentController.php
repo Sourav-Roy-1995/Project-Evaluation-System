@@ -9,6 +9,8 @@ use App\Http\Controllers\Controller;
 use App\StudentList;
 use App\User;
 use App\ProjectList;
+use Session;
+
 
 
 class StudentController extends Controller
@@ -51,8 +53,25 @@ class StudentController extends Controller
 		return view('supervisor',compact('supervisorstudents'));
 
 
-	}
+    }
+    
+    public function getAns(){
 
+        $getans = StudentList::where([
+            ['studentid', '=' ,$request->studentid],
+            ['studentname', '=', $request->studentname],
+            ['semester', '=', $reqest->semester]
+        ])->first();
+        
+        if (count($getans) > 0) {
+            Session::flash('alert-info', 'You are elligible for project');
+            return redirect('/');
+        } else {        
+            Session::flash('alert-danger', 'You are not elligible for project');
+            return redirect('/');
+        }
+
+    }
 
 
 

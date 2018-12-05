@@ -91,19 +91,27 @@
 				</div>
 
 				<div class="col-lg-6 nopadding">
-					
 					<!-- Search -->
-
 					<div class="search_section d-flex flex-column align-items-center justify-content-center">
 						<div class="search_background" style="background-image:url(images/search_background.jpg);"></div>
 						<div class="search_content text-center">
 							<h1 class="search_title">Are You Eligible For Project</h1>
-							<form id="search_form" class="search_form" action="post">
-								<input id="search_form_name" class="input_field search_form_name" type="text" placeholder="Course Code" required="required" data-error="Course name is required.">
-								<input id="search_form_category" class="input_field search_form_category" type="text" placeholder="Name">
-								<input id="search_form_degree" class="input_field search_form_degree" type="text" placeholder="ID">
-								<button id="search_submit_button" type="submit" class="search_submit_button trans_200" value="Submit">GET ANS</button>
-							</form>
+
+							{!! Form::open(['id'=>'search_form','class'=>'search_form', 		
+							'method'=>'POST','action'=>'StudentController@getAns','files'=>true]) !!}
+
+								
+
+								{!! Form::text('studentid',null,['class'=>'input_field search_form_name','placeholder'=>'Students Id:' ]) !!}
+
+								<input id="search_form_category" name="studentname" class="input_field search_form_category" type="text" placeholder="Name">
+
+								<input id="search_form_degree" name="semester" class="input_field search_form_degree" type="text" placeholder="Semester">
+
+								<input id="search_submit_button" type="submit" class="search_submit_button trans_200" name="submit" value="GET ANS" >
+								
+
+								{!! Form::close() !!}
 						</div> 
 					</div>
 

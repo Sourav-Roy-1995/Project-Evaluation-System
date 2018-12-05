@@ -483,10 +483,8 @@
               <th>Category One</th>
               <th>Category Two</th>
               <th>Supervisor</th>
-              <th>Total</th>
-             
+              <th>Total</th>           
               <th>Counter</th>
-              <th>Final</th>
               <th>Update</th>
             </tr>
 
@@ -510,16 +508,16 @@
                   $b[$mark->student_id] = 0;
             }
                     
-            if(!isset($sup[$mark->supervisor_marks])) {
-                  $sup[$mark->supervisor_marks] = 0;
+            if(!isset($sup[$mark->student_id])) {
+                  $sup[$mark->student_id] = $mark->supervisor_marks;
             }
             
             $a[$mark->student_id]++;
+
             $b[$mark->student_id] += $mark->total;
-            $sup[$mark->supervisor_marks] = $mark->supervisor_marks;
+            
             $count = $a[$mark->student_id];
-            $final = ($b[$mark->student_id] / $a[$mark->student_id]) + 
-            $sup[$mark->supervisor_marks];   
+   
         ?>
         
           <tbody class="tbody">
@@ -553,11 +551,6 @@
                 placeholder="Counter" style="background:white;cursor:default;width:100px" value=<?php echo $count ?>>
               </td>
 
-              <td>
-                <input class="form-control final" type="text" name="final[]"
-                placeholder="Final Marks" style="background:white;cursor:default;width:100px" value=<?php echo $final ?> >
-              </td> 
-              
               <td><a href="{{route('admin.view_mark',$mark->id)}}" class='btn btn-info btn-sm' name="update" >Update</a></td>
             </tr>
           </tbody>
@@ -570,20 +563,11 @@
 
               for($i=0; $i < count($keys); ++$i) {
 
-                  if(!isset($b[$keys[$i]] )) {
-                      $b[$keys[$i]]  = 0;
-                  }
-                 else  if(!isset($a[$keys[$i]])) {
-                      $a[$keys[$i]] = 0;
-                   }
-                          
-                 else  if(!isset($sup[$keys[$i]])) {
-                       $sup[$keys[$i]] = 0;
-                   }
                   echo $keys[$i] . '    ' . $a[$keys[$i]] . "<br/>";
                   
                   $avg = ($b[$keys[$i]] / $a[$keys[$i]]) + $sup[$keys[$i]];
                   echo $keys[$i]." got total average marks: ".$avg."<br/>";
+                  
               }
             
           ?>

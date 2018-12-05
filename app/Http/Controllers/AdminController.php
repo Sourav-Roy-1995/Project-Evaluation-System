@@ -36,17 +36,11 @@ class AdminController extends Controller
         $userlists = User::all();
         $students=StudentList::all();
        // $marks = MarkingSystem::all();
-
+       
         $marks = DB::table('marking_systems')
                  ->select('id','student_id','category_one','category_two','supervisor_marks','total')              
                  ->get();
 
-                
-        /*$marks = DB::table('marking_systems')
-        ->select('id','student_id','category_one','category_two','supervisor_marks')   
-        ->select('SUM(`total`) `total`') 
-        ->groupBy('student_id')          
-        ->get();*/  
 
         
         $supervisorstudents = DB::table('supervisor_students')

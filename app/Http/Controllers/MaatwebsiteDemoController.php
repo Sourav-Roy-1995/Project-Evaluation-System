@@ -4,8 +4,6 @@
 
 namespace App\Http\Controllers;
 
- 
-
 use App\StudentList;
 
 use DB;
@@ -16,7 +14,6 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
- 
 
 class MaatwebsiteDemoController extends Controller
 
@@ -104,13 +101,9 @@ class MaatwebsiteDemoController extends Controller
 
         ]);
 
- 
-
         $path = $request->file('import_file')->getRealPath();
 
         $data = Excel::load($path)->get();
-
- 
 
         if($data->count()){
 
@@ -120,8 +113,6 @@ class MaatwebsiteDemoController extends Controller
 
             }
 
- 
-
             if(!empty($arr)){
 
                 StudentList::insert($arr);
@@ -130,11 +121,9 @@ class MaatwebsiteDemoController extends Controller
 
         }
 
- 
-
         $request->session()->flash('flash_message', 'posting done successfully!');
 
-         return redirect()->back();
+        return redirect()->back();
 
         //return redirect('admin');
 

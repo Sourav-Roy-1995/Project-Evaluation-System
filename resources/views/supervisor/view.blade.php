@@ -114,6 +114,7 @@
 
             {!! Form::model($supervisorstudents,['method'=>'POST',
             'action'=>['SupervisorController@insert',$supervisorstudents->project_id],'files'=>true]) !!}
+            
             {{csrf_field()}}
               <div class="row">
 
