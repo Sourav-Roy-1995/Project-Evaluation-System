@@ -484,7 +484,6 @@
               <th>Category Two</th>
               <th>Supervisor</th>
               <th>Total</th>           
-              <th>Counter</th>
               <th>Update</th>
             </tr>
 
@@ -546,38 +545,64 @@
 
               </td> 
 
-              <td>                   
-                <input class="form-control final" type="text" name="counter[]"
-                placeholder="Counter" style="background:white;cursor:default;width:100px" value=<?php echo $count ?>>
-              </td>
-
               <td><a href="{{route('admin.view_mark',$mark->id)}}" class='btn btn-info btn-sm' name="update" >Update</a></td>
             </tr>
           </tbody>
 
           @endforeach
 
+        </table>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-bordered" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th>Student ID</th>
+              <th>Counter</th>
+              <th>Final Mark</th>
+            </tr>
+          </thead>
+        
+          <tbody class="tbody">
           <?php 
 
           $keys = array_keys($a);
 
-              for($i=0; $i < count($keys); ++$i) {
+                for($i=0; $i < count($keys); ++$i) {              
+                $avg = ($b[$keys[$i]] / $a[$keys[$i]]) + $sup[$keys[$i]];
 
-                  echo $keys[$i] . '    ' . $a[$keys[$i]] . "<br/>";
-                  
-                  $avg = ($b[$keys[$i]] / $a[$keys[$i]]) + $sup[$keys[$i]];
-                  echo $keys[$i]." got total average marks: ".$avg."<br/>";
-                  
-              }
-            
-          ?>
+          ?>      
+             <tr>
+              <td>
+                  <input class="form-control studentid" type="text" name="studentid[]" placeholder="Student ID" style="width:100px" value=<?php echo $keys[$i] ?>>
+              </td>
 
+              <td>
+                  <input class="form-control counter" type="text" name="counter[]" placeholder="Counter" style="width:100px" value=<?php echo  $a[$keys[$i]] ?>>
+              </td>
 
+              <td>
+                  <input class="form-control final_mark" type="text" name="final_mark[]" placeholder="Final Mark" style="width:100px" value=<?php echo $avg ?>>
+              </td>
+
+            </tr>
+          </tbody>
+
+        <?php  
+        }
+        
+        ?>
 
         </table>
       </div>
+
     </div>
-    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+        <div class="card-footer text-right">
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <input type="submit" class="btn btn-info custom-btn btn-sm" name="submit" value="Generate">
+        </div>
+    </div>
 </div>
 
 
