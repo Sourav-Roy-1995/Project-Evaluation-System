@@ -70,7 +70,9 @@ Route::group(['middleware'=>'auth'],function(){
 		Route::patch('editmark/{id}','AdminController@update_marks')->name('admin.update');
 
 		Route::post('store_two','AdminController@store_two')->name('admin.store');
-		Route::post('store_three','AdminController@store_three')->name('admin.store');		
+		Route::post('store_three','AdminController@store_three')->name('admin.store');	
+		
+		Route::post('store_final','AdminController@store_final')->name('admin.store_final');
 
 	    //Main Admin Route List:
 		

@@ -468,7 +468,7 @@
 </div><!-- Supervisor data form -->
   
 <div class="card mb-3" style="margin-top: 30px">
-    <div class="card-header" id="supervisorlist">
+    <div class="card-header" id="result">
       <i class="fas fa-table"></i>
       Project Marking </div>
     <div class="card-body">
@@ -555,6 +555,10 @@
       </div>
 
       <div class="table-responsive">
+
+          {!! Form::open(['id'=>'search_form','class'=>'search_form',     
+          'method'=>'POST','action'=>'AdminController@store_final','files'=>true]) !!}
+          
         <table class="table table-bordered" width="100%" cellspacing="0">
           <thead>
             <tr>
@@ -595,14 +599,20 @@
         ?>
 
         </table>
+
+        
       </div>
 
     </div>
+
         <div class="card-footer text-right">
-        <div class="btn-group" role="group" aria-label="Basic example">
-            <input type="submit" class="btn btn-info custom-btn btn-sm" name="submit" value="Generate">
+          <div class="btn-group" role="group" aria-label="Basic example">
+              <input type="submit" class="btn btn-info custom-btn btn-sm" name="submit" value="Generate">
+          </div>
         </div>
-    </div>
+
+        {!! Form::close() !!} 
+
 </div>
 
 

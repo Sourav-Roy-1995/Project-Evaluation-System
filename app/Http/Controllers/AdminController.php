@@ -12,6 +12,7 @@ use App\ProjectList;
 use App\SupervisorStudent;
 use App\RegInfo;
 use App\MarkingSystem;
+use App\Final_mark;
 use Illuminate\Support\Facades\Validator;
 use Session;
 
@@ -119,8 +120,6 @@ class AdminController extends Controller
     public function store_two(Request $request)
     {
         
-
-            
            $validatedData = $request->validate([
 
                 'project_id' => 'max:10|unique:supervisor_students|exists:project_lists,project_id',
@@ -159,6 +158,24 @@ class AdminController extends Controller
          $request->session()->flash('flash_message', 'Submitted successfully!');
 
          return redirect()->back();
+    }
+
+    public function store_final(Request $request){
+
+        foreach($request->studentid as $key => $v){
+
+            $data = array(
+            'studentid'=>$request->studentid [$key],
+            'counter'=>$request->counter [$key],
+            'final_mark'=>$request->final_mark [$key],
+           );
+           Final_mark::insert($data);
+
+        }
+
+          $request->session()->flash('flash_message', 'Submitted successfully!');
+          return redirect()->back();
+
     }
 
 

@@ -84,7 +84,7 @@
 						<div class="register_content text-center">
 							<h1 class="register_title">Registration For Project <span>Hurry Up! </span> </h1>
 							<p class="register_text"> Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </p>
-							<div class="button button_1 register_button mx-auto trans_200"><a href="#">register now</a></div>
+							<div class="button button_1 register_button mx-auto trans_200"><a href="registration">register now</a></div>
 						</div>
 					</div>
 
