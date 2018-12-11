@@ -50,8 +50,19 @@
           <ul>
             <li class="active"><a href="http://localhost/final_year_project/public" data-nav-section="home">Home</a></li>
             <li><a href="#" data-nav-section="about">About</a></li>
-            <li><a href="#" data-nav-section="services">Student List</a></li>
-            <li><a href="#" data-nav-section="skills">Project List</a></li>
+            <li><a href="#" data-nav-section="personal_project">Project List</a></li>
+            <li class="dropdown"><a href="#" data-toggle="dropdown" data-nav-section="project_list">Personal Project</a>
+              
+              <ul class="dropdown-menu settings-menu dropdown-menu-right">
+                  <li><a class="dropdown-item" href="#"><i class="fa fa-cog fa-lg"></i> Settings</a></li>
+                  <li><a class="dropdown-item" href="#"><i class="fa fa-user fa-lg"></i> Profile</a></li>
+                  <li><a class="dropdown-item" href="{{ url('logout') }}"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
+              </ul>
+            
+            </li>
+
+
+
             <li><a href="#" data-nav-section="education">Marking</a></li>
             <li><a href="#" data-nav-section="experience">Experience</a></li>
             <li><a href="#" data-nav-section="work">Work</a></li>
@@ -66,21 +77,75 @@
 
     <div id="colorlib-main">
 
-
-
-    <div class="card mb-3" style="margin-top: 30px">
+        <div class="card mb-3" style="margin-top: 30px">
             <div class="card-header" id="supervisorlist">
-              <i class="fas fa-table"></i>
-              Students Information</div>
+
+              <div class="row">
+                  <div class="col-md-6" style="margin-top: 21px;">
+                      Personal Project
+                  </div>
+
+              </div>
+
+            </div>
+              
             <div class="card-body">
 
            <!--  <input float="left" class="form-control" id="myInput2" type="text" placeholder="Search.."> -->
 
               <div class="table-responsive">
-                <table class="table table-bordered" width="100%" cellspacing="0">
-                  <thead>
+                <table class="table table-bordered" width="100%" cellspacing="0"
+                >
+                  <thead >
                     <tr>
-                      <th>Project ID</th>
+                      
+                      <th>Project Id:</th>                      
+                      <th>view</th>
+                    </tr>
+                  </thead>
+
+                @foreach($personalstudents as $personalstudent)
+                  <tbody id="myTable">
+                    <tr>
+
+                      <td>{{$personalstudent->project_id}}</td>
+
+                      <td><a href="{{route('supervisor.view',$personalstudent->project_id)}}" class='btn btn-info btn-sm' name="name" >View</a></td>
+                      
+                    </tr>
+                  </tbody>
+                  @endforeach
+
+                </table>
+              </div>
+            </div>
+            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+    </div>
+
+    <div class="card mb-3" style="margin-top: 30px">
+            <div class="card-header" id="supervisorlist">
+
+              <div class="row">
+                  <div class="col-md-6" style="margin-top: 21px;">
+                      All Project
+                  </div>
+      
+                  <div class="col-md-6">
+                      <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                  </div>
+              </div>
+
+            </div>
+              
+            <div class="card-body">
+
+           <!--  <input float="left" class="form-control" id="myInput2" type="text" placeholder="Search.."> -->
+
+              <div class="table-responsive">
+                <table class="table table-bordered" width="100%" cellspacing="0"
+                >
+                  <thead >
+                    <tr>
                       <th>Supervisor Id:</th>
                       <th>Supervisor Name:</th>
                       <th>Course Code:</th>                      
@@ -93,10 +158,9 @@
                   </thead>
 
                 @foreach($supervisorstudents as $supervisorstudent)
-                  <tbody id="myTable2">
+                  <tbody id="myTable">
                     <tr>
-                      <td>{{$supervisorstudent->project_id}}</td>
-              
+
                       <td>{{$supervisorstudent->personal_id}}</td>
 
                       <td>{{$supervisorstudent->supervisor_name}}</td>
@@ -132,11 +196,43 @@
 
 
 
-
   
   <!-- MAIN JS -->
   <script>src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="js/main.js"></script>
+      <!-- Bootstrap core JavaScript-->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  
+      <!-- Core plugin JavaScript-->
+      <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  
+      <!-- Page level plugin JavaScript-->
+      <script src="vendor/datatables/jquery.dataTables.js"></script>
+      <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+  
+      <!-- Custom scripts for all pages-->
+      <script src="js/sb-admin.min.js"></script>
+  
+      <!-- Demo scripts for this page-->
+      <script src="js/demo/datatables-demo.js"></script>
+
+
+<!-- Search -->
+
+<script>
+    $(document).ready(function(){
+      $("#myInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#myTable tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+
+</script> 
 
 
   </body>

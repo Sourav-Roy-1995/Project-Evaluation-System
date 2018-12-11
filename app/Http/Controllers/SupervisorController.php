@@ -32,19 +32,22 @@ class SupervisorController extends Controller
 
     public function index(){
 
-        $user = Auth::user();
+        $user =Auth::User();
 
 		 $supervisorstudents = DB::table('supervisor_students')
         ->join('project_lists', function ($join) {
             $join->on('supervisor_students.project_id', '=', 'project_lists.project_id');
                 
         })
-
-
         ->select('supervisor_students.*','project_lists.course_code', 'project_lists.semester','project_lists.studentid_one','project_lists.studentid_two','project_lists.studentid_three')
         ->get();
 
-        return view('supervisor.index',compact('supervisorstudents'));
+        $personalstudents = DB::table('project_lists')
+        ->where('project_lists.personal_id', '=', $user->personal_id)
+        ->select('project_id')
+        ->get();
+
+        return view('supervisor.index',compact('supervisorstudents','personalstudents'));
 
 	}
 
