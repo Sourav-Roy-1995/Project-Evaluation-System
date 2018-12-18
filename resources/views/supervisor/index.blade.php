@@ -71,12 +71,12 @@
             <div class="card-header" id="personal" style="background-color: #2C3034;color: white;">
 
               <div class="row">
-                <div class="col-md-6" style="margin-top: 21px;">
+                <div class="col-md-6 col-sm-6" style="margin-top: 21px;">
                   Personal Project
               </div>
   
-              <div class="col-md-6">
-                  <input class="form-control" id="myInput2" type="text" placeholder="Search..">
+              <div class="col-md-6 col-sm-6">
+                  <input class="search" id="myInput2" type="text" placeholder="Search.." >
               </div>
 
               </div>
@@ -125,8 +125,8 @@
                   All Project
               </div>
   
-              <div class="col-md-6">
-                  <input class="form-control" id="myInput3" type="text" placeholder="Search..">
+              <div class="col-md-6">            
+                  <input type="text" id="myInput3" name="search_input" class="search_input search" placeholder="search...">
               </div>
 
               </div>
@@ -179,7 +179,7 @@
                   </div>
       
                   <div class="col-md-6">
-                      <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                      <input class="search" id="myInput" type="text" placeholder="search..">
                   </div>
               </div>
 
@@ -289,6 +289,8 @@
         });
       });
     });
+
+
 
 </script> 
 
