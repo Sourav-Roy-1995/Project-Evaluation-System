@@ -47,54 +47,6 @@
 
 <body id="page-top">
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="custom-nav">
-
-          <a class="navbar-brand" href="http://localhost/final_year_project/public">Dept. Of CSE</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" 
-          data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
-          aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-              <ul class="navbar-nav mr-auto nav-list list-inline mx-auto justify-content-center">
-
-                <li class="nav-item ">
-                  <a class="nav-link" href="importExport">Add Students</a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" href="#con">Add Supervisor</a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" href="index2">Project Student List</a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" href="add_business.php">Final Year Student List</a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" href="#all_user">User List</a>
-                </li>
-
-                  <!-- User Menu-->
-
-                      <li class="dropdown" style="position: absolute;right: 0;top:0"> <a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
-                          <ul class="dropdown-menu settings-menu dropdown-menu-right">
-                              <li><a class="dropdown-item" href="#"><i class="fa fa-cog fa-lg"></i> Settings</a></li>
-                              <li><a class="dropdown-item" href="#"><i class="fa fa-user fa-lg"></i> Profile</a></li>
-                              <li><a class="dropdown-item" href="{{ url('logout') }}"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
-                          </ul>
-                      </li>
-
-              </ul>
-             
-          </div>
-
-    </nav>
 
     <!--Content Form -->
 
@@ -105,7 +57,6 @@
             <div class="text-right">
                 <div class="btn-group " role="group" aria-label="Basic example">
                     <a href="{{ asset('supervisor') }}" class="btn btn-info btn-sm float-right">Back</a>
-                    <a href="#" class="btn btn-info btn-sm float-right supervisor">Supervisor?</a>
                 </div>
             </div>
         </div>
@@ -127,10 +78,8 @@
                                     <th>Category One</th>
                                     <th>Category Two</th>
                                     <th>Supervisor Marks</th>
-                                    <th>Total</th>  
-                                    <th>
-                                        <a href="#" class="btn btn-info btn-sm addRow">Add</a>
-                                    </th>                                 
+                                    <th>Total</th>    
+                                    <th>Remove</th>                                
                                 </thead>
 
                                 <tbody>

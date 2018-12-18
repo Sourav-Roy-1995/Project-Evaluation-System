@@ -1,520 +1,242 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
+<head>
 
-    <head>
-        <!-- Required meta tags-->
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="au theme template">
-        <meta name="author" content="Hau Nguyen">
-        <meta name="keywords" content="au theme template">
-    
-        <!-- Title Page-->
-        <title>Dashboard 2</title>
-    
-        <!-- Fontfaces CSS-->
-        <link href="css/font-face.css" rel="stylesheet" media="all">
-        <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-        <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
-        <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-    
-        <!-- Bootstrap CSS-->
-        <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
-    
-        <!-- Vendor CSS-->
-        <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
-        <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
-        <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
-        <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
-        <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
-        <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
-        <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
-        <link href="vendor/vector-map/jqvmap.min.css" rel="stylesheet" media="all">
-    
-        <!-- Main CSS-->
-        <link href="css/theme.css" rel="stylesheet" media="all">
-    
-    </head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Faculty Members</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="" />
 
-<body >
-    <div class="page-wrapper">
-        <!-- MENU SIDEBAR-->
-        <aside class="menu-sidebar2">
-            <div class="logo">
-                <a href="#">
-                    <img src="images/icon/logo-white.png" alt="Cool Admin" />
-                </a>
-            </div>
-            <div class="menu-sidebar2__content js-scrollbar1">
-                <div class="account2">
-                    <div class="image img-cir img-120">
-                        <img src="images/icon/avatar-big-01.jpg" alt="John Doe" />
-                    </div>
-                    <h4 class="name">{{ Auth::User()->name }}</h4>
-                    <a href="#">Sign out</a>
-                </div>
-                <nav class="navbar-sidebar2">
-                    <ul class="list-unstyled navbar__list">
-                        <li class="active has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-tachometer-alt"></i>Dashboard
-                                <span class="arrow">
-                                    <i class="fas fa-angle-down"></i>
-                                </span>
-                            </a>
-                            <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                <li>
-                                    <a href="index.html">
-                                        <i class="fas fa-tachometer-alt"></i>Dashboard 1</a>
-                                </li>
-                                <li>
-                                    <a href="index2.html">
-                                        <i class="fas fa-tachometer-alt"></i>Dashboard 2</a>
-                                </li>
-                                <li>
-                                    <a href="index3.html">
-                                        <i class="fas fa-tachometer-alt"></i>Dashboard 3</a>
-                                </li>
-                                <li>
-                                    <a href="index4.html">
-                                        <i class="fas fa-tachometer-alt"></i>Dashboard 4</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="inbox.html">
-                                <i class="fas fa-chart-bar"></i>Inbox</a>
-                            <span class="inbox-num">3</span>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fas fa-shopping-basket"></i>eCommerce</a>
-                        </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-trophy"></i>Features
-                                <span class="arrow">
-                                    <i class="fas fa-angle-down"></i>
-                                </span>
-                            </a>
-                            <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                <li>
-                                    <a href="table.html">
-                                        <i class="fas fa-table"></i>Tables</a>
-                                </li>
-                                <li>
-                                    <a href="form.html">
-                                        <i class="far fa-check-square"></i>Forms</a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fas fa-calendar-alt"></i>Calendar</a>
-                                </li>
-                                <li>
-                                    <a href="map.html">
-                                        <i class="fas fa-map-marker-alt"></i>Maps</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-copy"></i>Pages
-                                <span class="arrow">
-                                    <i class="fas fa-angle-down"></i>
-                                </span>
-                            </a>
-                            <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                <li>
-                                    <a href="login.html">
-                                        <i class="fas fa-sign-in-alt"></i>Login</a>
-                                </li>
-                                <li>
-                                    <a href="register.html">
-                                        <i class="fas fa-user"></i>Register</a>
-                                </li>
-                                <li>
-                                    <a href="forget-pass.html">
-                                        <i class="fas fa-unlock-alt"></i>Forget Password</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-desktop"></i>UI Elements
-                                <span class="arrow">
-                                    <i class="fas fa-angle-down"></i>
-                                </span>
-                            </a>
-                            <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                <li>
-                                    <a href="button.html">
-                                        <i class="fab fa-flickr"></i>Button</a>
-                                </li>
-                                <li>
-                                    <a href="badge.html">
-                                        <i class="fas fa-comment-alt"></i>Badges</a>
-                                </li>
-                                <li>
-                                    <a href="tab.html">
-                                        <i class="far fa-window-maximize"></i>Tabs</a>
-                                </li>
-                                <li>
-                                    <a href="card.html">
-                                        <i class="far fa-id-card"></i>Cards</a>
-                                </li>
-                                <li>
-                                    <a href="alert.html">
-                                        <i class="far fa-bell"></i>Alerts</a>
-                                </li>
-                                <li>
-                                    <a href="progress-bar.html">
-                                        <i class="fas fa-tasks"></i>Progress Bars</a>
-                                </li>
-                                <li>
-                                    <a href="modal.html">
-                                        <i class="far fa-window-restore"></i>Modals</a>
-                                </li>
-                                <li>
-                                    <a href="switch.html">
-                                        <i class="fas fa-toggle-on"></i>Switchs</a>
-                                </li>
-                                <li>
-                                    <a href="grid.html">
-                                        <i class="fas fa-th-large"></i>Grids</a>
-                                </li>
-                                <li>
-                                    <a href="fontawesome.html">
-                                        <i class="fab fa-font-awesome"></i>FontAwesome</a>
-                                </li>
-                                <li>
-                                    <a href="typo.html">
-                                        <i class="fas fa-font"></i>Typography</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </aside>
-        <!-- END MENU SIDEBAR-->
+  <!-- Facebook and Twitter integration -->
+  <meta property="og:title" content=""/>
+  <meta property="og:image" content=""/>
+  <meta property="og:url" content=""/>
+  <meta property="og:site_name" content=""/>
+  <meta property="og:description" content=""/>
+  <meta name="twitter:title" content="" />
+  <meta name="twitter:image" content="" />
+  <meta name="twitter:url" content="" />
+  <meta name="twitter:card" content="" />
 
-        <!-- PAGE CONTAINER-->
-        <div class="page-container2">
-            <!-- HEADER DESKTOP-->
-            <header class="header-desktop2">
-                <div class="section__content section__content--p30">
-                    <div class="container-fluid">
-                        <div class="header-wrap2">
-                            <div class="logo d-block d-lg-none">
-                                <a href="#">
-                                    <img src="images/icon/logo-white.png" alt="CoolAdmin" />
-                                </a>
-                            </div>
-                            <div class="header-button2">
-                                <div class="header-button-item js-item-menu">
-                                    <i class="zmdi zmdi-search"></i>
-                                    <div class="search-dropdown js-dropdown">
-                                        <form action="">
-                                            <input class="au-input au-input--full au-input--h65" type="text" placeholder="Search for datas &amp; reports..." />
-                                            <span class="search-dropdown__icon">
-                                                <i class="zmdi zmdi-search"></i>
-                                            </span>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="header-button-item has-noti js-item-menu">
-                                    <i class="zmdi zmdi-notifications"></i>
-                                    <div class="notifi-dropdown js-dropdown">
-                                        <div class="notifi__title">
-                                            <p>You have 3 Notifications</p>
-                                        </div>
-                                        <div class="notifi__item">
-                                            <div class="bg-c1 img-cir img-40">
-                                                <i class="zmdi zmdi-email-open"></i>
-                                            </div>
-                                            <div class="content">
-                                                <p>You got a email notification</p>
-                                                <span class="date">April 12, 2018 06:50</span>
-                                            </div>
-                                        </div>
-                                        <div class="notifi__item">
-                                            <div class="bg-c2 img-cir img-40">
-                                                <i class="zmdi zmdi-account-box"></i>
-                                            </div>
-                                            <div class="content">
-                                                <p>Your account has been blocked</p>
-                                                <span class="date">April 12, 2018 06:50</span>
-                                            </div>
-                                        </div>
-                                        <div class="notifi__item">
-                                            <div class="bg-c3 img-cir img-40">
-                                                <i class="zmdi zmdi-file-text"></i>
-                                            </div>
-                                            <div class="content">
-                                                <p>You got a new file</p>
-                                                <span class="date">April 12, 2018 06:50</span>
-                                            </div>
-                                        </div>
-                                        <div class="notifi__footer">
-                                            <a href="#">All notifications</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="header-button-item mr-0 js-sidebar-btn">
-                                    <i class="zmdi zmdi-menu"></i>
-                                </div>
-                                <div class="setting-menu js-right-sidebar d-none d-lg-block">
-                                    <div class="account-dropdown__body">
-                                        <div class="account-dropdown__item">
-                                            <a href="#">
-                                                <i class="zmdi zmdi-account"></i>Account</a>
-                                        </div>
-                                        <div class="account-dropdown__item">
-                                            <a href="#">
-                                                <i class="zmdi zmdi-settings"></i>Setting</a>
-                                        </div>
-                                        <div class="account-dropdown__item">
-                                            <a href="#">
-                                                <i class="zmdi zmdi-money-box"></i>Billing</a>
-                                        </div>
-                                    </div>
-                                    <div class="account-dropdown__body">
-                                        <div class="account-dropdown__item">
-                                            <a href="#">
-                                                <i class="zmdi zmdi-globe"></i>Language</a>
-                                        </div>
-                                        <div class="account-dropdown__item">
-                                            <a href="#">
-                                                <i class="zmdi zmdi-pin"></i>Location</a>
-                                        </div>
-                                        <div class="account-dropdown__item">
-                                            <a href="#">
-                                                <i class="zmdi zmdi-email"></i>Email</a>
-                                        </div>
-                                        <div class="account-dropdown__item">
-                                            <a href="#">
-                                                <i class="zmdi zmdi-notifications"></i>Notifications</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </header>
-            <aside class="menu-sidebar2 js-right-sidebar d-block d-lg-none">
-                <div class="logo">
-                    <a href="#">
-                        <img src="images/icon/logo-white.png" alt="Cool Admin" />
-                    </a>
-                </div>
-                <div class="menu-sidebar2__content js-scrollbar2">
-                    <div class="account2">
-                        <div class="image img-cir img-120">
-                            <img src="images/icon/avatar-big-01.jpg" alt="John Doe" />
-                        </div>
-                        <h4 class="name">john doe</h4>
-                        <a href="#">Sign out</a>
-                    </div>
-                    <nav class="navbar-sidebar2">
-                        <ul class="list-unstyled navbar__list">
-                            <li class="active has-sub">
-                                <a class="js-arrow" href="#">
-                                    <i class="fas fa-tachometer-alt"></i>Dashboard
-                                    <span class="arrow">
-                                        <i class="fas fa-angle-down"></i>
-                                    </span>
-                                </a>
-                                <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                    <li>
-                                        <a href="index.html">
-                                            <i class="fas fa-tachometer-alt"></i>Dashboard 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="index2.html">
-                                            <i class="fas fa-tachometer-alt"></i>Dashboard 2</a>
-                                    </li>
-                                    <li>
-                                        <a href="index3.html">
-                                            <i class="fas fa-tachometer-alt"></i>Dashboard 3</a>
-                                    </li>
-                                    <li>
-                                        <a href="index4.html">
-                                            <i class="fas fa-tachometer-alt"></i>Dashboard 4</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="inbox.html">
-                                    <i class="fas fa-chart-bar"></i>Inbox</a>
-                                <span class="inbox-num">3</span>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fas fa-shopping-basket"></i>eCommerce</a>
-                            </li>
-                            <li class="has-sub">
-                                <a class="js-arrow" href="#">
-                                    <i class="fas fa-trophy"></i>Features
-                                    <span class="arrow">
-                                        <i class="fas fa-angle-down"></i>
-                                    </span>
-                                </a>
-                                <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                    <li>
-                                        <a href="table.html">
-                                            <i class="fas fa-table"></i>Tables</a>
-                                    </li>
-                                    <li>
-                                        <a href="form.html">
-                                            <i class="far fa-check-square"></i>Forms</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fas fa-calendar-alt"></i>Calendar</a>
-                                    </li>
-                                    <li>
-                                        <a href="map.html">
-                                            <i class="fas fa-map-marker-alt"></i>Maps</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="has-sub">
-                                <a class="js-arrow" href="#">
-                                    <i class="fas fa-copy"></i>Pages
-                                    <span class="arrow">
-                                        <i class="fas fa-angle-down"></i>
-                                    </span>
-                                </a>
-                                <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                    <li>
-                                        <a href="login.html">
-                                            <i class="fas fa-sign-in-alt"></i>Login</a>
-                                    </li>
-                                    <li>
-                                        <a href="register.html">
-                                            <i class="fas fa-user"></i>Register</a>
-                                    </li>
-                                    <li>
-                                        <a href="forget-pass.html">
-                                            <i class="fas fa-unlock-alt"></i>Forget Password</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="has-sub">
-                                <a class="js-arrow" href="#">
-                                    <i class="fas fa-desktop"></i>UI Elements
-                                    <span class="arrow">
-                                        <i class="fas fa-angle-down"></i>
-                                    </span>
-                                </a>
-                                <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                    <li>
-                                        <a href="button.html">
-                                            <i class="fab fa-flickr"></i>Button</a>
-                                    </li>
-                                    <li>
-                                        <a href="badge.html">
-                                            <i class="fas fa-comment-alt"></i>Badges</a>
-                                    </li>
-                                    <li>
-                                        <a href="tab.html">
-                                            <i class="far fa-window-maximize"></i>Tabs</a>
-                                    </li>
-                                    <li>
-                                        <a href="card.html">
-                                            <i class="far fa-id-card"></i>Cards</a>
-                                    </li>
-                                    <li>
-                                        <a href="alert.html">
-                                            <i class="far fa-bell"></i>Alerts</a>
-                                    </li>
-                                    <li>
-                                        <a href="progress-bar.html">
-                                            <i class="fas fa-tasks"></i>Progress Bars</a>
-                                    </li>
-                                    <li>
-                                        <a href="modal.html">
-                                            <i class="far fa-window-restore"></i>Modals</a>
-                                    </li>
-                                    <li>
-                                        <a href="switch.html">
-                                            <i class="fas fa-toggle-on"></i>Switchs</a>
-                                    </li>
-                                    <li>
-                                        <a href="grid.html">
-                                            <i class="fas fa-th-large"></i>Grids</a>
-                                    </li>
-                                    <li>
-                                        <a href="fontawesome.html">
-                                            <i class="fab fa-font-awesome"></i>FontAwesome</a>
-                                    </li>
-                                    <li>
-                                        <a href="typo.html">
-                                            <i class="fas fa-font"></i>Typography</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </aside>
-            <!-- END HEADER DESKTOP-->
 
-            <!-- BREADCRUMB-->
-            <section class="au-breadcrumb m-t-75">
-                <div class="section__content section__content--p30">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="au-breadcrumb-content">
-                                </div> 
-   
+  <link rel="stylesheet" href="css/profile.css">
 
-            <section>
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="copyright">
-                                <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- END PAGE CONTAINER-->
+    <!-- Date Format -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>  
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>  
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+    <link rel="stylesheet" href="css/admin-css/css/main.css">
+    <link href="css/style.css" rel="stylesheet">
+
+    
+
+</head>
+
+  <body>
+
+  <div id="colorlib-page">
+    <div class="container-wrap">
+    <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+    <aside id="colorlib-aside" role="complementary" class="border js-fullheight">
+      <div class="text-center">
+        <div class="author-img" style="background-image: url(images/about.jpg);"></div>
+        <h1 id="colorlib-logo"><a href="index.html">{{ Auth::User()->name }}</a></h1>
+        <span class="position"><a href="#">Faculty</a> in Leading University</span>
+      </div>
+      <nav id="colorlib-main-menu" role="navigation" class="navbar">
+        <div id="navbar" class="collapse">
+          <ul>
+            <li class="active"><a href="http://localhost/final_year_project/public" data-nav-section="home">Home</a></li>
+            <li><a href="#" data-nav-section="about">About</a></li>
+            <li><a href="#" data-nav-section="personal_project">Project List</a></li>
+            <li class="dropdown"><a href="#" data-toggle="dropdown" data-nav-section="project_list">Personal Project</a>
+              
+              <ul class="dropdown-menu settings-menu dropdown-menu-right">
+                  <li><a class="dropdown-item" href="#"><i class="fa fa-cog fa-lg"></i> Settings</a></li>
+                  <li><a class="dropdown-item" href="#"><i class="fa fa-user fa-lg"></i> Profile</a></li>
+                  <li><a class="dropdown-item" href="{{ url('logout') }}"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
+              </ul>
+            
+            </li>
+
+
+
+            <li><a href="#" data-nav-section="education">Marking</a></li>
+            <li><a href="#" data-nav-section="experience">Experience</a></li>
+            <li><a href="#" data-nav-section="work">Work</a></li>
+            <li><a href="#" data-nav-section="blog">Blog</a></li>
+            <li><a href="#" data-nav-section="contact">Contact</a></li>
+            
+          </ul>
         </div>
+      </nav>
 
+    </aside>
+
+    <div id="colorlib-main">
+
+        <div class="card mb-3" style="margin-top: 30px">
+            <div class="card-header" id="supervisorlist">
+
+              <div class="row">
+                  <div class="col-md-6" style="margin-top: 21px;">
+                      Personal Project
+                  </div>
+
+              </div>
+
+            </div>
+              
+            <div class="card-body">
+
+           <!--  <input float="left" class="form-control" id="myInput2" type="text" placeholder="Search.."> -->
+
+              <div class="table-responsive">
+                <table class="table table-bordered" width="100%" cellspacing="0"
+                >
+                  <thead >
+                    <tr>
+                      
+                      <th>Project Id:</th>                      
+                      <th>view</th>
+                    </tr>
+                  </thead>
+
+                @foreach($personalstudents as $personalstudent)
+                  <tbody id="myTable">
+                    <tr>
+
+                      <td>{{$personalstudent->project_id}}</td>
+
+                      <td><a href="{{route('supervisor.view',$personalstudent->project_id)}}" class='btn btn-info btn-sm' name="name" >View</a></td>
+                      
+                    </tr>
+                  </tbody>
+                  @endforeach
+
+                </table>
+              </div>
+            </div>
+            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
     </div>
 
-    <!-- Jquery JS-->
-    <script src="vendor/jquery-3.2.1.min.js"></script>
-    <!-- Bootstrap JS-->
-    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
-    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
-    <!-- Vendor JS       -->
-    <script src="vendor/slick/slick.min.js">
-    </script>
-    <script src="vendor/wow/wow.min.js"></script>
-    <script src="vendor/animsition/animsition.min.js"></script>
-    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
-    </script>
-    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
-    <script src="vendor/counter-up/jquery.counterup.min.js">
-    </script>
-    <script src="vendor/circle-progress/circle-progress.min.js"></script>
-    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
-    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
-    <script src="vendor/select2/select2.min.js">
-    </script>
-    <script src="vendor/vector-map/jquery.vmap.js"></script>
-    <script src="vendor/vector-map/jquery.vmap.min.js"></script>
-    <script src="vendor/vector-map/jquery.vmap.sampledata.js"></script>
-    <script src="vendor/vector-map/jquery.vmap.world.js"></script>
+    <div class="card mb-3" style="margin-top: 30px">
+            <div class="card-header" id="supervisorlist">
 
-    <!-- Main JS-->
-    <script src="js/main.js"></script>
+              <div class="row">
+                  <div class="col-md-6" style="margin-top: 21px;">
+                      All Project
+                  </div>
+      
+                  <div class="col-md-6">
+                      <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                  </div>
+              </div>
 
-</body>
+            </div>
+              
+            <div class="card-body">
 
+           <!--  <input float="left" class="form-control" id="myInput2" type="text" placeholder="Search.."> -->
+
+              <div class="table-responsive">
+                <table class="table table-bordered" width="100%" cellspacing="0"
+                >
+                  <thead >
+                    <tr>
+                      <th>Supervisor Id:</th>
+                      <th>Supervisor Name:</th>
+                      <th>Course Code:</th>                      
+                      <th>semester</th>
+                      <th>studentid one</th>
+                      <th>studentid two</th>
+                      <th>studentid three</th>
+                      <th>view</th>
+                    </tr>
+                  </thead>
+
+                @foreach($supervisorstudents as $supervisorstudent)
+                  <tbody id="myTable">
+                    <tr>
+
+                      <td>{{$supervisorstudent->personal_id}}</td>
+
+                      <td>{{$supervisorstudent->supervisor_name}}</td>
+
+                      <td>{{$supervisorstudent->course_code}}</td>
+
+                      <td>{{$supervisorstudent->semester}}</td>
+
+                      <td>{{$supervisorstudent->studentid_one}}</td>
+
+                      <td>{{$supervisorstudent->studentid_two}}</td>
+
+                      <td>{{$supervisorstudent->studentid_three}}</td>
+
+                      <td><a href="{{route('supervisor.view',$supervisorstudent->project_id)}}" class='btn btn-info btn-sm' name="name" >View</a></td>
+                      
+                    </tr>
+                  </tbody>
+                  @endforeach
+
+                </table>
+              </div>
+            </div>
+            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+    </div>
+
+  
+    </div><!-- end:colorlib-main -->
+  </div><!-- end:container-wrap -->
+</div><!-- end:colorlib-page -->
+
+
+
+
+
+  
+  <!-- MAIN JS -->
+  <script>src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/main.js"></script>
+      <!-- Bootstrap core JavaScript-->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  
+      <!-- Core plugin JavaScript-->
+      <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  
+      <!-- Page level plugin JavaScript-->
+      <script src="vendor/datatables/jquery.dataTables.js"></script>
+      <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+  
+      <!-- Custom scripts for all pages-->
+      <script src="js/sb-admin.min.js"></script>
+  
+      <!-- Demo scripts for this page-->
+      <script src="js/demo/datatables-demo.js"></script>
+
+
+<!-- Search -->
+
+<script>
+    $(document).ready(function(){
+      $("#myInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#myTable tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+
+</script> 
+
+
+  </body>
 </html>
+

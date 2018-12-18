@@ -98,6 +98,7 @@ Route::group(['middleware'=>'auth'],function(){
 		Route::get('/marks_store',array('as'=>'marks_store','uses'=>'SupervisorController@marks_store'));
 		Route::post('/insert',array('as'=>'supervisor.insert',
 		'uses'=>'SupervisorController@insert'));
+		Route::get('/view/{project_id}/view_project','SupervisorController@view_project')->name('supervisor.view_project');
 		//Supervisor LoginPage
 
 

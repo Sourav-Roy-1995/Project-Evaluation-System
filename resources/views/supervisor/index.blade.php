@@ -21,9 +21,6 @@
   <meta name="twitter:url" content="" />
   <meta name="twitter:card" content="" />
 
-
-  <link rel="stylesheet" href="css/profile.css">
-
     <!-- Date Format -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>  
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>  
@@ -31,6 +28,7 @@
 
     <link rel="stylesheet" href="css/admin-css/css/main.css">
     <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/profile.css">
 
 </head>
 
@@ -38,32 +36,24 @@
 
   <div id="colorlib-page">
     <div class="container-wrap">
-    <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+    <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target=".navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
     <aside id="colorlib-aside" role="complementary" class="border js-fullheight">
       <div class="text-center">
         <div class="author-img" style="background-image: url(images/about.jpg);"></div>
-        <h1 id="colorlib-logo"><a href="index.html">{{ Auth::User()->name }}</a></h1>
+        <h1 id="colorlib-logo"><a href="#">{{ Auth::User()->name }}</a></h1>
         <span class="position"><a href="#">Faculty</a> in Leading University</span>
       </div>
       <nav id="colorlib-main-menu" role="navigation" class="navbar">
-        <div id="navbar" class="collapse">
+        <div class="navbar" class="collapse">
           <ul>
-            <li class="active"><a href="http://localhost/final_year_project/public" data-nav-section="home">Home</a></li>
+            <li class="active"><a href="{{ asset('/') }}" data-nav-section="home">Home</a></li>
             <li><a href="#" data-nav-section="about">About</a></li>
-            <li><a href="#" data-nav-section="personal_project">Project List</a></li>
-            <li class="dropdown"><a href="#" data-toggle="dropdown" data-nav-section="project_list">Personal Project</a>
-              
-              <ul class="dropdown-menu settings-menu dropdown-menu-right">
-                  <li><a class="dropdown-item" href="#"><i class="fa fa-cog fa-lg"></i> Settings</a></li>
-                  <li><a class="dropdown-item" href="#"><i class="fa fa-user fa-lg"></i> Profile</a></li>
-                  <li><a class="dropdown-item" href="{{ url('logout') }}"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
-              </ul>
-            
-            </li>
+            <li><a href="#personal" data-nav-section="personal_project">Personal Project</a></li>
+            <li class="dropdown"><a href="#all" data-toggle="dropdown" data-nav-section="project_list">All Project</a></li>
 
 
 
-            <li><a href="#" data-nav-section="education">Marking</a></li>
+            <li><a href="#marking" data-nav-section="education">Marking</a></li>
             <li><a href="#" data-nav-section="experience">Experience</a></li>
             <li><a href="#" data-nav-section="work">Work</a></li>
             <li><a href="#" data-nav-section="blog">Blog</a></li>
@@ -78,23 +68,27 @@
     <div id="colorlib-main">
 
         <div class="card mb-3" style="margin-top: 30px">
-            <div class="card-header" id="supervisorlist">
+            <div class="card-header" id="personal" style="background-color: #2C3034;color: white;">
 
               <div class="row">
-                  <div class="col-md-6" style="margin-top: 21px;">
-                      Personal Project
-                  </div>
+                <div class="col-md-6" style="margin-top: 21px;">
+                  Personal Project
+              </div>
+  
+              <div class="col-md-6">
+                  <input class="form-control" id="myInput2" type="text" placeholder="Search..">
+              </div>
 
               </div>
 
             </div>
               
-            <div class="card-body">
+            <div class="card-body" style="border: 1px solid #2C3034;">
 
            <!--  <input float="left" class="form-control" id="myInput2" type="text" placeholder="Search.."> -->
 
-              <div class="table-responsive">
-                <table class="table table-bordered" width="100%" cellspacing="0"
+              <div class="table-responsive ">
+                <table class="table table-bordered table-striped table-dark table-hover" width="100%" cellspacing="0"
                 >
                   <thead >
                     <tr>
@@ -105,12 +99,12 @@
                   </thead>
 
                 @foreach($personalstudents as $personalstudent)
-                  <tbody id="myTable">
+                  <tbody id="myTable2">
                     <tr>
 
-                      <td>{{$personalstudent->project_id}}</td>
+                      <td style="font-weight: bold;">{{$personalstudent->project_id}}</td>
 
-                      <td><a href="{{route('supervisor.view',$personalstudent->project_id)}}" class='btn btn-info btn-sm' name="name" >View</a></td>
+                      <td><a href="{{route('supervisor.view_project',$personalstudent->project_id)}}" class='btn btn-info btn-sm' name="name" style="background: #004A43;border:2px solid #004A43;font-weight: bold;font-size: xx-small;font-family: initial;" >View</a></td>
                       
                     </tr>
                   </tbody>
@@ -119,15 +113,69 @@
                 </table>
               </div>
             </div>
-            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+            <div class="card-footer small text-muted" style="background-color: #2C3034;color: white;">Updated yesterday at 11:59 PM</div>
+        </div>
+
+
+        <div class="card mb-3" style="margin-top: 30px">
+            <div class="card-header" id="all" style="background-color: #2C3034;color: white;">
+
+              <div class="row">
+                <div class="col-md-6" style="margin-top: 21px;">
+                  All Project
+              </div>
+  
+              <div class="col-md-6">
+                  <input class="form-control" id="myInput3" type="text" placeholder="Search..">
+              </div>
+
+              </div>
+
+            </div>
+              
+            <div class="card-body" style="border: 1px solid #2C3034;">
+
+           <!--  <input float="left" class="form-control" id="myInput2" type="text" placeholder="Search.."> -->
+
+              <div class="table-responsive ">
+                <table class="table table-bordered table-striped table-dark table-hover" width="100%" cellspacing="0"
+                >
+                  <thead >
+                    <tr>
+                      
+                      <th>Project Id:</th>                      
+                      <th>view</th>
+                    </tr>
+                  </thead>
+
+                @foreach($allstudents as $allstudent)
+                  <tbody id="myTable3">
+                    <tr>
+
+                      <td style="font-weight: bold;">{{$allstudent->project_id}}</td>
+
+                      <td><a href="{{route('supervisor.view_project',$allstudent->project_id)}}" class='btn btn-info btn-sm' name="name" style="background: #004A43;border:2px solid #004A43;font-weight: bold;font-size: xx-small;font-family: initial;" >View</a></td>
+                      
+                    </tr>
+                  </tbody>
+                  @endforeach
+
+                </table>
+              </div>
+            </div>
+            <div class="card-footer small text-muted" style="background-color: #2C3034;color: white;">Updated yesterday at 11:59 PM</div>
     </div>
 
+
+
+
+
     <div class="card mb-3" style="margin-top: 30px">
-            <div class="card-header" id="supervisorlist">
+            <div class="card-header" id="marking" style="background-color: #2C3034;color: white;">
 
               <div class="row">
                   <div class="col-md-6" style="margin-top: 21px;">
-                      All Project
+                      Marking
                   </div>
       
                   <div class="col-md-6">
@@ -137,12 +185,12 @@
 
             </div>
               
-            <div class="card-body">
+            <div class="card-body"  style="border: 1px solid #2C3034;">
 
            <!--  <input float="left" class="form-control" id="myInput2" type="text" placeholder="Search.."> -->
 
               <div class="table-responsive">
-                <table class="table table-bordered" width="100%" cellspacing="0"
+                <table class="table table-bordered table-striped table-dark table-hover" width="100%" cellspacing="0"
                 >
                   <thead >
                     <tr>
@@ -161,21 +209,21 @@
                   <tbody id="myTable">
                     <tr>
 
-                      <td>{{$supervisorstudent->personal_id}}</td>
+                      <td style="font-weight: bold;">{{$supervisorstudent->personal_id}}</td>
 
-                      <td>{{$supervisorstudent->supervisor_name}}</td>
+                      <td style="font-weight: bold;">{{$supervisorstudent->supervisor_name}}</td>
 
-                      <td>{{$supervisorstudent->course_code}}</td>
+                      <td style="font-weight: bold;">{{$supervisorstudent->course_code}}</td>
 
-                      <td>{{$supervisorstudent->semester}}</td>
+                      <td style="font-weight: bold;">{{$supervisorstudent->semester}}</td>
 
-                      <td>{{$supervisorstudent->studentid_one}}</td>
+                      <td style="font-weight: bold;">{{$supervisorstudent->studentid_one}}</td>
 
-                      <td>{{$supervisorstudent->studentid_two}}</td>
+                      <td style="font-weight: bold;">{{$supervisorstudent->studentid_two}}</td>
 
-                      <td>{{$supervisorstudent->studentid_three}}</td>
+                      <td style="font-weight: bold;">{{$supervisorstudent->studentid_three}}</td>
 
-                      <td><a href="{{route('supervisor.view',$supervisorstudent->project_id)}}" class='btn btn-info btn-sm' name="name" >View</a></td>
+                      <td><a href="{{route('supervisor.view',$supervisorstudent->project_id)}}" class='btn btn-info btn-sm' name="name" style="background: #004A43;border:2px solid #004A43;font-weight: bold;font-size: xx-small;font-family: initial;" >View</a></td>
                       
                     </tr>
                   </tbody>
@@ -184,7 +232,7 @@
                 </table>
               </div>
             </div>
-            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+            <div class="card-footer small text-muted" style="background-color: #2C3034;color: white;">Updated yesterday at 11:59 PM</div>
     </div>
 
   
@@ -197,27 +245,18 @@
 
 
   
-  <!-- MAIN JS -->
-  <script>src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="js/main.js"></script>
-      <!-- Bootstrap core JavaScript-->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  
-      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  
-      <!-- Core plugin JavaScript-->
-      <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-  
-      <!-- Page level plugin JavaScript-->
-      <script src="vendor/datatables/jquery.dataTables.js"></script>
-      <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
-  
-      <!-- Custom scripts for all pages-->
-      <script src="js/sb-admin.min.js"></script>
-  
-      <!-- Demo scripts for this page-->
-      <script src="js/demo/datatables-demo.js"></script>
+      <!-- MAIN JS -->
+      <script>src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="js/main.js"></script>
+
+
+      <!-- Waypoints -->
+      <script src="js/jquery.waypoints.min.js"></script>
+
+      <!-- Counters -->
+      <script src="js/jquery.countTo.js"></script>
+      <script src="js/profile.js"></script>
+
 
 
 <!-- Search -->
@@ -227,6 +266,25 @@
       $("#myInput").on("keyup", function() {
         var value = $(this).val().toLowerCase();
         $("#myTable tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+
+
+    $(document).ready(function(){
+      $("#myInput2").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#myTable2 tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+
+    $(document).ready(function(){
+      $("#myInput3").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#myTable3 tr").filter(function() {
           $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
       });

@@ -44,10 +44,15 @@ class SupervisorController extends Controller
 
         $personalstudents = DB::table('project_lists')
         ->where('project_lists.personal_id', '=', $user->personal_id)
-        ->select('project_id')
+        ->select('project_id','project_name','description','course_code','semester','studentid_one','studentid_two','studentid_three')
         ->get();
 
-        return view('supervisor.index',compact('supervisorstudents','personalstudents'));
+
+        $allstudents = DB::table('project_lists')
+        ->select('project_id','project_name','description','course_code','semester','studentid_one','studentid_two','studentid_three')
+        ->get();
+
+        return view('supervisor.index',compact('supervisorstudents','personalstudents','allstudents'));
 
 	}
 
@@ -60,13 +65,20 @@ class SupervisorController extends Controller
 
     }
 
+    public function view_project($project_id)
+    {
+        //
+        $personalstudents = ProjectList::findOrFail($project_id);
+        return view('supervisor.view_project',compact('personalstudents')); 
+
+    }
+
     public function marks_store(Request $request)
     {
         //
         $data = MarkingSystem::select('total')->where('project_id',$request->project_id)->first();
         return response()->json($data);
-
-        
+ 
     }
 
     public function insert(Request $request){
