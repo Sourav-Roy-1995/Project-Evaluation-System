@@ -71,11 +71,11 @@
             <div class="card-header" id="personal" style="background-color: #2C3034;color: white;">
 
               <div class="row">
-                <div class="col-md-6 col-sm-6" style="margin-top: 21px;">
+                <div class="col-md-6 col-sm-6 col-xs-2 personal_project" style="margin-top: 21px;">
                   Personal Project
               </div>
   
-              <div class="col-md-6 col-sm-6">
+              <div class="col-md-6 col-sm-6 col-xs-4">
                   <input class="search" id="myInput2" type="text" placeholder="Search.." >
               </div>
 
@@ -179,7 +179,8 @@
                   </div>
       
                   <div class="col-md-6">
-                      <input class="search" id="myInput" type="text" placeholder="search..">
+                      
+                      <input type="text" id="myInput" name="search_input" class="search_input search" placeholder="search...">
                   </div>
               </div>
 

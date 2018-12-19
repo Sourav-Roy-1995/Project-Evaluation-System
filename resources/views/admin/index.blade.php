@@ -47,6 +47,14 @@
 
   </head>
 
+  <style rel="stylesheet">
+      #marks_input{
+        pointer-events: none;
+      }
+  </style>
+
+
+
   <body id="page-top">
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light" id="custom-nav">
@@ -306,7 +314,6 @@
 
 
 @if(count($errors) > 0)
-
       <div class="alert alert-danger">
         
         <ul>
@@ -319,7 +326,6 @@
         </ul>
 
       </div>
-
 @endif
 
 
@@ -523,24 +529,24 @@
             <tr>
 
               <td>
-                  <input class="form-control student_id" type="text" name="student_id[]" placeholder="Student ID" style="width:100px" value="{{$mark->student_id}}">
+                  <input id="marks_input" class="form-control student_id" type="text" name="student_id[]" placeholder="Student ID" style="width:110px" value="{{$mark->student_id}}">
               </td>
 
               <td>
-                  <input class="form-control category_one" type="text" name="category_one[]" placeholder="Category One" style="width:100px" value="{{$mark->category_one}}">
+                  <input id="marks_input" class="form-control category_one" type="text" name="category_one[]" placeholder="Category One" style="width:100px" value="{{$mark->category_one}}">
               </td> 
 
               <td>
-                  <input class="form-control category_two" type="text" name="category_two[]" placeholder="Category Two" style="width:100px" value="{{$mark->category_two}}">
+                  <input id="marks_input" class="form-control category_two" type="text" name="category_two[]" placeholder="Category Two" style="width:100px" value="{{$mark->category_two}}">
               </td> 
 
               <td>
-                  <input class="form-control supervisor_marks" type="text" name="supervisor_marks[]" style="background:white;width:110px";
+                  <input id="marks_input" class="form-control supervisor_marks" type="text" name="supervisor_marks[]" style="background:white;width:110px";
                   value="{{$mark->supervisor_marks}}">
               </td> 
 
               <td>
-                  <input class="form-control total" type="text" name="total[]"
+                  <input id="marks_input" class="form-control total" type="text" name="total[]"
                   placeholder="Total Marks" style="background:white;cursor:default;width:100px" value="{{$mark->total}}" > 
 
               </td> 
@@ -555,6 +561,12 @@
       </div>
 
       <div class="table-responsive">
+
+        @if(Session::has('flash_message'))
+                  <div class="alert alert-success">
+                      {{ Session::get('flash_message') }}
+                  </div>
+        @endif
 
           {!! Form::open(['id'=>'search_form','class'=>'search_form',     
           'method'=>'POST','action'=>'AdminController@store_final','files'=>true]) !!}
@@ -579,15 +591,15 @@
           ?>      
              <tr>
               <td>
-                  <input class="form-control studentid" type="text" name="studentid[]" placeholder="Student ID" style="width:100px" value=<?php echo $keys[$i] ?>>
+                  <input id="marks_input" class="form-control studentid" type="text" name="studentid[]" placeholder="Student ID" style="width:110px" value=<?php echo $keys[$i] ?>>
               </td>
 
               <td>
-                  <input class="form-control counter" type="text" name="counter[]" placeholder="Counter" style="width:100px" value=<?php echo  $a[$keys[$i]] ?>>
+                  <input id="marks_input" class="form-control counter" type="text" name="counter[]" placeholder="Counter" style="width:100px" value=<?php echo  $a[$keys[$i]] ?>>
               </td>
 
               <td>
-                  <input class="form-control final_mark" type="text" name="final_mark[]" placeholder="Final Mark" style="width:100px" value=<?php echo $avg ?>>
+                  <input id="marks_input" class="form-control final_mark" type="text" name="final_mark[]" placeholder="Final Mark" style="width:100px" value=<?php echo $avg ?>>
               </td>
 
             </tr>
@@ -612,6 +624,22 @@
         </div>
 
         {!! Form::close() !!} 
+
+
+        @if(count($errors) > 0)
+          <div class="alert alert-danger">
+            
+            <ul>
+              @foreach($errors->all() as $error)
+
+                <li>{{$error}}</li>
+
+              @endforeach
+
+            </ul>
+
+          </div>
+       @endif
 
 </div>
 
@@ -682,10 +710,6 @@
     <script src="js/demo/datatables-demo.js"></script>
 
 
-    
-
-
-
         <!-- Search -->
 
         <script>
@@ -712,6 +736,7 @@
               });
             });
 
+            
     </script> 
 
     <!-- Search -->

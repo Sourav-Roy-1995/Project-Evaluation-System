@@ -1,11 +1,32 @@
-
-  @media screen and (max-width: 992px) {
+@media screen and (max-width: 992px) {
     body {
-      font-size: 16px; } }
+        font-size: 16px; 
+    } 
+}
 
-    @media screen and (max-width: 480px) {
+    
+@media screen and (max-width: 480px) {
       figure figcaption {
-        width: 100%; } }
+        width: 100%; 
+      } 
+  }
+
+@media screen and (max-width: 575px) {
+
+    .personal_project{width: 12pc;
+      font-size: 16px;}
+    
+    .search {
+      width: 32%;
+      height: 28px;
+      margin-top: -29px;
+      position: absolute;
+      right: 20px;
+      top: 0px;
+      z-index: 2;
+  
+  }
+}        
 
 
 #colorlib-aside {

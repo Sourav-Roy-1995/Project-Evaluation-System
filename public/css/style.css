@@ -52,7 +52,6 @@ body {
   padding-bottom: 80px;
 }
 
-.business-detail-row{}
 .business-detail-row h5{
 
     text-align:center;
@@ -62,11 +61,6 @@ body {
     font-weight: bold;
 }
 
-#myInput {
-    margin-top: 15px;
-    border-radius: 0px;
-    margin-bottom: 10px;
-}
 
 #datepicker {
     border-radius: 0px;
