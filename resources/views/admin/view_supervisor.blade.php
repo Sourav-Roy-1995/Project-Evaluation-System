@@ -19,7 +19,10 @@
     <!-- Page level plugin CSS-->
     <link href="{{ asset('vendor/datatables/dataTables.bootstrap4.css') }}" rel="stylesheet">
 
-    <!-- Custom styles for this template-->
+        <!-- Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Charm" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Charm|Staatliches" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Charm|Lobster|Staatliches" rel="stylesheet">
    
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -45,62 +48,66 @@
   </head>
   
 
-<body id="page-top">
+<body id="page-top" class="bg">
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="custom-nav">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="custom-nav">
 
-          <a class="navbar-brand" href="http://localhost/final_year_project/public">Dept. Of CSE</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-          </button>
+    <a class="navbar-brand form-txt-four" href="http://localhost/final_year_project/public">Dept. Of CSE</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-              <ul class="navbar-nav mr-auto nav-list list-inline mx-auto justify-content-center">
+        <ul class="navbar-nav mr-auto nav-list list-inline mx-auto justify-content-center form-txt-four">
 
-                <li class="nav-item ">
-                  <a class="nav-link" href="importExport">Add Students</a>
+          <li class="nav-item ">
+            <a class="nav-link" href="importExport">Add Students</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#add_supervisor">Add Supervisor</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#projectstudent">Project Student List</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#all_user">User List</a>
+          </li>
+
+          <li class="nav-item">
+              <a class="nav-link" href="#result">Result</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#reg">Project Registration</a>
+          </li>
+
+            <!-- User Menu-->
+
+                <li class="dropdown" style="position: absolute;right: 0;top:0"> <a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
+                    <ul class="dropdown-menu settings-menu dropdown-menu-right">
+                        <li><a class="dropdown-item" href="#"><i class="fa fa-cog fa-lg"></i> Settings</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fa fa-user fa-lg"></i> Profile</a></li>
+                        <li><a class="dropdown-item" href="{{ url('logout') }}"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
+                    </ul>
                 </li>
 
-                <li class="nav-item">
-                  <a class="nav-link" href="#con">Add Supervisor</a>
-                </li>
+        </ul>
+       
+    </div>
 
-                <li class="nav-item">
-                  <a class="nav-link" href="index2">Project Student List</a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" href="add_business.php">Final Year Student List</a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" href="#all_user">User List</a>
-                </li>
-
-                  <!-- User Menu-->
-
-                      <li class="dropdown" style="position: absolute;right: 0;top:0"> <a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
-                          <ul class="dropdown-menu settings-menu dropdown-menu-right">
-                              <li><a class="dropdown-item" href="#"><i class="fa fa-cog fa-lg"></i> Settings</a></li>
-                              <li><a class="dropdown-item" href="#"><i class="fa fa-user fa-lg"></i> Profile</a></li>
-                              <li><a class="dropdown-item" href="{{ url('logout') }}"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
-                          </ul>
-                      </li>
-
-              </ul>
-             
-          </div>
-
-    </nav>
+  </nav>
 
 <!--Content Form -->
-<div class="row" style="margin-top: 120px;">
+<div class="row form-txt" style="margin-top: 120px;">
 <div class="container">
-   <div id="con" class="card">
+   <div id="con" class="card custom-card-two mx-auto mt-5">
       <div class="card-header col-md-12">
           Update Supervisor 
-          <a href="javascript:history.back()" class="btn btn-info btn-sm float-right">Back</a>
+          <a href="javascript:history.back()" class="btn btn-dark btn-sm custom-btn float-right">Back</a>
       </div>
 
 
@@ -117,7 +124,7 @@
       <div class="col-md-6">
         <div class="form-label-group">        
 
-          {!! Form::text('project_id',null,['class'=>'form-control']) !!}
+          {!! Form::text('project_id',null,['class'=>'form-control disable-input']) !!}
 
           {!! Form::label('project_id','Project ID: ') !!}
 
@@ -164,8 +171,8 @@
 
       <div class="card-footer text-right">
                <div class="btn-group" role="group" aria-label="Basic example">
-                    <a href="javascript:history.back()" class="btn btn-info custom-btn btn-sm">Cancle</a>
-                         {!! Form::submit('Update',['class'=>'btn btn-info btn-sm']) !!}
+                    <a href="javascript:history.back()" class="btn btn-dark btn-sm custom-btn">Cancle</a>
+                         {!! Form::submit('Update',['class'=>'btn btn-dark btn-sm custom-btn']) !!}
                 
       
 
@@ -177,7 +184,7 @@
           {{csrf_field()}}
 
    
-            {!! Form::submit('Delete',['class'=>'btn btn-danger btn-sm']) !!}
+            {!! Form::submit('Delete',['class'=>'btn btn-dark btn-sm custom-btn']) !!}
 
           </div>	
 {!! Form::close() !!} 

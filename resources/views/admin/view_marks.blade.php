@@ -19,6 +19,11 @@
     <!-- Page level plugin CSS-->
     <link href="{{ asset('vendor/datatables/dataTables.bootstrap4.css') }}" rel="stylesheet">
 
+        <!-- Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Charm" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Charm|Staatliches" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Charm|Lobster|Staatliches" rel="stylesheet">
+
     <!-- Custom styles for this template-->
    
 
@@ -46,62 +51,66 @@
   </head>
   
 
-<body id="page-top">
+<body id="page-top" class="bg">
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="custom-nav">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="custom-nav">
 
-          <a class="navbar-brand" href="http://localhost/final_year_project/public">Dept. Of CSE</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">           
-          <span class="navbar-toggler-icon"></span>
-          </button>
+    <a class="navbar-brand form-txt-four" href="http://localhost/final_year_project/public">Dept. Of CSE</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-              <ul class="navbar-nav mr-auto nav-list list-inline mx-auto justify-content-center">
+        <ul class="navbar-nav mr-auto nav-list list-inline mx-auto justify-content-center form-txt-four">
 
-                <li class="nav-item ">
-                  <a class="nav-link" href="importExport">Add Students</a>
+          <li class="nav-item ">
+            <a class="nav-link" href="importExport">Add Students</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#add_supervisor">Add Supervisor</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#projectstudent">Project Student List</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#all_user">User List</a>
+          </li>
+
+          <li class="nav-item">
+              <a class="nav-link" href="#result">Result</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#reg">Project Registration</a>
+          </li>
+
+            <!-- User Menu-->
+
+                <li class="dropdown" style="position: absolute;right: 0;top:0"> <a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
+                    <ul class="dropdown-menu settings-menu dropdown-menu-right">
+                        <li><a class="dropdown-item" href="#"><i class="fa fa-cog fa-lg"></i> Settings</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fa fa-user fa-lg"></i> Profile</a></li>
+                        <li><a class="dropdown-item" href="{{ url('logout') }}"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
+                    </ul>
                 </li>
 
-                <li class="nav-item">
-                  <a class="nav-link" href="#con">Add Supervisor</a>
-                </li>
+        </ul>
+       
+    </div>
 
-                <li class="nav-item">
-                  <a class="nav-link" href="index2">Project Student List</a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" href="add_business.php">Final Year Student List</a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" href="#all_user">User List</a>
-                </li>
-
-                  <!-- User Menu-->
-
-                      <li class="dropdown" style="position: absolute;right: 0;top:0"> <a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
-                          <ul class="dropdown-menu settings-menu dropdown-menu-right">
-                              <li><a class="dropdown-item" href="#"><i class="fa fa-cog fa-lg"></i> Settings</a></li>
-                              <li><a class="dropdown-item" href="#"><i class="fa fa-user fa-lg"></i> Profile</a></li>
-                              <li><a class="dropdown-item" href="{{ url('logout') }}"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
-                          </ul>
-                      </li>
-
-              </ul>
-             
-          </div>
-
-    </nav>
+  </nav>
 
 <!--Content Form -->
-<div class="row" style="margin-top: 120px;">
+<div class="row form-txt" style="margin-top: 120px;">
 <div class="container">
-   <div id="con" class="card">
+   <div id="con" class="card custom-card-three mx-auto mt-5">
       <div class="card-header col-md-12">
           Update Marks
-          <a href="{{ asset('admin') }}" class="btn btn-info btn-sm float-right">Back</a>
+          <a href="{{ asset('admin') }}" class="btn btn-dark btn-sm custom-btn float-right">Back</a>
       </div>
 
 
@@ -120,7 +129,7 @@
       <div class="col-md-6">
         <div class="form-label-group">        
 
-          {!! Form::text('student_id',null,['class'=>'form-control','required'=>'required','data-error'=>'Input is required.']) !!}
+          {!! Form::text('student_id',null,['class'=>'form-control disable-input','required'=>'required','data-error'=>'Input is required.']) !!}
 
           {!! Form::label('student_id','Student ID: ') !!}
 
@@ -131,7 +140,7 @@
 
        <div class="form-label-group">          
 
-            {!! Form::text('category_one',null,['class'=>'form-control']) !!}
+            {!! Form::text('category_one',null,['class'=>'form-control category_one']) !!}
 
             {!! Form::label('category_one','Category One: ') !!}
          
@@ -149,7 +158,7 @@
 
             <div class="form-label-group">          
 
-                    {!! Form::text('category_two',null,['class'=>'form-control']) !!}
+                    {!! Form::text('category_two',null,['class'=>'form-control category_two']) !!}
         
                     {!! Form::label('category_two','Category Two: ') !!}
                  
@@ -160,7 +169,7 @@
 
             <div class="form-label-group">          
 
-                    {!! Form::text('supervisor_marks',null,['class'=>'form-control']) !!}
+                    {!! Form::text('supervisor_marks',null,['class'=>'form-control supervisor_marks']) !!}
         
                     {!! Form::label('supervisor_marks','Supervisor marks: ') !!}
                  
@@ -175,7 +184,7 @@
       
                   <div class="form-label-group">          
       
-                          {!! Form::text('total',null,['class'=>'form-control','required'=>'required','data-error'=>'Input is required.']) !!}
+                          {!! Form::text('total',null,['class'=>'form-control total','required'=>'required','data-error'=>'Input is required.']) !!}
               
                           {!! Form::label('total','Total: ') !!}
                        
@@ -189,8 +198,8 @@
 
       <div class="card-footer text-right">
             <div class="btn-group" role="group" aria-label="Basic example">
-                <a href="javascript:history.back()" class="btn btn-info custom-btn btn-sm">Cancle</a>
-                  {!! Form::submit('Send',['class'=>'btn btn-info btn-sm']) !!}
+                <a href="{{ asset('admin') }}" class="btn btn-dark btn-sm custom-btn">Cancle</a>
+                  {!! Form::submit('Send',['class'=>'btn btn-dark btn-sm custom-btn']) !!}
             </div>
       </div>      
 
@@ -246,6 +255,20 @@
 
     <!-- Demo scripts for this page-->
     <script src="{{URL::asset('js/demo/datatables-demo.js')}}"></script>
+
+    <script type="text/javascript">
+    
+
+        //Sum Marks
+        $('.row').delegate('.category_one,.category_two','keyup',function(){
+            var tr = $(this).parent().parent();
+            var category_one = parseFloat(tr.find('.category_one').val());
+            var category_two = parseFloat(tr.find('.category_two').val());
+            var total = (category_one + category_two);
+            tr.find('.total').val(total);
+      }); //Sum Marks
+
+    </script>
 
 
   </body>

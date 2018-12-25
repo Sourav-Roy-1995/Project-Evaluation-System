@@ -4,11 +4,11 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+            <div class="card custom-card-reg mx-auto mt-5">
+                <div class="card-header form-txt">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}" enctype="multipart/form-data">
+                    <form method="POST" class="form-txt" action="{{ route('register') }}" aria-label="{{ __('Register') }}" enctype="multipart/form-data">
                         @csrf
 
 
@@ -95,10 +95,12 @@
                         </div>
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary" name="upload">
+                            <div class="col-md-6 offset-md-4 btn-group" role="group">
+                                <button type="submit" class="btn btn-dark btn-sm custom-btn" name="upload">
                                     {{ __('Register') }}
                                 </button>
+                                
+                                <a href="{{ asset('/') }}" class="btn btn-dark btn-sm custom-btn">Back</a>
                             </div>
                         </div>
                     </form>

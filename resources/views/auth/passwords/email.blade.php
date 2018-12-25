@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card custom-card mx-auto mt-5">
                 <div class="card-header">{{ __('Reset Password') }}</div>
 
                 <div class="card-body">
@@ -32,10 +32,12 @@
                         </div>
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                            <div class="col-md-6 offset-md-4 btn-group" role="group">
+                                <button type="submit" class="btn btn-dark btn-sm custom-btn">
                                     {{ __('Send Password Reset Link') }}
                                 </button>
+
+                                <a href="{{ asset('supervisor') }}" class="btn btn-dark btn-sm custom-btn">Back</a>
                             </div>
                         </div>
                     </form>

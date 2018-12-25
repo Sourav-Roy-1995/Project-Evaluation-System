@@ -23,7 +23,14 @@
     <!-- Page level plugin CSS-->
     <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
-    <!-- Custom styles for this template-->
+    <!-- Fonts-->
+    <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/js/gijgo.min.js" type="text/javascript"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Charm" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Charm|Staatliches" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Charm|Lobster|Staatliches" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/css/gijgo.min.css" rel="stylesheet" type="text/css" />
    
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -55,18 +62,18 @@
 
 
 
-  <body id="page-top">
+  <body id="page-top" >
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light" id="custom-nav">
 
-          <a class="navbar-brand" href="http://localhost/final_year_project/public">Dept. Of CSE</a>
+          <a class="navbar-brand form-txt-four" href="http://localhost/final_year_project/public">Dept. Of CSE</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-              <ul class="navbar-nav mr-auto nav-list list-inline mx-auto justify-content-center">
+              <ul class="navbar-nav mr-auto nav-list list-inline mx-auto justify-content-center form-txt-four">
 
                 <li class="nav-item ">
                   <a class="nav-link" href="importExport">Add Students</a>
@@ -108,7 +115,7 @@
 
         </nav>
 
-    <div id="wrapper">
+    <div id="wrapper" >
 
       <!-- Sidebar -->
 
@@ -131,7 +138,7 @@
  
       </ul>
 
-<div id="content-wrapper">
+<div id="content-wrapper" class="form-txt-three">
 
         <div class="container-fluid">
 
@@ -183,7 +190,7 @@
 
                       <td>{{$supervisorstudent->studentid_three}}</td> 
                       
-                      <td><a href="{{route('admin.view_supervisor',$supervisorstudent->id)}}" class='btn btn-info btn-sm' name="name" >View</a></td>
+                      <td><a href="{{route('admin.view_supervisor',$supervisorstudent->id)}}" class='btn btn-info btn-sm custom-btn' name="name" >View</a></td>
                     </tr>
                   </tbody>
                   @endforeach
@@ -234,7 +241,7 @@
                       <td>{{$post->studentid_one}}</td>
                       <td>{{$post->studentid_two}}</td>
                       <td>{{$post->studentid_three}}</td>
-                      <td><a href="{{route('admin.view',$post->project_id)}}" class='btn btn-info btn-sm' name="name" >View</a></td>
+                      <td><a href="{{route('admin.view',$post->project_id)}}" class='btn btn-info btn-sm custom-btn' name="name" >View</a></td>
                     </tr>
                   </tbody>
                   @endforeach
@@ -305,7 +312,7 @@
 <div class="card-footer text-right">
     <div class="btn-group" role="group" aria-label="Basic example">
        <a href="javascript:history.back()" class="btn btn-info custom-btn btn-sm">Cancle</a>
-         {!! Form::submit('Update',['class'=>'btn btn-info btn-sm']) !!}
+         {!! Form::submit('Update',['class'=>'btn btn-info btn-sm custom-btn']) !!}
     </div>
 </div>      
 
@@ -356,7 +363,7 @@
                     <tr>
                       <td>{{$userlist->personal_id}}</td>
                       <td>{{$userlist->name}}</td>
-                      <td><a href="{{route('admin.edit',$userlist->id)}}" class='btn btn-info btn-sm' name="name" >View</a></td>
+                      <td><a href="{{route('admin.edit',$userlist->id)}}" class='btn btn-info btn-sm custom-btn' name="name" >View</a></td>
                     </tr>
                   </tbody>
                   @endforeach
@@ -373,7 +380,7 @@
      <div id="con" class="card">
         <div class="card-header col-md-12" id="add_supervisor">
             Supervisor Distribution
-            <a href="#supervisorlist" class="btn btn-info btn-sm float-right">View</a>
+            <a href="#supervisorlist" class="btn btn-info btn-sm float-right custom-btn">View</a>
         </div>
   
   
@@ -446,8 +453,8 @@
   
   <div class="card-footer text-right">
       <div class="btn-group" role="group" aria-label="Basic example">
-         <a href="javascript:history.back()" class="btn btn-info custom-btn btn-sm">Cancle</a>
-           {!! Form::submit('Update',['class'=>'btn btn-info btn-sm']) !!}
+         <a href="javascript:history.back()" class="btn btn-info custom-btn btn-sm custom-btn">Cancle</a>
+           {!! Form::submit('Update',['class'=>'btn btn-info btn-sm custom-btn']) !!}
       </div>
   </div>      
   
@@ -551,7 +558,7 @@
 
               </td> 
 
-              <td><a href="{{route('admin.view_mark',$mark->id)}}" class='btn btn-info btn-sm' name="update" >Update</a></td>
+              <td><a href="{{route('admin.view_mark',$mark->id)}}" class='btn btn-info btn-sm custom-btn' name="update" >Update</a></td>
             </tr>
           </tbody>
 
@@ -692,7 +699,8 @@
 
     <!-- Bootstrap core JavaScript-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 

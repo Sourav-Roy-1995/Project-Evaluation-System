@@ -202,13 +202,16 @@
         });
 
     });
+
+    //Sum Marks
     $('tbody').delegate('.category_one,.category_two','keyup',function(){
             var tr = $(this).parent().parent();
             var category_one = parseFloat(tr.find('.category_one').val());
             var category_two = parseFloat(tr.find('.category_two').val());
             var total = (category_one + category_two);
             tr.find('.total').val(total);
-    });
+    }); //Sum Marks
+
     window.onload = function addRow(){
          std_three = "{{$supervisorstudents->studentid_three}}"
          std_two = "{{$supervisorstudents->studentid_two}}"
