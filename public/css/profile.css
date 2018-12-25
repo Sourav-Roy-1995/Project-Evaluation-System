@@ -61,6 +61,7 @@
     -ms-border-radius: 50%;
     border-radius: 50%; }
   #colorlib-aside .position {
+   
     display: block;
     margin-bottom: 2em;
     font-size: 12px;
@@ -99,7 +100,7 @@
         text-transform: uppercase;
         letter-spacing: 1px; }
         #colorlib-aside #colorlib-main-menu ul li a {
-          color: rgba(0, 0, 0, 0.7);
+          color: #004A43!important;
           text-decoration: none;
           position: relative;
           padding: 10px 0;
@@ -107,7 +108,8 @@
           -webkit-transition: 0.3s;
           -o-transition: 0.3s;
           transition: 0.3s; 
-          font-weight: bold;}
+          font-weight: bold;
+          font-size: 13px;}
           #colorlib-aside #colorlib-main-menu ul li a:after {
             content: "";
             position: absolute;
@@ -358,6 +360,7 @@ body.offcanvas {
       padding-bottom: 8em; } }
 
 .author-img {
+  background: url('../images/about.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;

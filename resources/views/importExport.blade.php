@@ -44,12 +44,12 @@
 
   </head>
 
-<body>     
+<body class="bg">     
 
  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="custom-nav">
 
           <a class="navbar-brand" href="http://localhost/final_year_project/public">Dept. Of CSE</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
 
@@ -90,99 +90,94 @@
 </nav>
 
 <div id="content-wrapper">
-        <div class="container">
-
-                <div id="con" class="card">
-
-                    <div class="card-header col-md-12">
-                      Student List For Project
-                      <a href="{{url('/admin')}}" class="btn btn-info btn-sm float-right">Back</a>
-                    </div>
+        <div class="container-fluid">
 
 
-           <form  action="{{ url('importExcel') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
+                        <div id="std-con" class="card">
 
-                @csrf
-
-
-                @if ($errors->any())
-
-                    <div class="alert alert-danger">
-
-                        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-
-                        <ul>
-
-                            @foreach ($errors->all() as $error)
-
-                                <li>{{ $error }}</li>
-
-                            @endforeach
-
-                        </ul>
-
-                    </div>
-
-                @endif
-
- 
-
-                @if (Session::has('flash_message'))
-
-                    <div class="alert alert-success">
-
-                        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-
-                        <p>{{ Session::get('flash_message') }}</p>
-
-                    </div>
-
-                @endif
-                    <div class="card-body">
-                            <div class="row">
-
-                                <div class="col-md-12">
-
-                                    <div class="form-group">
-                                        <div class="form-label-group">
-
-                                            <input type="file" name="import_file" id="name" >
-                                            <label for="import_file">File</label>
-
-                                        </div>
-                                    </div>
-
+                                <div class="card-header col-md-12">
+                                  Student List For Project
+                                  <a href="{{url('/admin')}}" class="btn btn-info btn-sm float-right">Back</a>
                                 </div>
-
-                            </div>
-
+            
+            
+                       <form  action="{{ url('importExcel') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
+            
+                            @csrf
+            
+            
+                            @if ($errors->any())
+            
+                                <div class="alert alert-danger">
+            
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+            
+                                    <ul>
+            
+                                        @foreach ($errors->all() as $error)
+            
+                                            <li>{{ $error }}</li>
+            
+                                        @endforeach
+            
+                                    </ul>
+            
+                                </div>
+            
+                            @endif
+            
+             
+            
+                            @if (Session::has('flash_message'))
+            
+                                <div class="alert alert-success">
+            
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+            
+                                    <p>{{ Session::get('flash_message') }}</p>
+            
+                                </div>
+            
+                            @endif
+                                <div class="card-body">
+                                        <div class="row">
+            
+                                            <div class="col-md-12">
+            
+                                                <div class="form-group">
+                                                    <div class="form-label-group">
+            
+                                                        <input type="file" name="import_file" id="name" >
+                                                        <label for="import_file">File</label>
+            
+                                                    </div>
+                                                </div>
+            
+                                            </div>
+            
+                                        </div>
+            
+                                </div>
+                                <div class="card-footer text-right">
+            
+                                  <div class="btn-group" role="group" aria-label="Basic example">
+                         <a href="javascript:history.back()" class="btn btn-info custom-btn btn-sm">Cancle</a>           
+                         <a  class="btn btn-info btn-sm" href="{{ url('downloadExcel/xls') }}"> Download XLS</a>
+            
+                        <a  class="btn btn-info btn-sm" href="{{ url('downloadExcel/xlsx') }}">Download XLSX</a>
+            
+                        <a class="btn btn-info btn-sm" href="{{ url('downloadExcel/csv') }}">Download CSV</a>
+                                        
+                                        <button type="submit" class="btn btn-info btn-sm" >Import File</button>
+                                    </div>
+                                </div>
+                        </form>
+            
+            
                     </div>
-                    <div class="card-footer text-right">
-
-                      <div class="btn-group" role="group" aria-label="Basic example">
-             <a href="javascript:history.back()" class="btn btn-info custom-btn btn-sm">Cancle</a>           
-             <a  class="btn btn-info btn-sm" href="{{ url('downloadExcel/xls') }}"> Download XLS</a>
-
-            <a  class="btn btn-info btn-sm" href="{{ url('downloadExcel/xlsx') }}">Download XLSX</a>
-
-            <a class="btn btn-info btn-sm" href="{{ url('downloadExcel/csv') }}">Download CSV</a>
-                            
-                            <button type="submit" class="btn btn-info btn-sm" >Import File</button>
-                        </div>
-                    </div>
-            </form>
+            
 
 
-        </div>
-
-            <!-- Sticky Footer -->
-            <footer class="sticky-footer" style="width: calc(100%);">
-              <div class="container my-auto">
-                <div class="copyright text-center my-auto">
-                  <span>Copyright © Your Website 2018</span>
-                </div>
-              </div>
-            </footer>
 
     </div>
 </div>

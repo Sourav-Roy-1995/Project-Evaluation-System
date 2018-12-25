@@ -41,7 +41,7 @@
       <div class="text-center">
         <div class="author-img" style="background-image: url(images/about.jpg);"></div>
         <h1 id="colorlib-logo"><a href="#">{{ Auth::User()->name }}</a></h1>
-        <span class="position"><a href="#">Faculty</a> in Leading University</span>
+        <span class="position"><a style="color:#004A43!important" href="#">Faculty</a>,Leading University</span>
       </div>
       <nav id="colorlib-main-menu" role="navigation" class="navbar">
         <div class="navbar" class="collapse">
@@ -65,36 +65,36 @@
 
     </aside>
 
-    <div id="colorlib-main">
+  <div id="colorlib-main">
 
         <div class="card mb-3" style="margin-top: 30px">
-            <div class="card-header" id="personal" style="background-color: #2C3034;color: white;">
+            <div class="card-header" id="personal">
 
               <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-2 personal_project" style="margin-top: 21px;">
+                <div class="col-md-6 col-sm-6 col-xs-2 personal_project" style="margin-top: 21px;"  style="font-weight: bold;" >
                   Personal Project
               </div>
   
-              <div class="col-md-6 col-sm-6 col-xs-4">
-                  <input class="search" id="myInput2" type="text" placeholder="Search.." >
+              <div class="col-md-6 col-sm-6 col-xs-4">                 
+                  <input class="input_field search"  id="myInput2" placeholder="search..." type="text">
               </div>
 
               </div>
 
             </div>
               
-            <div class="card-body" style="border: 1px solid #2C3034;">
+            <div class="card-body">
 
            <!--  <input float="left" class="form-control" id="myInput2" type="text" placeholder="Search.."> -->
 
               <div class="table-responsive ">
-                <table class="table table-bordered table-striped table-dark table-hover" width="100%" cellspacing="0"
+                <table class="table table-bordered table-striped table-hover" width="100%" cellspacing="0"
                 >
                   <thead >
                     <tr>
                       
-                      <th>Project Id:</th>                      
-                      <th>view</th>
+                      <th style="font-weight: bold;" >Project Id:</th>                      
+                      <th style="font-weight: bold;" >view</th>
                     </tr>
                   </thead>
 
@@ -113,12 +113,12 @@
                 </table>
               </div>
             </div>
-            <div class="card-footer small text-muted" style="background-color: #2C3034;color: white;">Updated yesterday at 11:59 PM</div>
+            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
         </div>
 
 
         <div class="card mb-3" style="margin-top: 30px">
-            <div class="card-header" id="all" style="background-color: #2C3034;color: white;">
+            <div class="card-header" id="all">
 
               <div class="row">
                 <div class="col-md-6" style="margin-top: 21px;">
@@ -126,25 +126,25 @@
               </div>
   
               <div class="col-md-6">            
-                  <input type="text" id="myInput3" name="search_input" class="search_input search" placeholder="search...">
+                  <input class="input_field search"  id="myInput3" placeholder="search..." type="text">
               </div>
 
               </div>
 
             </div>
               
-            <div class="card-body" style="border: 1px solid #2C3034;">
+            <div class="card-body">
 
            <!--  <input float="left" class="form-control" id="myInput2" type="text" placeholder="Search.."> -->
 
               <div class="table-responsive ">
-                <table class="table table-bordered table-striped table-dark table-hover" width="100%" cellspacing="0"
+                <table class="table table-bordered table-striped table-hover" width="100%" cellspacing="0"
                 >
                   <thead >
                     <tr>
                       
-                      <th>Project Id:</th>                      
-                      <th>view</th>
+                      <th style="font-weight: bold;" >Project Id:</th>                      
+                      <th style="font-weight: bold;" >view</th>
                     </tr>
                   </thead>
 
@@ -163,7 +163,7 @@
                 </table>
               </div>
             </div>
-            <div class="card-footer small text-muted" style="background-color: #2C3034;color: white;">Updated yesterday at 11:59 PM</div>
+            <div class="card-footer small text-muted" >Updated yesterday at 11:59 PM</div>
     </div>
 
 
@@ -171,7 +171,7 @@
 
 
     <div class="card mb-3" style="margin-top: 30px">
-            <div class="card-header" id="marking" style="background-color: #2C3034;color: white;">
+            <div class="card-header" id="marking" >
 
               <div class="row">
                   <div class="col-md-6" style="margin-top: 21px;">
@@ -179,19 +179,21 @@
                   </div>
       
                   <div class="col-md-6">
+
+                      <input class="input_field search"  id="myInput" placeholder="search..." type="text">
+
                       
-                      <input type="text" id="myInput" name="search_input" class="search_input search" placeholder="search...">
                   </div>
               </div>
 
             </div>
               
-            <div class="card-body"  style="border: 1px solid #2C3034;">
+            <div class="card-body">
 
            <!--  <input float="left" class="form-control" id="myInput2" type="text" placeholder="Search.."> -->
 
               <div class="table-responsive">
-                <table class="table table-bordered table-striped table-dark table-hover" width="100%" cellspacing="0"
+                <table class="table table-bordered table-striped table-hover" width="100%" cellspacing="0"
                 >
                   <thead >
                     <tr>
@@ -233,7 +235,7 @@
                 </table>
               </div>
             </div>
-            <div class="card-footer small text-muted" style="background-color: #2C3034;color: white;">Updated yesterday at 11:59 PM</div>
+            <div class="card-footer small text-muted" >Updated yesterday at 11:59 PM</div>
     </div>
 
   

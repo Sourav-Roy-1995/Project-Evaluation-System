@@ -45,7 +45,7 @@
   </head>
   
 
-<body id="page-top">
+<body id="page-top" class="bg">
 
 
     <!--Content Form -->
@@ -61,7 +61,7 @@
             </div>
         </div>
 
-        <div class="card-body">
+        <div class="card-body" >
 
             {!! Form::model($supervisorstudents,['method'=>'POST',
             'action'=>['SupervisorController@insert',$supervisorstudents->project_id],'files'=>true]) !!}
