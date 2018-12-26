@@ -66,7 +66,7 @@
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light" id="custom-nav">
 
-          <a class="navbar-brand form-txt-four" href="http://localhost/final_year_project/public">Dept. Of CSE</a>
+          <a class="navbar-brand dept-font" href="http://localhost/final_year_project/public">Dept. Of CSE</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -258,7 +258,6 @@
 
       <div class="card-header col-md-12">
           Registrattion Information
-          
       </div>
 
 

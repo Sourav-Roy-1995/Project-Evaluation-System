@@ -52,11 +52,6 @@ body {
   position: relative;
   overflow: hidden;
 }
-.uv-name{
-  font-family: 'Charm', cursive;
-  font-size:30px;
-}
-
 
 .custom-nav-link{ 
   font-family: 'Charm', cursive;
@@ -69,7 +64,16 @@ body {
   font-weight: bold;
   font-family: initial;
 }
-.nav-link{color:white!important;}
+.custom-btn-danger{
+  background: #C82333;
+  border:none!important;
+  font-weight: bold;
+  font-family: initial;
+}
+.nav-link {
+  color: white!important;
+  font-size: 1pc;
+}
 .form-txt{
   font-family: 'Staatliches', cursive;
 }
@@ -84,6 +88,18 @@ body {
 .form-txt-four
 {
   font-family: 'Lobster', cursive;
+}
+.dept-font {
+  font-family: 'Lobster', cursive;
+  font-size: 1.3pc;
+}
+.faculty-txt {
+  font-family: 'Staatliches', cursive;
+  font-size: 1pc!important;
+}
+.uv-name{
+  font-family: 'Charm', cursive;
+  font-size:30px;
 }
 
 #wrapper {

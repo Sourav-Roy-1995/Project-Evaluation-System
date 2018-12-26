@@ -122,7 +122,7 @@ class AdminController extends Controller
         
            $validatedData = $request->validate([
 
-                'project_id' => 'max:10|unique:supervisor_students|exists:project_lists,project_id',
+                'project_id' => 'max:10|unique:supervisor_students|  exists:project_lists,project_id',
                 'personal_id' => 'required|max:10',
                 'supervisor_name' => 'required',
                
@@ -161,6 +161,14 @@ class AdminController extends Controller
     }
 
     public function store_final(Request $request){
+
+        $validatedData = $request->validate([
+
+            'studentid'   => 'unique:final_marks',
+            'counter'     => 'unique:final_marks',
+            'final_mark'  => 'unique:final_marks',
+           
+        ]);
 
         foreach($request->studentid as $key => $v){
 

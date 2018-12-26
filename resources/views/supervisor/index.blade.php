@@ -21,6 +21,13 @@
   <meta name="twitter:url" content="" />
   <meta name="twitter:card" content="" />
 
+      <!-- Fonts-->
+      <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/js/gijgo.min.js" type="text/javascript"></script>
+
+      <link href="https://fonts.googleapis.com/css?family=Charm" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Charm|Staatliches" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Charm|Lobster|Staatliches" rel="stylesheet">
+
     <!-- Date Format -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>  
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>  
@@ -40,12 +47,12 @@
     <aside id="colorlib-aside" role="complementary" class="border js-fullheight">
       <div class="text-center">
         <div class="author-img" style="background-image: url(images/about.jpg);"></div>
-        <h1 id="colorlib-logo"><a href="#">{{ Auth::User()->name }}</a></h1>
-        <span class="position"><a style="color:#004A43!important" href="#">Faculty</a>,Leading University</span>
+        <h1 id="colorlib-logo" ><a href="#" class="dept-font">{{ Auth::User()->name }}</a></h1>
+        <span class="position faculty-txt"><a style="color:#004A43!important" href="#">Faculty</a>,Leading University</span>
       </div>
       <nav id="colorlib-main-menu" role="navigation" class="navbar">
         <div class="navbar" class="collapse">
-          <ul>
+          <ul class="form-txt-two">
             <li class="active"><a href="{{ asset('/') }}" data-nav-section="home">Home</a></li>
             <li><a href="#" data-nav-section="about">About</a></li>
             <li><a href="#personal" data-nav-section="personal_project">Personal Project</a></li>
@@ -58,6 +65,7 @@
             <li><a href="#" data-nav-section="work">Work</a></li>
             <li><a href="#" data-nav-section="blog">Blog</a></li>
             <li><a href="#" data-nav-section="contact">Contact</a></li>
+            <li><a href="{{ url('logout') }}" data-nav-section="logout">Logout</a></li>
             
           </ul>
         </div>
@@ -65,7 +73,7 @@
 
     </aside>
 
-  <div id="colorlib-main">
+  <div id="colorlib-main" class="form-txt-three">
 
         <div class="card mb-3" style="margin-top: 30px">
             <div class="card-header" id="personal">
@@ -104,7 +112,7 @@
 
                       <td style="font-weight: bold;">{{$personalstudent->project_id}}</td>
 
-                      <td><a href="{{route('supervisor.view_project',$personalstudent->project_id)}}" class='btn btn-info btn-sm' name="name" style="background: #004A43;border:2px solid #004A43;font-weight: bold;font-size: xx-small;font-family: initial;" >View</a></td>
+                      <td><a href="{{route('supervisor.view_project',$personalstudent->project_id)}}" class='btn btn-info btn-sm custom-btn' name="name" >View</a></td>
                       
                     </tr>
                   </tbody>
@@ -154,7 +162,7 @@
 
                       <td style="font-weight: bold;">{{$allstudent->project_id}}</td>
 
-                      <td><a href="{{route('supervisor.view_project',$allstudent->project_id)}}" class='btn btn-info btn-sm' name="name" style="background: #004A43;border:2px solid #004A43;font-weight: bold;font-size: xx-small;font-family: initial;" >View</a></td>
+                      <td><a href="{{route('supervisor.view_project',$allstudent->project_id)}}" class='btn btn-info btn-sm custom-btn' >View</a></td>
                       
                     </tr>
                   </tbody>
@@ -226,7 +234,7 @@
 
                       <td style="font-weight: bold;">{{$supervisorstudent->studentid_three}}</td>
 
-                      <td><a href="{{route('supervisor.view',$supervisorstudent->project_id)}}" class='btn btn-info btn-sm' name="name" style="background: #004A43;border:2px solid #004A43;font-weight: bold;font-size: xx-small;font-family: initial;" >View</a></td>
+                      <td><a href="{{route('supervisor.view',$supervisorstudent->project_id)}}" class='btn btn-info btn-sm custom-btn' >View</a></td>
                       
                     </tr>
                   </tbody>

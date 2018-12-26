@@ -26,6 +26,13 @@
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>  
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 
+          <!-- Fonts-->
+          <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/js/gijgo.min.js" type="text/javascript"></script>
+
+          <link href="https://fonts.googleapis.com/css?family=Charm" rel="stylesheet">
+          <link href="https://fonts.googleapis.com/css?family=Charm|Staatliches" rel="stylesheet">
+          <link href="https://fonts.googleapis.com/css?family=Charm|Lobster|Staatliches" rel="stylesheet">
+
     <link rel="stylesheet" href="{{ asset('css/admin-css/css/main.css') }}">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
@@ -41,12 +48,12 @@
     <aside id="colorlib-aside" role="complementary" class="border js-fullheight">
       <div class="text-center">
         <div class="author-img" ></div>
-        <h1 id="colorlib-logo"><a href="#">{{ Auth::User()->name }}</a></h1>
-        <span class="position"><a href="#">Faculty</a> in Leading University</span>
+        <h1 id="colorlib-logo" ><a href="#" class="dept-font">{{ Auth::User()->name }}</a></h1>
+        <span class="position faculty-txt"><a style="color:#004A43!important" href="#">Faculty</a>,Leading University</span>
       </div>
       <nav id="colorlib-main-menu" role="navigation" class="navbar">
         <div class="navbar" class="collapse">
-          <ul>
+          <ul class="form-txt-two">
             <li class="active"><a href="{{ asset('/') }}" data-nav-section="home">Home</a></li>
             <li><a href="#" data-nav-section="about">About</a></li>
             <li><a href="#personal" data-nav-section="personal_project">Personal Project</a></li>
@@ -66,7 +73,7 @@
 
     </aside>
 
-  <div id="colorlib-main">
+  <div id="colorlib-main" class="form-txt-three">
 
     <!--Content Form -->
 
@@ -76,7 +83,7 @@
                 Project Information
                 <div class="text-right">
                     <div class="btn-group " role="group" aria-label="Basic example">
-                        <a href="{{ asset('supervisor') }}" class="btn btn-info btn-sm float-right" style="background: #004A43;border:2px solid #004A43;font-weight: bold;font-size: xx-small;font-family: initial;" >Back</a>
+                        <a href="{{ asset('supervisor') }}" class="btn btn-info btn-sm float-right custom-btn">Back</a>
                     </div>
                 </div>
             </div>

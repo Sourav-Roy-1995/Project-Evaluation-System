@@ -19,7 +19,13 @@
     <!-- Page level plugin CSS-->
     <link href="{{ asset('vendor/datatables/dataTables.bootstrap4.css') }}" rel="stylesheet">
 
-    <!-- Custom styles for this template-->
+              <!-- Fonts-->
+              <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/js/gijgo.min.js" type="text/javascript"></script>
+
+              <link href="https://fonts.googleapis.com/css?family=Charm" rel="stylesheet">
+              <link href="https://fonts.googleapis.com/css?family=Charm|Staatliches" rel="stylesheet">
+              <link href="https://fonts.googleapis.com/css?family=Charm|Lobster|Staatliches" rel="stylesheet">
+    
    
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -52,11 +58,11 @@
 
 <div class="container">
     <section class="card" style="margin-top:100px">
-        <div class="card-header col-md-12 ">
+        <div class="card-header col-md-12 form-txt-three">
             Marking System
             <div class="text-right">
-                <div class="btn-group " role="group" aria-label="Basic example">
-                    <a href="{{ asset('supervisor') }}" class="btn btn-info btn-sm float-right">Back</a>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <a href="{{ asset('supervisor') }}" class="btn btn-info btn-sm float-right custom-btn">Back</a>
                 </div>
             </div>
         </div>
@@ -126,7 +132,7 @@
                                       </td>
 
                                       <td>
-                                          <a href="#" class="btn btn-danger btn-sm remove">Remove</a>
+                                          <a href="#" class="btn btn-danger btn-sm remove custom-btn-danger">Remove</a>
                                       </td>
                   
                                    </tr>
@@ -230,7 +236,7 @@
                   '<td><input class="form-control category_two" type="text" name="category_two[]" placeholder="Category Two"></td>'+
                   '<td><input class="form-control supervisor_marks" type="text" name="supervisor_marks[]" disabled="true" cursor="default" style="background:white" placeholder="Disabled"></td>'+
                   '<td><input class="form-control total" type="text" name="total[]"  placeholder="Total Marks" style="background:white;cursor:default"></td>'+
-                  '<td><a href="#" class="btn btn-danger btn-sm remove">Remove</a></td>'+      
+                  '<td><a href="#" class="btn btn-danger btn-sm remove custom-btn-danger">Remove</a></td>'+      
                   '</tr>';
 
         $('tbody').append(tr);
@@ -250,7 +256,7 @@
                   '<td><input class="form-control category_two" type="text" name="category_two[]" placeholder="Category Two"></td>'+
                   '<td><input class="form-control supervisor_marks" type="text" name="supervisor_marks[]" disabled="true" cursor="default" style="background:white" placeholder="Disabled"></td>'+
                   '<td><input class="form-control total" type="text" name="total[]"  placeholder="Total Marks" style="background:white;cursor:default"></td>'+
-                  '<td><a href="#" class="btn btn-danger btn-sm remove">Remove</a></td>'+      
+                  '<td><a href="#" class="btn btn-danger btn-sm remove custom-btn-danger">Remove</a></td>'+      
                   '</tr>'+
                   
                   '<tr>'+
@@ -266,7 +272,7 @@
                   '<td><input class="form-control category_two" type="text" name="category_two[]" placeholder="Category Two"></td>'+
                   '<td><input class="form-control supervisor_marks" type="text" name="supervisor_marks[]" disabled="true" cursor="default" style="background:white" placeholder="Disabled"></td>'+
                   '<td><input class="form-control total" type="text" name="total[]"  placeholder="Total Marks" style="background:white;cursor:default"></td>'+
-                  '<td><a href="#" class="btn btn-danger btn-sm remove">Remove</a></td>'+      
+                  '<td><a href="#" class="btn btn-danger btn-sm remove custom-btn-danger">Remove</a></td>'+      
                   '</tr>';
 
         $('tbody').append(tr);
