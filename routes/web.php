@@ -74,6 +74,8 @@ Route::group(['middleware'=>'auth'],function(){
 		
 		Route::post('store_final','AdminController@store_final')->name('admin.store_final');
 
+		Route::get('scheduling','AdminController@view_scheduling')->name('admin.schedule');
+
 	    //Main Admin Route List:
 		
 

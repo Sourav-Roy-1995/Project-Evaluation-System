@@ -84,7 +84,7 @@
                 </li>
 
                 <li class="nav-item">
-                  <a class="nav-link" href="#projectstudent">Project Student List</a>
+                  <a class="nav-link" href="#projectstudent"> Student List</a>
                 </li>
 
                 <li class="nav-item">
@@ -96,7 +96,11 @@
                 </li>
 
                 <li class="nav-item">
-                  <a class="nav-link" href="#reg">Project Registration</a>
+                  <a class="nav-link" href="#reg"> Registration</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="scheduling"> Scheduling</a>
                 </li>
 
                   <!-- User Menu-->

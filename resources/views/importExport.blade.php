@@ -19,7 +19,12 @@
     <!-- Page level plugin CSS-->
     <link href="{{ asset('vendor/datatables/dataTables.bootstrap4.css') }}" rel="stylesheet">
 
-    <!-- Custom styles for this template-->
+        <!-- Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Charm" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Charm|Staatliches" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Charm|Lobster|Staatliches" rel="stylesheet">
+    
+        <link href="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/css/gijgo.min.css" rel="stylesheet" type="text/css" />
    
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -46,58 +51,29 @@
 
 <body class="bg">     
 
- <nav class="navbar navbar-expand-lg navbar-light bg-light" id="custom-nav">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="custom-nav">
 
-          <a class="navbar-brand" href="http://localhost/final_year_project/public">Dept. Of CSE</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+        <a class="navbar-brand dept-font" href="http://localhost/final_year_project/public">Dept. Of CSE</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-              <ul class="navbar-nav mr-auto nav-list list-inline mx-auto justify-content-center">
 
-                <li class="nav-item ">
-                  <a class="nav-link" href="importExport">Add Students</a>
-                </li>
+        </div>
 
-                <li class="nav-item">
-                  <a class="nav-link" href="#con">Add Supervisor</a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" href="#projectstudent">Project Student List</a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" href="#all_user">User List</a>
-                </li>
-
-                  <!-- User Menu-->
-
-                      <li class="dropdown" style="position: absolute;right: 0;top:0"> <a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
-                          <ul class="dropdown-menu settings-menu dropdown-menu-right">
-                              <li><a class="dropdown-item" href="#"><i class="fa fa-cog fa-lg"></i> Settings</a></li>
-                              <li><a class="dropdown-item" href="#"><i class="fa fa-user fa-lg"></i> Profile</a></li>
-                              <li><a class="dropdown-item" href="{{ url('logout') }}"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
-                          </ul>
-                      </li>
-
-              </ul>
-             
-          </div>
-
-</nav>
+      </nav>
 
 <div id="content-wrapper">
-        <div class="container-fluid">
+        <div class="container-fluid form-txt-three">
 
 
                         <div id="std-con" class="card">
 
                                 <div class="card-header col-md-12">
                                   Student List For Project
-                                  <a href="{{url('/admin')}}" class="btn btn-info btn-sm float-right">Back</a>
+                                  <a href="{{url('/admin')}}" class="btn btn-info btn-sm float-right custom-btn">Back</a>
                                 </div>
             
             
@@ -161,14 +137,14 @@
                                 <div class="card-footer text-right">
             
                                   <div class="btn-group" role="group" aria-label="Basic example">
-                         <a href="javascript:history.back()" class="btn btn-info custom-btn btn-sm">Cancle</a>           
-                         <a  class="btn btn-info btn-sm" href="{{ url('downloadExcel/xls') }}"> Download XLS</a>
+                         <a href="{{ asset('admin') }}" class="btn btn-info custom-btn btn-sm custom-btn">Cancle</a>           
+                         <a  class="btn btn-info btn-sm custom-btn" href="{{ url('downloadExcel/xls') }}"> Download XLS</a>
             
-                        <a  class="btn btn-info btn-sm" href="{{ url('downloadExcel/xlsx') }}">Download XLSX</a>
+                        <a  class="btn btn-info btn-sm custom-btn" href="{{ url('downloadExcel/xlsx') }}">Download XLSX</a>
             
-                        <a class="btn btn-info btn-sm" href="{{ url('downloadExcel/csv') }}">Download CSV</a>
+                        <a class="btn btn-info btn-sm custom-btn" href="{{ url('downloadExcel/csv') }}">Download CSV</a>
                                         
-                                        <button type="submit" class="btn btn-info btn-sm" >Import File</button>
+                                        <button type="submit" class="btn btn-info btn-sm custom-btn" >Import File</button>
                                     </div>
                                 </div>
                         </form>

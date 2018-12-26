@@ -74,6 +74,10 @@ class AdminController extends Controller
 		return view('admin/index4');
 	}
 
+    public function view_scheduling(){
+	   return view('admin/scheduling');
+	}
+
 
     /**
      * Show the form for creating a new resource.
