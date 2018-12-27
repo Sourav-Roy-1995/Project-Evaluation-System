@@ -24,43 +24,23 @@
     <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
     <!-- Fonts-->
-    <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/js/gijgo.min.js" type="text/javascript"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Charm" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Charm|Staatliches" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Charm|Lobster|Staatliches" rel="stylesheet">
 
-    <link href="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/css/gijgo.min.css" rel="stylesheet" type="text/css" />
-   
-
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/js/gijgo.min.js" type="text/javascript"></script>
-
-    <link href="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/css/gijgo.min.css" rel="stylesheet" type="text/css" />
-
-
-
     <!-- Date Format -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>  
-    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>  
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 
     <link rel="stylesheet" href="css/admin-css/css/main.css">
     <link href="css/style.css" rel="stylesheet">
 
 
   </head>
-
-  <style rel="stylesheet">
-      #marks_input{
-        pointer-events: none;
-      }
-  </style>
-
-
 
   <body id="page-top" >
 
@@ -124,19 +104,16 @@
 
 <div class="container">
 
-          <!-- Breadcrumbs-->
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-              <a href="#">Dashboard</a>
-            </li>
-            <li class="breadcrumb-item active">Overview</li>
-          </ol>
-
 <div id="reg" class="card">
 
-      <div class="card-header col-md-12">
-          Project Information
-      </div>
+  <div class="card-header col-md-12 ">
+    Project Information
+    <div class="text-right">
+        <div class="btn-group " role="group" aria-label="Basic example">
+            <a href="{{ asset('admin') }}" class="btn btn-info btn-sm float-right custom-btn">Back</a>
+        </div>
+    </div>
+  </div>
 
 
 @if(Session::has('flash_message'))
@@ -175,14 +152,14 @@
 
       <div class="col-md-6" style="margin-top:1pc">
         <div class="form-label-group">        
-            <input type="date" name="final_project" class="form-control" required>
-            {!! Form::label('from','From: ') !!}
+            <input type="text" name="date_one" id="date_one" class="form-control" placeholder="Date" required>
+            {!! Form::label('date_one','From: ') !!}
         </div>
      </div>
      <div class="col-md-6" style="margin-top:1pc">
         <div class="form-label-group">        
-            <input type="date" name="final_project" class="form-control" required>
-            {!! Form::label('to','To: ') !!}
+            <input type="text" name="date_two" id="date_two" class="form-control" placeholder="Date" required>
+            {!! Form::label('date_two','To: ') !!}
         </div>
      </div>
 </div>
@@ -211,14 +188,14 @@
   
         <div class="col-md-6" style="margin-top:1pc">
           <div class="form-label-group">        
-              <input type="date" name="final_project" class="form-control" required>
-              {!! Form::label('from','From: ') !!}
+              <input type="text" name="date_three" id="date_three" class="form-control" placeholder="Date" required>
+              {!! Form::label('date_three','From: ') !!}
           </div>
        </div>
       <div class="col-md-6" style="margin-top:1pc">
           <div class="form-label-group">        
-              <input type="date" name="final_project" class="form-control" required>
-                {!! Form::label('to','To: ') !!}
+              <input type="text" name="date_four" id="date_four" class="form-control" placeholder="Date" required>
+                {!! Form::label('date_four','To: ') !!}
           </div>
       </div>
   </div>
@@ -233,8 +210,8 @@
 
         <div class="col-md-6">
           <div class="form-label-group">        
-              <input type="date" name="final_project" class="form-control" required>
-              {!! Form::label('date','Date: ') !!}
+              <input type="text" name="date_five" id="date_five" class="form-control" placeholder="Date" required>
+              {!! Form::label('date_five','Date: ') !!}
           </div>
        </div>
 
@@ -244,7 +221,7 @@
 
 <div class="card-footer text-right">
     <div class="btn-group" role="group" aria-label="Basic example">
-       <a href="javascript:history.back()" class="btn btn-info custom-btn btn-sm">Cancle</a>
+       <a href="{{ asset('admin') }}" class="btn btn-info custom-btn btn-sm">Cancle</a>
          {!! Form::submit('Update',['class'=>'btn btn-info btn-sm custom-btn']) !!}
     </div>
 </div>      
@@ -295,27 +272,42 @@
 
 
     <!-- Bootstrap core JavaScript-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
-
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="{{URL::asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="{{URL::asset('vendor/jquery-easing/jquery.easing.min.js')}}"></script>
 
     <!-- Page level plugin JavaScript-->
-    <script src="vendor/datatables/jquery.dataTables.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+    <script src="{{URL::asset('vendor/datatables/jquery.dataTables.js')}}"></script>
+    <script src="{{URL::asset('vendor/datatables/dataTables.bootstrap4.js')}}"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin.min.js"></script>
+    <script src="{{URL::asset('js/sb-admin.min.js')}}"></script>
 
     <!-- Demo scripts for this page-->
-    <script src="js/demo/datatables-demo.js"></script>
+    <script src="{{URL::asset('js/demo/datatables-demo.js')}}"></script>
 
 
+    <!-- date picker -->
+    <script>  
+      $(document).ready(function(){  
+           $.datepicker.setDefaults({  
+                dateFormat: 'dd/mm/yy'   
+           });  
+           $(function(){  
+                $("#date_one").datepicker();
+                $("#date_two").datepicker();  
+                $("#date_three").datepicker();
+                $("#date_four").datepicker();
+                $("#date_five").datepicker();
+           });  
+             
+      });  
+    </script>
 
+<!-- date picker -->
+    
   </body>
 
 </html>
