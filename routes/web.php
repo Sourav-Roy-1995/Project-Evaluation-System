@@ -15,10 +15,10 @@ use App\StudentList;
 use App\User;
 
 
-Route::get('/', function () {
-    return view('index');
-});
 
+Route::resource('/','IndexController');
+
+/*
 Route::get('test',function(){
 
 		$marks = DB::table('marking_systems')
@@ -29,6 +29,7 @@ Route::get('test',function(){
 		dd($marks);
 		
 });
+*/
 
 Route::get('/contact',function(){
 	return view('contact');
@@ -55,7 +56,7 @@ Route::group(['middleware'=>'auth'],function(){
 
 		Route::resource('/admin','AdminController');
 
-		Route::get('/index2','AdminController@index_two' );
+		Route::get('/index2','AdminController@index_two');
 
 		Route::get('/index3','AdminController@index_three');
 
@@ -75,6 +76,7 @@ Route::group(['middleware'=>'auth'],function(){
 		Route::post('store_final','AdminController@store_final')->name('admin.store_final');
 
 		Route::get('scheduling','AdminController@view_scheduling')->name('admin.schedule');
+		Route::post('store_scheduling','AdminController@store_schedule')->name('admin.store_schedule');
 
 	    //Main Admin Route List:
 		

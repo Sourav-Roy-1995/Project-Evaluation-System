@@ -1310,17 +1310,16 @@ input:last-of-type
     margin-bottom: 9px;
 
 }
-.event_day
-{
-	font-size: 48px;
-	font-weight: 700;
-	color: #ffb606;
-	margin-bottom: 1px;
-	line-height: 1;
+.event_day {
+    font-size: 31px;
+    font-weight: 700;
+    color: #ffb606;
+    margin-bottom: 1px;
+    line-height: 1;
 }
 .event_month
 {
-	font-size: 16px;
+	font-size: 30px;
 	font-weight: 700;
 	color: #ffb606;
 }

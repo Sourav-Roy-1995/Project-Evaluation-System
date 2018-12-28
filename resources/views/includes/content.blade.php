@@ -280,24 +280,33 @@
 			</div>
 			
 			<div class="event_items">
+				@foreach($schedules as $schedule)
 
 				<!-- Event Item -->
 				<div class="row event_item">
 					<div class="col">
 						<div class="row d-flex flex-row align-items-end">
 
+							
 							<div class="col-lg-6 order-lg-1 order-3">
 								<div class="event_date d-flex flex-column align-items-center justify-content-center">
-									<div class="event_day">07-12</div>
-									<div class="event_month">January</div>
+									<div class="event_day">
+							            {{$schedule->fi_fr_date}}
+						            </div>
+									<div class="event_month">To</div>
+									<div class="event_day">
+										{{$schedule->fi_to_date}}
+									 </div>
 								</div>
 							</div>
 
 							<div class="col-lg-6 order-lg-2 order-3">
 								<div class="event_content">
-									<div class="event_name"><a class="trans_200" href="#">Final Year Project</a></div>
-									<div class="event_location">38 Batch</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consequat magna felis, vitae ornare lectus molestie pretium.</p>
+									<div class="event_name"><a class="trans_200" href="#">{{$schedule->final_year}}</a></div>
+									<div class="event_location">
+										{{$schedule->fi_semester}}
+									</div>
+									<p>{{$schedule->fi_info}}</p>
 								</div>
 							</div>
 
@@ -314,17 +323,24 @@
 
 							<div class="col-lg-6 order-lg-1 order-3">
 								<div class="event_date d-flex flex-column align-items-center justify-content-center">
-									<div class="event_day">14-20</div>
-									<div class="event_month">January</div>
+										<div class="event_day">
+											{{$schedule->th_fr_date}}
+										</div>
+										<div class="event_month">To</div>
+										<div class="event_day">
+											{{$schedule->th_to_date}}
+										</div>
 								</div>
 							</div>
 
 							<div class="col-lg-6 order-lg-2 order-3">
-								<div class="event_content">
-									<div class="event_name"><a class="trans_200" href="#">Third Year Year Project</a></div>
-									<div class="event_location">41 Batch</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consequat magna felis, vitae ornare lectus molestie pretium.</p>
-								</div>
+									<div class="event_content">
+										<div class="event_name"><a class="trans_200" href="#">{{$schedule->final_year}}</a></div>
+										<div class="event_location">
+											{{$schedule->th_semester}}
+										</div>
+										<p>{{$schedule->th_info}}</p>
+									</div>
 							</div>
 
 							
@@ -340,14 +356,14 @@
 
 							<div class="col-lg-6 order-lg-1 order-3">
 								<div class="event_date d-flex flex-column align-items-center justify-content-center">
-									<div class="event_day">25</div>
-									<div class="event_month">January</div>
+									<div class="event_day">{{$schedule->rs_date}}</div>
+									
 								</div>
 							</div>
 
 							<div class="col-lg-6 order-lg-2 order-3">
 								<div class="event_content">
-									<div class="event_name"><a class="trans_200" href="#">Project Result</a></div>
+									<div class="event_name"><a class="trans_200" href="#">Project {{$schedule->result}}</a></div>
 									<div class="event_location">All Project Result</div>
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consequat magna felis, vitae ornare lectus molestie pretium.</p>
 								</div>
@@ -360,6 +376,7 @@
 				</div>
 
 			</div>
+			@endforeach
 				
 		</div>
 	</div>

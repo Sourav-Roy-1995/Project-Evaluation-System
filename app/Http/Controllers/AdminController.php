@@ -13,6 +13,7 @@ use App\SupervisorStudent;
 use App\RegInfo;
 use App\MarkingSystem;
 use App\Final_mark;
+use App\Scheduling;
 use Illuminate\Support\Facades\Validator;
 use Session;
 
@@ -190,6 +191,47 @@ class AdminController extends Controller
 
     }
 
+    public function store_schedule(Request $request)
+    {
+        
+           $validatedData = $request->validate([
+
+                'final_year'=> 'required', 
+                'fi_semester'=> 'required', 
+                'fi_info'=> 'required',
+                'fi_fr_date'=> 'required',
+                'fi_to_date'=> 'required',
+                'third_year'=> 'required',
+                'th_semester'=> 'required',
+                'th_info'=> 'required',
+                'th_fr_date'=> 'required',
+                'th_to_date'=> 'required',
+                'result'=>  'required',
+                'rs_date'=> 'required',
+               
+            ]);
+
+
+          $schedule  = new Scheduling();
+          $schedule->final_year = $request->input("final_year");
+          $schedule->fi_semester = $request->input("fi_semester");
+          $schedule->fi_info = $request->input("fi_info");
+          $schedule->fi_fr_date = $request->input("fi_fr_date");
+          $schedule->fi_to_date = $request->input("fi_to_date");
+          $schedule->third_year = $request->input("third_year");
+          $schedule->th_semester = $request->input("th_semester");
+          $schedule->th_info = $request->input("th_info");
+          $schedule->th_fr_date = $request->input("th_fr_date");
+          $schedule->th_to_date = $request->input("th_to_date");
+          $schedule->result = $request->input("result");
+          $schedule->rs_date = $request->input("rs_date");
+          $schedule->save();
+
+         
+         $request->session()->flash('flash_message', 'Submitted successfully!');
+
+         return redirect()->back();
+    }
 
     public function view($project_id)
 
@@ -257,13 +299,11 @@ class AdminController extends Controller
     public function update_marks(Request $request, $id)
     {
         //
-
         $mark = MarkingSystem::findOrFail($id);
 
         $mark->update($request->all());
 
         return redirect('/admin');
-
 
     }
 

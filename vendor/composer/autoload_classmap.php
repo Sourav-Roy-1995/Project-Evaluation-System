@@ -44,6 +44,7 @@ return array(
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
     'App\\RegInfo' => $baseDir . '/app/RegInfo.php',
+    'App\\Scheduling' => $baseDir . '/app/Scheduling.php',
     'App\\StudentList' => $baseDir . '/app/StudentList.php',
     'App\\SupervisorStudent' => $baseDir . '/app/SupervisorStudent.php',
     'App\\User' => $baseDir . '/app/User.php',

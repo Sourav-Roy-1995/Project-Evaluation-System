@@ -124,19 +124,19 @@
 
 
 {!! Form::open(['id'=>'search_form','class'=>'search_form',     
-    'method'=>'POST','action'=>'AdminController@store_three','files'=>true]) !!}
+    'method'=>'POST','action'=>'AdminController@store_schedule','files'=>true]) !!}
 
-  
+
 <div class="card-body">
 <div class="row">
       <div class="col-md-4">
         <div class="form-label-group">        
-            <input type="text" name="final_project" class="form-control disable-input" value="Final Year Project" required>
+            <input type="text" name="final_year" class="form-control disable-input" value="Final Year Project" required>
         </div>
       </div>
       <div class="col-md-4">
         <div class="form-label-group">          
-            <select name="semester" class="form-control" id="exampleFormControlSelect1" style="height: 47px;">
+            <select name="fi_semester" class="form-control" id="exampleFormControlSelect1" style="height: 47px;">
                 <option>Semester</option>
                 <option>SUMMER-2018</option>
                 <option>FALL-2018</option>
@@ -146,33 +146,34 @@
       </div>
       <div class="col-md-4">
         <div class="form-label-group">        
-            <textarea type="text" placeholder="Information" name="project-txt disable-input" class="form-control" required style="height: 47px;"></textarea>
+            <textarea type="text" placeholder="Information" name="fi_info" class="form-control" required style="height: 47px;"></textarea>
         </div>
       </div>
 
       <div class="col-md-6" style="margin-top:1pc">
         <div class="form-label-group">        
-            <input type="text" name="date_one" id="date_one" class="form-control" placeholder="Date" required>
+            <input type="text" name="fi_fr_date" id="date_one" class="form-control" placeholder="Date" required>
             {!! Form::label('date_one','From: ') !!}
         </div>
      </div>
      <div class="col-md-6" style="margin-top:1pc">
         <div class="form-label-group">        
-            <input type="text" name="date_two" id="date_two" class="form-control" placeholder="Date" required>
+            <input type="text" name="fi_to_date" id="date_two" class="form-control" placeholder="Date" required>
             {!! Form::label('date_two','To: ') !!}
         </div>
      </div>
 </div>
 
+  
 <div class="row" style="margin-top:2pc">
         <div class="col-md-4">
           <div class="form-label-group">        
-              <input type="text" name="final_project" class="form-control disable-input" value="Third Year Project" required>
+              <input type="text" name="third_year" class="form-control disable-input" value="Third Year Project" required>
           </div>
         </div>
         <div class="col-md-4">
           <div class="form-label-group">          
-              <select name="semester" class="form-control" id="exampleFormControlSelect1" style="height: 47px;">
+              <select name="th_semester" class="form-control" id="exampleFormControlSelect1" style="height: 47px;">
                   <option>Semester</option>
                   <option>SUMMER-2018</option>
                   <option>FALL-2018</option>
@@ -182,19 +183,19 @@
         </div>
         <div class="col-md-4">
           <div class="form-label-group">        
-              <textarea type="text" placeholder="Information" name="project-txt disable-input" class="form-control" required style="height: 47px;"></textarea>
+              <textarea type="text" placeholder="Information" name="th_info" class="form-control" required style="height: 47px;"></textarea>
           </div>
         </div>
   
         <div class="col-md-6" style="margin-top:1pc">
           <div class="form-label-group">        
-              <input type="text" name="date_three" id="date_three" class="form-control" placeholder="Date" required>
+              <input type="text" name="th_fr_date" id="date_three" class="form-control" placeholder="Date" required>
               {!! Form::label('date_three','From: ') !!}
           </div>
        </div>
       <div class="col-md-6" style="margin-top:1pc">
           <div class="form-label-group">        
-              <input type="text" name="date_four" id="date_four" class="form-control" placeholder="Date" required>
+              <input type="text" name="th_to_date" id="date_four" class="form-control" placeholder="Date" required>
                 {!! Form::label('date_four','To: ') !!}
           </div>
       </div>
@@ -204,13 +205,13 @@
   <div class="row" style="margin-top:2pc">
         <div class="col-md-6">
           <div class="form-label-group">        
-              <input type="text" name="final_project" class="form-control disable-input" value="Result" required>
+              <input type="text" name="result" class="form-control disable-input" value="Result" required>
           </div>
         </div>
 
         <div class="col-md-6">
           <div class="form-label-group">        
-              <input type="text" name="date_five" id="date_five" class="form-control" placeholder="Date" required>
+              <input type="text" name="rs_date" id="date_five" class="form-control" placeholder="Date" required>
               {!! Form::label('date_five','Date: ') !!}
           </div>
        </div>
@@ -293,7 +294,7 @@
     <script>  
       $(document).ready(function(){  
            $.datepicker.setDefaults({  
-                dateFormat: 'dd/mm/yy'   
+                dateFormat: 'dd-mm-yy'   
            });  
            $(function(){  
                 $("#date_one").datepicker();
