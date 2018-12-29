@@ -68,14 +68,11 @@ class ProjectListController extends Controller
                 'semester' => 'required|exists:student_lists,semester',
 
                 'studentid_one' => 
-                'required|max:10|unique:project_lists|exists:student_lists,  studentid',
+                'required|max:10|unique:project_lists|exists:student_lists,studentid',
 
                 'studentid_two' => 'max:10',
-
                 'studentid_three' =>'max:10'
                 
-                
-
             ]);
 
 

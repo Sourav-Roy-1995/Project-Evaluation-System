@@ -28,12 +28,66 @@
   }
 }        
 
-.custom-btn{
-  background: #004A43!important;
-  border:none!important;
-  font-weight: bold!important;
-  font-family: initial!important;
+.custom-panel {
+  width: 68.3pc;
+  margin-left: 15px;
 }
+.custom-panel-footer{background-color: #D9EDF7;}
+.default-panel-head {
+  font-family: 'Staatliches', cursive!important;
+  font-weight: bold;
+  font-size: 1.2pc;
+}
+.custom-btn{
+  background: #004A43;
+  border:none!important;
+  font-weight: bold;
+  font-family: initial;
+}
+.custom-btn-two {
+  background: #00A65A;
+  border: none!important;
+  font-weight: bold;
+  font-family: initial;
+}
+.custom-btn-danger{
+  background: #C82333;
+  border:none!important;
+  font-weight: bold;
+  font-family: initial;
+}
+.nav-link {
+  color: white!important;
+  font-size: 1pc;
+}
+.form-txt{
+  font-family: 'Staatliches', cursive!important;
+}
+.form-txt-two
+{
+  font-family: 'Charm', cursive!important;
+}
+.form-txt-three
+{
+  font-family: 'Staatliches', cursive!important;
+}
+.form-txt-four
+{
+  font-family: 'Lobster', cursive!important;
+}
+.dept-font {
+  font-family: 'Lobster', cursive!important;
+  font-size: 1.3pc;
+}
+.faculty-txt {
+  font-family: 'Staatliches', cursive;
+  font-size: 1pc!important;
+}
+.uv-name{
+  font-family: 'Charm', cursive;
+  font-size:30px;
+}
+
 #colorlib-aside {
   padding-top: 3em;
   padding-bottom: 40px;
@@ -374,7 +428,6 @@ body.offcanvas {
   background-position: center center;
   background-repeat: no-repeat;
   position: relative; }
-
 .colorlib-heading {
   font-size: 18px;
   margin-bottom: 4em;
@@ -424,7 +477,7 @@ body.offcanvas {
 .fancy-collapse-panel .panel-default > .panel-heading {
   padding: 0; }
 
-.panel-heading a {
+/*.panel-heading a {
   padding: 20px 25px;
   display: block;
   width: 100%;
@@ -440,15 +493,15 @@ body.offcanvas {
   -moz-box-shadow: none !important;
   -ms-box-shadow: none !important;
   -o-box-shadow: none !important;
-  box-shadow: none !important; }
+  box-shadow: none !important; }*/
 
-.panel {
+/*.panel {
   -webkit-box-shadow: none !important;
   -moz-box-shadow: none !important;
   -ms-box-shadow: none !important;
   -o-box-shadow: none !important;
   box-shadow: none !important;
-  border: none; }
+  border: none; }*/
 
 .panel-heading a:after {
   font-family: "icomoon";
@@ -469,10 +522,10 @@ body.offcanvas {
   border: 1px solid #e6e6e6 !important;
   color: #333333; }
 
-.panel-body {
+/*.panel-body {
   padding: 1.5em;
   margin-top: 5px;
-  border: 1px solid #e6e6e6 !important; }
+  border: 1px solid #e6e6e6 !important; }*/
 
 .timeline-centered {
   position: relative;

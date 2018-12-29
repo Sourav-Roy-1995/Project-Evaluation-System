@@ -86,11 +86,12 @@ Route::group(['middleware'=>'auth'],function(){
 		//Faculty Route List
 
 
-		//Students Route List:
+		//Students Route List
 		Route::get('/elligible_student','StudentController@index');
 		Route::get('/supervisorlist','StudentController@index2');
+		Route::get('/student_panel','StudentController@index3');
 		Route::post('/getans','StudentController@getAns')->name('student.getans');
-		//Students Route List:
+		//Students Route List
 
 		//Normal User loginPage
 		Route::get('/index','NormalController@index');

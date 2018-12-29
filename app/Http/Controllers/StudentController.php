@@ -49,6 +49,14 @@ class StudentController extends Controller
      	return view('supervisor',compact('supervisorstudents'));
 
     }
+
+
+    public function index3(){
+	
+		return view('student.index');
+
+	}
+
     
     public function getAns(){
 

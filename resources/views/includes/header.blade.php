@@ -68,6 +68,7 @@
 						<li class="main_nav_item"><a href="supervisor">Result</a></li>
 						<li class="main_nav_item"><a href="contact">Contact</a></li>
 						<li class="main_nav_item"><a href="admin">Admin</a></li>
+						<li class="main_nav_item"><a href="student_panel">Student Panel</a></li>
 
 						<!-- Authentication Links -->
 
