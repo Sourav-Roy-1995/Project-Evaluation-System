@@ -1,5 +1,10 @@
 @extends('includes.header')
 
+@foreach($schedules as $schedule)
+
+@endforeach
+
+
 	<div class="register" style="margin-top: -39px">
 
 		<div class="container-fluid">
@@ -107,7 +112,7 @@
 
 			    <div class="form-group">
 			    	
-			    	{!! Form::submit('REGISTER',['class'=>'btn btn-primary','id'=>'search_submit_button', 'type'=>'submit','class'=>'search_submit_button trans_200']) !!}
+			    	{!! Form::submit('REGISTER',['class'=>'btn btn-primary reg-btn','id'=>'search_submit_button', 'type'=>'submit','class'=>'search_submit_button trans_200']) !!}
 			    	
 			    </div>
 
@@ -167,5 +172,33 @@
 		$(".studentid_three").prop('disabled', false).attr("placeholder", "Student Id");
     }
    
+	window.onload = function reg_range(){
+
+		 start_date =   "{{$schedule->reg_fr_date}}"
+		 end_date   =   "{{$schedule->reg_to_date}}"
+		 today      =   "{{ date('d-m-Y') }}"
+    
+	     reg_start_date = parseInt(start_date,10);
+		 reg_end_date = parseInt(end_date,10);
+		 current_date = parseInt(today,10);
+
+
+		 if(current_date >= reg_start_date || current_date <= reg_end_date){
+
+			$(".search_form_name").prop('disabled', false).attr("placeholder", "Enabled");
+			
+		 }
+
+		 if(current_date < reg_start_date || current_date > reg_end_date){
+
+			$(".search_form_name").prop('disabled', true).attr("placeholder", "Disabled");
+
+		}
+
+
+
+
+
+	}
 
 </script>

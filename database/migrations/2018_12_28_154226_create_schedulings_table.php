@@ -25,6 +25,8 @@ class CreateSchedulingsTable extends Migration
             $table->string('th_info');
             $table->string('th_fr_date');
             $table->string('th_to_date');
+            $table->string('reg_fr_date');
+            $table->string('reg_to_date');
             $table->string('result');
             $table->string('rs_date');
             $table->timestamps();

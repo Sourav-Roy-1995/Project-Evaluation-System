@@ -196,18 +196,20 @@ class AdminController extends Controller
         
            $validatedData = $request->validate([
 
-                'final_year'=> 'required', 
+                'final_year' => 'required', 
                 'fi_semester'=> 'required', 
-                'fi_info'=> 'required',
-                'fi_fr_date'=> 'required',
-                'fi_to_date'=> 'required',
-                'third_year'=> 'required',
+                'fi_info'    => 'required',
+                'fi_fr_date' => 'required',
+                'fi_to_date' => 'required',
+                'third_year' => 'required',
                 'th_semester'=> 'required',
-                'th_info'=> 'required',
-                'th_fr_date'=> 'required',
-                'th_to_date'=> 'required',
-                'result'=>  'required',
-                'rs_date'=> 'required',
+                'th_info'    => 'required',
+                'th_fr_date' => 'required',
+                'th_to_date' => 'required',
+                'reg_fr_date'=> 'required',
+                'reg_to_date'=> 'required',
+                'result'     => 'required',
+                'rs_date'    => 'required',
                
             ]);
 
@@ -223,6 +225,8 @@ class AdminController extends Controller
           $schedule->th_info = $request->input("th_info");
           $schedule->th_fr_date = $request->input("th_fr_date");
           $schedule->th_to_date = $request->input("th_to_date");
+          $schedule->reg_fr_date = $request->input("reg_fr_date");
+          $schedule->reg_to_date = $request->input("reg_to_date");
           $schedule->result = $request->input("result");
           $schedule->rs_date = $request->input("rs_date");
           $schedule->save();

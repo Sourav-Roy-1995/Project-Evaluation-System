@@ -17,19 +17,39 @@
       font-size: 16px;}
     
     .search {
-      width: 32%;
       height: 28px;
-      margin-top: -29px;
       position: absolute;
       right: 20px;
       top: 0px;
       z-index: 2;
-  
+      width: 168px;
+      border: none;
   }
 }        
+@media screen and (max-width: 280px) {
+  
+  .search {
+    height: 28px;
+    position: absolute;
+    right: 20px;
+    top: 0px;
+    z-index: 4;
+    width: 140px;
+    border: none;
+}
 
+}
+
+.search {
+  height: 28px;
+  position: absolute;
+  right: 20px;
+  top: 0px;
+  z-index: 2;
+  width: 168px;
+  border: none;
+}
 .custom-panel {
-  width: 68.3pc;
   margin-left: 15px;
 }
 .custom-panel-footer{background-color: #D9EDF7;}

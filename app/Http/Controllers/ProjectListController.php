@@ -33,7 +33,11 @@ class ProjectListController extends Controller
     {
         //
         $regs = RegInfo::all();
-        return view('registration',compact('regs'));
+
+        $schedules = DB::table('schedulings')
+        ->select('reg_fr_date','reg_to_date')
+        ->get();
+        return view('registration',compact('regs','schedules'));
     }
 
     /**

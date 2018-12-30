@@ -19,6 +19,8 @@ class Scheduling extends Model
         'th_info',
         'th_fr_date',
         'th_to_date',
+        'reg_fr_date',
+        'reg_to_date',
         'result',
         'rs_date'
     ];

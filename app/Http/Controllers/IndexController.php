@@ -28,12 +28,11 @@ class IndexController extends Controller
     public function index()
     {
         //
-
         $schedules = DB::table('schedulings')
         ->select('final_year','fi_semester','fi_info','fi_fr_date','fi_to_date','third_year','th_semester','th_info','th_fr_date','th_to_date','result','rs_date')
         ->get();
 
-         return view('index' ,compact('schedules'));
+         return view('index',compact('schedules'));
     }
 
     /**

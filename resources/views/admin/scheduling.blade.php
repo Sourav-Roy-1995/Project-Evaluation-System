@@ -203,6 +203,29 @@
 
 
   <div class="row" style="margin-top:2pc">
+
+      <div class="col-md-4">
+        <div class="form-label-group">        
+            <input type="text" class="form-control disable-input" value="Registration Date" required>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-label-group">        
+            <input type="text" name="reg_fr_date" id="date_six" class="form-control" placeholder="Date" required>
+            {!! Form::label('date_six','From: ') !!}
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-label-group">        
+            <input type="text" name="reg_to_date" id="date_seven" class="form-control" placeholder="Date" required>
+            {!! Form::label('date_seven','To: ') !!}
+        </div>
+      </div>
+   </div>
+
+  <div class="row" style="margin-top:2pc">
         <div class="col-md-6">
           <div class="form-label-group">        
               <input type="text" name="result" class="form-control disable-input" value="Result" required>
@@ -302,6 +325,8 @@
                 $("#date_three").datepicker();
                 $("#date_four").datepicker();
                 $("#date_five").datepicker();
+                $("#date_six").datepicker();
+                $("#date_seven").datepicker();
            });  
              
       });  

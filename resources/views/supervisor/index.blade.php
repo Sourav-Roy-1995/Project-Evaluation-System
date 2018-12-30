@@ -5,9 +5,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Dept. Of CSE| Dashboard</title>
   <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+
   <!-- Font Awesome -->
   <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
@@ -47,7 +48,6 @@
 
 
   <link rel="stylesheet" href="css/profile.css">
- 
   
 </head>
 
@@ -57,7 +57,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="{{ asset('/') }}" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
@@ -355,16 +355,16 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-            <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+            <li class="active"><a href="supervisor"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
           </ul>
         </li>
         <li class="">
-          <a href="registration">
+          <a href="#">
             <i class="fa fa-files-o"></i>
             <span>Register</span>
             <span class="pull-right-container">
-              <span class="label label-primary pull-right">+</span>
+              <small class="label pull-right bg-green">new</small>
             </span>
           </a>
 
@@ -422,10 +422,10 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
-            <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
-            <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
-            <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> ChartJS</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Morris</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Flot</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Inline charts</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -437,12 +437,12 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
-            <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
-            <li><a href="pages/UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
-            <li><a href="pages/UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
-            <li><a href="pages/UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
-            <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> General</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Icons</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Buttons</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Sliders</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Timeline</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Modals</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -453,9 +453,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
-            <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
-            <li><a href="pages/forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> General Elements</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Editors</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -466,12 +466,12 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
-            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Simple tables</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Data tables</a></li>
           </ul>
         </li>
         <li>
-          <a href="pages/calendar.html">
+          <a href="#">
             <i class="fa fa-calendar"></i> <span>Calendar</span>
             <span class="pull-right-container">
               <small class="label pull-right bg-red">3</small>
@@ -480,7 +480,7 @@
           </a>
         </li>
         <li>
-          <a href="pages/mailbox/mailbox.html">
+          <a href="#">
             <i class="fa fa-envelope"></i> <span>Mailbox</span>
             <span class="pull-right-container">
               <small class="label pull-right bg-yellow">12</small>
@@ -497,15 +497,15 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/examples/invoice.html"><i class="fa fa-circle-o"></i> Invoice</a></li>
-            <li><a href="pages/examples/profile.html"><i class="fa fa-circle-o"></i> Profile</a></li>
-            <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> Login</a></li>
-            <li><a href="pages/examples/register.html"><i class="fa fa-circle-o"></i> Register</a></li>
-            <li><a href="pages/examples/lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
-            <li><a href="pages/examples/404.html"><i class="fa fa-circle-o"></i> 404 Error</a></li>
-            <li><a href="pages/examples/500.html"><i class="fa fa-circle-o"></i> 500 Error</a></li>
-            <li><a href="pages/examples/blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
-            <li><a href="pages/examples/pace.html"><i class="fa fa-circle-o"></i> Pace Page</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Invoice</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Profile</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Login</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Register</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> 404 Error</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> 500 Error</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Blank Page</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Pace Page</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -541,7 +541,7 @@
             <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
           </ul>
         </li>
-        <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
+        <li><a href="#"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
         <li class="header">LABELS</li>
         <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
         <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
@@ -651,11 +651,10 @@
   
               </div>
                 
-              <div class="panel-body">
+              <div class="panel-body table-responsive">
   
              <!--  <input float="left" class="form-control" id="myInput2" type="text" placeholder="Search.."> -->
-  
-                <div class="table-responsive">
+
                   <table class="table table-bordered table-hover" width="100%" cellspacing="0"
                   >
                     <thead >
@@ -677,9 +676,7 @@
                       </tr>
                     </tbody>
                     @endforeach
-  
-                  </table>
-                </div>
+                  </table>               
               </div>
               <div class="panel-footer custom-panel-footer small text-muted">Updated yesterday at 11:59 PM</div>
           </div>
@@ -703,11 +700,10 @@
   
               </div>
                 
-              <div class="panel-body">
+              <div class="panel-body table-responsive">
   
              <!--  <input float="left" class="form-control" id="myInput2" type="text" placeholder="Search.."> -->
   
-             <div class="table-responsive ">
                 <table class="table table-bordered table-hover" width="100%" cellspacing="0"
                 >
                   <thead >
@@ -731,7 +727,7 @@
                   @endforeach
 
                 </table>
-              </div>
+              
               </div>
               <div class="panel-footer custom-panel-footer small text-muted">Updated yesterday at 11:59 PM</div>
           </div>
@@ -754,11 +750,9 @@
   
               </div>
                 
-              <div class="panel-body">
+              <div class="panel-body table-responsive">
   
              <!--  <input float="left" class="form-control" id="myInput2" type="text" placeholder="Search.."> -->
-  
-             <div class="table-responsive">
                 <table class="table table-bordered table-striped table-hover" width="100%" cellspacing="0"
                 >
                   <thead >
@@ -797,9 +791,7 @@
                     </tr>
                   </tbody>
                   @endforeach
-
                 </table>
-              </div>
               </div>
               <div class="panel-footer custom-panel-footer small text-muted">Updated yesterday at 11:59 PM</div>
           </div>
@@ -1051,7 +1043,6 @@
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
-
 
 
 <!-- Search -->
