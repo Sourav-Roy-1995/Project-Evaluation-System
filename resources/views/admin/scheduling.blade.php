@@ -312,6 +312,8 @@
     <!-- Demo scripts for this page-->
     <script src="{{URL::asset('js/demo/datatables-demo.js')}}"></script>
 
+    <script src="{{URL::asset('js/moment.js')}}"></script>
+
 
     <!-- date picker -->
     <script>  
@@ -320,13 +322,8 @@
                 dateFormat: 'dd-mm-yy'   
            });  
            $(function(){  
-                $("#date_one").datepicker();
-                $("#date_two").datepicker();  
-                $("#date_three").datepicker();
-                $("#date_four").datepicker();
-                $("#date_five").datepicker();
-                $("#date_six").datepicker();
-                $("#date_seven").datepicker();
+                $("#date_one, #date_two, #date_three, #date_four, #date_five, #date_six, #date_seven").datepicker();
+
            });  
              
       });  

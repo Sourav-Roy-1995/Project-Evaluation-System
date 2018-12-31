@@ -2,6 +2,9 @@
 
 @foreach($schedules as $schedule)
 
+
+
+
 @endforeach
 
 
@@ -17,7 +20,6 @@
 						<div class="search_background" style="background-image:url(images/search_background.jpg);"></div>
 						<div class="search_content text-center" >
 							<h1 class="search_title">Register Here</h1>
-
 
 @if(Session::has('flash_message'))
         <div class="alert alert-success">
@@ -174,31 +176,31 @@
    
 	window.onload = function reg_range(){
 
-		 start_date =   "{{$schedule->reg_fr_date}}"
-		 end_date   =   "{{$schedule->reg_to_date}}"
-		 today      =   "{{ date('d-m-Y') }}"
-    
-	     reg_start_date = parseInt(start_date,10);
-		 reg_end_date = parseInt(end_date,10);
-		 current_date = parseInt(today,10);
+		// cr_date       = {{ date("dd-mm-yy") }};
+
+		 frm_date      = {{strtotime($schedule->reg_fr_date)}};
+		 end_date      = {{strtotime($schedule->reg_to_date)}};
+		 current_date  = {{strtotime("today")}};
+
+		 window.alert(end_date);
 
 
-		 if(current_date >= reg_start_date || current_date <= reg_end_date){
-
-			$(".search_form_name").prop('disabled', false).attr("placeholder", "Enabled");
-			
+		 if(current_date > end_date)
+		 {
+			$(".search_form_name").prop('disabled', true).attr("placeholder", "Disabled");
 		 }
 
-		 if(current_date < reg_start_date || current_date > reg_end_date){
-
+		 else if(current_date < frm_date)
+		 {
 			$(".search_form_name").prop('disabled', true).attr("placeholder", "Disabled");
-
-		}
-
-
-
-
+		 }
+		 
+		 else if(current_date >= frm_date || current_date <= end_date)
+		 {
+			$(".search_form_name").prop('disabled', false).attr("placeholder", "Enabled");
+		 }
 
 	}
+
 
 </script>
