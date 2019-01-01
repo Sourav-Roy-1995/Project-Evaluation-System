@@ -48,6 +48,7 @@
   z-index: 2;
   width: 168px;
   border: none;
+  padding: 7px;
 }
 .custom-panel {
   margin-left: 15px;

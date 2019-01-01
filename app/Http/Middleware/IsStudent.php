@@ -18,7 +18,7 @@ class IsStudent
     {
 
         $user = Auth::user();
-
+ 
         if(!$user->isStudent()){
                 
             return redirect('/');

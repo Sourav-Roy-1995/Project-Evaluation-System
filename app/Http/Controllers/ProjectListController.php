@@ -24,7 +24,7 @@ class ProjectListController extends Controller
 
     public function __construct(){
 
-         $this->middleware('IsStudent');
+         $this->middleware('RegMiddleware');
     }
 
 
@@ -37,7 +37,9 @@ class ProjectListController extends Controller
         $schedules = DB::table('schedulings')
         ->select('reg_fr_date','reg_to_date')
         ->get();
+
         return view('registration',compact('regs','schedules'));
+     
     }
 
     /**

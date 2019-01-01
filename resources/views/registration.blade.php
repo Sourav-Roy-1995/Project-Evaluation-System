@@ -173,31 +173,52 @@
     function student_three(){
 		$(".studentid_three").prop('disabled', false).attr("placeholder", "Student Id");
     }
+
+	function disable_std_one(){
+        $(".studentid_two").prop('disabled', true).attr("placeholder", "Registratin is currently disable");
+    }
+
+	function disable_std_two(){
+        $(".studentid_three").prop('disabled', true).attr("placeholder", "Registratin is currently disable");
+    }
    
+
 	window.onload = function reg_range(){
-
 		// cr_date       = {{ date("dd-mm-yy") }};
-
 		 frm_date      = {{strtotime($schedule->reg_fr_date)}};
 		 end_date      = {{strtotime($schedule->reg_to_date)}};
 		 current_date  = {{strtotime("today")}};
 
-		 window.alert(end_date);
-
-
 		 if(current_date > end_date)
 		 {
-			$(".search_form_name").prop('disabled', true).attr("placeholder", "Disabled");
+			$(".search_form_name").prop('disabled', true).attr("placeholder", "Registratin is currently disable");
+
+			$('.add_std_one').on('click',function(){
+				disable_std_one();
+			});
+
+			$('.add_std_two').on('click',function(){
+				disable_std_two();
+			});
+
+			$( ".search_title" ).text( "Registratin is currently disable" );
 		 }
 
 		 else if(current_date < frm_date)
 		 {
-			$(".search_form_name").prop('disabled', true).attr("placeholder", "Disabled");
-		 }
-		 
-		 else if(current_date >= frm_date || current_date <= end_date)
-		 {
-			$(".search_form_name").prop('disabled', false).attr("placeholder", "Enabled");
+			$(".search_form_name").prop('disabled', true).attr("placeholder", "Registratin is currently disable");
+
+			$('.add_std_one').on('click',function(){
+				disable_std_one();
+			});
+
+			$('.add_std_two').on('click',function(){
+				disable_std_two();
+			});
+
+			$( ".search_title" ).text( "Registratin is currently disable" );
+
+			
 		 }
 
 	}

@@ -69,7 +69,7 @@
 						<li class="main_nav_item"><a href="supervisorlist">Supervisor List</a></li>
 						<li class="main_nav_item"><a href="elligible_student">Eligible Student</a></li>
 						<li class="main_nav_item"><a href="registration">Project Registration</a></li>					
-						<li class="main_nav_item"><a href="supervisor">Result</a></li>
+						<li class="main_nav_item"><a href="result">Result</a></li>
 						<li class="main_nav_item"><a href="contact">Contact</a></li>
 						<li class="main_nav_item"><a href="admin">Admin</a></li>
 						<li class="main_nav_item"><a href="student_panel">Student Panel</a></li>
