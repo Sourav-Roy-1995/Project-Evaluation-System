@@ -90,7 +90,10 @@ Route::group(['middleware'=>'auth'],function(){
 		Route::get('/elligible_student','StudentController@index');
 		Route::get('/supervisorlist','StudentController@index2');
 		Route::get('/student_panel','StudentController@index3');
+		Route::get('/project_upload','StudentController@index4')->name('project_upload');
 		Route::post('/getans','StudentController@getAns')->name('student.getans');
+
+		
 		//Students Route List
 
 		//Normal User loginPage

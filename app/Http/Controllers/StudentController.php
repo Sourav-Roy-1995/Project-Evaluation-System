@@ -9,6 +9,10 @@ use App\Http\Controllers\Controller;
 use App\StudentList;
 use App\User;
 use App\ProjectList;
+use App\SupervisorStudent;
+use App\RegInfo;
+use App\MarkingSystem;
+use App\Final_mark;
 use App\Scheduling;
 use Session;
 
@@ -52,12 +56,16 @@ class StudentController extends Controller
 
 
     public function index3(){
-	
+        
 		return view('student.index');
 
-	}
+    }
+    public function index4(){
+        
+		return view('student.project_upload');
 
-    
+    }
+        
     public function getAns(){
 
         $getans = StudentList::where([

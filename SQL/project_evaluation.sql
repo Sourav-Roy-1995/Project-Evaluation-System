@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 29, 2018 at 02:54 PM
+-- Generation Time: Jan 01, 2019 at 02:02 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -37,15 +37,6 @@ CREATE TABLE `final_marks` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `final_marks`
---
-
-INSERT INTO `final_marks` (`id`, `studentid`, `counter`, `final_mark`, `created_at`, `updated_at`) VALUES
-(1, 1512020201, 1, 40, NULL, NULL),
-(2, 1512020221, 1, 69, NULL, NULL),
-(3, 1512020246, 1, 42, NULL, NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -67,15 +58,6 @@ CREATE TABLE `marking_systems` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `marking_systems`
---
-
-INSERT INTO `marking_systems` (`id`, `project_id`, `personal_id`, `course_code`, `semester`, `student_id`, `category_one`, `category_two`, `supervisor_marks`, `total`, `created_at`, `updated_at`) VALUES
-(1, 14001, 90901, 'CSE-4041', 'SUMMER-2018', 1512020201, 10, 10, 20, 20, NULL, NULL),
-(2, 14001, 90901, 'CSE-4041', 'SUMMER-2018', 1512020221, 20, 30, 20, 49, NULL, NULL),
-(3, 14000, 90901, 'CSE-4041', 'SUMMER-2018', 1512020246, 10, 12, 20, 22, NULL, NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -93,15 +75,15 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(279, '2014_10_12_000000_create_users_table', 1),
-(280, '2014_10_12_100000_create_password_resets_table', 1),
-(281, '2018_11_09_183850_create_student_lists_table', 1),
-(282, '2018_11_13_191303_create_project_lists_table', 1),
-(283, '2018_11_17_061207_create_marking_systems_table', 1),
-(284, '2018_11_17_123019_create_supervisor_students_table', 1),
-(285, '2018_11_26_220525_create_reg_infos_table', 1),
-(286, '2018_12_09_142144_create_final_marks_table', 1),
-(287, '2018_12_28_154226_create_schedulings_table', 1);
+(297, '2014_10_12_000000_create_users_table', 1),
+(298, '2014_10_12_100000_create_password_resets_table', 1),
+(299, '2018_11_09_183850_create_student_lists_table', 1),
+(300, '2018_11_13_191303_create_project_lists_table', 1),
+(301, '2018_11_17_061207_create_marking_systems_table', 1),
+(302, '2018_11_17_123019_create_supervisor_students_table', 1),
+(303, '2018_11_26_220525_create_reg_infos_table', 1),
+(304, '2018_12_09_142144_create_final_marks_table', 1),
+(305, '2018_12_28_154226_create_schedulings_table', 1);
 
 -- --------------------------------------------------------
 
@@ -140,9 +122,7 @@ CREATE TABLE `project_lists` (
 --
 
 INSERT INTO `project_lists` (`project_id`, `project_name`, `description`, `course_code`, `personal_id`, `semester`, `studentid_one`, `studentid_two`, `studentid_three`, `created_at`, `updated_at`) VALUES
-(14000, 'Project Evaluation', 'It is a long established fact that a reader will be distracted by th', 'CSE-4041', 90901, 'SUMMER-2018', 1512020246, NULL, NULL, '2018-12-29 07:49:07', '2018-12-29 07:49:07'),
-(14001, 'Project Evaluation2', 'It is a long established fact that a reader will be distracted by th', 'CSE-4041', 90901, 'SUMMER-2018', 1512020201, 1512020221, NULL, '2018-12-29 07:49:31', '2018-12-29 07:49:31'),
-(14002, 'Project Evaluation4', 'It is a long established fact that a reader will be distracted by th', 'CSE-4041', 0, 'SUMMER-2018', 1512020203, 1512020204, 1512020205, '2018-12-29 07:49:56', '2018-12-29 07:49:56');
+(14000, 'Project Evaluation', 'lllllllllllllllllll', 'CSE-4041', 0, 'SUMMER-2018', 1512020246, 1512020201, 1512020202, '2019-01-01 01:24:30', '2019-01-01 01:24:30');
 
 -- --------------------------------------------------------
 
@@ -163,7 +143,7 @@ CREATE TABLE `reg_infos` (
 --
 
 INSERT INTO `reg_infos` (`id`, `course_code`, `semester`, `created_at`, `updated_at`) VALUES
-(1, 'CSE-4041', 'SUMMER-2018', '2018-12-29 07:48:55', '2018-12-29 07:48:55');
+(1, 'CSE-4041', 'SUMMER-2018', '2019-01-01 01:24:11', '2019-01-01 01:24:11');
 
 -- --------------------------------------------------------
 
@@ -183,6 +163,8 @@ CREATE TABLE `schedulings` (
   `th_info` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `th_fr_date` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `th_to_date` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `reg_fr_date` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `reg_to_date` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `result` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `rs_date` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -249,14 +231,6 @@ CREATE TABLE `supervisor_students` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `supervisor_students`
---
-
-INSERT INTO `supervisor_students` (`id`, `project_id`, `personal_id`, `supervisor_name`, `created_at`, `updated_at`) VALUES
-(1, 14000, 90901, 'Sourav', '2018-12-29 07:50:17', '2018-12-29 07:50:17'),
-(2, 14001, 90901, 'Sourav', '2018-12-29 07:50:26', '2018-12-29 07:50:26');
-
 -- --------------------------------------------------------
 
 --
@@ -285,7 +259,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `personal_id`, `name`, `admin`, `faculty`, `student`, `normal_user`, `supervisor`, `email`, `phone`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 90901, 'Sourav', 1, 1, 1, 1, 1, 'sourav@gmail.com', 1999999, '$2y$10$5aKas0GY1Sfyffa7VdRz5.jsfkwsGxR5Lrzo2T9oCZNUOUxE2BBLW', NULL, '2018-12-29 07:47:35', '2018-12-29 07:47:35');
+(1, 90901, 'Sourav', 1, 1, 1, 1, 1, 'sourav@gmail.com', 65698956, '$2y$10$MYeTqvZmbIwXMwsbLr37lO3rDDEExvEc7TQSYYzywOSHOip0kOps.', NULL, '2019-01-01 01:21:04', '2019-01-01 01:21:04');
 
 --
 -- Indexes for dumped tables
@@ -362,25 +336,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `final_marks`
 --
 ALTER TABLE `final_marks`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `marking_systems`
 --
 ALTER TABLE `marking_systems`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=288;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=306;
 
 --
 -- AUTO_INCREMENT for table `project_lists`
 --
 ALTER TABLE `project_lists`
-  MODIFY `project_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14003;
+  MODIFY `project_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14001;
 
 --
 -- AUTO_INCREMENT for table `reg_infos`
@@ -392,7 +366,7 @@ ALTER TABLE `reg_infos`
 -- AUTO_INCREMENT for table `schedulings`
 --
 ALTER TABLE `schedulings`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `student_lists`
@@ -404,7 +378,7 @@ ALTER TABLE `student_lists`
 -- AUTO_INCREMENT for table `supervisor_students`
 --
 ALTER TABLE `supervisor_students`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`

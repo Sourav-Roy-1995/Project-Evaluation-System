@@ -1,3 +1,9 @@
+<?php
+  use App\User;
+  use App\ProjectList;
+  use App\StudentList;
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -574,9 +580,9 @@
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>150</h3>
+              <h3>{{StudentList::all()->count('studentid') }}</h3>
 
-              <p>New Orders</p>
+              <p>Total Students</p>
             </div>
             <div class="icon">
               <i class="ion ion-bag"></i>
@@ -589,9 +595,9 @@
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <h3>53<sup style="font-size: 20px">%</sup></h3>
+                <h3>{{ProjectList::all()->count('project_id') }}</h3>
 
-              <p>Bounce Rate</p>
+                <p>Total Project</p>
             </div>
             <div class="icon">
               <i class="ion ion-stats-bars"></i>
