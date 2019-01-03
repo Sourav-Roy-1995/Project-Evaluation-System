@@ -40,6 +40,15 @@
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+  <!-- Fonts-->
+  <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/js/gijgo.min.js" type="text/javascript"></script>
+  <link href="https://fonts.googleapis.com/css?family=Charm" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Charm|Staatliches" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Charm|Lobster|Staatliches" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet"> 
+
+  <link rel="stylesheet" href="css/profile.css">
   
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -47,7 +56,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="{{ asset('/') }}" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
@@ -339,17 +348,13 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
-        <li class="active treeview">
-          <a href="#">
+        <li >
+          <a href="student_panel">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-          <ul class="treeview-menu">
-            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
-          </ul>
         </li>
         <li class="">
           <a href="registration">
@@ -398,7 +403,7 @@
             <li><a href="#"><i class="fa fa-circle-o"></i> Buttons</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Sliders</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Timeline</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Modals</a></li>
+            <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -447,14 +452,14 @@
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-folder"></i> <span>Examples</span>
+            <i class="fa fa-folder"></i> <span>Profile</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
             <li><a href="#"><i class="fa fa-circle-o"></i> Invoice</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Profile</a></li>
+            <li><a href="sp_profile"><i class="fa fa-circle-o"></i> Profile</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Login</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Register</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
@@ -516,7 +521,7 @@
         <small>Control panel</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="student_panel"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Dashboard</li>
       </ol>
     </section>
@@ -588,6 +593,55 @@
           </div>
         </div>
         <!-- ./col -->
+
+
+        
+        <div class="panel panel-info custom-panel form-txt" style="    margin-top: 175px;">
+            <div class="panel-heading panel-info" id="personal">
+
+              <div class="row">
+                  <div class="col-md-6 col-sm-6 col-xs-2 default-panel-head personal_project" >
+                      <span class="glyphicon glyphicon-th" aria-hidden="true" ></span>
+                       Project Information
+                  </div>
+      
+                  <div class="col-md-6 col-sm-6 col-xs-4">                 
+                      <input class="input_field search"  id="myInput2" placeholder="search..." type="text">
+                  </div>
+              </div>
+
+
+            </div>
+              
+            <div class="panel-body table-responsive">
+
+           <!--  <input float="left" class="form-control" id="myInput2" type="text" placeholder="Search.."> -->
+
+                <table class="table table-bordered table-hover" width="100%" cellspacing="0"
+                >
+                  <thead >
+                    <tr>
+                      
+                      <th style="font-weight: bold;" >Project Id:</th>                      
+                      <th style="font-weight: bold;" >view</th>
+                    </tr>
+                  </thead>
+
+                
+                  <tbody id="myTable2">
+                    <tr>
+
+                      <td style="font-weight: bold;"></td>
+
+                      <td><a href="#" class='btn btn-info btn-sm custom-btn' name="name" >View</a></td>
+                      
+                    </tr>
+                  </tbody>
+                 
+                </table>               
+            </div>
+            <div class="panel-footer custom-panel-footer small text-muted">Updated yesterday at 11:59 PM</div>
+        </div>
       </div>
       <!-- /.row -->
       <!-- Main row -->
@@ -602,11 +656,10 @@
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      <b>Version</b> 2.4.0
-    </div>
-    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
-    reserved.
+      <div class="pull-right hidden-xs">
+        <b>Version</b> 2.4.0
+      </div>
+      <strong>Developed By <a href="https://www.linkedin.com/in/sourav-roy-a2a489135/">Sourav Roy</a>.</strong>
   </footer>
 
   <!-- Control Sidebar -->

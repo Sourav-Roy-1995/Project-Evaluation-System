@@ -91,6 +91,7 @@ Route::group(['middleware'=>'auth'],function(){
 		Route::get('/supervisorlist','StudentController@index2');
 		Route::get('/student_panel','StudentController@index3');
 		Route::get('/project_upload','StudentController@index4')->name('project_upload');
+		Route::get('/sp_profile','StudentController@sp_profile')->name('sp_profile');
 		Route::post('/getans','StudentController@getAns')->name('student.getans');
 
 		

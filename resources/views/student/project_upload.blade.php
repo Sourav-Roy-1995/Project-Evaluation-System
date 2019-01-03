@@ -35,6 +35,10 @@
     <link href="https://fonts.googleapis.com/css?family=Charm" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Charm|Staatliches" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Charm|Lobster|Staatliches" rel="stylesheet">
+
+    <style>
+      .disable-input{pointer-events: none;}
+    </style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -333,17 +337,13 @@
                   <!-- sidebar menu: : style can be found in sidebar.less -->
                   <ul class="sidebar-menu" data-widget="tree">
                     <li class="header">MAIN NAVIGATION</li>
-                    <li class="active treeview">
-                      <a href="#">
-                        <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-                        <span class="pull-right-container">
-                          <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                      </a>
-                      <ul class="treeview-menu">
-                        <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
-                      </ul>
+                    <li >
+                        <a href="student_panel">
+                          <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                          <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                          </span>
+                        </a>
                     </li>
                     <li class="">
                       <a href="registration">
@@ -520,7 +520,7 @@
     <section class="content">
       <div class="row">
         <!-- left column -->
-        <div class="col-md-6">
+        <div class="col-md-12">
           <!-- general form elements -->
           <div class="box box-primary">
             <div class="box-header with-border">
@@ -532,11 +532,11 @@
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputName">Name</label>
-                  <input type="text" name="name" class="form-control" id="exampleInputName" placeholder="Enter Name">
+                  <input type="text" name="name" class="form-control disable-input" id="exampleInputName" placeholder="Enter Name" value="{{ Auth::User()->name }}">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputID">ID</label>
-                    <input type="text" name="std_id" class="form-control" id="exampleInputID" placeholder="Enter ID">
+                    <input type="text" name="std_id" class="form-control disable-input" id="exampleInputID" placeholder="Enter ID" value="{{ Auth::User()->personal_id }}">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputTitle">Project Title</label>
@@ -558,13 +558,14 @@
                     <select name="type" id="exampleInputType"  class="form-control">                    
                         <option value="web">Laravel</option>
                         <option value="android">Node Js</option>
-                        <option value="ios">IOS</option>
-                        <option value="thesis">THESIS</option>
+                        <option value="ios">Django</option>
+                        <option value="thesis">CodeIgniter</option>
+                        <option value="thesis">Flask</option>
                     </select>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  <label for="exampleInputDescription">Description</label>
+                  <textarea type="text" name="project_txt" class="form-control" id="exampleInputDescription" placeholder="description" ></textarea>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputFile">File input</label>

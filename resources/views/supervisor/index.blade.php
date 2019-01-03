@@ -689,7 +689,6 @@
           </div>
 
 
-
           <div class="panel panel-info custom-panel form-txt" style="margin-top: 30px">
               <div class="panel-heading panel-info" id="all">
   
