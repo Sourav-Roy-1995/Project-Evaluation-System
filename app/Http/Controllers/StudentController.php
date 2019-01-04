@@ -57,10 +57,21 @@ class StudentController extends Controller
 
 
     public function index3(){
-        
-		return view('student.index');
+
+        $user =Auth::User();
+
+        $personalproject = DB::table('project_lists')
+
+        ->where('project_lists.studentid_one', '=', $user->personal_id)
+        ->orWhere('project_lists.studentid_two', '=', $user->personal_id)
+        ->orWhere('project_lists.studentid_three', '=', $user->personal_id)
+        ->select('project_lists.project_name', 'project_lists.description','project_lists.course_code','project_lists.semester','project_lists.studentid_one','project_lists.studentid_two','project_lists.studentid_three')
+        ->get();
+
+		return view('student.index',compact('personalproject'));
 
     }
+    
     public function index4(){
 	    return view('student.project_upload');
     }

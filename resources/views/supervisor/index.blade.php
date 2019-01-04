@@ -638,6 +638,8 @@
         <!-- ./col -->
       </div>
       <!-- /.row -->
+
+
       <!-- Main row -->
       <div class="row">
 
@@ -752,7 +754,6 @@
                         <input class="input_field search"  id="myInput" placeholder="search..." type="text">
                     </div>
                 </div>
-
   
               </div>
                 
@@ -799,7 +800,8 @@
                   @endforeach
                 </table>
               </div>
-              <div class="panel-footer custom-panel-footer small text-muted">Updated yesterday at 11:59 PM</div>
+              <div class="panel-footer custom-panel-footer small          text-muted">Updated yesterday at 11:59 PM
+              </div>
           </div>
         
       </div>

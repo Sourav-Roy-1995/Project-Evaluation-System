@@ -3,54 +3,57 @@
 ?>
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Dept. Of CSE| Dashboard</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
-  <!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
-  <!-- Morris chart -->
-  <link rel="stylesheet" href="bower_components/morris.js/morris.css">
-  <!-- jvectormap -->
-  <link rel="stylesheet" href="bower_components/jvectormap/jquery-jvectormap.css">
-  <!-- Date Picker -->
-  <link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
-  <!-- Daterange picker -->
-  <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css">
-  <!-- bootstrap wysihtml5 - text editor -->
-  <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-
-  <!-- Google Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-
-  <!-- Fonts-->
-  <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/js/gijgo.min.js" type="text/javascript"></script>
-  <link href="https://fonts.googleapis.com/css?family=Charm" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Charm|Staatliches" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Charm|Lobster|Staatliches" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet"> 
-
-  <link rel="stylesheet" href="css/profile.css">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dept. Of CSE| Dashboard</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
   
-</head>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+    
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+    <!-- Morris chart -->
+    <link rel="stylesheet" href="bower_components/morris.js/morris.css">
+    <!-- jvectormap -->
+    <link rel="stylesheet" href="bower_components/jvectormap/jquery-jvectormap.css">
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css">
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+  
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  
+    <!-- Fonts-->
+    <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://fonts.googleapis.com/css?family=Charm" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Charm|Staatliches" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Charm|Lobster|Staatliches" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet"> 
+  
+  
+    <link rel="stylesheet" href="css/profile.css">
+    
+  </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
@@ -348,7 +351,7 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
-        <li >
+        <li>
           <a href="student_panel">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             <span class="pull-right-container">
@@ -366,87 +369,12 @@
           </a>
 
         </li>
+
         <li>
-          <a href="#">
-            <i class="fa fa-th"></i> <span>Widgets</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-green">new</small>
-            </span>
-          </a>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-pie-chart"></i>
-            <span>Charts</span>
+          <a href="project_upload">
+            <i class="fa fa-edit"></i> <span>Project Upload</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> ChartJS</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Morris</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Flot</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Inline charts</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-laptop"></i>
-            <span>UI Elements</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> General</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Icons</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Buttons</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Sliders</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Timeline</a></li>
-            <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-edit"></i> <span>Forms</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="project_upload"><i class="fa fa-circle-o"></i> General Elements</a></li>
-            <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
-            <li><a href="pages/forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-table"></i> <span>Tables</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Simple tables</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Data tables</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fa fa-calendar"></i> <span>Calendar</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-red">3</small>
-              <small class="label pull-right bg-blue">17</small>
-            </span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fa fa-envelope"></i> <span>Mailbox</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-yellow">12</small>
-              <small class="label pull-right bg-green">16</small>
-              <small class="label pull-right bg-red">5</small>
             </span>
           </a>
         </li>
@@ -457,63 +385,24 @@
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-          <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Invoice</a></li>
-            <li><a href="sp_profile"><i class="fa fa-circle-o"></i> Profile</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Login</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Register</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> 404 Error</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> 500 Error</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Blank Page</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Pace Page</a></li>
+          <ul class="treeview-menu">           
+            <li><a href="sp_profile"><i class="fa fa-circle-o"></i>Supervisor Profile</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i>Others</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i>Others</a></li>
           </ul>
         </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-share"></i> <span>Multilevel</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
-            <li class="treeview">
-              <a href="#"><i class="fa fa-circle-o"></i> Level One
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i> Level Two</a></li>
-                <li class="treeview">
-                  <a href="#"><i class="fa fa-circle-o"></i> Level Two
-                    <span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                  </a>
-                  <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
-          </ul>
-        </li>
-        <li><a href="#"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
-        <li class="header">LABELS</li>
-        <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
+
+        <li class="header">OTHER INFORMATION</li>
+        <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Project Evaluation</span></a></li>
+        <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Documentation</span></a></li>
+        <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Previous Project</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="content-wrapper wrapper-two">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
@@ -593,67 +482,72 @@
           </div>
         </div>
         <!-- ./col -->
-
-
-        
-        <div class="panel panel-info custom-panel form-txt" style="    margin-top: 175px;">
-            <div class="panel-heading panel-info" id="personal">
-
-              <div class="row">
-                  <div class="col-md-6 col-sm-6 col-xs-2 default-panel-head personal_project" >
-                      <span class="glyphicon glyphicon-th" aria-hidden="true" ></span>
-                       Project Information
-                  </div>
+      </div>
       
-                  <div class="col-md-6 col-sm-6 col-xs-4">                 
-                      <input class="input_field search"  id="myInput2" placeholder="search..." type="text">
-                  </div>
-              </div>
-
-
-            </div>
-              
-            <div class="panel-body table-responsive">
-
-           <!--  <input float="left" class="form-control" id="myInput2" type="text" placeholder="Search.."> -->
-
-                <table class="table table-bordered table-hover" width="100%" cellspacing="0"
-                >
-                  <thead >
-                    <tr>
-                      
-                      <th style="font-weight: bold;" >Project Id:</th>                      
-                      <th style="font-weight: bold;" >view</th>
-                    </tr>
-                  </thead>
-
-                
-                  <tbody id="myTable2">
-                    <tr>
-
-                      <td style="font-weight: bold;"></td>
-
-                      <td><a href="#" class='btn btn-info btn-sm custom-btn' name="name" >View</a></td>
-                      
-                    </tr>
-                  </tbody>
-                 
-                </table>               
-            </div>
-            <div class="panel-footer custom-panel-footer small text-muted">Updated yesterday at 11:59 PM</div>
-        </div>
-      </div>
       <!-- /.row -->
-      <!-- Main row -->
-      <div class="row">
 
-        
-      </div>
+      <!-- Main row -->
+    
+      <div class="row"> 
+      <div class="panel panel-info custom-panel form-txt" style="margin-top:50px;">
+          <div class="panel-heading panel-info" id="personal">
+
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-2 default-panel-head personal_project" >
+                    <span class="glyphicon glyphicon-th" aria-hidden="true" ></span>
+                     Project Information
+                </div>
+    
+                <div class="col-md-6 col-sm-6 col-xs-4">                 
+                    <input class="input_field search"  id="myInput2" placeholder="search..." type="text">
+                </div>
+            </div>
+          </div>
+            
+          <div class="panel-body table-responsive">
+
+                  <table class="table table-bordered table-hover" width="100%" cellspacing="0">
+
+                            @foreach($personalproject as $personalprojects)
+                                <tbody class="table-bordered">
+                                   <tr>                                
+                                        <th>Project Name</th> 
+                                        <td>{{$personalprojects->project_name}}</td>
+                                   </tr> 
+                                   <tr>                                
+                                        <th>Description</th> 
+                                        <td>{{$personalprojects->description}}</td>
+                                   </tr> 
+                                   <tr>                                
+                                        <th>Semester</th> 
+                                        <td>{{$personalprojects->semester}}</td>
+                                   </tr> 
+                                   <tr>                                
+                                        <th>Students</th> 
+                                        <td>
+                                        {{$personalprojects->studentid_one}}<br>
+                                        {{$personalprojects->studentid_two}}<br>
+                                        {{$personalprojects->studentid_three}}</td>
+                                   </tr>     
+                                </tbody>
+
+                                @endforeach
+
+                          </table>
+                                                   
+            </div>
+
+          <div class="panel-footer custom-panel-footer small text-muted">Updated     yesterday at 11:59 PM 
+          </div>
+       </div>
+      </div>          
       <!-- /.row (main row) -->
 
     </section>
     <!-- /.content -->
   </div>
+
+
   <!-- /.content-wrapper -->
   <footer class="main-footer">
       <div class="pull-right hidden-xs">

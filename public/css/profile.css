@@ -109,6 +109,10 @@
   font-size:30px;
 }
 
+.wrapper-two{
+  height: 1200px!important;
+}
+
 #colorlib-aside {
   padding-top: 3em;
   padding-bottom: 40px;
