@@ -5,7 +5,7 @@
 			<div class="row">
 				<div class="col">
 					<div class="section_title text-center">
-						<h1>Popular Project</h1>
+						<h1>Project Slide</h1>
 					</div>
 				</div>
 			</div>
@@ -18,9 +18,9 @@
 					<div class="card">
 					<img class="card-img-top" src="{{asset('images/'.$prev_project->project_img)}}" alt="Owl Image">
 						<div class="card-body text-center">
-							<div class="card-title"><a href="courses.php">
+							<div class="card-title"><a href="prev_project">
 								{{$prev_project->project_title}}</a></div>
-							<div class="card-text">{{$prev_project->project_txt}}</div>
+							<div class="card-text custom-card-txt">{{$prev_project->project_txt}}</div>
 						</div>
 						<div class="price_box d-flex flex-row align-items-center">
 							<div class="course_author_image">
@@ -33,95 +33,6 @@
 					</div>
 				</div>
 				@endforeach
-
-				<!-- Popular Course Item -->
-				<div class="item">
-					<div class="card">
-						<img class="card-img-top" src="images/course_2.jpg" alt="Owl Image">
-						<div class="card-body text-center">
-							<div class="card-title"><a href="courses.php">Library Management</a></div>
-							<div class="card-text">Lorem ipsum lorem ipsum lorem ipsum  etc...</div>
-						</div>
-						<div class="price_box d-flex flex-row align-items-center">
-							<div class="course_author_image">
-								<img src="images/author.jpg" alt="https://unsplash.com/@mehdizadeh">
-							</div>
-							<div class="course_author_name">Sourav Roy, <span>Author</span></div>
-							<div class="course_price d-flex flex-column align-items-center justify-content-center"><span>free in charge</span></div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Popular Course Item -->
-				<div class="item">
-					<div class="card">
-						<img class="card-img-top" src="images/course_3.jpg" alt="Owl Image">
-						<div class="card-body text-center">
-							<div class="card-title"><a href="courses.php">Student Management</a></div>
-							<div class="card-text">Lorem ipsum lorem ipsum lorem ipsum  etc...</div>
-						</div>
-						<div class="price_box d-flex flex-row align-items-center">
-							<div class="course_author_image">
-								<img src="images/author.jpg" alt="">
-							</div>
-							<div class="course_author_name">Sourav Roy, <span>Author</span></div>
-							<div class="course_price d-flex flex-column align-items-center justify-content-center"><span>free in charge</span></div>
-						</div>
-					</div>
-				</div>
-
-				  <div class="item">
-						<div class="card">
-							<img class="card-img-top" src="images/course_1.jpg" alt="Owl Image">
-							<div class="card-body text-center">
-								<div class="card-title"><a href="courses.php">Air Line</a></div>
-								<div class="card-text">Lorem ipsum lorem ipsum lorem ipsum  etc...</div>
-							</div>
-							<div class="price_box d-flex flex-row align-items-center">
-								<div class="course_author_image">
-									<img src="images/author.jpg" alt="">
-								</div>
-								<div class="course_author_name">Sourav Roy, <span>Author</span></div>
-								<div class="course_price d-flex flex-column align-items-center justify-content-center"><span>free in charge </span></div>
-							</div>
-						</div>
-					</div>
-	
-					<!-- Popular Course Item -->
-					<div class="item">
-						<div class="card">
-							<img class="card-img-top" src="images/course_2.jpg" alt="Owl Image">
-							<div class="card-body text-center">
-								<div class="card-title"><a href="courses.php">Blog System</a></div>
-								<div class="card-text">Lorem ipsum lorem ipsum lorem ipsum  etc...</div>
-							</div>
-							<div class="price_box d-flex flex-row align-items-center">
-								<div class="course_author_image">
-									<img src="images/author.jpg" alt="https://unsplash.com/@mehdizadeh">
-								</div>
-								<div class="course_author_name">Sourav Roy, <span>Author</span></div>
-								<div class="course_price d-flex flex-column align-items-center justify-content-center"><span>free in charge</span></div>
-							</div>
-						</div>
-					</div>
-	
-					<!-- Popular Course Item -->
-					<div class="item">
-						<div class="card">
-							<img class="card-img-top" src="images/course_3.jpg" alt="Owl Image">
-							<div class="card-body text-center">
-								<div class="card-title"><a href="courses.php">Framework</a></div>
-								<div class="card-text">Lorem ipsum lorem ipsum lorem ipsum  etc...</div>
-							</div>
-							<div class="price_box d-flex flex-row align-items-center">
-								<div class="course_author_image">
-									<img src="images/author.jpg" alt="">
-								</div>
-								<div class="course_author_name">Sourav Roy, <span>Author</span></div>
-								<div class="course_price d-flex flex-column align-items-center justify-content-center"><span>free in charge</span></div>
-							</div>
-						</div>
-					</div>
 			</div>
 		</div>		
 	</div>

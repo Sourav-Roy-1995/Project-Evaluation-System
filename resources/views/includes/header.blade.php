@@ -49,10 +49,22 @@
 #owl-example .item{
   margin: 7px;
 }
-#owl-example .item img{
+.card-img-top{
   display: block;
   width: 100%;
-  height: auto;
+  height: 232px;
+}
+.custom-card-txt{
+	line-height: 52px;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 400px;
+}
+.card-img-body{
+	display: block;
+	width: 50%;
+	height: 50%;
+	margin-left: 238px;
 }
 </style>
 

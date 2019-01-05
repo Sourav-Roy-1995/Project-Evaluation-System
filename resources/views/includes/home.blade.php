@@ -55,7 +55,7 @@
 							<img src="images/earth-globe.svg" class="svg" alt="">
 							<div class="hero_box_content">
 								<h2 class="hero_box_title">Previous Project</h2>
-								<a href="student" class="hero_box_link">view more</a>
+								<a href="prev_project" class="hero_box_link">view more</a>
 							</div>
 						</div>
 					</div>

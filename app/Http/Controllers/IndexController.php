@@ -39,6 +39,14 @@ class IndexController extends Controller
          return view('index',compact('schedules','prev_projects'));
     }
 
+
+    public function prev_project()
+    {
+        //
+        $pre_projects=Project_Upload::all();
+        return view('previous_project',compact('pre_projects'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

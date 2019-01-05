@@ -16,20 +16,18 @@ use App\User;
 
 
 
+
+
+
+
+
+
+
+//Index Controller:
 Route::resource('/','IndexController');
+Route::get('/prev_project','IndexController@prev_project');
+//Index Controller:
 
-/*
-Route::get('test',function(){
-
-		$marks = DB::table('marking_systems')
-        ->select('student_id','category_one','category_two','supervisor_marks','total',DB::raw('count(*) as total'))   
-		->groupBy('student_id','category_one','category_two','supervisor_marks','total') 
-		->orderBy('total','DESC')        
-		->get();
-		dd($marks);
-		
-});
-*/
 
 Route::get('/contact',function(){
 	return view('contact');
@@ -96,8 +94,6 @@ Route::group(['middleware'=>'auth'],function(){
 		Route::post('store_project','StudentController@store_project')->name('project.store');
 
 		Route::post('/getans','StudentController@getAns')->name('student.getans');
-
-		
 		//Students Route List
 
 		//Normal User loginPage
