@@ -14,6 +14,7 @@ use App\RegInfo;
 use App\MarkingSystem;
 use App\Final_mark;
 use App\Scheduling;
+use App\Project_Upload;
 use Illuminate\Support\Facades\Validator;
 use Session;
 
@@ -32,7 +33,10 @@ class IndexController extends Controller
         ->select('final_year','fi_semester','fi_info','fi_fr_date','fi_to_date','third_year','th_semester','th_info','th_fr_date','th_to_date','result','rs_date')
         ->get();
 
-         return view('index',compact('schedules'));
+
+        $prev_projects=Project_Upload::all();
+
+         return view('index',compact('schedules','prev_projects'));
     }
 
     /**

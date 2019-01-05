@@ -13,22 +13,26 @@
 			<div class="row course_boxes owl-carousel" id="owl-example" >
 				
 				<!-- Popular Course Item -->
+				@foreach($prev_projects as $prev_project)
 				<div class="item">
 					<div class="card">
-						<img class="card-img-top" src="images/course_1.jpg" alt="Owl Image">
+					<img class="card-img-top" src="{{asset('images/'.$prev_project->project_img)}}" alt="Owl Image">
 						<div class="card-body text-center">
-							<div class="card-title"><a href="courses.php">Hotel Management</a></div>
-							<div class="card-text">Lorem ipsum lorem ipsum lorem ipsum  etc...</div>
+							<div class="card-title"><a href="courses.php">
+								{{$prev_project->project_title}}</a></div>
+							<div class="card-text">{{$prev_project->project_txt}}</div>
 						</div>
 						<div class="price_box d-flex flex-row align-items-center">
 							<div class="course_author_image">
 								<img src="images/author.jpg" alt="">
 							</div>
-							<div class="course_author_name">Sourav Roy, <span>Author</span></div>
-							<div class="course_price d-flex flex-column align-items-center justify-content-center"><span>free in charge </span></div>
+							<div class="course_author_name">{{$prev_project->name}}, <span>Author</span></div>
+							<div class="course_price d-flex flex-column align-items-center justify-content-center"><span>
+							{{$prev_project->project_type}} Project</span></div>
 						</div>
 					</div>
 				</div>
+				@endforeach
 
 				<!-- Popular Course Item -->
 				<div class="item">
