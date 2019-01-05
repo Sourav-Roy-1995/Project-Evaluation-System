@@ -87,11 +87,14 @@ Route::group(['middleware'=>'auth'],function(){
 
 
 		//Students Route List
-		Route::get('/elligible_student','StudentController@index');
-		Route::get('/supervisorlist','StudentController@index2');
-		Route::get('/student_panel','StudentController@index3');
-		Route::get('/project_upload','StudentController@index4')->name('project_upload');
+		Route::get('/elligible_student','StudentController@elligible_students');
+		Route::get('/supervisorlist','StudentController@view_supervisor');
+		Route::get('/student_panel','StudentController@index')->name('student_panel');
+		Route::get('/project_upload','StudentController@project_upload')->name('project_upload');
 		Route::get('/sp_profile','StudentController@sp_profile')->name('sp_profile');
+
+		Route::post('store_project','StudentController@store_project')->name('project.store');
+
 		Route::post('/getans','StudentController@getAns')->name('student.getans');
 
 		

@@ -136,6 +136,7 @@
 </div>
 
 <script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
 <script src="styles/bootstrap4/popper.js"></script>
 <script src="styles/bootstrap4/bootstrap.min.js"></script>
 <script src="plugins/greensock/TweenMax.min.js"></script>
@@ -163,6 +164,22 @@
 <script src="js/news_post_custom.js"></script>
 
 <script src="js/teachers_custom.js"></script>
+
+<script>
+$(document).ready(function() {
+ $("#owl-example").owlCarousel({
+
+	 autoPlay: 3000, //Set AutoPlay to 3 seconds
+	 items : 3,
+	 itemsDesktop : [1199,3],
+	 itemsDesktopSmall : [979,3]
+
+ });
+});
+</script>
+
+
+
 
 <!--<script src="js/moment.js"></script>-->
 

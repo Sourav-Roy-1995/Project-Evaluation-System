@@ -416,7 +416,9 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form">
+            {!! Form::open(['id'=>'search_form','class'=>'search_form',     
+            'method'=>'POST','action'=>'StudentController@store_project','files'=>true]) !!}
+
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputName">Name</label>
@@ -428,27 +430,27 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputTitle">Project Title</label>
-                    <input type="text" name="title" class="form-control" id="exampleInputTitle" placeholder="Project Title">
+                    <input type="text" name="project_title" class="form-control" id="exampleInputTitle" placeholder="Project Title">
                 </div>
 
                 <div class="form-group">
                     <label for="exampleInputTitle">Select Project Type</label>
-                    <select name="type" id="exampleInputType"  class="form-control">                    
+                    <select name="project_type" id="exampleInputType"  class="form-control">                    
                         <option value="web">WEB</option>
                         <option value="android">ANDROID</option>
                         <option value="ios">IOS</option>
                         <option value="thesis">THESIS</option>
                     </select>
                 </div>
-
+                
                 <div class="form-group">
                     <label for="exampleInputTitle">Framework</label>
-                    <select name="type" id="exampleInputType"  class="form-control">                    
-                        <option value="web">Laravel</option>
-                        <option value="android">Node Js</option>
-                        <option value="ios">Django</option>
-                        <option value="thesis">CodeIgniter</option>
-                        <option value="thesis">Flask</option>
+                    <select name="framework" id="exampleInputType"  class="form-control">                    
+                        <option value="Laravel">Laravel</option>
+                        <option value="Node Js">Node Js</option>
+                        <option value="Django">Django</option>
+                        <option value="CodeIgniter">CodeIgniter</option>
+                        <option value="Flask">Flask</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -457,7 +459,7 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleInputFile">File input</label>
-                  <input type="file" id="exampleInputFile">
+                  <input type="file" name="project_img" id="exampleInputFile">
 
                   <p class="help-block">Example block-level help text here.</p>
                 </div>
@@ -472,7 +474,7 @@
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Submit</button>
               </div>
-            </form>
+              {!! Form::close() !!} 
           </div>
           <!-- /.box -->
 

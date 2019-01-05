@@ -10,12 +10,12 @@
 				</div>
 			</div>
 
-			<div class="row course_boxes">
+			<div class="row course_boxes owl-carousel" id="owl-example" >
 				
 				<!-- Popular Course Item -->
-				<div class="col-lg-4 course_box">
+				<div class="item">
 					<div class="card">
-						<img class="card-img-top" src="images/course_1.jpg" alt="https://unsplash.com/@kellybrito">
+						<img class="card-img-top" src="images/course_1.jpg" alt="Owl Image">
 						<div class="card-body text-center">
 							<div class="card-title"><a href="courses.php">Hotel Management</a></div>
 							<div class="card-text">Lorem ipsum lorem ipsum lorem ipsum  etc...</div>
@@ -31,9 +31,9 @@
 				</div>
 
 				<!-- Popular Course Item -->
-				<div class="col-lg-4 course_box">
+				<div class="item">
 					<div class="card">
-						<img class="card-img-top" src="images/course_2.jpg" alt="https://unsplash.com/@cikstefan">
+						<img class="card-img-top" src="images/course_2.jpg" alt="Owl Image">
 						<div class="card-body text-center">
 							<div class="card-title"><a href="courses.php">Library Management</a></div>
 							<div class="card-text">Lorem ipsum lorem ipsum lorem ipsum  etc...</div>
@@ -49,9 +49,9 @@
 				</div>
 
 				<!-- Popular Course Item -->
-				<div class="col-lg-4 course_box">
+				<div class="item">
 					<div class="card">
-						<img class="card-img-top" src="images/course_3.jpg" alt="">
+						<img class="card-img-top" src="images/course_3.jpg" alt="Owl Image">
 						<div class="card-body text-center">
 							<div class="card-title"><a href="courses.php">Student Management</a></div>
 							<div class="card-text">Lorem ipsum lorem ipsum lorem ipsum  etc...</div>
@@ -65,6 +65,59 @@
 						</div>
 					</div>
 				</div>
+
+				  <div class="item">
+						<div class="card">
+							<img class="card-img-top" src="images/course_1.jpg" alt="Owl Image">
+							<div class="card-body text-center">
+								<div class="card-title"><a href="courses.php">Air Line</a></div>
+								<div class="card-text">Lorem ipsum lorem ipsum lorem ipsum  etc...</div>
+							</div>
+							<div class="price_box d-flex flex-row align-items-center">
+								<div class="course_author_image">
+									<img src="images/author.jpg" alt="">
+								</div>
+								<div class="course_author_name">Sourav Roy, <span>Author</span></div>
+								<div class="course_price d-flex flex-column align-items-center justify-content-center"><span>free in charge </span></div>
+							</div>
+						</div>
+					</div>
+	
+					<!-- Popular Course Item -->
+					<div class="item">
+						<div class="card">
+							<img class="card-img-top" src="images/course_2.jpg" alt="Owl Image">
+							<div class="card-body text-center">
+								<div class="card-title"><a href="courses.php">Blog System</a></div>
+								<div class="card-text">Lorem ipsum lorem ipsum lorem ipsum  etc...</div>
+							</div>
+							<div class="price_box d-flex flex-row align-items-center">
+								<div class="course_author_image">
+									<img src="images/author.jpg" alt="https://unsplash.com/@mehdizadeh">
+								</div>
+								<div class="course_author_name">Sourav Roy, <span>Author</span></div>
+								<div class="course_price d-flex flex-column align-items-center justify-content-center"><span>free in charge</span></div>
+							</div>
+						</div>
+					</div>
+	
+					<!-- Popular Course Item -->
+					<div class="item">
+						<div class="card">
+							<img class="card-img-top" src="images/course_3.jpg" alt="Owl Image">
+							<div class="card-body text-center">
+								<div class="card-title"><a href="courses.php">Framework</a></div>
+								<div class="card-text">Lorem ipsum lorem ipsum lorem ipsum  etc...</div>
+							</div>
+							<div class="price_box d-flex flex-row align-items-center">
+								<div class="course_author_image">
+									<img src="images/author.jpg" alt="">
+								</div>
+								<div class="course_author_name">Sourav Roy, <span>Author</span></div>
+								<div class="course_price d-flex flex-column align-items-center justify-content-center"><span>free in charge</span></div>
+							</div>
+						</div>
+					</div>
 			</div>
 		</div>		
 	</div>

@@ -37,10 +37,24 @@
 <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="styles/responsive.css">
 
+<link rel="stylesheet" type="text/css" href="styles/owl.carousel.min.css">
+<link rel="stylesheet" type="text/css" href="styles/owl.theme.default.min.css">
+
 
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 <link rel="stylesheet" href="css/admin-css/css/main.css">
+
+<style>
+#owl-example .item{
+  margin: 7px;
+}
+#owl-example .item img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+</style>
 
 
 </head>
