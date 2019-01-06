@@ -60,43 +60,15 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
         <ul class="navbar-nav mr-auto nav-list list-inline mx-auto justify-content-center form-txt-four">
-
-          <li class="nav-item ">
-            <a class="nav-link" href="importExport">Add Students</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#add_supervisor">Add Supervisor</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#projectstudent">Project Student List</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#all_user">User List</a>
-          </li>
-
-          <li class="nav-item">
-              <a class="nav-link" href="#result">Result</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#reg">Project Registration</a>
-          </li>
-
-            <!-- User Menu-->
-
-                <li class="dropdown" style="position: absolute;right: 0;top:0"> <a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
+      
+              <li class="dropdown" style="position: absolute;right: 0;top:0"> <a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
                     <ul class="dropdown-menu settings-menu dropdown-menu-right">
                         <li><a class="dropdown-item" href="#"><i class="fa fa-cog fa-lg"></i> Settings</a></li>
                         <li><a class="dropdown-item" href="#"><i class="fa fa-user fa-lg"></i> Profile</a></li>
                         <li><a class="dropdown-item" href="{{ url('logout') }}"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
                     </ul>
-                </li>
-
-        </ul>
-       
+              </li>
+        </ul> 
     </div>
 
   </nav>

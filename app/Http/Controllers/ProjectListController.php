@@ -68,16 +68,16 @@ class ProjectListController extends Controller
 
             $validatedData = $request->validate([
 
-                'project_name' => 'required|unique:project_lists',
+                'project_name'    => 'required|unique:project_lists',
                 'description' => 'required',
                 'course_code' => 'required',
-                'semester' => 'required|exists:student_lists,semester',
+                'semester'    => 'required|exists:student_lists,semester',
 
                 'studentid_one' => 
-                'required|max:10|unique:project_lists|exists:student_lists,studentid',
+                'required|max:10|unique:project_lists|exists:student_lists,studentid|exists:users,personal_id',
 
-                'studentid_two' => 'max:10',
-                'studentid_three' =>'max:10'
+                'studentid_two'   => 'max:10',
+                'studentid_three' => 'max:10'
                 
             ]);
 

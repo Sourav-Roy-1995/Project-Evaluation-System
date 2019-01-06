@@ -61,29 +61,6 @@
 
         <ul class="navbar-nav mr-auto nav-list list-inline mx-auto justify-content-center form-txt-four">
 
-          <li class="nav-item ">
-            <a class="nav-link" href="importExport">Add Students</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#add_supervisor">Add Supervisor</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#projectstudent">Project Student List</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#all_user">User List</a>
-          </li>
-
-          <li class="nav-item">
-              <a class="nav-link" href="#result">Result</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#reg">Project Registration</a>
-          </li>
 
             <!-- User Menu-->
 

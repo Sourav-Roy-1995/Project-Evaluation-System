@@ -53,6 +53,15 @@ body {
   overflow: hidden;
 }
 
+.bg-two{
+  background: url('../images/slider_background.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+ 
+}
+
 .custom-nav-link{ 
   font-family: 'Charm', cursive;
   font-size:15px;

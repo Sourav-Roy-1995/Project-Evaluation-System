@@ -42,8 +42,7 @@
 
   </head>
 
-  <body id="page-top" >
-
+  <body class="bg-two">
         <nav class="navbar navbar-expand-lg navbar-light bg-light" id="custom-nav">
 
           <a class="navbar-brand dept-font" href="http://localhost/final_year_project/public">Dept. Of CSE</a>
@@ -54,34 +53,6 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
               <ul class="navbar-nav mr-auto nav-list list-inline mx-auto justify-content-center form-txt-four">
-
-                <li class="nav-item ">
-                  <a class="nav-link" href="importExport">Add Students</a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" href="#add_supervisor">Add Supervisor</a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" href="#projectstudent"> Student List</a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" href="#all_user">User List</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#result">Result</a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" href="#reg"> Registration</a>
-                </li>
-
-                <li class="nav-item">
-                  <a class="nav-link" href="#reg"> Scheduling</a>
-                </li>
 
                   <!-- User Menu-->
 
@@ -274,19 +245,10 @@
 </div>
         <!-- /.container-fluid -->
 
-        <!-- Sticky Footer -->
-        <footer class="sticky-footer">
-          <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-              <span>Copyright © Your Website 2018</span>
-            </div>
-          </div>
-        </footer>
 
-      </div>
+</div>
       <!-- /.content-wrapper -->
-
-    </div>
+</div>
     <!-- /#wrapper -->
 
     <!-- Scroll to Top Button-->

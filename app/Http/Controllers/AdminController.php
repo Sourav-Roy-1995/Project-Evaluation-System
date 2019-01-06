@@ -43,8 +43,6 @@ class AdminController extends Controller
                  ->select('id','student_id','category_one','category_two','supervisor_marks','total')              
                  ->get();
 
-
-        
         $supervisorstudents = DB::table('supervisor_students')
         ->join('project_lists', function ($join) {
             $join->on('supervisor_students.project_id', '=', 'project_lists.project_id');
