@@ -399,7 +399,7 @@
 
           <li>
               <a href="#projectstudent" >
-                <i class="fa fa-th"></i> <span>Student List</span>
+                <i class="fa fa-th"></i> <span>Project List</span>
                 <span class="pull-right-container">
                   <small class="label pull-right bg-green"><i class="fas fa-hand-point-right"></i></small>
                 </span>
@@ -441,6 +441,15 @@
                       </span>
                   </a>
               </li>
+
+              <li>
+                <a href="view_schedule" >
+                    <i class="fa fa-th"></i> <span>View Schedule</span>
+                    <span class="pull-right-container">
+                      <small class="label pull-right bg-green"><i class="fas fa-hand-point-right"></i></small>
+                    </span>
+                </a>
+            </li>
 
       </ul>
     </section>
@@ -866,21 +875,14 @@
               {!! Form::close() !!} 
   
   
-              @if(count($errors) > 0)
-              
-                    <div class="alert alert-danger">
-                      
+              @if(count($errors) > 0)            
+                    <div class="alert alert-danger">                    
                       <ul>
-                        @foreach($errors->all() as $error)
-              
-                          <li>{{$error}}</li>
-              
-                        @endforeach
-              
-                      </ul>
-              
-                    </div>
-              
+                        @foreach($errors->all() as $error)            
+                          <li>{{$error}}</li>             
+                        @endforeach            
+                      </ul>            
+                    </div>           
               @endif
           </div> <!-- Supervisor data form -->
 

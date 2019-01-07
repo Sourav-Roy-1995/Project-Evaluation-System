@@ -257,7 +257,7 @@
 		  <div class="card-footer text-right">
                <div class="btn-group" role="group" aria-label="Basic example">
                     <a href="{{ asset('admin') }}" class="btn btn-dark btn-sm custom-btn">Cancle</a>
-                         {!! Form::submit('Update',['class'=>'btn btn-dark btn-sm custom-btn']) !!}
+                    {!! Form::submit('Update',['class'=>'btn btn-dark btn-sm custom-btn']) !!}
                 	
     {!! Form::close() !!} 
 

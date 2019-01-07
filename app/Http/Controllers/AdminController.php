@@ -73,9 +73,38 @@ class AdminController extends Controller
 		return view('admin/index4');
 	}
 
-    public function view_scheduling(){
+    public function scheduling(){
 	   return view('admin/scheduling');
-	}
+    }
+    
+    public function view_schedule(){
+        
+        $view_schedules=Scheduling::all();
+        return view('admin/view_schedule',compact('view_schedules'));
+     }
+
+
+     public function edit_schedule($id){
+        
+        $view_schedule=Scheduling::findOrFail($id);
+        return view('admin/edit_schedule',compact('view_schedule'));
+     }
+
+
+
+     public function update_schedule(Request $request, $id)
+     {
+         //
+ 
+         $update_schedule = Scheduling::findOrFail($id);
+ 
+         $update_schedule->update($request->all());
+
+         $request->session()->flash('flash_message', 'Submitted successfully!');
+ 
+         return redirect('/view_schedule');
+ 
+     }
 
 
     /**

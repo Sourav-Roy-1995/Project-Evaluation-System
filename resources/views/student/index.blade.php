@@ -14,6 +14,10 @@
   
     <!-- Font Awesome -->
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+
     <!-- Ionicons -->
     <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
     <!-- Theme style -->
@@ -77,7 +81,7 @@
           <!-- Messages: style can be found in dropdown.less-->
           <li class="dropdown messages-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-envelope-o"></i>
+                <i class="fas fa-envelope"></i>
               <span class="label label-success">4</span>
             </a>
             <ul class="dropdown-menu">
@@ -154,7 +158,7 @@
           <!-- Notifications: style can be found in dropdown.less -->
           <li class="dropdown notifications-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-bell-o"></i>
+                <i class="fas fa-bell"></i>
               <span class="label label-warning">10</span>
             </a>
             <ul class="dropdown-menu">
@@ -196,7 +200,7 @@
           <!-- Tasks: style can be found in dropdown.less -->
           <li class="dropdown tasks-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-flag-o"></i>
+                <i class="fas fa-flag"></i>
               <span class="label label-danger">9</span>
             </a>
             <ul class="dropdown-menu">
@@ -353,49 +357,40 @@
         <li class="header">MAIN NAVIGATION</li>
         <li>
           <a href="student_panel">
-            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+              <i class="fa fa-th"></i><span>Dashboard</span>
+            <small class="label pull-right bg-green"><i class="fas fa-hand-point-right"></i></small>
           </a>
         </li>
         <li class="">
           <a href="registration">
-            <i class="fa fa-files-o"></i>
-            <span>Register</span>
-            <span class="pull-right-container">
-              <span class="label label-primary pull-right">+</span>
-            </span>
+            <i class="fa fa-th"></i><span>Register</span>
+            <small class="label pull-right bg-green"><i class="fas fa-hand-point-right"></i></small>
           </a>
 
         </li>
 
         <li>
           <a href="project_upload">
-            <i class="fa fa-edit"></i> <span>Project Upload</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+            <i class="fa fa-th"></i><span>Project Upload</span>
+            <small class="label pull-right bg-green"><i class="fas fa-hand-point-right"></i></small>
           </a>
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-folder"></i> <span>Profile</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+            <i class="fa fa-th"></i><span>Profile</span>
+            <small class="label pull-right bg-green"><i class="fas fa-hand-point-right"></i></small>
           </a>
           <ul class="treeview-menu">           
-            <li><a href="sp_profile"><i class="fa fa-circle-o"></i>Supervisor Profile</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i>Others</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i>Others</a></li>
+            <li><a href="sp_profile"><i class="fa fa-circle"></i>Supervisor Profile</a></li>
+            <li><a href="#"><i class="fa fa-circle"></i>Others</a></li>
+            <li><a href="#"><i class="fa fa-circle"></i>Others</a></li>
           </ul>
         </li>
 
         <li class="header">OTHER INFORMATION</li>
-        <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Project Evaluation</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Documentation</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Previous Project</span></a></li>
+        <li><a href="#"><i class="fa fa-circle text-red"></i> <span>Project Evaluation</span></a></li>
+        <li><a href="#"><i class="fa fa-circle text-yellow"></i> <span>Documentation</span></a></li>
+        <li><a href="#prev_project"><i class="fa fa-circle text-aqua"></i> <span>Previous Project</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -410,7 +405,7 @@
         <small>Control panel</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="student_panel"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="student_panel"><i class="fas fa-chart-line"></i> Home</a></li>
         <li class="active">Dashboard</li>
       </ol>
     </section>
@@ -544,7 +539,7 @@
       <!-- /.row (main row) -->
 
 
-      <div class="row">
+      <div class="row" id="prev_project">
 
         @foreach($pre_projects as $pre_project)
         <div class="col-md-6">

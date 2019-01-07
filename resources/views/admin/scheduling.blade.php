@@ -150,7 +150,7 @@
                   <option>FALL-2018</option>
                   <option>SPRING-2018</option>
               </select>
-            </div>
+          </div>
         </div>
         <div class="col-md-4">
           <div class="form-label-group">        

@@ -112,7 +112,12 @@
 .wrapper-two{
   height: 1200px!important;
 }
-
+.schedule-table h3{
+    font-family: none;
+    font-size: large;
+    font-weight: 600;
+    text-align: center;
+}
 #colorlib-aside {
   padding-top: 3em;
   padding-bottom: 40px;
@@ -526,7 +531,7 @@ body.offcanvas {
   -ms-box-shadow: none !important;
   -o-box-shadow: none !important;
   box-shadow: none !important;
-  border: none; }*/
+  border: none; }
 
 .panel-heading a:after {
   font-family: "icomoon";
@@ -537,7 +542,7 @@ body.offcanvas {
   font-weight: 400;
   top: 50%;
   line-height: 1;
-  margin-top: -7px; }
+  margin-top: -7px; } 
 
 .panel-heading a.collapsed:after {
   content: "\e114"; }
@@ -545,7 +550,7 @@ body.offcanvas {
 .panel-heading a.collapsed {
   background: #f2f3f7;
   border: 1px solid #e6e6e6 !important;
-  color: #333333; }
+  color: #333333; } */
 
 /*.panel-body {
   padding: 1.5em;

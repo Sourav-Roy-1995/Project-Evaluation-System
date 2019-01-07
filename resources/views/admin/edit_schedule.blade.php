@@ -7,35 +7,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Dept. Of CSE| Dashboard</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1" name="viewport">
-  <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dept. Of| Dashboard</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" 
+    href="{{ asset('bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ asset('bower_components/font-awesome/css/font-awesome.min.css') }}">
+ 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
-
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="{{ asset('bower_components/Ionicons/css/ionicons.min.css') }}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{{ asset('dist/css/AdminLTE.min.css') }}">
+    
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="{{ asset('dist/css/skins/_all-skins.min.css') }}">
+    <!-- Morris chart -->
+    <link rel="stylesheet" href="{{ asset('bower_components/morris.js/morris.css') }}">
+    <!-- jvectormap -->
+    <link rel="stylesheet" href="{{ asset('bower_components/jvectormap/jquery-jvectormap.css') }}">
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="{{ asset('bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="{{ asset('bower_components/bootstrap-daterangepicker/daterangepicker.css') }}">
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="{{ asset('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">
   
-  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
-  <!-- Morris chart -->
-  <link rel="stylesheet" href="bower_components/morris.js/morris.css">
-  <!-- jvectormap -->
-  <link rel="stylesheet" href="bower_components/jvectormap/jquery-jvectormap.css">
-  <!-- Date Picker -->
-  <link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
-  <!-- Daterange picker -->
-  <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css">
-  <!-- bootstrap wysihtml5 - text editor -->
-  <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
@@ -45,9 +55,8 @@
   <link href="https://fonts.googleapis.com/css?family=Charm|Staatliches" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Charm|Lobster|Staatliches" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet"> 
-
-
-  <link rel="stylesheet" href="css/profile.css">
+  
+    <link rel="stylesheet" href="{{URL::asset('css/profile.css') }}">
 
   <style rel="stylesheet">
       #marks_input{
@@ -57,6 +66,7 @@
 
   
 </head>
+
 
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -93,7 +103,7 @@
                   <li><!-- start message -->
                     <a href="#">
                       <div class="pull-left">
-                        <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Support Team
@@ -106,7 +116,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                          <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         CSE Design Team
@@ -118,7 +128,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                          <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Developers
@@ -130,7 +140,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                          <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Sales Department
@@ -142,7 +152,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                          <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Reviewers
@@ -279,13 +289,13 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="user-image" alt="User Image">
               <span class="hidden-xs">{{ Auth::User()->name }}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
 
                 <p>
                     {{ Auth::User()->name }} - Web Developer
@@ -333,7 +343,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p>{{ Auth::User()->name }}</p>
@@ -432,7 +442,7 @@
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper" style="height: 1000px;">
+  <div class="content-wrapper" >
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
@@ -514,17 +524,23 @@
 
 
       <!-- Main row -->
+      @if(Session::has('flash_message'))
+      <div class="alert alert-success">
+          {{ Session::get('flash_message') }}
+      </div>
+      @endif
+
       <div class="row">
 
         <section  class="panel panel-info custom-panel form-txt" style="margin-top: 30px">
             <div class="panel-heading panel-info default-panel-head">
-                
-                Schedule
-                @foreach($view_schedules as $view_schedule)
+                Edit Schedule
+          {!! Form::model($view_schedule,['method'=>'PATCH','action'=>['AdminController@update_schedule', $view_schedule->id],'files'=>true]) !!}      
                 <div class="text-right"  role="group">
                     <div class="btn-group">
                         <a href="{{ asset('admin') }}" class="btn btn-info btn-sm float-right custom-btn">Back</a>
-                        <a href="{{route('schedule.edit',$view_schedule->id)}}" class='btn btn-info btn-sm custom-btn' name="name" >Edit</a> 
+                        {!! Form::submit('Update',['class'=>'btn btn-info btn-sm custom-btn']) !!}
+                       
                     </div>
                 </div>
             </div>
@@ -536,56 +552,109 @@
     
                     <div class="col-lg-12 col-sm-12">
                           <div class="form-group">
-                              <table class="table table-hover table-responsive table-bordered">
-    
-                                
+                              <table class="table table-responsive table-bordered">
                                     
-                                    <tbody class="table-bordered">
+                                    <tbody class="table-bordered schedule-table">
+                                      
                                        <tr>                                
-                                            <th>{{$view_schedule->final_year}}</th> 
-                                            <td>{{$view_schedule->fi_fr_date }} <span style="font-weight:bold">To</span> 
-                                                {{$view_schedule->fi_to_date }}
+                                            <th>
+                                              {{$view_schedule->final_year}}
+                                            </th> 
+                                            <td>
+                                               <h3>Date Range</h3>
+                                              <input type="text" class="form-control"  name="fi_fr_date" id="date_one" value="{{$view_schedule->fi_fr_date }} ">
+                                              <input type="text" class="form-control" name="fi_to_date" id="date_two" value="{{$view_schedule->fi_to_date }}">
                                             </td>
                                             
-                                            <td>{{$view_schedule->fi_semester}}</td>
-                                            <td>{{$view_schedule->fi_info }}</td>
+                                            <td>
+                                              
+                                                <div class="form-label-group">        
+                                                    <select name="fi_semester" class="form-control" id="exampleFormControlSelect1" style="height: 47px;">
+                                                        <option>Semester</option>
+                                                       
+                                                        <option>SUMMER-2018</option>
+                                                        <option>FALL-2018</option>
+                                                        <option>SPRING-2018</option>
+                                                    </select>
+                                                </div>
+                                            
+                                            </td>
+
+
+                                            <td>
+                                              <h3>Comments</h3>
+                                              <input type="text" name="fi_info" class="form-control" value="{{$view_schedule->fi_info }}">
+                                            </td>
 
                                        </tr> 
 
                                        <tr>                                
-                                        <th>{{$view_schedule->third_year}}</th> 
-                                        <td>{{$view_schedule->th_fr_date }} 
-                                            <span style="font-weight:bold">To</span>
-                                            {{$view_schedule->th_to_date }}
+                                        <th>
+                                          {{$view_schedule->third_year}}
+                                        </th> 
+                                        <td>
+                                          <h3 >Date Range</h3>
+                                          <input type="text" id="date_three" name="th_fr_date" class="form-control" value="{{$view_schedule->th_fr_date }}">
+                                           
+                                          <input type="text" id="date_four" name="th_to_date" class="form-control" value="{{$view_schedule->th_to_date }}">
                                         </td>
                                        
-                                        <td>{{$view_schedule->th_semester}}</td>
-                                        <td>{{$view_schedule->th_info }}</td>
+                                        <td>
+                                            
+                                            <div class="form-label-group">        
+                                                <select name="th_semester" class="form-control" id="exampleFormControlSelect1" style="height: 47px;">
+                                                    <option>Semester</option>
+                                                   
+                                                    <option>SUMMER-2018</option>
+                                                    <option>FALL-2018</option>
+                                                    <option>SPRING-2018</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td>
+                                          <h3>Comments</h3>
+                                          <input type="text" name="th_info" class="form-control" value="{{$view_schedule->th_info }}">
+                                        </td>
                                        </tr> 
 
                                        <tr>     
                                         <th>Registration</th> 
-                                        <td>{{$view_schedule->reg_fr_date }}
-                                                <span style="font-weight:bold">To</span>
-                                                {{$view_schedule->reg_to_date }}
+                                        <td>
+
+                                          <h3>Date Range</h3>                                      
+                                          <input type="text" name="reg_fr_date" id="date_five" class="form-control" value="{{$view_schedule->reg_fr_date }}">
+                                            
+                                          <input type="text" class="form-control" id="date_six" name="reg_to_date" value="{{$view_schedule->reg_to_date }}">
                                         </td>
                                                                            
                                        </tr>
-                                       <tr>     
-                                            <th>{{$view_schedule->result}}</th> 
-                                            <td>{{$view_schedule->rs_date}}
-                                            </td>
+                                        <tr>   
                                             
+                                            <th>{{$view_schedule->result}}</th> 
+                                            <td>
+                                              <h3>Date</h3>
+                                              <input type="text" id="date_seven" name="rs_date" class="form-control" value="{{$view_schedule->rs_date}}">
+                                            </td>
                                         </tr> 
 
                                     </tbody>
 
-                                @endforeach
+                                {!! Form::close() !!} 
     
                               </table>
     
                           </div>
-                    </div>            
+                    </div> 
+                    
+                    @if(count($errors) > 0)            
+                    <div class="alert alert-danger">                    
+                      <ul>
+                        @foreach($errors->all() as $error)            
+                          <li>{{$error}}</li>             
+                        @endforeach            
+                      </ul>            
+                    </div>           
+                    @endif
     
            </div>
         </div>
@@ -813,44 +882,75 @@
 </div>
 <!-- ./wrapper -->
 
-<!-- jQuery 3 -->
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-  $.widget.bridge('uibutton', $.ui.button);
-</script>
-<!-- Bootstrap 3.3.7 -->
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- Morris.js charts -->
-<script src="bower_components/raphael/raphael.min.js"></script>
-<script src="bower_components/morris.js/morris.min.js"></script>
-<!-- Sparkline -->
-<script src="bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
-<!-- jvectormap -->
-<script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-<!-- jQuery Knob Chart -->
-<script src="bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
-<!-- daterangepicker -->
-<script src="bower_components/moment/min/moment.min.js"></script>
-<script src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
-<!-- datepicker -->
-<script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-<!-- Bootstrap WYSIHTML5 -->
-<script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-<!-- Slimscroll -->
-<script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="bower_components/fastclick/lib/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
 
+    <!-- jQuery 3 -->
+    <script src="{{URL::asset('bower_components/jquery/dist/jquery.min.js')}}"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="{{URL::asset('bower_components/jquery-ui/jquery-ui.min.js')}}"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+      $.widget.bridge('uibutton', $.ui.button);
+    </script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="{{URL::asset('bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+    <!-- Morris.js charts -->
+    <script src="{{URL::asset('bower_components/raphael/raphael.min.js')}}"></script>
+    <script src="{{URL::asset('bower_components/morris.js/morris.min.js')}}"></script>
+    <!-- Sparkline -->
+    <script src="{{ URL::asset('bower_components/jquery-sparkline/dist/jquery.sparkline.min.js') }}"></script>
+    <!-- jvectormap -->
+    <script src="{{URL::asset('plugins/jvectormap/jquery-jvectormap-1.2.2.min.js') }}"></script>
+    <script src="{{URL::asset('plugins/jvectormap/jquery-jvectormap-world-mill-en.js') }}"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="{{URL::asset('bower_components/jquery-knob/dist/jquery.knob.min.js') }}"></script>
+    <!-- daterangepicker -->
+    <script src="{{URL::asset('bower_components/moment/min/moment.min.js')}}"></script>
+    <script src="{{URL::asset('bower_components/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
+    <!-- datepicker -->
+    <script src="{{URL::asset('bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
+    <!-- Bootstrap WYSIHTML5 -->
+    <script src="{{URL::asset('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js')}}"></script>
+    <!-- Slimscroll -->
+    <script src="{{URL::asset('bower_components/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
+    <!-- FastClick -->
+    <script src="{{URL::asset('bower_components/fastclick/lib/fastclick.js')}}"></script>
+    <!-- AdminLTE App -->
+    <script src="{{URL::asset('dist/js/adminlte.min.js')}}"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="{{URL::asset('dist/js/pages/dashboard.js')}}"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="{{URL::asset('dist/js/demo.js')}}"></script>
+
+
+      <script>src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="{{URL::asset('js/main.js') }}"></script>
+
+
+      <!-- Waypoints -->
+      <script src="{{URL::asset('js/jquery.waypoints.min.js') }}"></script>
+
+      <!-- Counters -->
+      <script src="{{URL::asset('js/jquery.countTo.js') }}"></script>
+      <script src="{{URL::asset('js/profile.js') }}"></script>
+
+      <script src="{{URL::asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
+
+    <!-- date picker -->
+    <script>  
+        $(document).ready(function(){  
+             $.datepicker.setDefaults({  
+                  dateFormat: 'dd-mm-yy'   
+             });  
+             $(function(){  
+                  $("#date_one, #date_two, #date_three, #date_four, #date_five, #date_six, #date_seven").datepicker();
+  
+             });  
+               
+        });  
+      </script>
+  
+  <!-- date picker -->
 
 
 </body>

@@ -73,8 +73,11 @@ Route::group(['middleware'=>'auth'],function(){
 		
 		Route::post('store_final','AdminController@store_final')->name('admin.store_final');
 
-		Route::get('scheduling','AdminController@view_scheduling')->name('admin.schedule');
+		Route::get('scheduling','AdminController@scheduling')->name('admin.schedule');
 		Route::post('store_scheduling','AdminController@store_schedule')->name('admin.store_schedule');
+		Route::get('view_schedule','AdminController@view_schedule');
+		Route::get('edit_schedule/{id}/edit','AdminController@edit_schedule')->name('schedule.edit');
+		Route::patch('update_schedule/{id}','AdminController@update_schedule')->name('schedule.update');
 
 	    //Main Admin Route List:
 		

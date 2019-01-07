@@ -85,7 +85,10 @@
 
 				<div class="form-group">				
 
-					{!! Form::text('studentid_one',null,['class'=>'input_field search_form_name', 'required'=>'required','data-error'=>'studentid is required.','placeholder'=>'Students Id:']) !!}
+					<!-- {!! Form::text('studentid_one',null,['class'=>'input_field search_form_name', 'required'=>'required','data-error'=>'studentid is required.','placeholder'=>'Students Id:']) !!} -->
+
+
+					<input type="text" name="studentid_one" class="input_field search_form_name" value="{{ Auth::User()->personal_id }}" placeholder="Students Id:" data-error="studentid is required." required >
 
 				</div>
 				
