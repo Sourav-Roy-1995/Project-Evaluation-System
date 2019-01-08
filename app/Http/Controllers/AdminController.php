@@ -40,7 +40,7 @@ class AdminController extends Controller
        // $marks = MarkingSystem::all();
        
         $marks = DB::table('marking_systems')
-                 ->select('id','student_id','category_one','category_two','supervisor_marks','total')              
+                 ->select('id','project_id','student_id','category_one','category_two','supervisor_marks','total')              
                  ->get();
 
         $supervisorstudents = DB::table('supervisor_students')
@@ -202,9 +202,10 @@ class AdminController extends Controller
            
         ]);
 
-        foreach($request->studentid as $key => $v){
+        foreach($request->project_id as $key => $v){
 
             $data = array(
+            'project_id'=>$request->project_id [$key],   
             'studentid'=>$request->studentid [$key],
             'counter'=>$request->counter [$key],
             'final_mark'=>$request->final_mark [$key],

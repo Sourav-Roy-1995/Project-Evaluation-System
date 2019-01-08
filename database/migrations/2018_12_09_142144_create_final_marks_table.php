@@ -14,7 +14,8 @@ class CreateFinalMarksTable extends Migration
     public function up()
     {
         Schema::create('final_marks', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id'); 
+            $table->integer('project_id');
             $table->integer('studentid');
             $table->integer('counter');
             $table->integer('final_mark');

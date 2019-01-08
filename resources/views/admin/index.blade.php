@@ -945,7 +945,9 @@
                     
                       <tbody class="tbody">
                         <tr>
-            
+                          
+                            <input type="hidden" name="project_id[]" value="{{$mark->project_id}}">
+                                  
                           <td>
                               <input id="marks_input" class="form-control student_id" type="text" name="student_id[]" placeholder="Student ID" style="background:white;width:120px" value="{{$mark->student_id}}">
                           </td>
@@ -1007,6 +1009,9 @@
               
                          ?>      
                            <tr>
+                              
+                              <input type="hidden" name="project_id[]" value="{{$mark->project_id}}">
+                               
                             <td>
                                 <input id="marks_input" class="form-control studentid" type="text" name="studentid[]" placeholder="Student ID" style="background:white;width:120px" value=<?php echo $keys[$i] ?>>
                             </td>

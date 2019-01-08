@@ -93,7 +93,7 @@ Route::group(['middleware'=>'auth'],function(){
 		Route::get('/student_panel','StudentController@index')->name('student_panel');
 		Route::get('/project_upload','StudentController@project_upload')->name('project_upload');
 		Route::get('/sp_profile','StudentController@sp_profile')->name('sp_profile');
-
+		Route::get('/view_result','StudentController@view_result')->name('view_result');
 		Route::post('store_project','StudentController@store_project')->name('project.store');
 
 		Route::post('/getans','StudentController@getAns')->name('student.getans');

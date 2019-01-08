@@ -34,7 +34,6 @@ class StudentController extends Controller
     public function elligible_students(){
 
 		$posts=StudentList::all();
-
 		return view('elligible_students',compact('posts'));
 
 	}
@@ -55,6 +54,24 @@ class StudentController extends Controller
      	return view('supervisor',compact('supervisorstudents'));
     }
 
+    
+    public function view_result() 
+
+	{
+        $user = Auth::User();
+
+	    $view_result = DB::table('final_marks')
+        ->join('project_lists', function ($join) {
+            $join->on('final_marks.project_id', '=', 'project_lists.project_id');        
+        })
+        ->where('final_marks.studentid', '=', $user->personal_id)
+        ->select('final_marks.studentid','project_lists.project_name', 'project_lists.course_code','project_lists.semester','final_marks.final_mark')
+        ->get();
+
+     	return view('student.result',compact('view_result'));
+    }
+
+
 
     public function index(){
 
@@ -72,7 +89,6 @@ class StudentController extends Controller
         ->get();
 
 		return view('student.index',compact('personalproject','pre_projects'));
-
     }
     
     public function project_upload(){
