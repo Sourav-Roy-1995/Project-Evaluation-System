@@ -44,6 +44,12 @@ class IndexController extends Controller
     {
         //
         $pre_projects=Project_Upload::all();
+        if($pre_projects->isEmpty()){
+            echo "<script>
+            alert('No Project Uploaded Yet...');
+            window.location.href='http://localhost/final_year_project/public/';
+            </script>";
+        }
         return view('previous_project',compact('pre_projects'));
     }
 

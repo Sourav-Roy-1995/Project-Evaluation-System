@@ -103,7 +103,7 @@
       <div class="col-md-6">
         <div class="form-label-group">        
 
-          {!! Form::text('project_id',null,['class'=>'form-control','required'=>'required','data-error'=>'Input is required.']) !!}
+          {!! Form::text('project_id',null,['class'=>'form-control disable-input','required'=>'required','data-error'=>'Input is required.']) !!}
 
           {!! Form::label('project_id','Project ID: ') !!}
 

@@ -84,7 +84,7 @@
    <div id="con" class="card custom-card-two mx-auto mt-5">
       <div class="card-header col-md-12">
           Update Supervisor 
-          <a href="javascript:history.back()" class="btn btn-dark btn-sm custom-btn float-right">Back</a>
+          <a href="{{ asset('admin') }}" class="btn btn-dark btn-sm custom-btn float-right">Back</a>
       </div>
 
 

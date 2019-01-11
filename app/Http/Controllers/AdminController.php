@@ -133,18 +133,14 @@ class AdminController extends Controller
                 $data->personal_id = $request->personal_id;
                 $data->supervisor_name = $request->supervisor_name;
                 $data->save();
-
-                //Sends ID Password to User Table
                 
-                /*$dataUser  = new ProjectList();
-                $dataUser->project_id = $i;
-                $dataUser->save();*/
+                /*Update project_list table and send supervisor id to that table */
+                DB::table('project_lists')
+                ->where('project_id',$i)
+                ->update(['personal_id' => $request->personal_id]);
             }
 
-         
-
-         $request->session()->flash('flash_message', 'Submitted successfully!');
-
+         $request->session()->flash('range_flash', 'Submitted successfully!');
          return redirect()->back();
     }
 
@@ -156,10 +152,10 @@ class AdminController extends Controller
 
                 'project_id' => 'max:10|unique:supervisor_students|  exists:project_lists,project_id',
                 'personal_id' => 'required|max:10',
-                'supervisor_name' => 'required',
-               
+                'supervisor_name' => 'required',   
             ]);
 
+          /*Send supervisor id to supervisor_students table */
 
           $post  = new SupervisorStudent();
           $post->project_id = $request->input("project_id");
@@ -167,12 +163,13 @@ class AdminController extends Controller
           $post->supervisor_name = $request->input("supervisor_name");
           $post->save();
 
+        /*Update project_list table and send supervisor id to that table */
+
            DB::table('project_lists')
-            ->where('project_id',$post->project_id)
-            ->update(['personal_id' => $post->personal_id]);
+           ->where('project_id',$post->project_id)
+           ->update(['personal_id' => $post->personal_id]);
          
          $request->session()->flash('flash_message', 'Submitted successfully!');
-
          return redirect()->back();
     }
 
@@ -187,7 +184,7 @@ class AdminController extends Controller
           $reg->save();
             
 
-         $request->session()->flash('flash_message', 'Submitted successfully!');
+         $request->session()->flash('reg_message', 'Submitted successfully!');
 
          return redirect()->back();
     }
@@ -214,7 +211,7 @@ class AdminController extends Controller
 
         }
 
-          $request->session()->flash('flash_message', 'Submitted successfully!');
+          $request->session()->flash('result_message', 'Submitted successfully!');
           return redirect()->back();
 
     }
@@ -298,7 +295,9 @@ class AdminController extends Controller
 
         $supervisorstudent->update($request->all());
 
-        return redirect('/admin');
+        $request->session()->flash('flash_message', 'Submitted successfully!');
+
+        return redirect()->back();
 
 
     }
@@ -384,7 +383,9 @@ class AdminController extends Controller
 
         $userlist->update($request->all());
 
-        return redirect('/admin');
+        $request->session()->flash('flash_message', 'Updated successfully!');
+
+        return redirect()->back();
 
 
     }

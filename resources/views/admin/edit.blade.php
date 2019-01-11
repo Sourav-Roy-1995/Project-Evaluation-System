@@ -83,7 +83,11 @@
 	    </div>
 
 	
-
+@if(Session::has('flash_message'))
+    <div class="alert alert-success">
+        {{ Session::get('flash_message') }}
+    </div>
+@endif
 {!! Form::model($userlist,['method'=>'PATCH','action'=>['AdminController@update', $userlist->id],'files'=>true]) !!}
 	
 	<div class="card-body">
@@ -259,7 +263,16 @@
                     <a href="{{ asset('admin') }}" class="btn btn-dark btn-sm custom-btn">Cancle</a>
                     {!! Form::submit('Update',['class'=>'btn btn-dark btn-sm custom-btn']) !!}
                 	
-    {!! Form::close() !!} 
+    {!! Form::close() !!}
+@if(count($errors) > 0)
+    <div class="alert alert-danger">                 
+      <ul>
+        @foreach($errors->all() as $error)
+          <li>{{$error}}</li>
+        @endforeach
+      </ul>
+    </div>
+@endif 
 
 {!! Form::open(['method'=>'DELETE','action'=>['AdminController@destroy',$userlist->id]]) !!}
 

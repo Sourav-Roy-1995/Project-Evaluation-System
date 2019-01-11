@@ -74,13 +74,33 @@ class ProjectListController extends Controller
                 'semester'    => 'required|exists:student_lists,semester',
 
                 'studentid_one' => 
-                'required|max:10|unique:project_lists|exists:student_lists,studentid',
+                'required|max:10|unique:project_lists',
 
-                'studentid_two'   => 'max:10|exists:student_lists,studentid|unique:project_lists',
-                'studentid_three' => 'max:10|exists:student_lists,studentid|unique:project_lists'
+                'studentid_two'   => 'max:10',
+                'studentid_three' => 'max:10'
 
             ]);
 
+          $student_one = StudentList::where('studentid', '=', $request->input('studentid_one'))->exists();
+          $student_two = StudentList::where('studentid', '=', $request->input('studentid_two'))->count() >= 0;
+          $student_three = StudentList::where('studentid', '=', $request->input('studentid_three'))->count() >= 0;
+          
+
+          $unique = ''; 
+          if($student_one != null)
+          {
+            $unique = true;
+          }     
+          if( $student_two != null && $student_three != null )
+          {
+            
+             $unique = ProjectList::where('studentid_two','studentid_three')->count()==0;
+
+          }
+
+          if( $student_one == true && $student_two == true && $student_three == true && $unique == true)
+          {
+                
             $project_lists = new ProjectList;
             $project_lists->project_name = $request->input("project_name");
             $project_lists->description = $request->input("description");
@@ -94,7 +114,15 @@ class ProjectListController extends Controller
             $request->session()->flash('flash_message', 'registration done successfully!');
             return redirect('registration');
 
- 
+          }
+
+          else
+          {
+            echo "<script>
+            alert('These students are not allowed to register...');
+            window.location.href='registration';
+            </script>";
+          }
 
     }
 

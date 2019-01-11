@@ -127,7 +127,7 @@
 					<p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum.</p>
 				</div>
 
-				<div class="col-lg-4 service_item text-left d-flex flex-column align-items-start justify-content-start">
+				<div class="col-lg-3 service_item text-left d-flex flex-column align-items-start justify-content-start">
 					<div class="icon_container d-flex flex-column justify-content-end">
 						<img src="images/professor.svg" alt="">
 					</div>
@@ -135,7 +135,15 @@
 					<p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum.</p>
 				</div>
 
-				<div class="col-lg-4 service_item text-left d-flex flex-column align-items-start justify-content-start">
+				<div class="col-lg-3 service_item text-left d-flex flex-column align-items-start justify-content-start">
+					<div class="icon_container d-flex flex-column justify-content-end">
+						<img src="images/exam.svg" alt="">
+					</div>
+					<h3>Project Development</h3>
+					<p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum.</p>
+				</div>
+
+				<div class="col-lg-3 service_item text-left d-flex flex-column align-items-start justify-content-start">
 					<div class="icon_container d-flex flex-column justify-content-end">
 						<img src="images/blackboard.svg" alt="">
 					</div>
@@ -143,7 +151,7 @@
 					<p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum.</p>
 				</div>
 
-				<div class="col-lg-4 service_item text-left d-flex flex-column align-items-start justify-content-start">
+				<div class="col-lg-3 service_item text-left d-flex flex-column align-items-start justify-content-start">
 					<div class="icon_container d-flex flex-column justify-content-end">
 						<img src="images/mortarboard.svg" alt="">
 					</div>

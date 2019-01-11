@@ -362,7 +362,7 @@
             </span>
           </a>
 
-          <ul class="treeview-menu"  id="myTable">
+          <ul class="treeview-menu">
               @foreach($students as $student)
               <li class="bs-list"><a href="#" name="name" id="bs-link"><i class="fas fa-user-circle"></i> 
                 {{$student->studentid}}</a></li>
@@ -550,7 +550,7 @@
                     </div>
         
                     <div class="col-md-6 col-sm-6 col-xs-4">                 
-                        <input class="input_field search"  id="myInput2" placeholder="search..." type="text">
+                        <input class="input_field search"  id="search_input" placeholder="search..." type="text">
                     </div>
                 </div>
               </div>
@@ -570,7 +570,7 @@
                       </thead>
     
                     @foreach($supervisorstudents as $supervisorstudent)
-                      <tbody id="myTable2">
+                      <tbody id="search_list">
                         <tr>
     
                           <td>{{$supervisorstudent->supervisor_name}}</td>
@@ -606,7 +606,7 @@
                    </div>
         
                     <div class="col-md-6 col-sm-6 col-xs-4">                 
-                        <input class="input_field search"  id="myInput3" placeholder="search..." type="text">
+                        <input class="input_field search"  id="search_input2" placeholder="search..." type="text">
                     </div>
                 </div>
 
@@ -632,7 +632,7 @@
                 </thead>
 
               @foreach($posts as $post)
-                <tbody id="myTable2">
+                <tbody id="search_list2">
                   <tr>
                     
                     <td>{{$post->project_name}}</td>
@@ -667,17 +667,15 @@
                         Registrattion Information
                    </div>
         
-                    <div class="col-md-6 col-sm-6 col-xs-4">                 
-                        <input class="input_field search"  id="myInput" placeholder="search..." type="text">
-                    </div>
+
                 </div>
   
               </div>
 
 
-              @if(Session::has('flash_message'))
+              @if(Session::has('reg_message'))
                       <div class="alert alert-success">
-                          {{ Session::get('flash_message') }}
+                          {{ Session::get('reg_message') }}
                       </div>
               @endif
 
@@ -726,20 +724,13 @@
 
                         
           {!! Form::close() !!} 
-
-
           @if(count($errors) > 0)
-                <div class="alert alert-danger">
-                  
+                <div class="alert alert-danger">                 
                   <ul>
                     @foreach($errors->all() as $error)
-
                       <li>{{$error}}</li>
-
                     @endforeach
-
                   </ul>
-
                 </div>
           @endif
           </div>
@@ -755,7 +746,7 @@
                    </div>
         
                     <div class="col-md-6 col-sm-6 col-xs-4">                 
-                        <input class="input_field search"  id="myInput3" placeholder="search..." type="text">
+                        <input class="input_field search"  id="search_input3" placeholder="search..." type="text">
                     </div>
                 </div>
               </div>
@@ -775,7 +766,7 @@
 
                 @if($userlists)
                 @foreach($userlists as $userlist)
-                <tbody>
+                <tbody id="search_list3">
                   <tr>
                     <td>{{$userlist->personal_id}}</td>
                     <td>{{$userlist->name}}</td>
@@ -809,13 +800,11 @@
               </div>
 
 
-              @if(Session::has('flash_message'))
+              @if(Session::has('range_flash'))
               <div class="alert alert-success">
-                  {{ Session::get('flash_message') }}
+                  {{ Session::get('range_flash') }}
               </div>
               @endif
-      
-      
       {!! Form::open(['id'=>'search_form','class'=>'search_form',     
           'method'=>'POST','action'=>'AdminController@store','files'=>true]) !!}
                 
@@ -896,7 +885,7 @@
                         Project Marking 
                    </div>
                     <div class="col-md-6 col-sm-6 col-xs-4">                 
-                        <input class="input_field search"  id="myInput3" placeholder="search..." type="text">
+                        <input class="input_field search"  id="search_input4" placeholder="search..." type="text">
                     </div>
                 </div>
               </div>
@@ -943,7 +932,7 @@
                         $count = $a[$mark->student_id];
                      ?>
                     
-                      <tbody class="tbody">
+                      <tbody class="tbody" id="search_list4">
                         <tr>
                           
                             <input type="hidden" name="project_id[]" value="{{$mark->project_id}}">
@@ -979,12 +968,33 @@
             
                     </table>
               </div>
+            </div>
 
+            <div class="panel-footer custom-panel-footer text-right">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    
+                </div>
+            </div> 
+          </div>
 
+          <div id="result" class="panel panel-info custom-panel form-txt" style="margin-top: 30px">
+              <div class="panel-heading panel-info" id="all">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-2 default-panel-head personal_project" >
+                        <span class="glyphicon glyphicon-th" aria-hidden="true" ></span>
+                        Final Marks 
+                   </div>
+                    <div class="col-md-6 col-sm-6 col-xs-4">                 
+                        <input class="input_field search"  id="" placeholder="search..." type="text">
+                    </div>
+                </div>
+              </div>
+            
+            <div class="panel-body">
             <div class="table-responsive">
-                @if(Session::has('flash_message'))
+                @if(Session::has('result_message'))
                   <div class="alert alert-success">
-                      {{ Session::get('flash_message') }}
+                      {{ Session::get('result_message') }}
                   </div>
                 @endif
 
@@ -1033,30 +1043,29 @@
                       ?>
           
                   </table> 
-              </div>                      
+              </div> 
+            </div>                     
+          
+            <div class="panel-footer custom-panel-footer text-right">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <input type="submit" class="btn btn-info custom-btn btn-sm" name="submit" value="Generate">
+                </div>
+            </div> 
           </div>
-                    <div class="panel-footer custom-panel-footer text-right">
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                            <input type="submit" class="btn btn-info custom-btn btn-sm" name="submit" value="Generate">
-                        </div>
-                    </div> 
 
-                    {!! Form::close() !!}  
-                    @if(count($errors) > 0)
-                      <div class="alert alert-danger">                      
-                        <ul>
-                          @foreach($errors->all() as $error)           
-                            <li>{{$error}}</li>            
-                          @endforeach           
-                        </ul>           
-                      </div>
-                      @endif
-              
-               </div>
+          {!! Form::close() !!}  
+          @if(count($errors) > 0)
+            <div class="alert alert-danger">                      
+              <ul>
+                @foreach($errors->all() as $error)           
+                  <li>{{$error}}</li>            
+                @endforeach           
+              </ul>           
+            </div>
+            @endif
               
       </div>
       <!-- /.row (main row) -->
-
     </section>
     <!-- /.content -->
   </div>
@@ -1306,36 +1315,50 @@
 <!-- Search -->
 <script>
     $(document).ready(function(){
-      $("#myInput").on("keyup", function() {
+      $("#search_input").on("keyup", function() {
         var value = $(this).val().toLowerCase();
-        $("#myTable li a").filter(function() {
+        $("#search_list tr").filter(function() {
           $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
       });
     });
-
-
-    $(document).ready(function(){
-      $("#myInput2").on("keyup", function() {
-        var value = $(this).val().toLowerCase();
-        $("#myTable2 tr").filter(function() {
-          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-        });
-      });
-    });
-
-    $(document).ready(function(){
-      $("#myInput3").on("keyup", function() {
-        var value = $(this).val().toLowerCase();
-        $("#myTable3 tr").filter(function() {
-          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-        });
-      });
-    });
-
-
-
 </script> 
+
+<!-- Search -->
+<script>
+  $(document).ready(function(){
+    $("#search_input2").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#search_list2 tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+</script> 
+
+<script>
+  $(document).ready(function(){
+    $("#search_input3").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#search_list3 tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+</script> 
+
+<script>
+    $(document).ready(function(){
+      $("#search_input4").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#search_list4 tr td input").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+</script> 
+
+
 
 
 </body>

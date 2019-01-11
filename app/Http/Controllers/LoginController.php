@@ -42,7 +42,7 @@ class LoginController extends Controller
 
             else if($user->isStudent()){
 
-                return redirect('elligible_student'); 
+                return redirect('student_panel'); 
             }
 
             else if($user->isNormal()){
