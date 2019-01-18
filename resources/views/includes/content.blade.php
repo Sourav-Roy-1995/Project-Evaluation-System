@@ -107,15 +107,21 @@
 					<div class="icon_container d-flex flex-column justify-content-end">
 						<img src="images/earth-globe.svg" alt="">
 					</div>
-					<h3>Third Year || Final Year Student</h3>
-					<p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum.</p>
+					
+					<button type="button" class="btn btn-primary custom-modal-btn" data-toggle="modal" data-target="#exampleModal">
+						<h3>Third Year || Final Year Student</h3>
+					</button>
+					<p>For third year project all students have to complete at least 70 credits and all of the related subjects.For final year project all student...</p>
 				</div>
 
 				<div class="col-lg-4 service_item text-left d-flex flex-column align-items-start justify-content-start">
 					<div class="icon_container d-flex flex-column justify-content-end">
 						<img src="images/exam.svg" alt="">
 					</div>
-					<h3>Project Approval</h3>
+					
+					<button type="button" class="btn btn-primary custom-modal-btn" data-toggle="modal" data-target="#exampleModal2">
+						 <h3>Project Approval</h3>
+					</button>
 					<p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum.</p>
 				</div>
 
@@ -123,7 +129,10 @@
 					<div class="icon_container d-flex flex-column justify-content-end">
 						<img src="images/books.svg" alt="">
 					</div>
-					<h3>Approval Acceptation Or Rejection</h3>
+					
+					<button type="button" class="btn btn-primary custom-modal-btn" data-toggle="modal" data-target="#exampleModal3">
+						<h3>Approval Acceptation Or Rejection</h3>
+				   </button>
 					<p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum.</p>
 				</div>
 
@@ -131,7 +140,10 @@
 					<div class="icon_container d-flex flex-column justify-content-end">
 						<img src="images/professor.svg" alt="">
 					</div>
-					<h3>Assigning Project Faculty</h3>
+				
+					<button type="button" class="btn btn-primary custom-modal-btn" data-toggle="modal" data-target="#exampleModal4">
+						<h3>Assigning Project Faculty</h3>
+				   </button>
 					<p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum.</p>
 				</div>
 
@@ -139,7 +151,10 @@
 					<div class="icon_container d-flex flex-column justify-content-end">
 						<img src="images/exam.svg" alt="">
 					</div>
-					<h3>Project Development</h3>
+					
+					<button type="button" class="btn btn-primary custom-modal-btn" data-toggle="modal" data-target="#exampleModal5">
+						<h3>Project Development</h3>
+				   </button>
 					<p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum.</p>
 				</div>
 
@@ -147,7 +162,10 @@
 					<div class="icon_container d-flex flex-column justify-content-end">
 						<img src="images/blackboard.svg" alt="">
 					</div>
-					<h3>Submission Date</h3>
+
+					<button type="button" class="btn btn-primary custom-modal-btn" data-toggle="modal" data-target="#exampleModal6">
+						<h3>Submission Date</h3>
+				   </button>
 					<p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum.</p>
 				</div>
 
@@ -155,7 +173,10 @@
 					<div class="icon_container d-flex flex-column justify-content-end">
 						<img src="images/mortarboard.svg" alt="">
 					</div>
-					<h3>Final Presentation</h3>
+
+					<button type="button" class="btn btn-primary custom-modal-btn" data-toggle="modal" data-target="#exampleModal7">
+						<h3>Final Presentation</h3>
+				   </button>
 					<p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum.</p>
 				</div>
 
@@ -163,12 +184,217 @@
 		</div>
 	</div>
 
-	<!-- Testimonials -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">Third Year || Final Year Student</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+			<i class="fas fa-hand-point-right"></i> For third year project all students have to complete at least 70 credits and all of the related subjects.For final year project all student have to complete 140 credits.<br>
+			<i class="fas fa-hand-point-right"></i> Students have to register first for project.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Close</button>
+		</div>
+	  </div>
+	</div>
+</div> <!-- Modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">Project Approval</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+			<i class="fas fa-hand-point-right"></i> Students have to register first for project.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Close</button>
+		</div>
+	  </div>
+	</div>
+</div> <!-- Modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">Approval Acceptation Or Rejection</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+			<i class="fas fa-hand-point-right"></i> Students have to register first for project.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Close</button>
+		</div>
+	  </div>
+	</div>
+</div> <!-- Modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">Assigning Project Faculty</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+			<i class="fas fa-hand-point-right"></i> Students have to register first for project.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Close</button>
+		</div>
+	  </div>
+	</div>
+</div> <!-- Modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">Project Development</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+			<i class="fas fa-hand-point-right"></i> Students have to register first for project.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Close</button>
+		</div>
+	  </div>
+	</div>
+</div> <!-- Modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">Submission Date</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+			<i class="fas fa-hand-point-right"></i> Students have to register first for project.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Close</button>
+		</div>
+	  </div>
+	</div>
+</div> <!-- Modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal7" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">Final Presentation</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+			<i class="fas fa-hand-point-right"></i> Students have to register first for project.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+			<i class="fas fa-hand-point-right"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Close</button>
+		</div>
+	  </div>
+	</div>
+</div> <!-- Modal -->
+
+<!-- Testimonials -->
 
 	<div class="testimonials page_section">
 		<!-- <div class="testimonials_background" style="background-image:url(images/testimonials_background.jpg)"></div> -->
 		<div class="testimonials_background_container prlx_parent">
-			<div class="testimonials_background prlx" style="background-image:url(images/sourav.JPG)"></div>
+			<div class="testimonials_background prlx" style="background-image:url(images/student.jpg)"></div>
 		</div>
 		<div class="container">
 
@@ -181,60 +407,29 @@
 			</div>
 
 			<div class="row">
-				<div class="col-lg-10 offset-lg-1">
-					
+				<div class="col-lg-10 offset-lg-1">	
 					<div class="testimonials_slider_container">
-
 						<!-- Testimonials Slider -->
 						<div class="owl-carousel owl-theme testimonials_slider">
 							
 							<!-- Testimonials Item -->
+							@foreach($std_comments as $std_comment)
 							<div class="owl-item">
 								<div class="testimonials_item text-center">
 									<div class="quote">“</div>
-									<p class="testimonials_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consequat magna felis, vitae ornare lectus molestie pretium. Nam vitae est quis nisi interdum aliquet. Ut tellus elit, faucibus sit amet quam at, cursus bibendum turpis. Mauris ac nisi tempor, commodo tellus in, mattis justo.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+									<p class="testimonials_text">{{$std_comment->comment}}</p>
 									<div class="testimonial_user">
 										<div class="testimonial_image mx-auto">
-											<img src="images/DSC_01141.JPG" alt="">
+											<img src="{{asset('images/'.$std_comment->personal_img)}}" alt="">
 										</div>
-										<div class="testimonial_name">Sourav Roy</div>
-										<div class="testimonial_title">Graduate Student</div>
+										<div class="testimonial_name">{{$std_comment->name}}</div>
+										<div class="testimonial_title">{{$std_comment->status}}</div>
 									</div>
 								</div>
 							</div>
-
-							<!-- Testimonials Item -->
-							<div class="owl-item">
-								<div class="testimonials_item text-center">
-									<div class="quote">“</div>
-									<p class="testimonials_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consequat magna felis, vitae ornare lectus molestie pretium. Nam vitae est quis nisi interdum aliquet. Ut tellus elit, faucibus sit amet quam at, cursus bibendum turpis. Mauris ac nisi tempor, commodo tellus in, mattis justo.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-									<div class="testimonial_user">
-										<div class="testimonial_image mx-auto">
-											<img src="images/DSC_01141.JPG" alt="">
-										</div>
-										<div class="testimonial_name">Sourav Roy</div>
-										<div class="testimonial_title">Graduate Student</div>
-									</div>
-								</div>
-							</div>
-
-							<!-- Testimonials Item -->
-							<div class="owl-item">
-								<div class="testimonials_item text-center">
-									<div class="quote">“</div>
-									<p class="testimonials_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consequat magna felis, vitae ornare lectus molestie pretium. Nam vitae est quis nisi interdum aliquet. Ut tellus elit, faucibus sit amet quam at, cursus bibendum turpis. Mauris ac nisi tempor, commodo tellus in, mattis justo.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-									<div class="testimonial_user">
-										<div class="testimonial_image mx-auto">
-											<img src="images/DSC_01141.JPG" alt="">
-										</div>
-										<div class="testimonial_name">Sourav Roy</div>
-										<div class="testimonial_title">Graduate Student</div>
-									</div>
-								</div>
-							</div>
+							@endforeach
 
 						</div>
-
 					</div>
 				</div>
 			</div>

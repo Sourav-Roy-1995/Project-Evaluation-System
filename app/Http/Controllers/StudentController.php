@@ -15,7 +15,8 @@ use App\RegInfo;
 use App\MarkingSystem;
 use App\Final_mark;
 use App\Scheduling;
-use App\Project_Upload;
+use App\Project_Upload; 
+use App\Student_Comment;
 use Illuminate\Support\Facades\Validator;
 use Session;
 
@@ -91,10 +92,6 @@ class StudentController extends Controller
 		return view('student.index',compact('personalproject','pre_projects'));
     }
     
-    public function project_upload(){
-	    return view('student.project_upload');
-    }
-
     public function sp_profile(){
 
         $user =Auth::User();
@@ -112,6 +109,10 @@ class StudentController extends Controller
 	    return view('student.supervisor_profile',compact('personalsupervisor'));
     }
 
+
+    public function project_upload(){
+	    return view('student.project_upload');
+    }
 
     public function store_project(Request $request)
     {
@@ -142,11 +143,41 @@ class StudentController extends Controller
         $upload_project->save(); 
         
         $request->session()->flash('flash_message', 'Submitted successfully!');
-        return redirect()->route('student_panel');
-
+        return redirect()->route('project_upload');
 
     }
     
+    public function comment_view(){
+	    return view('student.student_comment');
+    }
+
+    public function store_comments(Request $request)
+    {    
+        $this->validate($request, [
+            'name'=>'required',
+            'stdnt_id'=>'required',
+            'status'=>'required',
+            'comment'=>'required'
+        ]);
+        
+        $leave_comment = new Student_Comment();
+
+        if($request->hasFile('personal_img')){
+            $path = time().'.'.$request->personal_img->getClientOriginalExtension();
+            $request->personal_img->move(public_path('images'), $path);
+            $leave_comment->personal_img = $path;
+        } //store personal images
+
+        $leave_comment->name = $request->name; 
+        $leave_comment->stdnt_id = $request->stdnt_id;
+        $leave_comment->status = $request->status; 
+        $leave_comment->comment = $request->comment; 
+        $leave_comment->save(); 
+        
+        $request->session()->flash('comment_flash', 'Submitted successfully!');
+        return redirect()->route('comment_view');
+    }
+
     public function getAns(){
 
         $getans = StudentList::where([

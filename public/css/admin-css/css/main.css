@@ -5741,7 +5741,19 @@ button.close {
   background-color: #000;
   border-radius: 0.25rem;
 }
+.custom-modal-btn {
+  background-color: white;
+  border: none;
+  padding-top: 12px;
+  padding-left:0px;
+  height: 46px;
 
+}
+.custom-modal-btn:hover{
+  background-color:#FFB606;
+  margin-bottom:5px;
+  padding-left:10px;
+}
 .popover {
   position: absolute;
   top: 0;

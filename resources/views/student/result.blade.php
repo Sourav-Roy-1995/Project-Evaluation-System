@@ -387,15 +387,41 @@
         </li>
 
         <li class="header">OTHER INFORMATION</li>
-        <li><a href="#"><i class="fa fa-circle text-red"></i> <span>Project Evaluation</span></a></li>
-        <li><a href="#"><i class="fa fa-circle text-yellow"></i> <span>Documentation</span></a></li>
+        <li><a href="comment_view"><i class="fa fa-circle text-red"></i> <span>Leave Comment</span></a></li>
+        <li><a href="#" data-toggle="modal" data-target="#exampleModal9"><i class="fa fa-circle text-yellow"></i> <span>Documentation</span></a></li>
         <li><a href="#prev_project"><i class="fa fa-circle text-aqua"></i> <span>Previous Project</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->
   </aside>
 
-  <!-- Content Wrapper. Contains page content -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal9" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h4 class="modal-title" id="exampleModalLabel"><b>Documentation</b></h4>
+
+		</div>
+		<div class="modal-body">
+			<i class="fas fa-hand-point-right"></i> Students have to be third year or final Year Student.<br>
+			<i class="fas fa-hand-point-right"></i> Students have to register first.<br>
+			<i class="fas fa-hand-point-right"></i> After Registration their request will go under observation.<br>
+			<i class="fas fa-hand-point-right"></i> Project convenor either approve their project or reject project.<br>
+			<i class="fas fa-hand-point-right"></i> Project convenor will distribute project among supervisors.<br>
+			<i class="fas fa-hand-point-right"></i> Project team will contact with their selected supervisor and start their development.<br>
+			<i class="fas fa-hand-point-right"></i> Project submission date will be published.<br>
+			<i class="fas fa-hand-point-right"></i> At submission date all team have to face defense board<br>
+
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Close</button>
+		</div>
+	  </div>
+	</div>
+</div> <!-- Modal -->
+
+<!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper wrapper-two">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -855,6 +881,6 @@
       <script src="{{URL::asset('js/jquery.countTo.js') }}"></script>
       <script src="{{URL::asset('js/profile.js') }}"></script>
 
-      <script src="{{URL::asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+      {{-- <script src="{{URL::asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script> --}}
 </body>
 </html>

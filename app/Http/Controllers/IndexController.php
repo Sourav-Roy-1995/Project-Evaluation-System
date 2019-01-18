@@ -15,6 +15,7 @@ use App\MarkingSystem;
 use App\Final_mark;
 use App\Scheduling;
 use App\Project_Upload;
+use App\Student_Comment; 
 use Illuminate\Support\Facades\Validator;
 use Session;
 
@@ -35,8 +36,9 @@ class IndexController extends Controller
 
 
         $prev_projects=Project_Upload::all();
+        $std_comments = Student_Comment::all();
 
-         return view('index',compact('schedules','prev_projects'));
+         return view('index',compact('schedules','prev_projects','std_comments'));
     }
 
 

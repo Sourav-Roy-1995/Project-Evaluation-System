@@ -938,25 +938,30 @@
                             <input type="hidden" name="project_id[]" value="{{$mark->project_id}}">
                                   
                           <td>
-                              <input id="marks_input" class="form-control student_id" type="text" name="student_id[]" placeholder="Student ID" style="background:white;width:120px" value="{{$mark->student_id}}">
+                              {{-- <input id="marks_input" class="form-control student_id" type="text" name="student_id[]" placeholder="Student ID" style="background:white;width:120px" value="{{$mark->student_id}}"> --}}
+                              {{$mark->student_id}}
                           </td>
             
                           <td>
-                              <input id="marks_input" class="form-control category_one" type="text" name="category_one[]" placeholder="Category One" style="background:white;width:100px" value="{{$mark->category_one}}">
+                              {{-- <input id="marks_input" class="form-control category_one" type="text" name="category_one[]" placeholder="Category One" style="background:white;width:100px" value="{{$mark->category_one}}"> --}}
+                              {{$mark->category_one}}
                           </td> 
             
                           <td>
-                              <input id="marks_input" class="form-control category_two" type="text" name="category_two[]" placeholder="Category Two" style="background:white;width:100px" value="{{$mark->category_two}}">
+                              {{-- <input id="marks_input" class="form-control category_two" type="text" name="category_two[]" placeholder="Category Two" style="background:white;width:100px" value="{{$mark->category_two}}"> --}}
+                              {{$mark->category_two}}
                           </td> 
             
                           <td>
-                              <input id="marks_input" class="form-control supervisor_marks" type="text" name="supervisor_marks[]" style="background:white;width:110px";
-                              value="{{$mark->supervisor_marks}}">
+                              {{-- <input id="marks_input" class="form-control supervisor_marks" type="text" name="supervisor_marks[]" style="background:white;width:110px";
+                              value="{{$mark->supervisor_marks}}"> --}}
+                              {{$mark->supervisor_marks}}
                           </td> 
             
                           <td>
-                              <input id="marks_input" class="form-control total" type="text" name="total[]"
-                              placeholder="Total Marks" style="background:white;cursor:default;width:100px" value="{{$mark->total}}" > 
+                              {{-- <input id="marks_input" class="form-control total" type="text" name="total[]"
+                              placeholder="Total Marks" style="background:white;cursor:default;width:100px" value="{{$mark->total}}"  --}}
+                              {{$mark->total}}
             
                           </td> 
             
@@ -985,7 +990,7 @@
                         Final Marks 
                    </div>
                     <div class="col-md-6 col-sm-6 col-xs-4">                 
-                        <input class="input_field search"  id="" placeholder="search..." type="text">
+                        {{-- <input class="input_field search"  id="" placeholder="search..." type="text"> --}}
                     </div>
                 </div>
               </div>
@@ -1351,7 +1356,7 @@
     $(document).ready(function(){
       $("#search_input4").on("keyup", function() {
         var value = $(this).val().toLowerCase();
-        $("#search_list4 tr td input").filter(function() {
+        $("#search_list4 tr").filter(function() {
           $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
       });

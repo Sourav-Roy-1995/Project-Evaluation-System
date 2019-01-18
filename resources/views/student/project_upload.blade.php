@@ -36,14 +36,7 @@
     <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css">
     <!-- bootstrap wysihtml5 - text editor -->
     <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-  
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  
+
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
   
@@ -327,75 +320,107 @@
   </header>
 
 
-  <aside class="main-sidebar">
-      <!-- sidebar: style can be found in sidebar.less -->
-      <section class="sidebar">
-        <!-- Sidebar user panel -->
-        <div class="user-panel">
-          <div class="pull-left image">
-            <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-          </div>
-          <div class="pull-left info">
-            <p>{{ Auth::User()->name }}</p>
-            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-          </div>
+<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- Sidebar user panel -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
-        <!-- search form -->
-        <form action="#" method="get" class="sidebar-form">
-          <div class="input-group">
-            <input type="text" name="q" class="form-control" placeholder="Search...">
-            <span class="input-group-btn">
-                  <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                  </button>
-                </span>
-          </div>
-        </form>
-        <!-- /.search form -->
-  
-  
-        <!-- sidebar menu: : style can be found in sidebar.less -->
-        <ul class="sidebar-menu" data-widget="tree">
-          <li class="header">MAIN NAVIGATION</li>
-          <li>
-            <a href="student_panel">
-                <i class="fa fa-th"></i><span>Dashboard</span>
-              <small class="label pull-right bg-green"><i class="fas fa-hand-point-right"></i></small>
-            </a>
-          </li>
-          <li class="">
-            <a href="registration">
-              <i class="fa fa-th"></i><span>Register</span>
-              <small class="label pull-right bg-green"><i class="fas fa-hand-point-right"></i></small>
-            </a>
-  
-          </li>
-  
-          <li>
-            <a href="project_upload">
-              <i class="fa fa-th"></i><span>Project Upload</span>
-              <small class="label pull-right bg-green"><i class="fas fa-hand-point-right"></i></small>
-            </a>
-          </li>
-          <li class="treeview">
-            <a href="#">
-              <i class="fa fa-th"></i><span>Profile</span>
-              <small class="label pull-right bg-green"><i class="fas fa-hand-point-right"></i></small>
-            </a>
-            <ul class="treeview-menu">           
-              <li><a href="sp_profile"><i class="fa fa-circle"></i>Supervisor Profile</a></li>
-              <li><a href="#"><i class="fa fa-circle"></i>Others</a></li>
-              <li><a href="#"><i class="fa fa-circle"></i>Others</a></li>
-            </ul>
-          </li>
-  
-          <li class="header">OTHER INFORMATION</li>
-          <li><a href="#"><i class="fa fa-circle text-red"></i> <span>Project Evaluation</span></a></li>
-          <li><a href="#"><i class="fa fa-circle text-yellow"></i> <span>Documentation</span></a></li>
-          <li><a href="#prev_project"><i class="fa fa-circle text-aqua"></i> <span>Previous Project</span></a></li>
-        </ul>
-      </section>
-      <!-- /.sidebar -->
-    </aside>
+        <div class="pull-left info">
+          <p>{{ Auth::User()->name }}</p>
+          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        </div>
+      </div>
+      <!-- search form -->
+      <form action="#" method="get" class="sidebar-form">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Search...">
+          <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
+              </span>
+        </div>
+      </form>
+      <!-- /.search form -->
+
+
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header">MAIN NAVIGATION</li>
+        <li>
+          <a href="student_panel">
+              <i class="fa fa-th"></i><span>Dashboard</span>
+            <small class="label pull-right bg-green"><i class="fas fa-hand-point-right"></i></small>
+          </a>
+        </li>
+        <li class="">
+          <a href="registration">
+            <i class="fa fa-th"></i><span>Register</span>
+            <small class="label pull-right bg-green"><i class="fas fa-hand-point-right"></i></small>
+          </a>
+
+        </li>
+
+        <li>
+          <a href="project_upload">
+            <i class="fa fa-th"></i><span>Project Upload</span>
+            <small class="label pull-right bg-green"><i class="fas fa-hand-point-right"></i></small>
+          </a>
+        </li>
+        <li>
+          <a href="view_result">
+            <i class="fa fa-th"></i><span>Result</span>
+            <small class="label pull-right bg-green"><i class="fas fa-hand-point-right"></i></small>
+          </a>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-th"></i><span>Profile</span>
+            <small class="label pull-right bg-green"><i class="fas fa-hand-point-right"></i></small>
+          </a>
+          <ul class="treeview-menu">           
+            <li><a href="sp_profile"><i class="fa fa-circle"></i>Supervisor Profile</a></li>
+            <li><a href="#"><i class="fa fa-circle"></i>Others</a></li>
+            <li><a href="#"><i class="fa fa-circle"></i>Others</a></li>
+          </ul>
+        </li>
+
+        <li class="header">OTHER INFORMATION</li>
+        <li><a href="comment_view"><i class="fa fa-circle text-red"></i> <span>Leave Comment</span></a></li>
+        <li><a href="#" data-toggle="modal" data-target="#exampleModal10"><i class="fa fa-circle text-yellow"></i> <span>Documentation</span></a></li>
+        <li><a href="#prev_project"><i class="fa fa-circle text-aqua"></i> <span>Previous Project</span></a></li>
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal10" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h4 class="modal-title" id="exampleModalLabel"><b>Documentation</b></h4>
+
+		</div>
+		<div class="modal-body">
+			<i class="fas fa-hand-point-right"></i> Students have to be third year or final Year Student.<br>
+			<i class="fas fa-hand-point-right"></i> Students have to register first.<br>
+			<i class="fas fa-hand-point-right"></i> After Registration their request will go under observation.<br>
+			<i class="fas fa-hand-point-right"></i> Project convenor either approve their project or reject project.<br>
+			<i class="fas fa-hand-point-right"></i> Project convenor will distribute project among supervisors.<br>
+			<i class="fas fa-hand-point-right"></i> Project team will contact with their selected supervisor and start their development.<br>
+			<i class="fas fa-hand-point-right"></i> Project submission date will be published.<br>
+			<i class="fas fa-hand-point-right"></i> At submission date all team have to face defense board<br>
+
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Close</button>
+		</div>
+	  </div>
+	</div>
+</div> <!-- Modal -->
             
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -424,9 +449,15 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
+            @if(Session::has('flash_message'))
+                    <div class="alert alert-success">
+                        {{ Session::get('flash_message') }}
+                    </div>
+            @endif 
+
             {!! Form::open(['id'=>'search_form','class'=>'search_form',     
             'method'=>'POST','action'=>'StudentController@store_project','files'=>true]) !!}
-
+              {{ csrf_field() }}
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputName">Name</label>
@@ -482,7 +513,17 @@
               <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Submit</button>
               </div>
-              {!! Form::close() !!} 
+              {!! Form::close() !!}
+              
+@if(count($errors) > 0)
+      <div class="alert alert-danger">
+        <ul>
+          @foreach($errors->all() as $error)
+            <li>{{$error}}</li>
+          @endforeach
+        </ul>
+      </div>
+@endif 
           </div>
           <!-- /.box -->
 
@@ -748,6 +789,6 @@
       <script src="{{URL::asset('js/jquery.countTo.js') }}"></script>
       <script src="{{URL::asset('js/profile.js') }}"></script>
 
-      <script src="{{URL::asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+      {{-- <script src="{{URL::asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script> --}}
 </body>
 </html>

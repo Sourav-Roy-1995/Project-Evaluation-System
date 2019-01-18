@@ -22,7 +22,9 @@
     <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
-
+    
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
     <!-- Morris chart -->
     <link rel="stylesheet" href="bower_components/morris.js/morris.css">
@@ -35,7 +37,13 @@
     <!-- bootstrap wysihtml5 - text editor -->
     <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
   
-
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
   
@@ -317,8 +325,9 @@
       </div>
     </nav>
   </header>
-  <!-- Left side column. contains the logo and sidebar -->
-  <aside class="main-sidebar">
+
+
+<aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
       <!-- Sidebar user panel -->
@@ -425,195 +434,96 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Dashboard
-        <small>Control panel</small>
+        
+        <small>Preview</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="student_panel"><i class="fas fa-chart-line"></i> Home</a></li>
-        <li class="active">Dashboard</li>
+        <li><a href="#"><i class="fas fa-chart-line"></i>  Home</a></li>
+        <li><a href="#">Forms</a></li>
+        <li class="active">General Elements</li>
       </ol>
     </section>
 
     <!-- Main content -->
     <section class="content">
-      <!-- Small boxes (Stat box) -->
       <div class="row">
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-aqua">
-            <div class="inner">
-
-              <h3>{{ Auth::User()->personal_id }}</h3>
-
-              <p>Your Id</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-bag"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-green" style="height: 127px;">
-            <div class="inner">
-              <!-- <h3>53<sup style="font-size: 20px">%</sup></h3> -->
-
-              <h3 style="font-size: 20px!important">{{ Auth::User()->email }}</h3>
-
-              <p>Email</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-stats-bars"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-yellow">
-            <div class="inner">
-              <h3>{{ Auth::User()->phone }}</h3>
-
-              <p>Phone</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-person-add"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-red">
-            <div class="inner">
-              <h3>{{ Auth::User()->name }}</h3>
-
-              <p>Name</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-pie-graph"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-      </div>
-      
-      <!-- /.row -->
-
-      <!-- Main row -->
-    
-      <div class="row"> 
-      <div class="panel panel-info custom-panel form-txt" style="margin-top:50px;">
-          <div class="panel-heading panel-info" id="personal">
-
-            <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-2 default-panel-head personal_project" >
-                    <span class="glyphicon glyphicon-th" aria-hidden="true" ></span>
-                     Project Information
-                </div>
-    
-                <div class="col-md-6 col-sm-6 col-xs-4">                 
-                    <input class="input_field search"  id="myInput2" placeholder="search..." type="text">
-                </div>
-            </div>
-          </div>
-            
-          <div class="panel-body table-responsive">
-
-                  <table class="table table-bordered table-hover" width="100%" cellspacing="0">
-
-                            @foreach($personalproject as $personalprojects)
-                                <tbody class="table-bordered">
-                                   <tr>                                
-                                        <th>Project Name</th> 
-                                        <td>{{$personalprojects->project_name}}</td>
-                                   </tr> 
-                                   <tr>                                
-                                        <th>Description</th> 
-                                        <td>{{$personalprojects->description}}</td>
-                                   </tr> 
-                                   <tr>                                
-                                        <th>Semester</th> 
-                                        <td>{{$personalprojects->semester}}</td>
-                                   </tr> 
-                                   <tr>                                
-                                        <th>Students</th> 
-                                        <td>
-                                        {{$personalprojects->studentid_one}}<br>
-                                        {{$personalprojects->studentid_two}}<br>
-                                        {{$personalprojects->studentid_three}}</td>
-                                   </tr>     
-                                </tbody>
-
-                                @endforeach
-
-                          </table>
-                                                   
-            </div>
-
-          <div class="panel-footer custom-panel-footer small text-muted">Updated     yesterday at 11:59 PM 
-          </div>
-       </div>
-      </div>          
-      <!-- /.row (main row) -->
-
-
-      <div class="row" id="prev_project">
-
-        @foreach($pre_projects as $pre_project)
-        <div class="col-md-6">
-          <div class="box box-default collapsed-box">
+        <!-- left column -->
+        <div class="col-md-12">
+          <!-- general form elements -->
+          <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">{{$pre_project->project_title}}</h3>
-
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
-                </button>
-              </div>
-              <!-- /.box-tools -->
+              <h3 class="box-title">Leave Your Comment</h3>
             </div>
             <!-- /.box-header -->
-            <div class="box-body">
-              <table class="table table-bordered table-hover" width="100%" cellspacing="0">
-                  <tbody class="table-bordered">
-                    <tr>                                
-                        <th>Student Name:</th> 
-                        <td>{{$pre_project->name}}</td>
-                    </tr> 
-                    <tr>                                
-                        <th>Project Type:</th> 
-                        <td>{{$pre_project->project_type}}</td>
-                    </tr> 
-                    <tr>                                
-                        <th>Framework:</th> 
-                        <td>{{$pre_project->framework}}</td>
-                    </tr> 
+            <!-- form start -->
+ @if(Session::has('comment_flash'))
+      <div class="alert alert-success">
+         {{ Session::get('comment_flash') }}
+      </div>
+ @endif 
+            {!! Form::open(['id'=>'search_form','class'=>'search_form',     
+            'method'=>'POST','action'=>'StudentController@store_comments','files'=>true]) !!}
+            {{ csrf_field() }}
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="exampleInputName">Name</label>
+                  <input type="text" name="name" class="form-control disable-input" id="exampleInputName" placeholder="Enter Name" value="{{ Auth::User()->name }}">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputID">ID</label>
+                    <input type="text" name="stdnt_id" class="form-control disable-input" id="exampleInputID" placeholder="Enter ID" value="{{ Auth::User()->personal_id }}">
+                </div>
 
-                    <tr>                                
-                        <th>Description:</th> 
-                        <td>{{$pre_project->project_txt}}</td>
-                    </tr> 
-                 </tbody>
-              </table>
-            </div>
-            <!-- /.box-body -->
+                <div class="form-group">
+                    <label for="exampleInputTitle">Status</label>
+                    <select name="status" id="exampleInputType"  class="form-control">                    
+                        <option value="Current Student">Current Student</option>
+                        <option value="Alumnie">Alumnie</option>
+                        <option value="Final Year Student">Final Year Student</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputTitle">Comment</label>
+                    <input type="text" name="comment" class="form-control" id="exampleInputTitle" placeholder="Status">
+                </div>
+                
+                <div class="form-group">
+                  <label for="exampleInputFile">Personal Image</label>
+                  <input type="file" name="personal_img" id="exampleInputFile">
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox"> Check me out
+                  </label>
+                </div>
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+              
+              {!! Form::close() !!} 
+@if(count($errors) > 0)
+      <div class="alert alert-danger">
+        <ul>
+          @foreach($errors->all() as $error)
+            <li>{{$error}}</li>
+          @endforeach
+        </ul>
+      </div>
+@endif 
           </div>
           <!-- /.box -->
-        </div>
-        @endforeach
 
+
+        <!--/.col (right) -->
       </div>
-
+      <!-- /.row -->
     </section>
     <!-- /.content -->
   </div>
-
-
   <!-- /.content-wrapper -->
   <footer class="main-footer">
       <div class="pull-right hidden-xs">
@@ -818,42 +728,57 @@
 </div>
 <!-- ./wrapper -->
 
-<!-- jQuery 3 -->
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-  $.widget.bridge('uibutton', $.ui.button);
-</script>
-<!-- Bootstrap 3.3.7 -->
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- Morris.js charts -->
-<script src="bower_components/raphael/raphael.min.js"></script>
-<script src="bower_components/morris.js/morris.min.js"></script>
-<!-- Sparkline -->
-<script src="bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
-<!-- jvectormap -->
-<script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-<!-- jQuery Knob Chart -->
-<script src="bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
-<!-- daterangepicker -->
-<script src="bower_components/moment/min/moment.min.js"></script>
-<script src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
-<!-- datepicker -->
-<script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-<!-- Bootstrap WYSIHTML5 -->
-<script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-<!-- Slimscroll -->
-<script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="bower_components/fastclick/lib/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
+
+    <!-- jQuery 3 -->
+    <script src="{{URL::asset('bower_components/jquery/dist/jquery.min.js')}}"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="{{URL::asset('bower_components/jquery-ui/jquery-ui.min.js')}}"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+      $.widget.bridge('uibutton', $.ui.button);
+    </script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="{{URL::asset('bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+    <!-- Morris.js charts -->
+    <script src="{{URL::asset('bower_components/raphael/raphael.min.js')}}"></script>
+    <script src="{{URL::asset('bower_components/morris.js/morris.min.js')}}"></script>
+    <!-- Sparkline -->
+    <script src="{{ URL::asset('bower_components/jquery-sparkline/dist/jquery.sparkline.min.js') }}"></script>
+    <!-- jvectormap -->
+    <script src="{{URL::asset('plugins/jvectormap/jquery-jvectormap-1.2.2.min.js') }}"></script>
+    <script src="{{URL::asset('plugins/jvectormap/jquery-jvectormap-world-mill-en.js') }}"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="{{URL::asset('bower_components/jquery-knob/dist/jquery.knob.min.js') }}"></script>
+    <!-- daterangepicker -->
+    <script src="{{URL::asset('bower_components/moment/min/moment.min.js')}}"></script>
+    <script src="{{URL::asset('bower_components/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
+    <!-- datepicker -->
+    <script src="{{URL::asset('bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
+    <!-- Bootstrap WYSIHTML5 -->
+    <script src="{{URL::asset('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js')}}"></script>
+    <!-- Slimscroll -->
+    <script src="{{URL::asset('bower_components/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
+    <!-- FastClick -->
+    <script src="{{URL::asset('bower_components/fastclick/lib/fastclick.js')}}"></script>
+    <!-- AdminLTE App -->
+    <script src="{{URL::asset('dist/js/adminlte.min.js')}}"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="{{URL::asset('dist/js/pages/dashboard.js')}}"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="{{URL::asset('dist/js/demo.js')}}"></script>
+
+
+      <script>src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="{{URL::asset('js/main.js') }}"></script>
+
+
+      <!-- Waypoints -->
+      <script src="{{URL::asset('js/jquery.waypoints.min.js') }}"></script>
+
+      <!-- Counters -->
+      <script src="{{URL::asset('js/jquery.countTo.js') }}"></script>
+      <script src="{{URL::asset('js/profile.js') }}"></script>
+
+      {{-- <script src="{{URL::asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script> --}}
 </body>
 </html>
