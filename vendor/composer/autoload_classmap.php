@@ -22,7 +22,7 @@ return array(
     'App\\Http\\Controllers\\MaatwebsiteDemoController' => $baseDir . '/app/Http/Controllers/MaatwebsiteDemoController.php',
     'App\\Http\\Controllers\\NormalController' => $baseDir . '/app/Http/Controllers/NormalController.php',
     'App\\Http\\Controllers\\PostController' => $baseDir . '/app/Http/Controllers/PostController.php',
-    'App\\Http\\Controllers\\ProjectListController' => $baseDir . '/app/Http/Controllers/check.php',
+    'App\\Http\\Controllers\\ProjectListController' => $baseDir . '/app/Http/Controllers/ProjectListController.php',
     'App\\Http\\Controllers\\StudentController' => $baseDir . '/app/Http/Controllers/StudentController.php',
     'App\\Http\\Controllers\\SupervisorController' => $baseDir . '/app/Http/Controllers/SupervisorController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',

@@ -96,7 +96,7 @@
                                       
                                        <td>
                                             
-                                        <input type="text" name="personal_id[]" class="form-control disable-input" style="width:130px" value="{{ Auth::User()->personal_id }}">
+                                        <input type="text" required name="personal_id[]" class="form-control disable-input" style="width:130px" value="{{ Auth::User()->personal_id }}">
 
                                        </td>
 
@@ -112,22 +112,22 @@
                                        
                                       <td>
 
-                                            <input class="form-control disable-input student_id" type="text" name="student_id[]" placeholder="Student ID" style="width:141px" value="{{$supervisorstudents->studentid_one}}">
+                                            <input class="form-control disable-input student_id" required type="text" name="student_id[]" placeholder="Student ID" style="width:141px" value="{{$supervisorstudents->studentid_one}}">
 
                                            
                                       </td>
                                       <td>
-                                          <input class="form-control category_one" type="text" name="category_one[]" placeholder="Category One" style="width:141px">
+                                          <input class="form-control category_one" type="text" required name="category_one[]" placeholder="Category One" style="width:141px">
                                       </td>
 
                                       <td>
-                                          <input class="form-control category_two" type="text" name="category_two[]" placeholder="Category Two" style="width:141px">
+                                          <input class="form-control category_two" type="text" required name="category_two[]" placeholder="Category Two" style="width:141px">
                                       </td>
                                       <td>
-                                          <input class="form-control supervisor_marks" type="text" name="supervisor_marks[]" placeholder="Disabled" disabled="true" cursor="default" style="background:white;width:141px">
+                                          <input class="form-control supervisor_marks" type="text" required name="supervisor_marks[]" placeholder="Disabled" disabled="true" cursor="default" style="background:white;width:141px">
                                       </td>
                                       <td>
-                                          <input class="form-control total disable-input" type="text" name="total[]"
+                                          <input class="form-control total disable-input" type="text" name="total[]" required
                                           placeholder="Total Marks" style="background:white;cursor:default;width:141px">
                                       </td>
 
@@ -225,17 +225,17 @@
         if(std_two > 1 && std_three==""){
       var tr='<tr>'+
                   '<input type="hidden" name="project_id[]" class="form-control" cursor="default" style="background:white;" value="{{$supervisorstudents->project_id}}">'+
-                  '<td><input type="text" name="personal_id[]" class="form-control disable-input" style="width:130px" value="{{ Auth::User()->personal_id }}"></td>'+
+                  '<td><input type="text" required name="personal_id[]" class="form-control disable-input" style="width:130px" value="{{ Auth::User()->personal_id }}"></td>'+
                   '<input type="hidden" name="course_code[]" class="form-control" cursor="default" style="background:white;" value="{{$supervisorstudents->course_code}}">'+
                   '<input type="hidden" name="semester[]" class="form-control" cursor="default" style="background:white;" value="{{$supervisorstudents->semester}}" >'+
                   '<td>'+
-                  '<input class="form-control student_id disable-input" type="text" name="student_id[]" placeholder="Category Two" style="width:141px" value="{{$supervisorstudents->studentid_two}}">'+
+                  '<input class="form-control student_id disable-input" required type="text" name="student_id[]" placeholder="Category Two" style="width:141px" value="{{$supervisorstudents->studentid_two}}">'+
                   '</td>'+
-                  '<td><input class="form-control category_one" type="text" name="category_one[]" placeholder="Category One"></td>'+
+                  '<td><input class="form-control category_one" type="text" required name="category_one[]" placeholder="Category One"></td>'+
 
-                  '<td><input class="form-control category_two" type="text" name="category_two[]" placeholder="Category Two"></td>'+
-                  '<td><input class="form-control supervisor_marks" type="text" name="supervisor_marks[]" disabled="true" cursor="default" style="background:white" placeholder="Disabled"></td>'+
-                  '<td><input class="form-control total disable-input" type="text" name="total[]"  placeholder="Total Marks" style="background:white;cursor:default"></td>'+
+                  '<td><input class="form-control category_two" type="text" required name="category_two[]" placeholder="Category Two"></td>'+
+                  '<td><input class="form-control supervisor_marks" type="text" required  name="supervisor_marks[]" disabled="true" cursor="default" style="background:white" placeholder="Disabled"></td>'+
+                  '<td><input class="form-control total disable-input" required type="text" name="total[]"  placeholder="Total Marks" style="background:white;cursor:default"></td>'+
                   '<td><a href="#" class="btn btn-danger btn-sm remove custom-btn-danger">Remove</a></td>'+      
                   '</tr>';
 
@@ -245,33 +245,33 @@
      else if(std_two > 1 && std_three!=""){
       var tr='<tr>'+
                   '<input type="hidden" name="project_id[]" class="form-control" cursor="default" style="background:white;" value="{{$supervisorstudents->project_id}}">'+
-                  '<td><input type="text" name="personal_id[]" class="form-control disable-input" style="width:130px" value="{{ Auth::User()->personal_id }}"></td>'+
+                  '<td><input type="text" name="personal_id[]" required class="form-control disable-input" style="width:130px" value="{{ Auth::User()->personal_id }}"></td>'+
                   '<input type="hidden" name="course_code[]" class="form-control" cursor="default" style="background:white;" value="{{$supervisorstudents->course_code}}">'+
                   '<input type="hidden" name="semester[]" class="form-control" cursor="default" style="background:white;" value="{{$supervisorstudents->semester}}" >'+
                   '<td>'+
-                  '<input class="form-control student_id disable-input" type="text" name="student_id[]" placeholder="Category Two" style="width:141px" value="{{$supervisorstudents->studentid_two}}">'+
+                  '<input class="form-control student_id disable-input" required type="text" name="student_id[]" placeholder="Category Two" style="width:141px" value="{{$supervisorstudents->studentid_two}}">'+
                   '</td>'+
-                  '<td><input class="form-control category_one" type="text" name="category_one[]" placeholder="Category One"></td>'+
+                  '<td><input class="form-control category_one" type="text" required name="category_one[]" placeholder="Category One"></td>'+
 
-                  '<td><input class="form-control category_two" type="text" name="category_two[]" placeholder="Category Two"></td>'+
-                  '<td><input class="form-control supervisor_marks" type="text" name="supervisor_marks[]" disabled="true" cursor="default" style="background:white" placeholder="Disabled"></td>'+
-                  '<td><input class="form-control total disable-input" type="text" name="total[]"  placeholder="Total Marks" style="background:white;cursor:default"></td>'+
+                  '<td><input class="form-control category_two" type="text" required name="category_two[]" placeholder="Category Two"></td>'+
+                  '<td><input class="form-control supervisor_marks" type="text" required  name="supervisor_marks[]" disabled="true" cursor="default" style="background:white" placeholder="Disabled"></td>'+
+                  '<td><input class="form-control total disable-input" required type="text" name="total[]"  placeholder="Total Marks" style="background:white;cursor:default"></td>'+
                   '<td><a href="#" class="btn btn-danger btn-sm remove custom-btn-danger">Remove</a></td>'+      
                   '</tr>'+
                   
                   '<tr>'+
                   '<input type="hidden" name="project_id[]" class="form-control" cursor="default" style="background:white;" value="{{$supervisorstudents->project_id}}">'+
-                  '<td><input type="text" name="personal_id[]" class="form-control disable-input" style="width:130px" value="{{ Auth::User()->personal_id }}"></td>'+
+                  '<td><input type="text" name="personal_id[]" required class="form-control disable-input" style="width:130px" value="{{ Auth::User()->personal_id }}"></td>'+
                   '<input type="hidden" name="course_code[]" class="form-control" cursor="default" style="background:white;" value="{{$supervisorstudents->course_code}}">'+
                   '<input type="hidden" name="semester[]" class="form-control" cursor="default" style="background:white;" value="{{$supervisorstudents->semester}}" >'+
                   '<td>'+
-                  '<input class="form-control student_id disable-input" type="text" name="student_id[]" placeholder="Student ID" style="width:141px" value="{{$supervisorstudents->studentid_three}}">'+
+                  '<input class="form-control student_id disable-input" required type="text" name="student_id[]" placeholder="Student ID" style="width:141px" value="{{$supervisorstudents->studentid_three}}">'+
                   '</td>'+
-                  '<td><input class="form-control category_one" type="text" name="category_one[]" placeholder="Category One"></td>'+
+                  '<td><input class="form-control category_one" type="text" required name="category_one[]" placeholder="Category One"></td>'+
 
-                  '<td><input class="form-control category_two" type="text" name="category_two[]" placeholder="Category Two"></td>'+
-                  '<td><input class="form-control supervisor_marks" type="text" name="supervisor_marks[]" disabled="true" cursor="default" style="background:white" placeholder="Disabled"></td>'+
-                  '<td><input class="form-control total disable-input" type="text" name="total[]"  placeholder="Total Marks" style="background:white;cursor:default"></td>'+
+                  '<td><input class="form-control category_two" type="text" required name="category_two[]" placeholder="Category Two"></td>'+
+                  '<td><input class="form-control supervisor_marks" type="text" required  name="supervisor_marks[]" disabled="true" cursor="default" style="background:white" placeholder="Disabled"></td>'+
+                  '<td><input class="form-control total disable-input" required type="text" name="total[]"  placeholder="Total Marks" style="background:white;cursor:default"></td>'+
                   '<td><a href="#" class="btn btn-danger btn-sm remove custom-btn-danger">Remove</a></td>'+      
                   '</tr>';
 

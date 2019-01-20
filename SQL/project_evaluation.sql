@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 11, 2019 at 03:13 PM
+-- Generation Time: Jan 21, 2019 at 12:19 AM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -43,9 +43,14 @@ CREATE TABLE `final_marks` (
 --
 
 INSERT INTO `final_marks` (`id`, `project_id`, `studentid`, `counter`, `final_mark`, `created_at`, `updated_at`) VALUES
-(4, 14000, 1512020203, 1, 77, NULL, NULL),
-(5, 14000, 1512020201, 1, 88, NULL, NULL),
-(6, 14000, 1512020202, 1, 82, NULL, NULL);
+(9, 14000, 1512020201, 2, 88, NULL, NULL),
+(10, 14001, 1512020204, 2, 89, NULL, NULL),
+(11, 14002, 1512020210, 2, 51, NULL, NULL),
+(12, 14002, 1512020211, 2, 50, NULL, NULL),
+(13, 14003, 1512020206, 2, 55, NULL, NULL),
+(14, 14004, 1512020202, 3, 82, NULL, NULL),
+(15, 14004, 1512020203, 2, 93, NULL, NULL),
+(16, 14004, 1512020205, 2, 88, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -73,9 +78,23 @@ CREATE TABLE `marking_systems` (
 --
 
 INSERT INTO `marking_systems` (`id`, `project_id`, `personal_id`, `course_code`, `semester`, `student_id`, `category_one`, `category_two`, `supervisor_marks`, `total`, `created_at`, `updated_at`) VALUES
-(1, 14000, 90901, 'CSE-4041', 'SUMMER-2018', 1512020203, 22, 22, 33, 50, NULL, '2019-01-11 07:58:50'),
-(2, 14000, 90901, 'CSE-4041', 'SUMMER-2018', 1512020201, 30, 30, 40, 60, NULL, '2019-01-11 07:59:17'),
-(3, 14000, 90901, 'CSE-4041', 'SUMMER-2018', 1512020202, 21, 21, 40, 42, NULL, NULL);
+(1, 14000, 90901, 'CSE-4041', 'SUMMER-2018', 1512020201, 30, 25, 38, 55, NULL, NULL),
+(2, 14001, 90901, 'CSE-4041', 'SUMMER-2018', 1512020204, 22, 25, 38, 47, NULL, NULL),
+(3, 14002, 90901, 'CSE-4041', 'SUMMER-2018', 1512020210, 22, 25, NULL, 47, NULL, NULL),
+(4, 14002, 90901, 'CSE-4041', 'SUMMER-2018', 1512020211, 30, 25, NULL, 55, NULL, NULL),
+(5, 14003, 90901, 'CSE-4041', 'SUMMER-2018', 1512020206, 30, 25, NULL, 55, NULL, NULL),
+(6, 14004, 90901, 'CSE-4041', 'SUMMER-2018', 1512020202, 22, 22, NULL, 44, NULL, NULL),
+(7, 14004, 90901, 'CSE-4041', 'SUMMER-2018', 1512020203, 30, 25, NULL, 55, NULL, NULL),
+(8, 14004, 90901, 'CSE-4041', 'SUMMER-2018', 1512020205, 22, 26, NULL, 48, NULL, NULL),
+(9, 14004, 90901, 'CSE-4041', 'SUMMER-2018', 1512020202, 22, 25, NULL, 47, NULL, NULL),
+(13, 14000, 1512020206, 'CSE-4041', 'SUMMER-2018', 1512020201, 22, 22, NULL, 44, NULL, NULL),
+(14, 14001, 1512020206, 'CSE-4041', 'SUMMER-2018', 1512020204, 30, 25, NULL, 55, NULL, NULL),
+(15, 14002, 1512020206, 'CSE-4041', 'SUMMER-2018', 1512020210, 30, 25, NULL, 55, NULL, NULL),
+(16, 14002, 1512020206, 'CSE-4041', 'SUMMER-2018', 1512020211, 22, 22, NULL, 44, NULL, NULL),
+(17, 14003, 1512020206, 'CSE-4041', 'SUMMER-2018', 1512020206, 30, 25, NULL, 55, NULL, NULL),
+(18, 14004, 1512020206, 'CSE-4041', 'SUMMER-2018', 1512020202, 30, 25, 33, 55, NULL, NULL),
+(19, 14004, 1512020206, 'CSE-4041', 'SUMMER-2018', 1512020203, 30, 25, 38, 55, NULL, NULL),
+(20, 14004, 1512020206, 'CSE-4041', 'SUMMER-2018', 1512020205, 30, 22, 38, 52, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -94,16 +113,17 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(21, '2014_10_12_000000_create_users_table', 1),
-(22, '2014_10_12_100000_create_password_resets_table', 1),
-(23, '2018_11_09_183850_create_student_lists_table', 1),
-(24, '2018_11_13_191303_create_project_lists_table', 1),
-(25, '2018_11_17_061207_create_marking_systems_table', 1),
-(26, '2018_11_17_123019_create_supervisor_students_table', 1),
-(27, '2018_11_26_220525_create_reg_infos_table', 1),
-(28, '2018_12_09_142144_create_final_marks_table', 1),
-(29, '2018_12_28_154226_create_schedulings_table', 1),
-(30, '2019_01_05_070611_create_project__uploads_table', 1);
+(1, '2014_10_12_000000_create_users_table', 1),
+(2, '2014_10_12_100000_create_password_resets_table', 1),
+(3, '2018_11_09_183850_create_student_lists_table', 1),
+(4, '2018_11_13_191303_create_project_lists_table', 1),
+(5, '2018_11_17_061207_create_marking_systems_table', 1),
+(6, '2018_11_17_123019_create_supervisor_students_table', 1),
+(7, '2018_11_26_220525_create_reg_infos_table', 1),
+(8, '2018_12_09_142144_create_final_marks_table', 1),
+(9, '2018_12_28_154226_create_schedulings_table', 1),
+(10, '2019_01_05_070611_create_project__uploads_table', 1),
+(11, '2019_01_18_113754_create_student__comments_table', 1);
 
 -- --------------------------------------------------------
 
@@ -142,11 +162,11 @@ CREATE TABLE `project_lists` (
 --
 
 INSERT INTO `project_lists` (`project_id`, `project_name`, `description`, `course_code`, `personal_id`, `semester`, `studentid_one`, `studentid_two`, `studentid_three`, `created_at`, `updated_at`) VALUES
-(14029, 'Android2', 'dddddddddd', 'CSE-4041', 90902, 'SUMMER-2018', 1512020201, NULL, NULL, '2019-01-11 05:37:00', '2019-01-11 05:37:00'),
-(14030, 'brycptd22', 'ddddddddddd', 'CSE-4041', 90901, 'SUMMER-2018', 1512020202, 1512020222, NULL, '2019-01-11 05:37:18', '2019-01-11 05:37:18'),
-(14031, 'Android22', 'eeeeeeeeeeeee', 'CSE-4041', 90901, 'SUMMER-2018', 1512020219, 1512020216, 1512020217, '2019-01-11 05:37:36', '2019-01-11 05:37:36'),
-(14032, 'brycptdss', 'ssssssssssssssss', 'CSE-4041', 90901, 'SUMMER-2018', 1512020220, 1512020221, NULL, '2019-01-11 05:50:16', '2019-01-11 05:50:16'),
-(14033, 'brycptd3', 'DDDDDDDDDDD', 'CSE-4041', 90901, 'SUMMER-2018', 1512020214, 1512020215, 1512020213, '2019-01-11 05:52:30', '2019-01-11 05:52:30');
+(14000, 'Cynas', 'DDDDDDDDDDDD', 'CSE-4041', 90901, 'SUMMER-2018', 1512020201, NULL, NULL, '2019-01-20 16:12:22', '2019-01-20 16:12:22'),
+(14001, 'Android2', 'DDDDDDDD', 'CSE-4041', 90901, 'SUMMER-2018', 1512020204, NULL, NULL, '2019-01-20 16:12:36', '2019-01-20 16:12:36'),
+(14002, 'brycptdq', 'FFFGGGGGGGGGGGG', 'CSE-4041', 1512020204, 'SUMMER-2018', 1512020210, 1512020211, NULL, '2019-01-20 16:13:21', '2019-01-20 16:13:21'),
+(14003, 'Android44', 'GGGGGGGGGGGGGGG', 'CSE-4041', 1512020204, 'SUMMER-2018', 1512020206, NULL, NULL, '2019-01-20 16:14:29', '2019-01-20 16:14:29'),
+(14004, 'WEBAPP', 'DDDDDDDDDDDDDDDD', 'CSE-4041', 1512020206, 'SUMMER-2018', 1512020202, 1512020203, 1512020205, '2019-01-20 16:15:30', '2019-01-20 16:15:30');
 
 -- --------------------------------------------------------
 
@@ -167,13 +187,6 @@ CREATE TABLE `project__uploads` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `project__uploads`
---
-
-INSERT INTO `project__uploads` (`id`, `name`, `std_id`, `project_title`, `project_type`, `framework`, `project_txt`, `project_img`, `created_at`, `updated_at`) VALUES
-(1, 'Mou', 1512020203, 'Cynas', 'web', 'Laravel', 'This is testing period', 0x313534373138393936352e4a5047, '2019-01-11 00:59:25', '2019-01-11 00:59:25');
-
 -- --------------------------------------------------------
 
 --
@@ -193,11 +206,7 @@ CREATE TABLE `reg_infos` (
 --
 
 INSERT INTO `reg_infos` (`id`, `course_code`, `semester`, `created_at`, `updated_at`) VALUES
-(1, 'CSE-4041', 'SUMMER-2018', '2019-01-08 15:58:45', '2019-01-08 15:58:45'),
-(2, 'CSE-4042', 'FALL-2018', '2019-01-11 06:09:31', '2019-01-11 06:09:31'),
-(3, 'CSE-4041', 'SUMMER-2018', '2019-01-11 06:12:00', '2019-01-11 06:12:00'),
-(4, 'CSE-4044', 'SPRING-2018', '2019-01-11 06:12:13', '2019-01-11 06:12:13'),
-(5, 'CSE-4041', 'SUMMER-2018', '2019-01-11 06:12:43', '2019-01-11 06:12:43');
+(1, 'CSE-4041', 'SUMMER-2018', '2019-01-20 16:10:26', '2019-01-20 16:10:26');
 
 -- --------------------------------------------------------
 
@@ -230,7 +239,7 @@ CREATE TABLE `schedulings` (
 --
 
 INSERT INTO `schedulings` (`id`, `final_year`, `fi_semester`, `fi_info`, `fi_fr_date`, `fi_to_date`, `third_year`, `th_semester`, `th_info`, `th_fr_date`, `th_to_date`, `reg_fr_date`, `reg_to_date`, `result`, `rs_date`, `created_at`, `updated_at`) VALUES
-(1, 'Final Year Project', 'SUMMER-2018', 'dddddddddddd', '09-01-2019', '11-01-2019', 'Third Year Project', 'SUMMER-2018', 'dddddddddd', '12-01-2019', '14-01-2019', '01-01-2019', '18-01-2019', 'Result', '19-01-2019', '2019-01-08 15:57:56', '2019-01-08 15:57:56');
+(1, 'Final Year Project', 'Semester', 'ddddddddddddd', '31-01-2019', '01-02-2019', 'Third Year Project', 'Semester', 'ddddddddddddddddddd', '31-01-2019', '02-02-2019', '20-01-2019', '31-01-2019', 'Result', '14-02-2019', '2019-01-20 15:54:32', '2019-01-20 16:09:56');
 
 -- --------------------------------------------------------
 
@@ -254,28 +263,46 @@ CREATE TABLE `student_lists` (
 --
 
 INSERT INTO `student_lists` (`id`, `studentid`, `studentname`, `semester`, `project_id`, `personal_id`, `created_at`, `updated_at`) VALUES
-(23, 1512020246, 'Sourav Roy', 'SUMMER-2018', NULL, NULL, NULL, NULL),
-(24, 1512020201, 'Debasish', 'SPRING-2018', NULL, NULL, NULL, NULL),
-(25, 1512020202, 'Akash', 'FALL-2018', NULL, NULL, NULL, NULL),
-(26, 1512020203, 'Proma', 'SUMMER-2018', NULL, NULL, NULL, NULL),
-(27, 1512020204, 'Sourav Roy', 'SUMMER-2018', NULL, NULL, NULL, NULL),
-(28, 1512020205, 'Debasish', 'SUMMER-2018', NULL, NULL, NULL, NULL),
-(29, 1512020206, 'Akash', 'SUMMER-2018', NULL, NULL, NULL, NULL),
-(30, 1512020210, 'Proma', 'SUMMER-2018', NULL, NULL, NULL, NULL),
-(31, 1512020211, 'Raju', 'SUMMER-2018', NULL, NULL, NULL, NULL),
-(32, 1512020212, 'Nikhil', 'SUMMER-2018', NULL, NULL, NULL, NULL),
-(33, 1512020213, 'Deba', 'SUMMER-2018', NULL, NULL, NULL, NULL),
-(34, 1512020214, 'Dulon', 'SUMMER-2018', NULL, NULL, NULL, NULL),
-(35, 1512020215, 'Sagar', 'SUMMER-2018', NULL, NULL, NULL, NULL),
-(36, 1512020216, 'Shuvo', 'SUMMER-2018', NULL, NULL, NULL, NULL),
-(37, 1512020217, 'Niaz', 'SUMMER-2018', NULL, NULL, NULL, NULL),
-(38, 1512020218, 'Riya', 'SUMMER-2018', NULL, NULL, NULL, NULL),
-(39, 1512020219, 'Rekha', 'SUMMER-2018', NULL, NULL, NULL, NULL),
-(40, 1512020220, 'Shanta', 'SUMMER-2018', NULL, NULL, NULL, NULL),
-(41, 1512020221, 'Maha', 'SUMMER-2018', NULL, NULL, NULL, NULL),
-(42, 1512020222, 'Maya', 'SUMMER-2018', NULL, NULL, NULL, NULL),
-(43, 1512020223, 'Azhar', 'SUMMER-2018', NULL, NULL, NULL, NULL),
-(44, 1512020224, 'XYZ', 'SUMMER-2018', NULL, NULL, NULL, NULL);
+(1, 1512020246, 'Sourav Roy', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(2, 1512020201, 'Debasish', 'SPRING-2018', NULL, NULL, NULL, NULL),
+(3, 1512020202, 'Akash', 'FALL-2018', NULL, NULL, NULL, NULL),
+(4, 1512020203, 'Proma', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(5, 1512020204, 'Sourav Roy', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(6, 1512020205, 'Debasish', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(7, 1512020206, 'Akash', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(8, 1512020210, 'Proma', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(9, 1512020211, 'Raju', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(10, 1512020212, 'Nikhil', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(11, 1512020213, 'Deba', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(12, 1512020214, 'Dulon', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(13, 1512020215, 'Sagar', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(14, 1512020216, 'Shuvo', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(15, 1512020217, 'Niaz', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(16, 1512020218, 'Riya', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(17, 1512020219, 'Rekha', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(18, 1512020220, 'Shanta', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(19, 1512020221, 'Maha', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(20, 1512020222, 'Maya', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(21, 1512020223, 'Azhar', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(22, 1512020224, 'XYZ', 'SUMMER-2018', NULL, NULL, NULL, NULL),
+(23, 1512020207, 'Niloy', 'SUMMER-2018', NULL, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `student__comments`
+--
+
+CREATE TABLE `student__comments` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `stdnt_id` int(11) NOT NULL,
+  `status` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `comment` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `personal_img` blob NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -297,26 +324,11 @@ CREATE TABLE `supervisor_students` (
 --
 
 INSERT INTO `supervisor_students` (`id`, `project_id`, `personal_id`, `supervisor_name`, `created_at`, `updated_at`) VALUES
-(1, 14000, 90901, 'sourav', '2019-01-08 16:01:37', '2019-01-08 16:01:37'),
-(2, 14029, 90902, 'sourav', '2019-01-11 05:59:15', '2019-01-11 05:59:15'),
-(6, 14030, 90901, 'sourav', '2019-01-11 06:09:16', '2019-01-11 06:09:16'),
-(7, 14031, 90901, 'sourav', '2019-01-11 06:19:18', '2019-01-11 06:19:18'),
-(8, 14032, 90901, 'sourav', '2019-01-11 06:19:18', '2019-01-11 06:19:18'),
-(9, 14030, 90901, 'sourav', '2019-01-11 06:31:51', '2019-01-11 06:31:51'),
-(10, 14031, 90901, 'sourav', '2019-01-11 06:31:51', '2019-01-11 06:31:51'),
-(11, 14032, 90901, 'sourav', '2019-01-11 06:31:51', '2019-01-11 06:31:51'),
-(12, 14030, 90901, 'sourav', '2019-01-11 06:35:01', '2019-01-11 06:35:01'),
-(13, 14031, 90901, 'sourav', '2019-01-11 06:35:01', '2019-01-11 06:35:01'),
-(14, 14032, 90901, 'sourav', '2019-01-11 06:35:01', '2019-01-11 06:35:01'),
-(15, 14030, 90901, 'sourav', '2019-01-11 06:35:54', '2019-01-11 06:35:54'),
-(16, 14031, 90901, 'sourav', '2019-01-11 06:35:54', '2019-01-11 06:35:54'),
-(17, 14032, 90901, 'sourav', '2019-01-11 06:35:55', '2019-01-11 06:35:55'),
-(18, 14030, 90901, 'sourav', '2019-01-11 06:40:05', '2019-01-11 06:40:05'),
-(19, 14031, 90901, 'sourav', '2019-01-11 06:40:06', '2019-01-11 06:40:06'),
-(20, 14032, 90901, 'sourav', '2019-01-11 06:40:06', '2019-01-11 06:40:06'),
-(21, 14030, 90901, 'sourav', '2019-01-11 06:41:22', '2019-01-11 06:41:22'),
-(22, 14031, 90901, 'sourav', '2019-01-11 06:41:22', '2019-01-11 06:41:22'),
-(23, 14032, 90901, 'sourav', '2019-01-11 06:41:22', '2019-01-11 06:41:22');
+(1, 14000, 90901, 'Sourav', '2019-01-20 16:19:59', '2019-01-20 16:19:59'),
+(2, 14001, 90901, 'Sourav', '2019-01-20 16:20:06', '2019-01-20 16:20:06'),
+(3, 14002, 1512020204, 'Nikhil', '2019-01-20 16:20:14', '2019-01-20 16:20:14'),
+(4, 14003, 1512020204, 'Nikhil', '2019-01-20 16:20:23', '2019-01-20 16:20:23'),
+(5, 14004, 1512020206, 'proma', '2019-01-20 16:21:54', '2019-01-20 16:21:54');
 
 -- --------------------------------------------------------
 
@@ -346,12 +358,12 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `personal_id`, `name`, `admin`, `faculty`, `student`, `normal_user`, `supervisor`, `email`, `phone`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 90901, 'sourav', 1, 1, 1, 1, 1, 'sourav@gmail.com', 123456, '$2y$10$kZOL/EL4aavB8YznUW.A4uIqfbnRdKbV9STIGW4bYsw2KkeSzt822', 'iwN2jwnbj31JaXXrcl3Kdgm6XWWo68WjreanHhs6DPy6jEtieKGWtefawfsX', '2019-01-08 15:50:55', '2019-01-08 15:50:55'),
-(2, 1512020201, 'Dulon', 0, 0, 1, 0, 0, 'd@gmail.com', 56541, '$2y$10$k26W9SWdUx48BSTQv4m/zu7rQ20pDbyyMsmEQXQ4ym.N8VrR8AWh.', 'iSflYHBiqhebIe0Wptx1bSpV9rJDKsGYZANI1BUF7aAY4JSguf6MNfE5QZmd', '2019-01-08 15:51:52', '2019-01-08 15:55:59'),
-(3, 90903, 'proma', 1, 1, 0, 0, 1, 'p@gmail.com', 871286, '$2y$10$eILZMxyhi2dpxtlymjpt5uqB2NKL6v2NEdzUDT8CbRIIgMxqpFnLS', '4pk1Z3z1r1fAvqkLqhkN1lOf3vNfSX0Od8zGPkUnUlGbe292CFiTvksfyg0I', '2019-01-08 15:52:30', '2019-01-11 06:15:05'),
-(4, 90902, 'Mou', 0, 1, 0, 0, 1, 'm@gmail.com', 6351417, '$2y$10$sBB9d1S5KHRKik5JU7J9aOrpQXv.ddDSlW4XHPv68.TdkJb490i.q', 'o4pCxtN2rWe7qO9YFHln4XMy9DbbMOPrreClNIqBS3BtIyviw8HySE8XAjUR', '2019-01-08 15:52:57', '2019-01-11 06:01:36'),
-(5, 1512020204, 'raju', 1, 0, 1, 0, 0, 'r@gmail.com', 71618, '$2y$10$lnyMjMTqiAkoVmVAV.UbHu59RNIP7MCVFTaQ0QrL8pFYPKTwAAbWa', '8vknrmC2Wr6U8kRezZOfthGIECWePX7zbo4XRf33OqonexHMkK3QPEdN1cUj', '2019-01-08 15:53:27', '2019-01-11 06:17:31'),
-(6, 1512020205, 'poly', 0, 1, 1, 0, 0, 'po@gmail.com', 817390, '$2y$10$tcU5Ql3wh2aWLMXH64/dJ.SLVJr.nFnUHE0xnfKpBzeg.FNGkoyH2', 'E4Vvj8VmZ3igDisN5faALTTP3wmfmbZhljkHWNKkeQVd8VemL0IpjY4cgXs5', '2019-01-08 15:54:12', '2019-01-11 06:13:01');
+(1, 90901, 'Sourav', 1, 1, 1, 1, 1, 'sourav@gmail.com', 123456, '$2y$10$mSPxJXXSlbLaVXH1uwnT4OqwxL0UGfczjLEyPuprwaWIt89tvrLe.', 'PH29lRLc9FJgzGmViYbMo5YCJ4AXaEjHxgSdvWK200qiGWCkJJjjT8gattr7', '2019-01-20 15:50:24', '2019-01-20 15:50:24'),
+(2, 1512020201, 'Mou', 0, 0, 1, 0, 0, 'm@gmail.com', 56541, '$2y$10$y.j1n8c5eGux/4.FmXEYoeDNDvd8Z7UnBRwbev6esubw4KnSauC0q', 'Ctxf7hu9AxRFXVgb5bcrrpXzb7ppJSWGQhPhr4G5VHhhdR0ybSSJbsP3VjDe', '2019-01-20 16:16:37', '2019-01-20 16:18:52'),
+(3, 1512020202, 'Subarna', 0, 0, 1, 0, 0, 'sa@gmail.com', 8173901, '$2y$10$biCvgYNEVi.V.BfbYXS3qeGG1LnxXGVg.3DSSRM6c2064InnInGc.', 'xvDhhSqentGPLkXHqcqVuW4moWUUnkg6AowKflqDvttDl4qvUF3ERErQYQaS', '2019-01-20 16:17:22', '2019-01-20 16:19:01'),
+(4, 1512020203, 'raju', 0, 0, 1, 0, 0, 'ra@gmail.com', 565411, '$2y$10$jsuiYTeZcfSr1PY9uzAVp.TszwJg.vbZn35547avdWQNx2TgIhTii', 'TVs6isBGQeqWZNcl6QvKgRYOHEUWvWgnfvWOVrHdMvP6haaX0j1rAbCr4Tc7', '2019-01-20 16:17:44', '2019-01-20 16:19:09'),
+(5, 1512020204, 'Nikhil', 0, 0, 1, 0, 1, 'n@gmail.com', 12345611, '$2y$10$8ZHZcGKJXHI.qNqltoNM5OoeGeqaMMOOX2cAz0aaeRTrYoeAMZpCa', 'rMIqc5WIqPbc873tJkoE3twJ1TJU8xciOYIaCnVuV1sb0Y5DUOvOFUZCcqUk', '2019-01-20 16:18:02', '2019-01-20 16:19:21'),
+(6, 1512020206, 'proma', 0, 0, 1, 0, 1, 'p@gmail.com', 12345612, '$2y$10$KsybUFiGzLMtUcFjADVSa.D4CRpJmzhuDc.dAO/es3QrBqM3ilrWW', '3iJrO5Dh548SJVqX2NRIPcfXOqBcPN1ekI2yAYHM7CKkAHZynDTeR9GVAdTw', '2019-01-20 16:18:29', '2019-01-20 16:19:31');
 
 --
 -- Indexes for dumped tables
@@ -412,6 +424,12 @@ ALTER TABLE `student_lists`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `student__comments`
+--
+ALTER TABLE `student__comments`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `supervisor_students`
 --
 ALTER TABLE `supervisor_students`
@@ -434,37 +452,37 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `final_marks`
 --
 ALTER TABLE `final_marks`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `marking_systems`
 --
 ALTER TABLE `marking_systems`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `project_lists`
 --
 ALTER TABLE `project_lists`
-  MODIFY `project_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14034;
+  MODIFY `project_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14005;
 
 --
 -- AUTO_INCREMENT for table `project__uploads`
 --
 ALTER TABLE `project__uploads`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `reg_infos`
 --
 ALTER TABLE `reg_infos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `schedulings`
@@ -476,13 +494,19 @@ ALTER TABLE `schedulings`
 -- AUTO_INCREMENT for table `student_lists`
 --
 ALTER TABLE `student_lists`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
+-- AUTO_INCREMENT for table `student__comments`
+--
+ALTER TABLE `student__comments`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `supervisor_students`
 --
 ALTER TABLE `supervisor_students`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`

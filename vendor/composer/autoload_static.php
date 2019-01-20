@@ -369,7 +369,7 @@ class ComposerStaticInit8c073df5454c3bab2fbc84f656445cc2
         'App\\Http\\Controllers\\MaatwebsiteDemoController' => __DIR__ . '/../..' . '/app/Http/Controllers/MaatwebsiteDemoController.php',
         'App\\Http\\Controllers\\NormalController' => __DIR__ . '/../..' . '/app/Http/Controllers/NormalController.php',
         'App\\Http\\Controllers\\PostController' => __DIR__ . '/../..' . '/app/Http/Controllers/PostController.php',
-        'App\\Http\\Controllers\\ProjectListController' => __DIR__ . '/../..' . '/app/Http/Controllers/check.php',
+        'App\\Http\\Controllers\\ProjectListController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProjectListController.php',
         'App\\Http\\Controllers\\StudentController' => __DIR__ . '/../..' . '/app/Http/Controllers/StudentController.php',
         'App\\Http\\Controllers\\SupervisorController' => __DIR__ . '/../..' . '/app/Http/Controllers/SupervisorController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',

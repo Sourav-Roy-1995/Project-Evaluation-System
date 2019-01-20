@@ -16,13 +16,6 @@ use App\User;
 
 
 
-
-
-
-
-
-
-
 //Index Controller:
 Route::resource('/','IndexController');
 Route::get('/prev_project','IndexController@prev_project');
