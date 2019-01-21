@@ -906,6 +906,7 @@
                         <?php
                           $a = array();
                           $b = array();
+                          $p = array();
                           $sup = array();
                         ?>
                       </thead>
@@ -920,12 +921,18 @@
                         if(!isset($b[$mark->student_id])) {
                               $b[$mark->student_id] = 0;
                         }
+
+                        if(!isset($p[$mark->student_id])) {
+                              $p[$mark->student_id] = 0;
+                        }
                                 
                         if(!isset($sup[$mark->student_id])) {
                               $sup[$mark->student_id] = $mark->supervisor_marks;
                         }
                         
                         $a[$mark->student_id]++;
+
+                        $p[$mark->student_id] = $mark->project_id; 
             
                         $b[$mark->student_id] += $mark->total;
                         
@@ -1024,9 +1031,7 @@
               
                          ?>      
                            <tr>
-                              
-                              <input type="hidden" name="project_id[]" value="{{$mark->project_id}}">
-                               
+                                <input type="hidden" name="project_id[]" value=<?php echo $p[$keys[$i] ]?> >
                             <td>
                                 <input id="marks_input" class="form-control studentid" type="text" name="studentid[]" placeholder="Student ID" style="background:white;width:120px" value=<?php echo $keys[$i] ?>>
                             </td>
