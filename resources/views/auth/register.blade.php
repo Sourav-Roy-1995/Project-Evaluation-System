@@ -8,7 +8,7 @@
                 <div class="card-header form-txt">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST"  action="{{ route('register') }}" aria-label="{{ __('Register') }}" enctype="multipart/form-data">
+                    <form method="POST"  action="{{ route('register') }}" aria-label="{{ __('Register') }}" files="true" enctype="multipart/form-data">
                         @csrf
 
 

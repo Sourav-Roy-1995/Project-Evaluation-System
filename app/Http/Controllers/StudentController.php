@@ -178,20 +178,26 @@ class StudentController extends Controller
         return redirect()->route('comment_view');
     }
 
-    public function getAns(){
+    public function getAns(Request $request){
 
-        $getans = StudentList::where([
-            ['studentid', '=' ,$request->studentid],
-            ['studentname', '=', $request->studentname],
-            ['semester', '=', $reqest->semester]
-        ])->first();
-        
-        if (count($getans) > 0) {
-            Session::flash('alert-info', 'You are elligible for project');
-            return redirect('/');
-        } else {        
-            Session::flash('alert-danger', 'You are not elligible for project');
-            return redirect('/');
+        $student_id = StudentList::where('studentid', '=', $request->input('personal_id'))->exists();
+
+        if( $student_id == true)
+        {
+              
+            echo "<script>
+            alert('You are allowed for project...');
+            window.location.href='http://localhost/final_year_project/public/';
+            </script>";
+
+        }
+
+        else
+        {
+            echo "<script>
+            alert('You are not allowed for project...');
+            window.location.href='http://localhost/final_year_project/public/';
+            </script>";
         }
 
     }

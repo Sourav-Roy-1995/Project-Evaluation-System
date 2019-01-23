@@ -430,7 +430,7 @@
 </div> <!-- Modal -->
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="content-wrapper" style="min-height:902.8px">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>

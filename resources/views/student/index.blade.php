@@ -518,7 +518,7 @@
                 </div>
     
                 <div class="col-md-6 col-sm-6 col-xs-4">                 
-                    <input class="input_field search"  id="myInput2" placeholder="search..." type="text">
+                   
                 </div>
             </div>
           </div>
@@ -569,6 +569,7 @@
         <div class="col-md-6">
           <div class="box box-default collapsed-box">
             <div class="box-header with-border">
+
               <h3 class="box-title">{{$pre_project->project_title}}</h3>
 
               <div class="box-tools pull-right">

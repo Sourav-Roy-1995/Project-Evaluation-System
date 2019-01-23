@@ -90,7 +90,7 @@ Route::group(['middleware'=>'auth'],function(){
 		Route::get('/view_result','StudentController@view_result')->name('view_result');
 		Route::post('store_project','StudentController@store_project')->name('project.store');
 		Route::post('store_comments','StudentController@store_comments')->name('store_comments');
-		Route::post('/getans','StudentController@getAns')->name('student.getans');
+		Route::post('getans','StudentController@getAns')->name('student.getans');
 		//Students Route List
 
 		//Normal User loginPage

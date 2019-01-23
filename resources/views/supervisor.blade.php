@@ -6,7 +6,7 @@
 
 	<!-- Contact -->
 
-<div class="container" style="margin-top: 150px;">
+<div class="container-fluid" style="margin-top: 150px;">
   
   <div class="card mb-3">
             <div class="card-header" id="supervisorlist">
@@ -21,12 +21,12 @@
                   <thead>
                     <tr>
                       <th>Project ID</th>
-                      <th>Supervisor Name:</th>
-                      <th>Course Code:</th>                      
+                      <th>Supervisor</th>
+                      <th>Course Code</th>                      
                       <th>semester</th>
-                      <th>studentid one</th>
-                      <th>studentid two</th>
-                      <th>studentid three</th>
+                      <th>Student ID</th>
+                      <th>Student ID</th>
+                      <th>Student ID</th>
                     </tr>
                   </thead>
 

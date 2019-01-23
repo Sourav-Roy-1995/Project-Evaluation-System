@@ -519,7 +519,7 @@
                 </div>
     
                 <div class="col-md-6 col-sm-6 col-xs-4">                 
-                    <input class="input_field search"  id="myInput2" placeholder="search..." type="text">
+                    
                 </div>
             </div>
           </div>

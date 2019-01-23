@@ -451,6 +451,24 @@
                 </a>
             </li>
 
+            <li>
+              <a href="faculty" >
+                  <i class="fa fa-th"></i> <span>Faculty</span>
+                  <span class="pull-right-container">
+                    <small class="label pull-right bg-green"><i class="fas fa-hand-point-right"></i></small>
+                  </span>
+              </a>
+           </li>
+
+           <li>
+            <a href="elligible_student" >
+                <i class="fa fa-th"></i> <span>Elligible Student</span>
+                <span class="pull-right-container">
+                  <small class="label pull-right bg-green"><i class="fas fa-hand-point-right"></i></small>
+                </span>
+            </a>
+         </li>
+
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -1034,6 +1052,7 @@
                                 <input type="hidden" name="project_id[]" value=<?php echo $p[$keys[$i] ]?> >
                             <td>
                                 <input id="marks_input" class="form-control studentid" type="text" name="studentid[]" placeholder="Student ID" style="background:white;width:120px" value=<?php echo $keys[$i] ?>>
+
                             </td>
               
                             <td>
@@ -1072,7 +1091,9 @@
                 @endforeach           
               </ul>           
             </div>
-            @endif
+          @endif
+
+ 
               
       </div>
       <!-- /.row (main row) -->

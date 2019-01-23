@@ -24,7 +24,7 @@
 						</div>
 						<div class="price_box d-flex flex-row align-items-center">
 							<div class="course_author_image">
-								<img src="images/author.jpg" alt="">
+								<img src="images/profile_icon.png" alt="">
 							</div>
 							<div class="course_author_name">{{$prev_project->name}}, <span>Author</span></div>
 							<div class="course_price d-flex flex-column align-items-center justify-content-center"><span>
@@ -68,13 +68,7 @@
 							{!! Form::open(['id'=>'search_form','class'=>'search_form', 		
 							'method'=>'POST','action'=>'StudentController@getAns','files'=>true]) !!}
 
-								
-
-								{!! Form::text('studentid',null,['class'=>'input_field search_form_name','placeholder'=>'Students Id:' ]) !!}
-
-								<input id="search_form_category" name="studentname" class="input_field search_form_category" type="text" placeholder="Name">
-
-								<input id="search_form_degree" name="semester" class="input_field search_form_degree" type="text" placeholder="Semester">
+								<input id="search_form_category" name="personal_id" class="input_field search_form_category" type="text" placeholder="ID" >
 
 								<input id="search_submit_button" type="submit" class="search_submit_button trans_200" name="submit" value="GET ANS" >
 								

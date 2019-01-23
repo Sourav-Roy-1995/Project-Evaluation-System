@@ -75,8 +75,8 @@
 		height: 20px;
 	}
 
-		.logo img {
-    		width: 98px!important;
+	.logo img {
+    		width: 80px!important;
 		}
 }
 
@@ -115,9 +115,9 @@
 	{
 		width: 442px;
 	}
-		.logo img {
-    		width: 98px!important;
-		}
+	.logo img {
+    	width: 80px!important;
+	}
 }
 
 /************
@@ -132,7 +132,7 @@
 	}
 
 	.logo img {
-    		width: 98px!important;
+    		width: 80px!important;
 		}
 }
 
@@ -143,7 +143,7 @@
 @media only screen and (max-width: 1100px)
 {
 	.logo img {
-    		width: 98px!important;
+    		width: 80px!important;
 		}	
 }
 
@@ -159,7 +159,7 @@
 	}
 
 	.logo img {
-    		width: 98px!important;
+    		width: 80px!important;
 		}	
 }
 
@@ -267,7 +267,7 @@
 @media only screen and (max-width: 959px)
 {
 	.logo img {
-    		width: 96px!important;
+    		width: 78px!important;
 		}		
 }
 
@@ -278,7 +278,7 @@
 @media only screen and (max-width: 880px)
 {
 	.logo img {
-    		width: 95px!important;
+    		width: 78px!important;
 		}		
 }
 
@@ -289,7 +289,7 @@
 @media only screen and (max-width: 768px)
 {
 	.logo img {
-    		width: 84px!important;
+    		width: 70px!important;
 		}	
 }
 
@@ -316,7 +316,7 @@
 
 	.logo img 
 	{
-    	width: 78px!important;
+    	width: 65px!important;
 	}
 
 }
@@ -339,7 +339,7 @@
 	}
 	.logo img 
 	{
-    	width: 68px!important;
+    	width: 59px!important;
 	}
 
 	.logo span
@@ -472,7 +472,7 @@
 @media only screen and (max-width: 539px)
 {
 .logo img {
-    		width: 68px!important;
+    		width: 59px!important;
 		}
 
 .header {
@@ -493,7 +493,7 @@
 @media only screen and (max-width: 480px)
 {
 .logo img {
-    		width: 65px!important;
+    		width: 59px!important;
 		}
 
 .header {
@@ -556,7 +556,7 @@
 	}
 
 .logo img {
-    		width: 55px!important;
+    		width: 50px!important;
 		}
 
 .header {
@@ -578,7 +578,7 @@
 {
 
 .logo img {
-    		width: 55px!important;
+    		width: 48px!important;
 		}
 
 .header {
