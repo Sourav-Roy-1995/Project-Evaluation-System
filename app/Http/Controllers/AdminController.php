@@ -177,6 +177,12 @@ class AdminController extends Controller
     public function store_three(Request $request)
     {
         
+        $validatedData = $request->validate([
+
+            'course_code' => 'unique:reg_infos',
+            'semester' => 'unique:reg_infos',
+             
+        ]);
 
           $reg = new RegInfo();
           $reg->course_code = $request->input("course_code");
