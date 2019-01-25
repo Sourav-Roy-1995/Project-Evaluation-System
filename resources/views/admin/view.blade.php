@@ -14,38 +14,12 @@
     <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- Custom fonts for this template-->
-    <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
-        <!-- Fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Charm" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Charm|Staatliches" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Charm|Lobster|Staatliches" rel="stylesheet">
-
-    <!-- Page level plugin CSS-->
-    <link href="{{ asset('vendor/datatables/dataTables.bootstrap4.css') }}" rel="stylesheet">
-
-    <!-- Custom styles for this template-->
-   
-
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/js/gijgo.min.js" type="text/javascript"></script>
-
-    <link href="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/css/gijgo.min.css" rel="stylesheet" type="text/css" />
-
-
-
-    <!-- Date Format -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>  
-    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>  
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link href="https://fonts.googleapis.com/css?family=Charm|Lobster|Staatliches" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet"> 
 
     <link rel="stylesheet" href="{{ asset('css/admin-css/css/main.css') }}">
 
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-
-
 
   </head>
   
@@ -81,10 +55,10 @@
   </nav>
 
 <!--Content Form -->
-<div class="row form-txt" style="margin-top: 120px;">
+<div class="row" style="margin-top: 9%;">
 <div class="container">
-   <div id="con" class="card custom-card-two mx-auto mt-5">
-      <div class="card-header col-md-12">
+   <div id="con" class="card custom-card-four mx-auto mt-5">
+      <div class="card-header col-md-12 form-txt">
           Supervisor Distribution
           <a href="{{ asset('admin') }}" class="btn btn-dark btn-sm custom-btn float-right">Back</a>
       </div>
@@ -100,52 +74,44 @@
   
   <div class="card-body">
     <div class="row">
-      <div class="col-md-6">
-        <div class="form-label-group">        
-
-          {!! Form::text('project_id',null,['class'=>'form-control disable-input','required'=>'required','data-error'=>'Input is required.']) !!}
-
-          {!! Form::label('project_id','Project ID: ') !!}
-
-        </div>
-      </div>
-
-      <div class="col-md-6">
-
-       <div class="form-label-group">          
-
-            <select name="personal_id" class="form-control" id="exampleFormControlSelect1">
-             @foreach($supervisors as $supervisor)
-
-              <option>{{$supervisor->personal_id}}</option>
-
-             @endforeach 
-            </select>
-         
-        </div>
-
-      </div>
-
-    </div>
-
-      
-
-    <div class="row" style="margin-top: 12px;">
-      
       <div class="col-md-12">
-        <div class="form-label-group">
+        <div class="form-label-group table-responsive">
+          
+          <table class="table table-bordered">
+            <tr>
+              <th>Project Id</th>
+              <td>{!! Form::text('project_id',null,['class'=>'form-control disable-input','required'=>'required','data-error'=>'Input is required.']) !!}</td>
+            </tr>
 
-            <select name="supervisor_name" class="form-control" id="exampleFormControlSelect1">
-               @foreach($supervisors as $supervisor)
+            <tr>
+                <th>Supervisor Id</th>
+                <td>
+                   <select name="personal_id" class="form-control" id="exampleFormControlSelect1">
+                    @foreach($supervisors as $supervisor)
+       
+                     <option>{{$supervisor->personal_id}}</option>
+       
+                    @endforeach 
+                   </select>
+                </td>
+            </tr>
 
-                <option>{{$supervisor->name}}</option>
-
-               @endforeach 
-            </select>
+            <tr>
+                <th>Supervisor Name</th>
+                <td>            
+                    <select name="supervisor_name" class="form-control" id="exampleFormControlSelect1">
+                      @foreach($supervisors as $supervisor)
+      
+                      <option>{{$supervisor->name}}</option>
+      
+                      @endforeach 
+                  </select>
+                </td>
+            </tr>
+          </table>
 
         </div>
       </div>
-
     </div>
 
   </div>
@@ -192,9 +158,6 @@
 
 
       <!-- Bootstrap core JavaScript-->
-
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <script src="{{URL::asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 

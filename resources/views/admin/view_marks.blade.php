@@ -81,7 +81,7 @@
   </nav>
 
 <!--Content Form -->
-<div class="row form-txt" style="margin-top: 120px;">
+<div class="row form-txt" style="margin-top: 9%;">
 <div class="container">
    <div id="con" class="card custom-card-three mx-auto mt-5">
       <div class="card-header col-md-12">

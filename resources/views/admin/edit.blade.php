@@ -48,7 +48,7 @@
   </head>
 	
 
-<body id="page-top" class="bg">
+<body id="page-top" class="bg-custom">
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light" id="custom-nav">
 
@@ -74,7 +74,7 @@
   </nav>
 
 <!--Content Form -->
-<div class="row form-txt" style="margin-top: 120px;">
+<div class="row form-txt" style="margin-top: 6.5%;">
 <div class="container">
 	 <div id="con" class="card custom-card-three mx-auto mt-5">
 	    <div class="card-header col-md-12">
@@ -92,7 +92,7 @@
 	
 	<div class="card-body">
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-md-6" style="margin-top: 0px;">
 				<div class="form-label-group">				
 
 					{!! Form::text('personal_id',null,['class'=>'form-control disable-input']) !!}
@@ -279,7 +279,7 @@
           {{csrf_field()}}
 
    
-            {!! Form::submit('Delete',['class'=>'btn btn-dark btn-sm custom-btn']) !!}
+            {!! Form::submit('Delete',['class'=>'btn btn-dark btn-sm custom-btn-two']) !!}
 
           </div>	
 {!! Form::close() !!} 

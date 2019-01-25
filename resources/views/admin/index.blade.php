@@ -40,9 +40,9 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
   <!-- Fonts-->
-  <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/js/gijgo.min.js" type="text/javascript"></script>
+  {{-- <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/js/gijgo.min.js" type="text/javascript"></script>
   <link href="https://fonts.googleapis.com/css?family=Charm" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Charm|Staatliches" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Charm|Staatliches" rel="stylesheet"> --}}
   <link href="https://fonts.googleapis.com/css?family=Charm|Lobster|Staatliches" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet"> 
 
