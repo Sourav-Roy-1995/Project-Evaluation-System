@@ -544,10 +544,11 @@
             <div class="panel-heading panel-info default-panel-head">
                 Edit Schedule
           {!! Form::model($view_schedule,['method'=>'PATCH','action'=>['AdminController@update_schedule', $view_schedule->id],'files'=>true]) !!}      
-                <div class="text-right"  role="group">
+                <div class="text-right" role="group">
                     <div class="btn-group">
                         <a href="{{ asset('admin') }}" class="btn btn-info btn-sm float-right custom-btn">Back</a>
                         {!! Form::submit('Update',['class'=>'btn btn-info btn-sm custom-btn']) !!}
+                        
                        
                     </div>
                 </div>
@@ -667,8 +668,14 @@
            </div>
         </div>
     
-        <div class="panel-footer custom-panel-footer small text-muted">
-            
+        <div class="panel-footer custom-panel-footer small text-muted text-right">
+              {!! Form::open(['method'=>'DELETE','action'=>['AdminController@destroy_schedule',$view_schedule->id]]) !!}
+
+              {{csrf_field()}}
+                {!! Form::submit('Delete',['class'=>'btn btn-danger btn-sm ']) !!}
+
+              	
+          {!! Form::close() !!} 
         </div>
     
     
@@ -686,6 +693,7 @@
     </section>
     <!-- /.content -->
   </div>
+ 
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="pull-right hidden-xs">

@@ -461,8 +461,26 @@
            </li>
 
            <li>
+              <a href="supervisor" >
+                  <i class="fa fa-th"></i> <span>Supervisor</span>
+                  <span class="pull-right-container">
+                    <small class="label pull-right bg-green"><i class="fas fa-hand-point-right"></i></small>
+                  </span>
+              </a>
+           </li>
+
+           <li>
             <a href="elligible_student" >
                 <i class="fa fa-th"></i> <span>Elligible Student</span>
+                <span class="pull-right-container">
+                  <small class="label pull-right bg-green"><i class="fas fa-hand-point-right"></i></small>
+                </span>
+            </a>
+         </li>
+
+         <li>
+            <a href="view_prevproject" >
+                <i class="fa fa-th"></i> <span>Previous Project</span>
                 <span class="pull-right-container">
                   <small class="label pull-right bg-green"><i class="fas fa-hand-point-right"></i></small>
                 </span>
@@ -1354,8 +1372,8 @@
       });
     });
 </script> 
-
 <!-- Search -->
+
 <script>
   $(document).ready(function(){
     $("#search_input2").on("keyup", function() {

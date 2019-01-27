@@ -10,8 +10,19 @@
   
   <div class="card mb-3">
             <div class="card-header" id="supervisorlist">
-              <i class="fas fa-table"></i>
-              Supervisor Information</div>
+
+              <div class="row">
+                  <div class="col-md-6 col-sm-6 col-xs-2 default-panel-head personal_project" >
+                      <i class="fas fa-table"></i>
+                      Supervisor Information
+                  </div>
+      
+                  <div class="col-md-6 col-sm-6 col-xs-4">                 
+                      <input class="input_field search"  id="search_inputs" placeholder="search..." type="text">
+                  </div>
+              </div>
+            </div>
+
             <div class="card-body">
 
            <!--  <input float="left" class="form-control" id="myInput2" type="text" placeholder="Search.."> -->
@@ -31,7 +42,7 @@
                   </thead>
 
                 @foreach($supervisorstudents as $supervisorstudent)
-                  <tbody id="myTable2">
+                  <tbody id="search_list">
                     <tr>
                       <td>{{$supervisorstudent->project_id}}</td>
               
@@ -58,6 +69,23 @@
             <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
     </div>
 </div>
-		
+    
+
+
 
 @extends('includes.footer')
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+
+<!-- Search -->
+<script>
+    $(document).ready(function(){
+      $("#search_inputs").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#search_list tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+</script> 
+<!-- Search -->

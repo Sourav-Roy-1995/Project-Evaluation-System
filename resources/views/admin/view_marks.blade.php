@@ -176,12 +176,20 @@
             <div class="btn-group" role="group" aria-label="Basic example">
                 <a href="{{ asset('admin') }}" class="btn btn-dark btn-sm custom-btn">Cancle</a>
                   {!! Form::submit('Send',['class'=>'btn btn-dark btn-sm custom-btn']) !!}
-            </div>
-      </div>      
+            
+           
 
 
 {!! Form::close() !!}
 
+{!! Form::open(['method'=>'DELETE','action'=>['AdminController@destroy_mark',$mark->id]]) !!}
+
+          {{csrf_field()}}
+            {!! Form::submit('Delete',['class'=>'btn btn-dark btn-sm custom-btn-two']) !!}
+
+          </div>	
+{!! Form::close() !!} 
+</div> 
 @if(count($errors) > 0)
       <div class="alert alert-danger">
         <ul>

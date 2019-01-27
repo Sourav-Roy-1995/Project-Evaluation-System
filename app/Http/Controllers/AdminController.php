@@ -14,6 +14,7 @@ use App\RegInfo;
 use App\MarkingSystem;
 use App\Final_mark;
 use App\Scheduling;
+use App\Project_Upload;
 use Illuminate\Support\Facades\Validator;
 use Session;
 
@@ -90,12 +91,9 @@ class AdminController extends Controller
         return view('admin/edit_schedule',compact('view_schedule'));
      }
 
-
-
      public function update_schedule(Request $request, $id)
      {
          //
- 
          $update_schedule = Scheduling::findOrFail($id);
  
          $update_schedule->update($request->all());
@@ -106,6 +104,32 @@ class AdminController extends Controller
  
      }
 
+     public function destroy_schedule($id)
+     {
+         //
+         $update_schedule = Scheduling::findOrFail($id);
+         $update_schedule->delete();
+ 
+         return redirect('admin');
+     }
+ 
+
+     public function view_prevproject(){
+        
+        $view_prevprojects=Project_Upload::all();
+        return view('admin/view_prevproject',compact('view_prevprojects'));
+     }
+
+     public function destroy_preproject($id)
+     {
+         //
+         $view_prevproject = Project_Upload::findOrFail($id);
+         $view_prevproject->delete();
+ 
+         return redirect('admin')->with('success', 'Item Has Been Delete');;
+     }
+
+     
 
     /**
      * Show the form for creating a new resource.
@@ -280,6 +304,15 @@ class AdminController extends Controller
 
     }
 
+    public function destroy_project($project_id)
+    {
+        
+        $post = ProjectList::findOrFail($project_id);
+        $post->delete();
+
+        return redirect('admin');
+    }
+
 
     public function view_supervisor($id)
 
@@ -317,6 +350,8 @@ class AdminController extends Controller
         return redirect('admin');
     }
 
+
+
     /**
      * Display the specified resource.
      *
@@ -342,6 +377,16 @@ class AdminController extends Controller
 
         return redirect('/admin');
 
+    }
+
+
+    public function destroy_mark($id)
+    {
+        //
+        $mark = MarkingSystem::findOrFail($id);
+        $mark->delete();
+
+        return redirect('admin');
     }
 
     public function show($id)

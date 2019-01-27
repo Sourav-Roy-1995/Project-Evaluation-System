@@ -56,9 +56,19 @@ Route::group(['middleware'=>'auth'],function(){
 		Route::get('insertsupervisor/{project_id}/view','AdminController@view')->name('admin.view');
 		Route::get('editsupervisor/{id}/view_supervisor','AdminController@view_supervisor')->name('admin.view_supervisor');
 		Route::patch('editsupervisor/{id}','AdminController@update_supervisor')->name('admin.update_supervisor');
+
 		Route::DELETE('deletesupervisor/{id}','AdminController@destroy_supervisor')->name('admin.delete_supervisor');
 
+		Route::DELETE('deleteproject/{id}','AdminController@destroy_project')->name('admin.delete_project');
+
+		Route::DELETE('deleteschedule/{id}','AdminController@destroy_schedule')->name('admin.delete_schedule');
+
+		Route::DELETE('deletemark/{id}','AdminController@destroy_mark')->name('admin.delete_mark');
+
+		Route::DELETE('deletepreproject/{id}','AdminController@destroy_preproject')->name('admin.deletepreproject');
+
 		Route::get('viewmark/{id}/view','AdminController@view_marks')->name('admin.view_mark');
+
 		Route::patch('editmark/{id}','AdminController@update_marks')->name('admin.update');
 
 		Route::post('store_two','AdminController@store_two')->name('admin.store');
@@ -68,9 +78,13 @@ Route::group(['middleware'=>'auth'],function(){
 
 		Route::get('scheduling','AdminController@scheduling')->name('admin.schedule');
 		Route::post('store_scheduling','AdminController@store_schedule')->name('admin.store_schedule');
+
 		Route::get('view_schedule','AdminController@view_schedule');
+
 		Route::get('edit_schedule/{id}/edit','AdminController@edit_schedule')->name('schedule.edit');
 		Route::patch('update_schedule/{id}','AdminController@update_schedule')->name('schedule.update');
+
+		Route::get('view_prevproject','AdminController@view_prevproject');
 
 	    //Main Admin Route List:
 		
