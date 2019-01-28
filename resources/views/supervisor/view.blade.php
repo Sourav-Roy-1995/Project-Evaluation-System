@@ -117,14 +117,14 @@
                                            
                                       </td>
                                       <td>
-                                          <input class="form-control category_one" type="text" required name="category_one[]" placeholder="Category One" style="width:141px">
+                                          <input class="form-control category_one" type="text" required name="category_one[]" placeholder="Category One" style="width:141px" min="0" max="30" step="2" >
                                       </td>
 
                                       <td>
-                                          <input class="form-control category_two" type="text" required name="category_two[]" placeholder="Category Two" style="width:141px">
+                                          <input class="form-control category_two" type="text" required name="category_two[]" placeholder="Category Two" style="width:141px" min="0" max="30" step="2">
                                       </td>
                                       <td>
-                                          <input class="form-control supervisor_marks" type="text" required name="supervisor_marks[]" placeholder="Disabled" disabled="true" cursor="default" style="background:white;width:141px">
+                                          <input class="form-control supervisor_marks" type="text" required name="supervisor_marks[]" placeholder="Disabled" disabled="true" cursor="default" style="background:white;width:141px" min="0" max="40" step="2">
                                       </td>
                                       <td>
                                           <input class="form-control total disable-input" type="text" name="total[]" required
@@ -190,6 +190,58 @@
     <script src="{{URL::asset('js/demo/datatables-demo.js')}}"></script>
 
 
+<script>
+        $(function () {
+        $( ".category_one" ).change(function() {
+            var max = parseInt($(this).attr('max'));
+            var min = parseInt($(this).attr('min'));
+            if ($(this).val() > max)
+            {
+                alert('Maxium range is 30');
+                $(this).val(max);
+            }
+            else if ($(this).val() < min)
+            {
+                alert('Minimum range is 0');
+                $(this).val(min);
+            }       
+            }); 
+        });
+
+        $(function () {
+        $( ".category_two" ).change(function() {
+            var max = parseInt($(this).attr('max'));
+            var min = parseInt($(this).attr('min'));
+            if ($(this).val() > max)
+            {
+                alert('Maxium range is 30');
+                $(this).val(max);
+            }
+            else if ($(this).val() < min)
+            {
+                alert('Minimum range is 0');
+                $(this).val(min);
+            }       
+            }); 
+        });
+
+        $(function () {
+        $( ".supervisor_marks" ).change(function() {
+            var max = parseInt($(this).attr('max'));
+            var min = parseInt($(this).attr('min'));
+            if ($(this).val() > max)
+            {
+                alert('Maxium range is 40');
+                $(this).val(max);
+            }
+            else if ($(this).val() < min)
+            {
+                alert('Minimum range is 0');
+                $(this).val(min);
+            }       
+            }); 
+        });
+</script>
 
 <script type="text/javascript">
 
@@ -231,10 +283,10 @@
                   '<td>'+
                   '<input class="form-control student_id disable-input" required type="text" name="student_id[]" placeholder="Category Two" style="width:141px" value="{{$supervisorstudents->studentid_two}}">'+
                   '</td>'+
-                  '<td><input class="form-control category_one" type="text" required name="category_one[]" placeholder="Category One"></td>'+
+                  '<td><input class="form-control category_one" type="text" required name="category_one[]" placeholder="Category One" min="0" max="30" step="2"></td>'+
 
-                  '<td><input class="form-control category_two" type="text" required name="category_two[]" placeholder="Category Two"></td>'+
-                  '<td><input class="form-control supervisor_marks" type="text" required  name="supervisor_marks[]" disabled="true" cursor="default" style="background:white" placeholder="Disabled"></td>'+
+                  '<td><input class="form-control category_two" type="text" required name="category_two[]" placeholder="Category Two" min="0" max="30" step="2"></td>'+
+                  '<td><input class="form-control supervisor_marks" type="text" required  name="supervisor_marks[]" disabled="true" cursor="default" style="background:white" placeholder="Disabled" min="0" max="40" step="2"></td>'+
                   '<td><input class="form-control total disable-input" required type="text" name="total[]"  placeholder="Total Marks" style="background:white;cursor:default"></td>'+
                   '<td><a href="#" class="btn btn-danger btn-sm remove custom-btn-danger">Remove</a></td>'+      
                   '</tr>';
@@ -251,10 +303,10 @@
                   '<td>'+
                   '<input class="form-control student_id disable-input" required type="text" name="student_id[]" placeholder="Category Two" style="width:141px" value="{{$supervisorstudents->studentid_two}}">'+
                   '</td>'+
-                  '<td><input class="form-control category_one" type="text" required name="category_one[]" placeholder="Category One"></td>'+
+                  '<td><input class="form-control category_one" type="text" required name="category_one[]" placeholder="Category One" min="0" max="30" step="2"></td>'+
 
-                  '<td><input class="form-control category_two" type="text" required name="category_two[]" placeholder="Category Two"></td>'+
-                  '<td><input class="form-control supervisor_marks" type="text" required  name="supervisor_marks[]" disabled="true" cursor="default" style="background:white" placeholder="Disabled"></td>'+
+                  '<td><input class="form-control category_two" type="text" required name="category_two[]" placeholder="Category Two" min="0" max="30" step="2"></td>'+
+                  '<td><input class="form-control supervisor_marks" type="text" required  name="supervisor_marks[]" disabled="true" cursor="default" style="background:white" placeholder="Disabled" min="0" max="40" step="2"></td>'+
                   '<td><input class="form-control total disable-input" required type="text" name="total[]"  placeholder="Total Marks" style="background:white;cursor:default"></td>'+
                   '<td><a href="#" class="btn btn-danger btn-sm remove custom-btn-danger">Remove</a></td>'+      
                   '</tr>'+
@@ -267,10 +319,10 @@
                   '<td>'+
                   '<input class="form-control student_id disable-input" required type="text" name="student_id[]" placeholder="Student ID" style="width:141px" value="{{$supervisorstudents->studentid_three}}">'+
                   '</td>'+
-                  '<td><input class="form-control category_one" type="text" required name="category_one[]" placeholder="Category One"></td>'+
+                  '<td><input class="form-control category_one" type="text" required name="category_one[]" placeholder="Category One" min="0" max="30" step="2"></td>'+
 
-                  '<td><input class="form-control category_two" type="text" required name="category_two[]" placeholder="Category Two"></td>'+
-                  '<td><input class="form-control supervisor_marks" type="text" required  name="supervisor_marks[]" disabled="true" cursor="default" style="background:white" placeholder="Disabled"></td>'+
+                  '<td><input class="form-control category_two" type="text" required name="category_two[]" placeholder="Category Two" min="0" max="30" step="2"></td>'+
+                  '<td><input class="form-control supervisor_marks" type="text" required  name="supervisor_marks[]" disabled="true" cursor="default" style="background:white" placeholder="Disabled" min="0" max="40" step="2"></td>'+
                   '<td><input class="form-control total disable-input" required type="text" name="total[]"  placeholder="Total Marks" style="background:white;cursor:default"></td>'+
                   '<td><a href="#" class="btn btn-danger btn-sm remove custom-btn-danger">Remove</a></td>'+      
                   '</tr>';
