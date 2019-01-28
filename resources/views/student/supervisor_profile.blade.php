@@ -434,6 +434,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
+        @foreach($personalsupervisor as $supervisor)
         Supervisor Profile
       </h1>
       <ol class="breadcrumb">
@@ -454,7 +455,7 @@
             <div class="box-body box-profile">
               <img class="profile-user-img img-responsive img-circle" src="dist/img/avatar5.png" alt="User profile picture">
 
-              @foreach($personalsupervisor as $supervisor)
+             
                   
               <h3 class="profile-username text-center">{{$supervisor->name}}</h3>
               

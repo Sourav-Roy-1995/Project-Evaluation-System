@@ -288,8 +288,8 @@
                 <img src="dist/img/profile_icon.png" class="img-circle" alt="User Image">
 
                 <p>
-                    {{ Auth::User()->name }} - Web Developer
-                  <small>Member since Nov. 2012</small>
+                    {{ Auth::User()->name }}
+                  
                 </p>
               </li>
               <!-- Menu Body -->
@@ -1063,7 +1063,9 @@
                         $keys = array_keys($a);
               
                         for($i=0; $i < count($keys); ++$i) {              
-                        $avg = ($b[$keys[$i]] / $a[$keys[$i]]) + $sup[$keys[$i]];
+                        $avg = ceil(($b[$keys[$i]] / $a[$keys[$i]]) + $sup[$keys[$i]]);
+
+                        // $avg = ($b[$keys[$i]] / $a[$keys[$i]]) + $sup[$keys[$i]];
               
                          ?>      
                            <tr>
@@ -1359,6 +1361,20 @@
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+
+
+<!-- Search -->
+<script>
+    $(document).ready(function(){
+      $("#myInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $(".bs-list a").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+</script> 
+<!-- Search -->
 
 
 <!-- Search -->

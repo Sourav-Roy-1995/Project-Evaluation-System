@@ -488,9 +488,9 @@
         <!-- ./col -->
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
-          <div class="small-box bg-red">
+          <div class="small-box bg-red" style="height: 127px;">
             <div class="inner">
-              <h3>{{ Auth::User()->name }}</h3>
+              <h3 style="font-size: 20px;">{{ Auth::User()->name }}</h3>
 
               <p>Name</p>
             </div>
