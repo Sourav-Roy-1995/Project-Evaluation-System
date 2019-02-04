@@ -113,11 +113,11 @@ Marking System
                             
                         </td>
                         <td>
-                            <input class="form-control category_one" type="text" required name="category_one[]" placeholder="Category One" style="width:141px" min="0" max="30" step="2" >
+                            <input class="form-control category_one" type="text" name="category_one[]" placeholder="Category One" style="width:141px" min="0" max="30" step="2" >
                         </td>
 
                         <td>
-                            <input class="form-control category_two" type="text" required name="category_two[]" placeholder="Category Two" style="width:141px" min="0" max="30" step="2">
+                            <input class="form-control category_two" type="text" name="category_two[]" placeholder="Category Two" style="width:141px" min="0" max="30" step="2">
                         </td>
                         <td>
                             <input class="form-control supervisor_marks" type="text" required name="supervisor_marks[]" placeholder="Disabled" disabled="true" cursor="default" style="background:white;width:141px" min="0" max="40" step="2">
@@ -279,9 +279,9 @@ var tr='<tr>'+
     '<td>'+
     '<input class="form-control student_id disable-input" required type="text" name="student_id[]" placeholder="Category Two" style="width:141px" value="{{$supervisorstudents->studentid_two}}">'+
     '</td>'+
-    '<td><input class="form-control category_one" type="text" required name="category_one[]" placeholder="Category One" min="0" max="30" step="2"></td>'+
+    '<td><input class="form-control category_one" type="text" name="category_one[]" placeholder="Category One" min="0" max="30" step="2"></td>'+
 
-    '<td><input class="form-control category_two" type="text" required name="category_two[]" placeholder="Category Two" min="0" max="30" step="2"></td>'+
+    '<td><input class="form-control category_two" type="text" name="category_two[]" placeholder="Category Two" min="0" max="30" step="2"></td>'+
     '<td><input class="form-control supervisor_marks" type="text" required  name="supervisor_marks[]" disabled="true" cursor="default" style="background:white" placeholder="Disabled" min="0" max="40" step="2"></td>'+
     '<td><input class="form-control total disable-input" required type="text" name="total[]"  placeholder="Total Marks" style="background:white;cursor:default"></td>'+
     '<td><a href="#" class="btn btn-danger btn-sm remove custom-btn-danger">Remove</a></td>'+      
@@ -299,9 +299,9 @@ var tr='<tr>'+
     '<td>'+
     '<input class="form-control student_id disable-input" required type="text" name="student_id[]" placeholder="Category Two" style="width:141px" value="{{$supervisorstudents->studentid_two}}">'+
     '</td>'+
-    '<td><input class="form-control category_one" type="text" required name="category_one[]" placeholder="Category One" min="0" max="30" step="2"></td>'+
+    '<td><input class="form-control category_one" type="text" name="category_one[]" placeholder="Category One" min="0" max="30" step="2"></td>'+
 
-    '<td><input class="form-control category_two" type="text" required name="category_two[]" placeholder="Category Two" min="0" max="30" step="2"></td>'+
+    '<td><input class="form-control category_two" type="text" name="category_two[]" placeholder="Category Two" min="0" max="30" step="2"></td>'+
     '<td><input class="form-control supervisor_marks" type="text" required  name="supervisor_marks[]" disabled="true" cursor="default" style="background:white" placeholder="Disabled" min="0" max="40" step="2"></td>'+
     '<td><input class="form-control total disable-input" required type="text" name="total[]"  placeholder="Total Marks" style="background:white;cursor:default"></td>'+
     '<td><a href="#" class="btn btn-danger btn-sm remove custom-btn-danger">Remove</a></td>'+      
@@ -315,9 +315,9 @@ var tr='<tr>'+
     '<td>'+
     '<input class="form-control student_id disable-input" required type="text" name="student_id[]" placeholder="Student ID" style="width:141px" value="{{$supervisorstudents->studentid_three}}">'+
     '</td>'+
-    '<td><input class="form-control category_one" type="text" required name="category_one[]" placeholder="Category One" min="0" max="30" step="2"></td>'+
+    '<td><input class="form-control category_one" type="text" name="category_one[]" placeholder="Category One" min="0" max="30" step="2"></td>'+
 
-    '<td><input class="form-control category_two" type="text" required name="category_two[]" placeholder="Category Two" min="0" max="30" step="2"></td>'+
+    '<td><input class="form-control category_two" type="text" name="category_two[]" placeholder="Category Two" min="0" max="30" step="2"></td>'+
     '<td><input class="form-control supervisor_marks" type="text" required  name="supervisor_marks[]" disabled="true" cursor="default" style="background:white" placeholder="Disabled" min="0" max="40" step="2"></td>'+
     '<td><input class="form-control total disable-input" required type="text" name="total[]"  placeholder="Total Marks" style="background:white;cursor:default"></td>'+
     '<td><a href="#" class="btn btn-danger btn-sm remove custom-btn-danger">Remove</a></td>'+      

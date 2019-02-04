@@ -20,8 +20,8 @@ class CreateMarkingSystemsTable extends Migration
             $table->string('course_code');
             $table->text('semester');
             $table->integer('student_id');                                       
-            $table->integer('category_one');
-            $table->integer('category_two');
+            $table->integer('category_one')->unsigned()->nullable();;
+            $table->integer('category_two')->unsigned()->nullable();;
             $table->integer('supervisor_marks')->unsigned()->nullable();
             $table->integer('total');
             $table->timestamps();

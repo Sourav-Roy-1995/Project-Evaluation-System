@@ -59,25 +59,19 @@ class MaatwebsiteDemoController extends Controller
      */
 
     public function downloadExcel($type)
-
     {
 
         $data = StudentList::get()->toArray();
-
-            
 
         return Excel::create('studentlist', function($excel) use ($data) {
 
             $excel->sheet('mySheet', function($sheet) use ($data)
 
             {
-
                 $sheet->fromArray($data);
-
             });
 
         })->download($type);
-
     }
 
 
